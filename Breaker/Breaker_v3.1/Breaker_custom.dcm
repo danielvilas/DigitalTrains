@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRF9520PBF
+D IRF9520PBF P-Channel MOSFET, 6.8 A, 100 V, 3-Pin TO-220AB Vishay
+K P-Channel MOSFET
+F https://www.vishay.com/docs/91074/91074.pdf
+$ENDCMP
+#
+#End Doc Library
