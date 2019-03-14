@@ -38,7 +38,7 @@ $EndComp
 Wire Wire Line
 	4950 1350 5150 1350
 $Comp
-L Device:R R5
+L Breaker_v3.1-rescue:R-Device R5
 U 1 1 5C3E5356
 P 4450 1650
 F 0 "R5" H 4520 1696 50  0000 L CNN
@@ -54,7 +54,7 @@ Connection ~ 4450 1350
 Wire Wire Line
 	4450 1350 4550 1350
 $Comp
-L Comparator:LM339 U2
+L Breaker_v3.1-rescue:LM339-Comparator U2
 U 3 1 5C3E5444
 P 3500 2650
 F 0 "U2" H 3500 3017 50  0000 C CNN
