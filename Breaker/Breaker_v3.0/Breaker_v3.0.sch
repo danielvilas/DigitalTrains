@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Breaker_v3.0-rescue:Screw_Terminal_01x02-Connector J1
+L Connector:Screw_Terminal_01x02 J1
 U 1 1 5C3E0CA6
 P 1200 950
 F 0 "J1" H 1280 942 50  0000 L CNN
@@ -26,7 +26,7 @@ F 3 "~" H 1200 950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:VCC-power #PWR0101
+L power:VCC #PWR0101
 U 1 1 5C3E0D0E
 P 850 900
 F 0 "#PWR0101" H 850 750 50  0001 C CNN
@@ -37,7 +37,7 @@ F 3 "" H 850 900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0102
+L power:GND #PWR0102
 U 1 1 5C3E0E2F
 P 850 1100
 F 0 "#PWR0102" H 850 850 50  0001 C CNN
@@ -66,7 +66,7 @@ F4 "Vsense" O R 3200 2000 50
 F5 "Vmean" O R 3200 2100 50 
 $EndSheet
 $Comp
-L Breaker_v3.0-rescue:VCC-power #PWR0103
+L power:VCC #PWR0103
 U 1 1 5C3E0F07
 P 2150 1800
 F 0 "#PWR0103" H 2150 1650 50  0001 C CNN
@@ -97,7 +97,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 1800 5600 1800
 $Comp
-L Breaker_v3.0-rescue:Screw_Terminal_01x02-Connector J2
+L Connector:Screw_Terminal_01x02 J2
 U 1 1 5C3E1033
 P 8100 1800
 F 0 "J2" H 8180 1792 50  0000 L CNN
@@ -108,7 +108,7 @@ F 3 "~" H 8100 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0104
+L power:GND #PWR0104
 U 1 1 5C3E103F
 P 7750 1950
 F 0 "#PWR0104" H 7750 1700 50  0001 C CNN
@@ -125,7 +125,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 1800 7250 1800
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0105
+L power:GND #PWR0105
 U 1 1 5C3E1592
 P 8250 2950
 F 0 "#PWR0105" H 8250 2700 50  0001 C CNN
@@ -136,7 +136,7 @@ F 3 "" H 8250 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0106
+L power:GND #PWR0106
 U 1 1 5C3E15C1
 P 7250 2950
 F 0 "#PWR0106" H 7250 2700 50  0001 C CNN
@@ -147,7 +147,7 @@ F 3 "" H 7250 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:LED-Device D1
+L Device:LED D1
 U 1 1 5C3E165F
 P 7250 2650
 F 0 "D1" V 7288 2533 50  0000 R CNN
@@ -158,7 +158,7 @@ F 3 "~" H 7250 2650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:R-Device R1
+L Device:R R1
 U 1 1 5C3E178A
 P 7250 2200
 F 0 "R1" H 7320 2246 50  0000 L CNN
@@ -176,7 +176,7 @@ Wire Wire Line
 Wire Wire Line
 	7250 2350 7250 2500
 $Comp
-L Breaker_v3.0-rescue:SW_Push_Dual-Switch SW1
+L Switch:SW_Push_Dual SW1
 U 1 1 5C3E1B8A
 P 7900 2700
 F 0 "SW1" H 7900 2985 50  0000 C CNN
@@ -280,7 +280,7 @@ Wire Wire Line
 	3550 3750 3550 2850
 Connection ~ 3550 2850
 $Comp
-L Breaker_v3.0-rescue:Conn_01x05-Connector_Generic J3
+L Connector_Generic:Conn_01x05 J3
 U 1 1 5C3EA81B
 P 7400 4300
 F 0 "J3" H 7480 4342 50  0000 L CNN
@@ -307,7 +307,7 @@ Vmean
 Text Label 6950 4100 0    50   ~ 0
 Vmean
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR01
+L power:GND #PWR01
 U 1 1 5C3EC541
 P 7100 4600
 F 0 "#PWR01" H 7100 4350 50  0001 C CNN

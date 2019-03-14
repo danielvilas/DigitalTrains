@@ -19,12 +19,11 @@ reset
 Wire Wire Line
 	1600 1450 1900 1450
 $Comp
-L Breaker_v3.1-rescue:R-Device R?
+L Device:R R?
 U 1 1 5C3E937B
 P 2700 1700
 AR Path="/5C3E8D5D/5C3E937B" Ref="R?"  Part="1" 
 AR Path="/5C3E9304/5C3E937B" Ref="R14"  Part="1" 
-AR Path="/5C3E937B" Ref="R14"  Part="1" 
 F 0 "R14" H 2770 1746 50  0000 L CNN
 F 1 "1M" H 2770 1655 50  0000 L CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2630 1700 50  0001 C CNN
@@ -33,12 +32,11 @@ F 3 "~" H 2700 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:CP-Device C?
+L Device:CP C?
 U 1 1 5C3E9382
 P 3150 1700
 AR Path="/5C3E8D5D/5C3E9382" Ref="C?"  Part="1" 
 AR Path="/5C3E9304/5C3E9382" Ref="C4"  Part="1" 
-AR Path="/5C3E9382" Ref="C4"  Part="1" 
 F 0 "C4" H 3268 1746 50  0000 L CNN
 F 1 "4.7uf" H 3268 1655 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3188 1550 50  0001 C CNN
@@ -47,7 +45,7 @@ F 3 "~" H 3150 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR?
+L power:GND #PWR?
 U 1 1 5C3E9389
 P 2700 2000
 AR Path="/5C3E8D5D/5C3E9389" Ref="#PWR?"  Part="1" 
@@ -60,7 +58,7 @@ F 3 "" H 2700 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR?
+L power:GND #PWR?
 U 1 1 5C3E938F
 P 3150 2000
 AR Path="/5C3E8D5D/5C3E938F" Ref="#PWR?"  Part="1" 
@@ -86,7 +84,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 1850 2700 2000
 $Comp
-L Breaker_v3.1-rescue:BC849-Transistor_BJT Q3
+L Transistor_BJT:BC849 Q3
 U 1 1 5C3E94F2
 P 2100 1550
 F 0 "Q3" V 2428 1550 50  0000 C CNN
@@ -99,7 +97,7 @@ $EndComp
 Text HLabel 1550 2300 0    50   Input ~ 0
 ext_reset
 $Comp
-L Breaker_v3.1-rescue:R-Device R13
+L Device:R R13
 U 1 1 5C3E957E
 P 2100 2050
 F 0 "R13" H 2170 2096 50  0000 L CNN

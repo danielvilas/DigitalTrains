@@ -21,7 +21,7 @@ status
 Text HLabel 4350 4200 2    50   Output ~ 0
 ctrl_ref
 $Comp
-L Breaker_v3.1-rescue:R-Device R6
+L Device:R R6
 U 1 1 5C3E62CC
 P 1750 3750
 F 0 "R6" H 1820 3796 50  0000 L CNN
@@ -32,7 +32,7 @@ F 3 "~" H 1750 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:R-Device R7
+L Device:R R7
 U 1 1 5C3E6319
 P 3800 1800
 F 0 "R7" H 3870 1846 50  0000 L CNN
@@ -43,7 +43,7 @@ F 3 "~" H 3800 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:R-Device R8
+L Device:R R8
 U 1 1 5C3E6378
 P 3800 4000
 F 0 "R8" H 3870 4046 50  0000 L CNN
@@ -54,7 +54,7 @@ F 3 "~" H 3800 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:R-Device R9
+L Device:R R9
 U 1 1 5C3E63CC
 P 3800 4650
 F 0 "R9" H 3870 4696 50  0000 L CNN
@@ -65,7 +65,7 @@ F 3 "~" H 3800 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:R_POT-Device RV1
+L Device:R_POT RV1
 U 1 1 5C3E64DD
 P 1750 4350
 F 0 "RV1" H 1680 4396 50  0000 R CNN
@@ -76,7 +76,7 @@ F 3 "~" H 1750 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR0109
+L power:GND #PWR0109
 U 1 1 5C3E6531
 P 1750 4850
 F 0 "#PWR0109" H 1750 4600 50  0001 C CNN
@@ -87,7 +87,7 @@ F 3 "" H 1750 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR0110
+L power:GND #PWR0110
 U 1 1 5C3E6569
 P 3800 5100
 F 0 "#PWR0110" H 3800 4850 50  0001 C CNN
@@ -98,7 +98,7 @@ F 3 "" H 3800 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:VCC-power #PWR0111
+L power:VCC #PWR0111
 U 1 1 5C3E65A8
 P 1750 3400
 F 0 "#PWR0111" H 1750 3250 50  0001 C CNN
@@ -109,7 +109,7 @@ F 3 "" H 1750 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:VCC-power #PWR0112
+L power:VCC #PWR0112
 U 1 1 5C3E65E0
 P 3800 3600
 F 0 "#PWR0112" H 3800 3450 50  0001 C CNN
@@ -120,7 +120,7 @@ F 3 "" H 3800 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:VCC-power #PWR0113
+L power:VCC #PWR0113
 U 1 1 5C3E6618
 P 3800 1500
 F 0 "#PWR0113" H 3800 1350 50  0001 C CNN
@@ -152,7 +152,7 @@ Connection ~ 3800 4200
 Wire Wire Line
 	3800 4200 3800 4400
 $Comp
-L Breaker_v3.1-rescue:CP-Device C?
+L Device:CP C?
 U 1 1 5C3E6ACB
 P 4250 4650
 AR Path="/5C3E6ACB" Ref="C?"  Part="1" 
@@ -172,7 +172,7 @@ Connection ~ 3800 4400
 Wire Wire Line
 	3800 4400 3800 4500
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR0114
+L power:GND #PWR0114
 U 1 1 5C3E6BA8
 P 4250 5100
 F 0 "#PWR0114" H 4250 4850 50  0001 C CNN
@@ -185,7 +185,7 @@ $EndComp
 Wire Wire Line
 	4250 5100 4250 4800
 $Comp
-L Breaker_v3.1-rescue:LM339-Comparator U2
+L Comparator:LM339 U2
 U 1 1 5C3E6DD8
 P 2850 2850
 F 0 "U2" H 2850 3217 50  0000 C CNN
@@ -196,7 +196,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 2900 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:LM339-Comparator U2
+L Comparator:LM339 U2
 U 2 1 5C3E6E63
 P 4400 2950
 F 0 "U2" H 4400 3317 50  0000 C CNN
@@ -222,7 +222,7 @@ Wire Wire Line
 Wire Wire Line
 	2400 2950 2550 2950
 $Comp
-L Breaker_v3.1-rescue:LED-Device D2
+L Device:LED D2
 U 1 1 5C3E7526
 P 5000 2450
 F 0 "D2" V 5038 2333 50  0000 R CNN
@@ -272,7 +272,7 @@ Wire Wire Line
 Wire Wire Line
 	4200 4300 4200 4200
 $Comp
-L Breaker_v3.1-rescue:LM339-Comparator U2
+L Comparator:LM339 U2
 U 5 1 5C3EFB16
 P 6850 1850
 F 0 "U2" H 6808 1896 50  0000 L CNN
@@ -283,7 +283,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 6900 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:VCC-power #PWR0116
+L power:VCC #PWR0116
 U 1 1 5C3EFB54
 P 6750 1450
 F 0 "#PWR0116" H 6750 1300 50  0001 C CNN
@@ -294,7 +294,7 @@ F 3 "" H 6750 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR0117
+L power:GND #PWR0117
 U 1 1 5C3EFB73
 P 6750 2250
 F 0 "#PWR0117" H 6750 2000 50  0001 C CNN

@@ -23,7 +23,7 @@ ext_5v
 Text HLabel 3500 900  2    50   Output ~ 0
 ext_err
 $Comp
-L Breaker_v3.0-rescue:LM339-Comparator U2
+L Comparator:LM339 U2
 U 4 1 5C3E5E4C
 P 1900 1450
 F 0 "U2" H 1900 1817 50  0000 C CNN
@@ -40,7 +40,7 @@ Wire Wire Line
 Wire Wire Line
 	1350 1550 1600 1550
 $Comp
-L Breaker_v3.0-rescue:BSS84-Transistor_FET Q2
+L Transistor_FET:BSS84 Q2
 U 1 1 5C3E6099
 P 2950 1000
 F 0 "Q2" V 3293 1000 50  0000 C CNN
@@ -51,7 +51,7 @@ F 3 "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf" H 2950 1000 50  
 	0    1    -1   0   
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:R-Device R10
+L Device:R R10
 U 1 1 5C3E61AD
 P 2650 1100
 F 0 "R10" H 2720 1146 50  0000 L CNN
@@ -80,7 +80,7 @@ Connection ~ 2950 1300
 Wire Wire Line
 	2950 1300 2950 1450
 $Comp
-L Breaker_v3.0-rescue:R-Device R11
+L Device:R R11
 U 1 1 5C3E6317
 P 3350 1150
 F 0 "R11" H 3420 1196 50  0000 L CNN
@@ -91,7 +91,7 @@ F 3 "~" H 3350 1150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0115
+L power:GND #PWR0115
 U 1 1 5C3E6365
 P 3350 1400
 F 0 "#PWR0115" H 3350 1150 50  0001 C CNN

@@ -23,7 +23,7 @@ Vsense
 Text HLabel 3900 2400 2    50   Output ~ 0
 Vmean
 $Comp
-L Breaker_v3.0-rescue:R-Device R2
+L Device:R R2
 U 1 1 5C3E242B
 P 2900 1400
 F 0 "R2" V 2693 1400 50  0000 C CNN
@@ -38,7 +38,7 @@ Wire Wire Line
 Wire Wire Line
 	2750 1400 2600 1400
 $Comp
-L Breaker_v3.0-rescue:ZXCT1009F-Amplifier_Current U?
+L Amplifier_Current:ZXCT1009F U?
 U 1 1 5C3E24B4
 P 2900 1900
 AR Path="/5C3E24B4" Ref="U?"  Part="1" 
@@ -66,7 +66,7 @@ Connection ~ 2600 1400
 Wire Wire Line
 	2600 1400 1800 1400
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0107
+L power:GND #PWR0107
 U 1 1 5C3E2691
 P 2900 2900
 F 0 "#PWR0107" H 2900 2650 50  0001 C CNN
@@ -77,7 +77,7 @@ F 3 "" H 2900 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:R-Device R3
+L Device:R R3
 U 1 1 5C3E26F7
 P 2900 2650
 F 0 "R3" H 2970 2696 50  0000 L CNN
@@ -88,7 +88,7 @@ F 3 "~" H 2900 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:R-Device R4
+L Device:R R4
 U 1 1 5C3E2760
 P 3250 2400
 F 0 "R4" V 3043 2400 50  0000 C CNN
@@ -99,7 +99,7 @@ F 3 "~" H 3250 2400 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:C-Device C?
+L Device:C C?
 U 1 1 5C3E28B1
 P 3600 2650
 AR Path="/5C3E28B1" Ref="C?"  Part="1" 
@@ -112,7 +112,7 @@ F 3 "~" H 3600 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.0-rescue:GND-power #PWR0108
+L power:GND #PWR0108
 U 1 1 5C3E2910
 P 3600 2950
 F 0 "#PWR0108" H 3600 2700 50  0001 C CNN

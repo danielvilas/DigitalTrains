@@ -17,7 +17,7 @@ $EndDescr
 Text HLabel 1450 1250 0    50   Output ~ 0
 reset
 $Comp
-L Breaker_v3.1-rescue:SW_Push_Dual-Switch SW2
+L Switch:SW_Push_Dual SW2
 U 1 1 5C3E8EB4
 P 1950 1050
 F 0 "SW2" H 1950 1335 50  0000 C CNN
@@ -35,7 +35,7 @@ Connection ~ 1750 1250
 Wire Wire Line
 	2150 1050 2150 1250
 $Comp
-L Breaker_v3.1-rescue:R-Device R12
+L Device:R R12
 U 1 1 5C3E8F0C
 P 2550 1500
 F 0 "R12" H 2620 1546 50  0000 L CNN
@@ -46,7 +46,7 @@ F 3 "~" H 2550 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:CP-Device C3
+L Device:CP C3
 U 1 1 5C3E8F92
 P 3000 1500
 F 0 "C3" H 3118 1546 50  0000 L CNN
@@ -57,7 +57,7 @@ F 3 "~" H 3000 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR02
+L power:GND #PWR02
 U 1 1 5C3E8FD4
 P 2550 1800
 F 0 "#PWR02" H 2550 1550 50  0001 C CNN
@@ -68,7 +68,7 @@ F 3 "" H 2550 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Breaker_v3.1-rescue:GND-power #PWR03
+L power:GND #PWR03
 U 1 1 5C3E9006
 P 3000 1800
 F 0 "#PWR03" H 3000 1550 50  0001 C CNN

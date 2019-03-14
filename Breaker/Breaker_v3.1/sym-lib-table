@@ -1,4 +1,3 @@
 (sym_lib_table
   (lib (name Breaker_custom)(type Legacy)(uri ${KIPRJMOD}/Breaker_custom.lib)(options "")(descr ""))
-  (lib (name Breaker_v3.1-rescue)(type Legacy)(uri ${KIPRJMOD}/Breaker_v3.1-rescue.lib)(options "")(descr ""))
 )
