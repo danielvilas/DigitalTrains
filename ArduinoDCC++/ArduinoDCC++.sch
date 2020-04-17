@@ -1,0 +1,459 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title "Arduino DCC++"
+Date "2020-04-16"
+Rev "v0.0.1b"
+Comp "Daniel Vilas"
+Comment1 "NeoPixel for V0.0.2"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 4350 1200 850  2400
+U 5E94B246
+F0 "Arduino" 50
+F1 "arduino.sch" 50
+F2 "ap_8_icp" B R 5200 1900 50 
+F3 "ap_0_rx" B R 5200 3500 50 
+F4 "ap_1_tx" B R 5200 3400 50 
+F5 "ad_2_int0" B R 5200 3300 50 
+F6 "ap_3*_int1" B R 5200 3200 50 
+F7 "ap_4_t0" B R 5200 3100 50 
+F8 "ap_5*_t1" B R 5200 3000 50 
+F9 "ap_6*_ain0" B R 5200 2900 50 
+F10 "ap_7_ain1" B R 5200 2800 50 
+F11 "ap_9*_osc1" B R 5200 1800 50 
+F12 "ap_10_ss" I R 5200 1700 50 
+F13 "ap_11*_mosi" B R 5200 1600 50 
+F14 "ap_12_miso" B R 5200 1500 50 
+F15 "ap_13_sck" B R 5200 1400 50 
+F16 "ap_a5_scl" B R 5200 2100 50 
+F17 "ap_a3" B R 5200 2300 50 
+F18 "ap_a2" B R 5200 2400 50 
+F19 "ap_a1" B R 5200 2500 50 
+F20 "ap_a0" B R 5200 2600 50 
+F21 "ap_rst" B L 4350 2650 50 
+F22 "ap_aref" I R 5200 1250 50 
+F23 "ap_a4_sda" I R 5200 2200 50 
+$EndSheet
+$Comp
+L Connector:USB_B_Micro J1
+U 1 1 5E952273
+P 1300 2700
+F 0 "J1" H 1357 3167 50  0000 C CNN
+F 1 "USB_B_Micro" H 1357 3076 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Amphenol_10103594-0001LF_Horizontal" H 1450 2650 50  0001 C CNN
+F 3 "~" H 1450 2650 50  0001 C CNN
+	1    1300 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2700 2300 2700
+Wire Wire Line
+	2300 2800 1600 2800
+$Comp
+L power:GND #PWR01
+U 1 1 5E963E0B
+P 1200 3250
+F 0 "#PWR01" H 1200 3000 50  0001 C CNN
+F 1 "GND" H 1205 3077 50  0000 C CNN
+F 2 "" H 1200 3250 50  0001 C CNN
+F 3 "" H 1200 3250 50  0001 C CNN
+	1    1200 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR02
+U 1 1 5E96466C
+P 1750 1900
+F 0 "#PWR02" H 1750 1750 50  0001 C CNN
+F 1 "+5V" H 1765 2073 50  0000 C CNN
+F 2 "" H 1750 1900 50  0001 C CNN
+F 3 "" H 1750 1900 50  0001 C CNN
+	1    1750 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 3100 1200 3200
+Wire Wire Line
+	1300 3100 1300 3200
+Wire Wire Line
+	1300 3200 1200 3200
+Connection ~ 1200 3200
+Wire Wire Line
+	1200 3200 1200 3250
+$Sheet
+S 2300 2500 800  500 
+U 5E94B185
+F0 "FTDI 231" 50
+F1 "FTDI-231.sch" 50
+F2 "D-" I L 2300 2800 50 
+F3 "D+" I L 2300 2700 50 
+F4 "TX" O R 3100 2750 50 
+F5 "RX" O R 3100 2850 50 
+F6 "RST" O R 3100 2650 50 
+$EndSheet
+$Comp
+L Device:Fuse F1
+U 1 1 5E96876B
+P 1750 2200
+F 0 "F1" H 1810 2246 50  0000 L CNN
+F 1 "MF-MSMF050-2" H 1810 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1680 2200 50  0001 C CNN
+F 3 "~" H 1750 2200 50  0001 C CNN
+	1    1750 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2500 1750 2500
+Wire Wire Line
+	1750 1900 1750 2050
+Wire Wire Line
+	1750 2350 1750 2500
+Wire Wire Line
+	3100 2650 4350 2650
+Wire Wire Line
+	4250 2750 4250 3800
+Wire Wire Line
+	4250 3800 5300 3800
+Wire Wire Line
+	5300 3800 5300 3500
+Wire Wire Line
+	5200 3500 5300 3500
+Wire Wire Line
+	3100 2750 4250 2750
+Wire Wire Line
+	3100 2850 4150 2850
+Wire Wire Line
+	4150 2850 4150 3900
+Wire Wire Line
+	4150 3900 5400 3900
+Wire Wire Line
+	5400 3900 5400 3400
+Wire Wire Line
+	5400 3400 5200 3400
+$Comp
+L Connector_Generic:Conn_01x08 J4
+U 1 1 5EA1CCB9
+P 6100 3100
+F 0 "J4" H 6180 3092 50  0000 L CNN
+F 1 "Conn_01x08" H 6180 3001 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6100 3100 50  0001 C CNN
+F 3 "~" H 6100 3100 50  0001 C CNN
+	1    6100 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2800 5900 2800
+Wire Wire Line
+	5200 2900 5900 2900
+Wire Wire Line
+	5200 3000 5750 3000
+Wire Wire Line
+	5200 3100 5900 3100
+Wire Wire Line
+	5200 3200 5750 3200
+Wire Wire Line
+	5200 3300 5900 3300
+Wire Wire Line
+	5400 3400 5900 3400
+Connection ~ 5400 3400
+Wire Wire Line
+	5900 3500 5300 3500
+Connection ~ 5300 3500
+$Comp
+L Connector_Generic:Conn_01x06 J3
+U 1 1 5EA1EDE9
+P 6100 2300
+F 0 "J3" H 6180 2292 50  0000 L CNN
+F 1 "Conn_01x06" H 6180 2201 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 6100 2300 50  0001 C CNN
+F 3 "~" H 6100 2300 50  0001 C CNN
+	1    6100 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2100 5600 2100
+Wire Wire Line
+	5900 2300 5800 2300
+Wire Wire Line
+	5200 2500 5750 2500
+Wire Wire Line
+	5900 2600 5750 2600
+$Comp
+L Connector_Generic:Conn_01x10 J2
+U 1 1 5EA21B65
+P 6100 1400
+F 0 "J2" H 6180 1392 50  0000 L CNN
+F 1 "Conn_01x10" H 6180 1301 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 6100 1400 50  0001 C CNN
+F 3 "~" H 6100 1400 50  0001 C CNN
+	1    6100 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1900 5800 1900
+Wire Wire Line
+	5900 1800 5800 1800
+Wire Wire Line
+	5900 1600 5800 1600
+Wire Wire Line
+	5200 1500 5800 1500
+Wire Wire Line
+	5900 1400 5800 1400
+Wire Wire Line
+	5900 1000 5600 1000
+Wire Wire Line
+	5600 1000 5600 2100
+Connection ~ 5600 2100
+Wire Wire Line
+	5600 2100 5200 2100
+Wire Wire Line
+	5200 1250 5850 1250
+Wire Wire Line
+	5850 1250 5850 1200
+Wire Wire Line
+	5850 1200 5900 1200
+$Comp
+L power:GND #PWR03
+U 1 1 5EA2BF76
+P 5550 1300
+F 0 "#PWR03" H 5550 1050 50  0001 C CNN
+F 1 "GND" V 5555 1172 50  0000 R CNN
+F 2 "" H 5550 1300 50  0001 C CNN
+F 3 "" H 5550 1300 50  0001 C CNN
+	1    5550 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5550 1300 5900 1300
+Wire Wire Line
+	5200 2200 5700 2200
+Wire Wire Line
+	5900 1100 5700 1100
+Wire Wire Line
+	5700 1100 5700 2200
+Connection ~ 5700 2200
+Wire Wire Line
+	5700 2200 5900 2200
+$Sheet
+S 8050 1150 550  2450
+U 5E983A86
+F0 "Motor Shield" 50
+F1 "MotorShield.sch" 50
+F2 "SNS0_aA0" O L 8050 2550 50 
+F3 "SNS1_aA1" O L 8050 2450 50 
+F4 "brakeB_a8" I L 8050 1850 50 
+F5 "dirB_a13" I L 8050 1350 50 
+F6 "brakeA_a9" I L 8050 1750 50 
+F7 "diraA_a12" I L 8050 1450 50 
+F8 "pwmA_a3" I L 8050 3150 50 
+F9 "pwmB_a11" I L 8050 1550 50 
+$EndSheet
+Wire Wire Line
+	8050 2450 5750 2450
+Wire Wire Line
+	5200 2400 5900 2400
+Wire Wire Line
+	5750 2450 5750 2500
+Connection ~ 5750 2500
+Wire Wire Line
+	5750 2500 5900 2500
+Wire Wire Line
+	5750 2600 5750 2550
+Connection ~ 5750 2600
+Wire Wire Line
+	5750 2600 5200 2600
+Wire Wire Line
+	5750 2550 8050 2550
+Wire Wire Line
+	5200 1700 5800 1700
+Wire Wire Line
+	8050 1850 5800 1850
+Wire Wire Line
+	5800 1850 5800 1900
+Connection ~ 5800 1900
+Wire Wire Line
+	5800 1900 5900 1900
+Wire Wire Line
+	5800 1350 5800 1400
+Connection ~ 5800 1400
+Wire Wire Line
+	5800 1400 5200 1400
+Wire Wire Line
+	5800 1750 5800 1800
+Connection ~ 5800 1800
+Wire Wire Line
+	5800 1800 5200 1800
+Wire Wire Line
+	8050 1450 7400 1450
+Wire Wire Line
+	5800 1450 5800 1500
+Connection ~ 5800 1500
+Wire Wire Line
+	5800 1500 5900 1500
+Wire Wire Line
+	5800 2300 5800 2250
+Connection ~ 5800 2300
+Wire Wire Line
+	5800 2300 5200 2300
+Wire Wire Line
+	8050 1550 5800 1550
+Wire Wire Line
+	5800 1550 5800 1600
+Connection ~ 5800 1600
+Wire Wire Line
+	5800 1600 5200 1600
+$Comp
+L Device:Jumper JP2
+U 1 1 5E992406
+P 7300 2950
+F 0 "JP2" H 7300 2725 50  0000 C CNN
+F 1 "Jumper" H 7300 2816 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7300 2950 50  0001 C CNN
+F 3 "~" H 7300 2950 50  0001 C CNN
+	1    7300 2950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Jumper JP1
+U 1 1 5E993048
+P 7050 2000
+F 0 "JP1" H 7050 1900 50  0000 C CNN
+F 1 "Jumper" H 7050 2150 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7050 2000 50  0001 C CNN
+F 3 "~" H 7050 2000 50  0001 C CNN
+	1    7050 2000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5800 1650 5800 1700
+Connection ~ 5800 1700
+Wire Wire Line
+	5800 1700 5900 1700
+Wire Wire Line
+	5800 1350 6750 1350
+Wire Wire Line
+	7400 2000 7400 1450
+Connection ~ 7400 1450
+Wire Wire Line
+	7400 1450 7350 1450
+Wire Wire Line
+	7400 2000 7350 2000
+Wire Wire Line
+	6750 2000 6650 2000
+Wire Wire Line
+	6650 2000 6650 1650
+Wire Wire Line
+	6650 1650 5800 1650
+Wire Wire Line
+	7000 2950 5750 2950
+Wire Wire Line
+	5750 2950 5750 3000
+Connection ~ 5750 3000
+Wire Wire Line
+	5750 3000 5900 3000
+Wire Wire Line
+	7600 2950 7650 2950
+Wire Wire Line
+	7650 2950 7650 1350
+Connection ~ 7650 1350
+Wire Wire Line
+	7650 1350 8050 1350
+Wire Wire Line
+	8050 3150 5750 3150
+Wire Wire Line
+	5750 3150 5750 3200
+Connection ~ 5750 3200
+Wire Wire Line
+	5750 3200 5900 3200
+$Comp
+L Device:R R?
+U 1 1 5EA069FF
+P 3150 4700
+AR Path="/5E94B185/5EA069FF" Ref="R?"  Part="1" 
+AR Path="/5EA069FF" Ref="R21"  Part="1" 
+F 0 "R21" V 2943 4700 50  0000 C CNN
+F 1 "1K" V 3034 4700 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3080 4700 50  0001 C CNN
+F 3 "~" H 3150 4700 50  0001 C CNN
+	1    3150 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5EA06A05
+P 2700 4700
+AR Path="/5E94B185/5EA06A05" Ref="D?"  Part="1" 
+AR Path="/5EA06A05" Ref="D16"  Part="1" 
+F 0 "D16" H 2693 4916 50  0000 C CNN
+F 1 "RX_PWR_G" H 2693 4825 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 2700 4700 50  0001 C CNN
+F 3 "~" H 2700 4700 50  0001 C CNN
+	1    2700 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 4700 3450 4700
+Wire Wire Line
+	3450 4700 3450 4400
+Wire Wire Line
+	3000 4700 2850 4700
+Wire Wire Line
+	2150 4700 2550 4700
+$Comp
+L power:+5V #PWR0104
+U 1 1 5EA09912
+P 3450 4400
+F 0 "#PWR0104" H 3450 4250 50  0001 C CNN
+F 1 "+5V" H 3465 4573 50  0000 C CNN
+F 2 "" H 3450 4400 50  0001 C CNN
+F 3 "" H 3450 4400 50  0001 C CNN
+	1    3450 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5EA09DB2
+P 2150 4700
+F 0 "#PWR0105" H 2150 4450 50  0001 C CNN
+F 1 "GND" H 2155 4527 50  0000 C CNN
+F 2 "" H 2150 4700 50  0001 C CNN
+F 3 "" H 2150 4700 50  0001 C CNN
+	1    2150 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 1350 7650 1350
+$Comp
+L Device:Jumper JP3
+U 1 1 5E9A2E2F
+P 7050 1350
+F 0 "JP3" H 7050 1650 50  0000 C CNN
+F 1 "Jumper" H 7050 1550 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7050 1350 50  0001 C CNN
+F 3 "~" H 7050 1350 50  0001 C CNN
+	1    7050 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper JP4
+U 1 1 5E9A61C6
+P 7050 1450
+F 0 "JP4" H 6950 1600 50  0000 C CNN
+F 1 "Jumper" H 7150 1600 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7050 1450 50  0001 C CNN
+F 3 "~" H 7050 1450 50  0001 C CNN
+	1    7050 1450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6750 1450 5800 1450
+Wire Wire Line
+	5800 1750 8050 1750
+$EndSCHEMATC

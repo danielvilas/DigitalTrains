@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name ArduinoDCC++)(type KiCad)(uri ${KIPRJMOD}/DataSheets/ArduinoDCC++.pretty)(options "")(descr ""))
+)
