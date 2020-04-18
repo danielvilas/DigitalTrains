@@ -1,4 +1,4 @@
-update=jue 16 abr 2020 11:47:44 CEST
+update=2020 April 18, Saturday 20:32:14
 version=1
 last_client=kicad
 [general]
@@ -261,7 +261,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=/Volumes/Datos/Daniel/GoogleDrive/trenes/OHS/DigitalTrains/docs/Dcc++Board/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew
