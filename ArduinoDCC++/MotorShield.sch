@@ -9,7 +9,7 @@ Date "2020-04-16"
 Rev "v0.0.1b"
 Comp "Daniel Vilas"
 Comment1 "Change r to Network of Resistances?"
-Comment2 ""
+Comment2 "Pin 3 on J6, conected to 2 when disconnected, open"
 Comment3 ""
 Comment4 ""
 $EndDescr
