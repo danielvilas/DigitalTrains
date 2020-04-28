@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 4
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.1b"
+Rev "v0.0.1c"
 Comp "Daniel Vilas"
 Comment1 "NeoPixel for V0.0.2"
 Comment2 ""
@@ -104,7 +104,7 @@ U 1 1 5E96876B
 P 1750 2200
 F 0 "F1" H 1810 2246 50  0000 L CNN
 F 1 "MF-MSMF050-2" H 1810 2155 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1680 2200 50  0001 C CNN
+F 2 "ArduinoDCC++:MF-MSMF" V 1680 2200 50  0001 C CNN
 F 3 "~" H 1750 2200 50  0001 C CNN
 	1    1750 2200
 	1    0    0    -1  
@@ -324,8 +324,8 @@ $Comp
 L Device:Jumper JP1
 U 1 1 5E993048
 P 7050 2000
-F 0 "JP1" H 7050 1775 50  0000 C CNN
-F 1 "Jumper" H 7050 1866 50  0000 C CNN
+F 0 "JP1" H 7050 1900 50  0000 C CNN
+F 1 "Jumper" H 7050 2150 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7050 2000 50  0001 C CNN
 F 3 "~" H 7050 2000 50  0001 C CNN
 	1    7050 2000
@@ -445,8 +445,8 @@ $Comp
 L Device:Jumper JP4
 U 1 1 5E9A61C6
 P 7050 1450
-F 0 "JP4" H 7000 1600 50  0000 C CNN
-F 1 "Jumper" H 7200 1600 50  0000 C CNN
+F 0 "JP4" H 6950 1600 50  0000 C CNN
+F 1 "Jumper" H 7150 1600 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 7050 1450 50  0001 C CNN
 F 3 "~" H 7050 1450 50  0001 C CNN
 	1    7050 1450
@@ -456,4 +456,48 @@ Wire Wire Line
 	6750 1450 5800 1450
 Wire Wire Line
 	5800 1750 8050 1750
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5EA3C7C2
+P 9300 1600
+F 0 "H1" H 9400 1646 50  0000 L CNN
+F 1 "MountingHole" H 9400 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 9300 1600 50  0001 C CNN
+F 3 "~" H 9300 1600 50  0001 C CNN
+	1    9300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5EA3D5E2
+P 10100 1600
+F 0 "H3" H 10200 1646 50  0000 L CNN
+F 1 "MountingHole" H 10200 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 10100 1600 50  0001 C CNN
+F 3 "~" H 10100 1600 50  0001 C CNN
+	1    10100 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5EA3D882
+P 9300 1800
+F 0 "H2" H 9400 1846 50  0000 L CNN
+F 1 "MountingHole" H 9400 1755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 9300 1800 50  0001 C CNN
+F 3 "~" H 9300 1800 50  0001 C CNN
+	1    9300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5EA3DAE7
+P 10100 1800
+F 0 "H4" H 10200 1846 50  0000 L CNN
+F 1 "MountingHole" H 10200 1755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 10100 1800 50  0001 C CNN
+F 3 "~" H 10100 1800 50  0001 C CNN
+	1    10100 1800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 3 4
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.1b"
+Rev "v0.0.1c"
 Comp "Daniel Vilas"
 Comment1 "C3 Near USB"
 Comment2 ""

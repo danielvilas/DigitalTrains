@@ -6,10 +6,10 @@ encoding utf-8
 Sheet 4 4
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.1b"
+Rev "v0.0.1c"
 Comp "Daniel Vilas"
 Comment1 "Change r to Network of Resistances?"
-Comment2 ""
+Comment2 "Pin 3 on J6, conected to 2 when disconnected, open"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -504,7 +504,7 @@ U 2 1 5EA04DF6
 P 2950 5650
 F 0 "U4" H 2950 6017 50  0000 C CNN
 F 1 "LMV358" H 2950 5926 50  0000 C CNN
-F 2 "" H 2950 5650 50  0001 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2950 5650 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 2950 5650 50  0001 C CNN
 	2    2950 5650
 	1    0    0    -1  
@@ -515,7 +515,7 @@ U 3 1 5EA064F0
 P 1050 4900
 F 0 "U4" H 1008 4946 50  0000 L CNN
 F 1 "LMV358" H 1008 4855 50  0000 L CNN
-F 2 "" H 1050 4900 50  0001 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1050 4900 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 1050 4900 50  0001 C CNN
 	3    1050 4900
 	1    0    0    -1  

@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 4
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.1b"
+Rev "v0.0.1c"
 Comp "Daniel Vilas"
 Comment1 "NeoPixel for V0.0.2"
 Comment2 ""
@@ -104,7 +104,7 @@ U 1 1 5E96876B
 P 1750 2200
 F 0 "F1" H 1810 2246 50  0000 L CNN
 F 1 "MF-MSMF050-2" H 1810 2155 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1680 2200 50  0001 C CNN
+F 2 "ArduinoDCC++:MF-MSMF" V 1680 2200 50  0001 C CNN
 F 3 "~" H 1750 2200 50  0001 C CNN
 	1    1750 2200
 	1    0    0    -1  
@@ -456,4 +456,111 @@ Wire Wire Line
 	6750 1450 5800 1450
 Wire Wire Line
 	5800 1750 8050 1750
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5EA3C7C2
+P 9300 1600
+F 0 "H1" H 9400 1646 50  0000 L CNN
+F 1 "MountingHole" H 9400 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 9300 1600 50  0001 C CNN
+F 3 "~" H 9300 1600 50  0001 C CNN
+	1    9300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5EA3D5E2
+P 10100 1600
+F 0 "H3" H 10200 1646 50  0000 L CNN
+F 1 "MountingHole" H 10200 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 10100 1600 50  0001 C CNN
+F 3 "~" H 10100 1600 50  0001 C CNN
+	1    10100 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5EA3D882
+P 9300 1800
+F 0 "H2" H 9400 1846 50  0000 L CNN
+F 1 "MountingHole" H 9400 1755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 9300 1800 50  0001 C CNN
+F 3 "~" H 9300 1800 50  0001 C CNN
+	1    9300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5EA3DAE7
+P 10100 1800
+F 0 "H4" H 10200 1846 50  0000 L CNN
+F 1 "MountingHole" H 10200 1755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 10100 1800 50  0001 C CNN
+F 3 "~" H 10100 1800 50  0001 C CNN
+	1    10100 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J9
+U 1 1 5EA815A6
+P 6450 4750
+F 0 "J9" H 6500 5067 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 6500 4976 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 6450 4750 50  0001 C CNN
+F 3 "~" H 6450 4750 50  0001 C CNN
+	1    6450 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0106
+U 1 1 5EA8220A
+P 5850 4550
+F 0 "#PWR0106" H 5850 4400 50  0001 C CNN
+F 1 "+5V" H 5865 4723 50  0000 C CNN
+F 2 "" H 5850 4550 50  0001 C CNN
+F 3 "" H 5850 4550 50  0001 C CNN
+	1    5850 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5EA826FA
+P 6850 5050
+F 0 "#PWR0107" H 6850 4800 50  0001 C CNN
+F 1 "GND" H 6855 4877 50  0000 C CNN
+F 2 "" H 6850 5050 50  0001 C CNN
+F 3 "" H 6850 5050 50  0001 C CNN
+	1    6850 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 4650 6850 4650
+Wire Wire Line
+	6850 4650 6850 4750
+Wire Wire Line
+	6750 4750 6850 4750
+Connection ~ 6850 4750
+Wire Wire Line
+	6850 4750 6850 4850
+Wire Wire Line
+	6750 4850 6850 4850
+Connection ~ 6850 4850
+Wire Wire Line
+	6850 4850 6850 5050
+Wire Wire Line
+	5850 4550 5850 4650
+Wire Wire Line
+	5850 4650 6150 4650
+Wire Wire Line
+	6250 4750 6150 4750
+Wire Wire Line
+	6150 4750 6150 4650
+Connection ~ 6150 4650
+Wire Wire Line
+	6150 4650 6250 4650
+Wire Wire Line
+	6250 4850 6150 4850
+Wire Wire Line
+	6150 4850 6150 4750
+Connection ~ 6150 4750
 $EndSCHEMATC
