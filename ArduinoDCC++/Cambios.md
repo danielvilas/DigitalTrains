@@ -10,8 +10,8 @@ Cosas a Corregir en la version 0.0.1 antes de empezar con la 0.0.2
 - [x] Añadir descripcion de los pines
 - [x] Reducir Tamaño PCB
 - [x] Añadir zona de Pines con 5V y GND
-- [ ] Revisar Compra Condesador 10uF 35V (es de 1uF 35V)
-- [ ] Revisar PushBtn
+- [x] Revisar Compra Condesador 10uF 35V (es de 1uF 35V)
+- [x] Revisar PushBtn
 - [x] Revisar Conexiones Jack
 
 ## Version 0.0.2
