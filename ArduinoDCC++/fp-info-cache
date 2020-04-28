@@ -501,7 +501,14 @@ SW_Matias_ISOEnter
 Matias/ALPS keyswitch, ISO Enter, http://matias.ca/switches/
 Matias ALPS keyswitch ISO enter
 0
+4
 2
+Button_Switch_SMD
+Panasonic_EVQPUK_EVQPUB
+http://industrial.panasonic.com/cdbs/www-data/pdf/ATV0000/ATV0000CE5.pdf
+SMD SMT SPST EVQPUK EVQPUB
+0
+4
 2
 Button_Switch_SMD
 Nidec_Copal_SH-7010A
@@ -1160,6 +1167,12 @@ MEC 5G single pole normally-open tactile switch
 switch normally-open pushbutton push-button
 0
 4
+2
+Button_Switch_SMD
+SW_Push_1P1T_NO_CK_KSC7xxJ
+CK components KSC7 tactile switch https://www.ckswitches.com/media/1973/ksc7.pdf
+tactile switch ksc7
+0
 4
 Button_Switch_SMD
 SW_Push_1P1T-SH_NO_CK_KMR2xxG
@@ -1187,6 +1200,14 @@ SW_Push_1P1T_NO_CK_KSC6xxJ
 CK components KSC6 tactile switch https://www.ckswitches.com/media/1972/ksc6.pdf
 tactile switch ksc6
 0
+2
+2
+Button_Switch_SMD
+SW_SP3T_PCM13
+Ultraminiature Surface Mount Slide Switch, right-angle, https://www.ckswitches.com/media/1424/pcm.pdf
+
+0
+8
 4
 2
 Button_Switch_SMD
@@ -1327,6 +1348,7 @@ SW_SPST_CK_KXT3
 https://www.ckswitches.com/media/1465/kxt3.pdf
 Switch SPST KXT3
 0
+4
 2
 2
 Button_Switch_SMD
@@ -1334,7 +1356,14 @@ SW_SPST_CK_RS282G05A3
 https://www.mouser.com/ds/2/60/RS-282G05A-SM_RT-1159762.pdf
 SPST button tactile switch
 0
+4
 2
+Button_Switch_SMD
+SW_SPST_EVQP2
+Light Touch Switch
+
+0
+4
 2
 Button_Switch_SMD
 SW_SPST_EVPBF
@@ -1376,7 +1405,14 @@ SW_SPST_EVQPE1
 Light Touch Switch, https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE7.pdf
 
 0
+4
 2
+Button_Switch_SMD
+SW_SPST_PTS810
+C&K Components, PTS 810 Series, Microminiature SMT Top Actuated, http://www.ckswitches.com/media/1476/pts810.pdf
+SPST Button Switch
+0
+4
 2
 Button_Switch_SMD
 SW_SPST_EVQQ2
@@ -1432,6 +1468,7 @@ SW_SPST_REED_CT05-XXXX-J1
 Coto Technologies SPST Reed Switch CT05-XXXX-J1
 Coto Reed SPST Switch
 0
+4
 2
 2
 Button_Switch_SMD
@@ -1439,14 +1476,28 @@ SW_SPST_REED_CT10-XXXX-G1
 Coto Technologies SPST Reed Switch CT10-XXXX-G1
 Coto Reed SPST Switch
 0
+4
 2
+Button_Switch_SMD
+SW_SPST_TL3305A
+https://www.e-switch.com/system/asset/product_line/data_sheet/213/TL3305.pdf
+TL3305 Series Tact Switch
+0
+4
 2
 Button_Switch_SMD
 SW_SPST_REED_CT10-XXXX-G2
 Coto Technologies SPST Reed Switch CT10-XXXX-G2
 Coto Reed SPST Switch
 0
+4
 2
+Button_Switch_SMD
+SW_SPST_TL3305C
+https://www.e-switch.com/system/asset/product_line/data_sheet/213/TL3305.pdf
+TL3305 Series Tact Switch
+0
+4
 2
 Button_Switch_SMD
 SW_SPST_REED_CT10-XXXX-G4
@@ -1594,6 +1645,33 @@ SW_DIP_SPSTx02_Slide_9.78x7.26mm_W7.62mm_P2.54mm
 DIP Switch SPST Slide 7.62mm 300mil
 0
 4
+2
+Button_Switch_THT
+SW_NKK_BB15AH
+https://www.nkkswitches.com/pdf/Bpushbuttons-1.pdf
+Pushbutton Right-angle
+0
+5
+3
+Button_Switch_THT
+SW_NKK_G1xJP
+Switch NKK G1xJP http://www.nkkswitches.com/pdf/gwillum.pdf
+SWITCH TOGGLE ILLUM SPDT NKK
+0
+6
+6
+Button_Switch_THT
+SW_NKK_GW12LJP
+Switch, single pole double throw, illuminated paddle, http://www.nkkswitches.com/pdf/gwillum.pdf
+switch single-pole double-throw spdt ON-ON illuminated LED
+0
+6
+6
+Button_Switch_THT
+SW_PUSH-12mm
+SW PUSH 12mm https://www.e-switch.com/system/asset/product_line/data_sheet/143/TL1100.pdf
+tact sw push 12mm
+0
 4
 Button_Switch_THT
 SW_DIP_SPSTx03_Piano_10.8x9.18mm_W7.62mm_P2.54mm
@@ -2056,6 +2134,12 @@ SW_TH_Tactile_Omron_B3F-10xx_https://www.omron.com/ecb/products/pdf/en-b3f.pdf
 Omron B3F-10xx
 0
 4
+2
+Button_Switch_THT
+SW_Tactile_SPST_Angled_PTS645Vx31-2LFS
+tactile switch SPST right angle, PTS645VL31-2 LFS
+tactile switch SPST angled PTS645VL31-2 LFS C&K Button
+0
 4
 Button_Switch_THT
 SW_Tactile_SKHH_Angled
