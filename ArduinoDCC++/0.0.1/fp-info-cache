@@ -1,4 +1,4 @@
-16926883533924400
+16926884487091400
 ArduinoDCC++
 MF-MSMF
 
@@ -501,14 +501,7 @@ SW_Matias_ISOEnter
 Matias/ALPS keyswitch, ISO Enter, http://matias.ca/switches/
 Matias ALPS keyswitch ISO enter
 0
-4
 2
-Button_Switch_SMD
-Panasonic_EVQPUK_EVQPUB
-http://industrial.panasonic.com/cdbs/www-data/pdf/ATV0000/ATV0000CE5.pdf
-SMD SMT SPST EVQPUK EVQPUB
-0
-4
 2
 Button_Switch_SMD
 Nidec_Copal_SH-7010A
@@ -1167,47 +1160,33 @@ MEC 5G single pole normally-open tactile switch
 switch normally-open pushbutton push-button
 0
 4
-2
-Button_Switch_SMD
-SW_Push_1P1T_NO_CK_KSC7xxJ
-CK components KSC7 tactile switch https://www.ckswitches.com/media/1973/ksc7.pdf
-tactile switch ksc7
-0
 4
-0
+Button_Switch_SMD
 SW_Push_1P1T-SH_NO_CK_KMR2xxG
 CK components KMR2 tactile switch with ground pin http://www.ckswitches.com/media/1479/kmr2.pdf
 tactile switch kmr2
 0
 5
 3
-0
+Button_Switch_SMD
 SW_Push_1P1T_NO_6x6mm_H9.5mm
 tactile push button, 6x6mm e.g. PTS645xx series, height=9.5mm
 tact sw push 6mm smd
 0
 4
 2
-0
+Button_Switch_SMD
 SW_Push_1P1T_NO_CK_KMR2
 CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf
 tactile switch kmr2
 0
 4
 2
-0
+Button_Switch_SMD
 SW_Push_1P1T_NO_CK_KSC6xxJ
 CK components KSC6 tactile switch https://www.ckswitches.com/media/1972/ksc6.pdf
 tactile switch ksc6
 0
-2
-2
-0
-SW_SP3T_PCM13
-Ultraminiature Surface Mount Slide Switch, right-angle, https://www.ckswitches.com/media/1424/pcm.pdf
-
-0
-8
 4
 2
 Button_Switch_SMD
@@ -1348,798 +1327,735 @@ SW_SPST_CK_KXT3
 https://www.ckswitches.com/media/1465/kxt3.pdf
 Switch SPST KXT3
 0
-4
 2
 2
 Button_Switch_SMD
 SW_SPST_CK_RS282G05A3
 https://www.mouser.com/ds/2/60/RS-282G05A-SM_RT-1159762.pdf
+SPST button tactile switch
 0
-0
-4
 2
-Button_Switch_SMD
-SW_SPST_EVQP2
-Light Touch Switch
-0
-0
-4
 2
 Button_Switch_SMD
 SW_SPST_EVPBF
 Light Touch Switch
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_EVQP0
 Light Touch Switch, https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE28.pdf
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_EVQP2
 Light Touch Switch
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_EVQP7A
 Light Touch Switch,https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE20.pdf
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_EVQP7C
 Light Touch Switch
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_EVQPE1
 Light Touch Switch, https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE7.pdf
+
 0
-0
-4
 2
-Button_Switch_SMD
-SW_SPST_PTS810
-C&K Components, PTS 810 Series, Microminiature SMT Top Actuated, http://www.ckswitches.com/media/1476/pts810.pdf
-0
-0
-4
 2
 Button_Switch_SMD
 SW_SPST_EVQQ2
 Light Touch Switch, https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE28.pdf
-0
+
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_FSMSM
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1437566-3&DocType=Customer+Drawing&DocLang=English
-0
+SPST button tactile switch
 0
 2
 2
 Button_Switch_SMD
 SW_SPST_PTS645
 C&K Components SPST SMD PTS645 Series 6mm Tact Switch
-0
+SPST Button Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_PTS810
 C&K Components, PTS 810 Series, Microminiature SMT Top Actuated, http://www.ckswitches.com/media/1476/pts810.pdf
-0
+SPST Button Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_Panasonic_EVQPL_3PL_5PL_PT_A08
 Light Touch Switch, http://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE3.pdf
-0
+SMD SMT SPST EVQPL EVQPT
 0
 6
 3
 Button_Switch_SMD
 SW_SPST_Panasonic_EVQPL_3PL_5PL_PT_A15
 Light Touch Switch, http://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/ATK0000CE3.pdf
-0
+SMD SMT SPST EVQPL EVQPT
 0
 6
 3
 Button_Switch_SMD
 SW_SPST_REED_CT05-XXXX-G1
 Coto Technologies SPST Reed Switch CT05-XXXX-G1
-0
+Coto Reed SPST Switch
 0
 2
 2
 Button_Switch_SMD
 SW_SPST_REED_CT05-XXXX-J1
 Coto Technologies SPST Reed Switch CT05-XXXX-J1
+Coto Reed SPST Switch
 0
-0
-4
 2
 2
 Button_Switch_SMD
 SW_SPST_REED_CT10-XXXX-G1
+Coto Technologies SPST Reed Switch CT10-XXXX-G1
+Coto Reed SPST Switch
 0
-0
-0
-4
 2
-Button_Switch_SMD
-SW_SPST_TL3305A
-0
-0
-0
-4
 2
 Button_Switch_SMD
 SW_SPST_REED_CT10-XXXX-G2
+Coto Technologies SPST Reed Switch CT10-XXXX-G2
+Coto Reed SPST Switch
 0
-0
-0
-4
 2
-Button_Switch_SMD
-SW_SPST_TL3305C
-0
-0
-0
-4
 2
 Button_Switch_SMD
 SW_SPST_REED_CT10-XXXX-G4
-0
-0
+Coto Technologies SPST Reed Switch CT10-XXXX-G4
+Coto Reed SPST Switch
 0
 2
 2
 Button_Switch_SMD
 SW_SPST_SKQG_WithStem
-0
-0
+ALPS 5.2mm Square Low-profile Type (Surface Mount) SKQG Series, With stem, http://www.alps.com/prod/info/E/HTML/Tact/SurfaceMount/SKQG/SKQGAFE010.html
+SPST Button Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_SKQG_WithoutStem
-0
-0
+ALPS 5.2mm Square Low-profile Type (Surface Mount) SKQG Series, Without stem, http://www.alps.com/prod/info/E/HTML/Tact/SurfaceMount/SKQG/SKQGAEE010.html
+SPST Button Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_TL3305A
-0
-0
+https://www.e-switch.com/system/asset/product_line/data_sheet/213/TL3305.pdf
+TL3305 Series Tact Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_TL3305B
-0
-0
+https://www.e-switch.com/system/asset/product_line/data_sheet/213/TL3305.pdf
+TL3305 Series Tact Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_TL3305C
-0
-0
+https://www.e-switch.com/system/asset/product_line/data_sheet/213/TL3305.pdf
+TL3305 Series Tact Switch
 0
 4
 2
 Button_Switch_SMD
 SW_SPST_TL3342
-0
-0
+Low-profile SMD Tactile Switch, https://www.e-switch.com/system/asset/product_line/data_sheet/165/TL3342.pdf
+SPST Tactile Switch
 0
 4
 2
 Button_Switch_THT
 KSA_Tactile_SPST
-0
-0
+KSA http://www.ckswitches.com/media/1457/ksa_ksl.pdf
+SWITCH SMD KSA SW
 0
 5
 5
 Button_Switch_THT
 Nidec_Copal_SH-7010C
-4
-0
+4-bit rotary coded switch, through-hole, https://www.nidec-copal-electronics.com/e/catalog/switch/sh-7000.pdf
+rotary switch bcd
 0
 6
 5
 Button_Switch_THT
 Push_E-Switch_KS01Q01
-0
-0
+E-Switch KS01Q01 http://spec_sheets.e-switch.com/specs/29-KS01Q01.pdf
+Push Button
 0
 4
 4
 Button_Switch_THT
 SW_CW_GPTS203211B
-0
-0
+SPST Off-On Pushbutton, 1A, 30V, CW Industries P/N GPTS203211B, http://switches-connectors-custom.cwind.com/Asset/GPTS203211BR2.pdf
+SPST button switch Off-On
 0
 2
 2
 Button_Switch_THT
 SW_CuK_JS202011AQN_DPDT_Angled
-0
-0
+CuK sub miniature slide switch, JS series, DPDT, right angle, http://www.ckswitches.com/media/1422/js.pdf
+switch DPDT
 0
 6
 6
 Button_Switch_THT
 SW_CuK_JS202011CQN_DPDT_Straight
-0
-0
+CuK sub miniature slide switch, JS series, DPDT, right angle, http://www.ckswitches.com/media/1422/js.pdf
+switch DPDT
 0
 6
 6
 Button_Switch_THT
 SW_CuK_OS102011MA1QN1_SPDT_Angled
-0
-0
+CuK miniature slide switch, OS series, SPDT, right angle, http://www.ckswitches.com/media/1428/os.pdf
+switch SPDT
 0
 5
 3
 Button_Switch_THT
 SW_DIP_SPSTx01_Piano_10.8x4.1mm_W7.62mm_P2.54mm
-1
-0
+1x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x4.1mm
+DIP Switch SPST Piano 7.62mm 300mil
 0
 2
 2
 Button_Switch_THT
 SW_DIP_SPSTx01_Slide_6.7x4.1mm_W7.62mm_P2.54mm_LowProfile
-1
-0
+1x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x4.1mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 2
 2
 Button_Switch_THT
 SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm
-1
-0
+1x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x4.72mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
+DIP Switch SPST Slide 7.62mm 300mil
 0
 2
 2
 Button_Switch_THT
 SW_DIP_SPSTx02_Piano_10.8x6.64mm_W7.62mm_P2.54mm
-2
-0
+2x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x6.64mm
+DIP Switch SPST Piano 7.62mm 300mil
 0
 4
 4
 Button_Switch_THT
 SW_DIP_SPSTx02_Piano_CTS_Series194-2MSTN_W7.62mm_P2.54mm
-2
-0
+2x-dip-switch SPST CTS_Series194-2MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
+DIP Switch SPST Piano 7.62mm 300mil
 0
 4
 4
 Button_Switch_THT
 SW_DIP_SPSTx02_Slide_6.7x6.64mm_W7.62mm_P2.54mm_LowProfile
-2
-0
+2x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x6.64mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 4
 4
 Button_Switch_THT
 SW_DIP_SPSTx02_Slide_9.78x7.26mm_W7.62mm_P2.54mm
-2
-0
+2x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x7.26mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
+DIP Switch SPST Slide 7.62mm 300mil
 0
 4
-2
-Button_Switch_THT
-SW_NKK_BB15AH
-0
-0
-0
-5
-3
-Button_Switch_THT
-SW_NKK_G1xJP
-0
-0
-0
-6
-6
-Button_Switch_THT
-SW_NKK_GW12LJP
-0
-0
-0
-6
-6
-Button_Switch_THT
-SW_PUSH-12mm
-0
-0
-0
 4
 Button_Switch_THT
 SW_DIP_SPSTx03_Piano_10.8x9.18mm_W7.62mm_P2.54mm
 3x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x9.18mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 6
 6
 Button_Switch_THT
 SW_DIP_SPSTx03_Piano_CTS_Series194-3MSTN_W7.62mm_P2.54mm
 3x-dip-switch SPST CTS_Series194-3MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 6
 6
 Button_Switch_THT
 SW_DIP_SPSTx03_Slide_6.7x9.18mm_W7.62mm_P2.54mm_LowProfile
 3x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x9.18mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 6
 6
 Button_Switch_THT
 SW_DIP_SPSTx03_Slide_9.78x9.8mm_W7.62mm_P2.54mm
 3x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x9.8mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 6
 6
 Button_Switch_THT
 SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm
 4x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x11.72mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 8
 8
 Button_Switch_THT
 SW_DIP_SPSTx04_Piano_CTS_Series194-4MSTN_W7.62mm_P2.54mm
 4x-dip-switch SPST CTS_Series194-4MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 8
 8
 Button_Switch_THT
 SW_DIP_SPSTx04_Slide_6.7x11.72mm_W7.62mm_P2.54mm_LowProfile
 4x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x11.72mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 8
 8
 Button_Switch_THT
 SW_DIP_SPSTx04_Slide_9.78x12.34mm_W7.62mm_P2.54mm
 4x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x12.34mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 8
 8
 Button_Switch_THT
 SW_DIP_SPSTx05_Piano_10.8x14.26mm_W7.62mm_P2.54mm
 5x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x14.26mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 10
 10
 Button_Switch_THT
 SW_DIP_SPSTx05_Piano_CTS_Series194-5MSTN_W7.62mm_P2.54mm
 5x-dip-switch SPST CTS_Series194-5MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 10
 10
 Button_Switch_THT
 SW_DIP_SPSTx05_Slide_6.7x14.26mm_W7.62mm_P2.54mm_LowProfile
 5x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x14.26mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 10
 10
 Button_Switch_THT
 SW_DIP_SPSTx05_Slide_9.78x14.88mm_W7.62mm_P2.54mm
 5x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x14.88mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 10
 10
 Button_Switch_THT
 SW_DIP_SPSTx06_Piano_10.8x16.8mm_W7.62mm_P2.54mm
 6x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x16.8mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 12
 12
 Button_Switch_THT
 SW_DIP_SPSTx06_Piano_CTS_Series194-6MSTN_W7.62mm_P2.54mm
 6x-dip-switch SPST CTS_Series194-6MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 12
 12
 Button_Switch_THT
 SW_DIP_SPSTx06_Slide_6.7x16.8mm_W7.62mm_P2.54mm_LowProfile
 6x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x16.8mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 12
 12
 Button_Switch_THT
 SW_DIP_SPSTx06_Slide_9.78x17.42mm_W7.62mm_P2.54mm
 6x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x17.42mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 12
 12
 Button_Switch_THT
 SW_DIP_SPSTx07_Piano_10.8x19.34mm_W7.62mm_P2.54mm
 7x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x19.34mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 14
 14
 Button_Switch_THT
 SW_DIP_SPSTx07_Piano_CTS_Series194-7MSTN_W7.62mm_P2.54mm
 7x-dip-switch SPST CTS_Series194-7MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 14
 14
 Button_Switch_THT
 SW_DIP_SPSTx07_Slide_6.7x19.34mm_W7.62mm_P2.54mm_LowProfile
 7x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x19.34mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 14
 14
 Button_Switch_THT
 SW_DIP_SPSTx07_Slide_9.78x19.96mm_W7.62mm_P2.54mm
 7x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x19.96mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 14
 14
 Button_Switch_THT
 SW_DIP_SPSTx08_Piano_10.8x21.88mm_W7.62mm_P2.54mm
 8x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x21.88mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 16
 16
 Button_Switch_THT
 SW_DIP_SPSTx08_Piano_CTS_Series194-8MSTN_W7.62mm_P2.54mm
 8x-dip-switch SPST CTS_Series194-8MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 16
 16
 Button_Switch_THT
 SW_DIP_SPSTx08_Slide_6.7x21.88mm_W7.62mm_P2.54mm_LowProfile
 8x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x21.88mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 16
 16
 Button_Switch_THT
 SW_DIP_SPSTx08_Slide_9.78x22.5mm_W7.62mm_P2.54mm
 8x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x22.5mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 16
 16
 Button_Switch_THT
 SW_DIP_SPSTx09_Piano_10.8x24.42mm_W7.62mm_P2.54mm
 9x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x24.42mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 18
 18
 Button_Switch_THT
 SW_DIP_SPSTx09_Piano_CTS_Series194-9MSTN_W7.62mm_P2.54mm
 9x-dip-switch SPST CTS_Series194-9MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 18
 18
 Button_Switch_THT
 SW_DIP_SPSTx09_Slide_6.7x24.42mm_W7.62mm_P2.54mm_LowProfile
 9x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x24.42mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 18
 18
 Button_Switch_THT
 SW_DIP_SPSTx09_Slide_9.78x25.04mm_W7.62mm_P2.54mm
 9x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x25.04mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 18
 18
 Button_Switch_THT
 SW_DIP_SPSTx10_Piano_10.8x26.96mm_W7.62mm_P2.54mm
 10x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x26.96mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 20
 20
 Button_Switch_THT
 SW_DIP_SPSTx10_Piano_CTS_Series194-10MSTN_W7.62mm_P2.54mm
 10x-dip-switch SPST CTS_Series194-10MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 20
 20
 Button_Switch_THT
 SW_DIP_SPSTx10_Slide_6.7x26.96mm_W7.62mm_P2.54mm_LowProfile
 10x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x26.96mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 20
 20
 Button_Switch_THT
 SW_DIP_SPSTx10_Slide_9.78x27.58mm_W7.62mm_P2.54mm
 10x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x27.58mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 20
 20
 Button_Switch_THT
 SW_DIP_SPSTx11_Piano_10.8x29.5mm_W7.62mm_P2.54mm
 11x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x29.5mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 22
 22
 Button_Switch_THT
 SW_DIP_SPSTx11_Piano_CTS_Series194-11MSTN_W7.62mm_P2.54mm
 11x-dip-switch SPST CTS_Series194-11MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 22
 22
 Button_Switch_THT
 SW_DIP_SPSTx11_Slide_6.7x29.5mm_W7.62mm_P2.54mm_LowProfile
 11x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x29.5mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 22
 22
 Button_Switch_THT
 SW_DIP_SPSTx11_Slide_9.78x30.12mm_W7.62mm_P2.54mm
 11x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x30.12mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 22
 22
 Button_Switch_THT
 SW_DIP_SPSTx12_Piano_10.8x32.04mm_W7.62mm_P2.54mm
 12x-dip-switch SPST , Piano, row spacing 7.62 mm (300 mils), body size 10.8x32.04mm
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 24
 24
 Button_Switch_THT
 SW_DIP_SPSTx12_Piano_CTS_Series194-12MSTN_W7.62mm_P2.54mm
 12x-dip-switch SPST CTS_Series194-12MSTN, Piano, row spacing 7.62 mm (300 mils), body size  (see https://www.ctscorp.com/wp-content/uploads/194-195.pdf)
-0
+DIP Switch SPST Piano 7.62mm 300mil
 0
 24
 24
 Button_Switch_THT
 SW_DIP_SPSTx12_Slide_6.7x32.04mm_W7.62mm_P2.54mm_LowProfile
 12x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 6.7x32.04mm (see e.g. https://www.ctscorp.com/wp-content/uploads/209-210.pdf), LowProfile
-0
+DIP Switch SPST Slide 7.62mm 300mil LowProfile
 0
 24
 24
 Button_Switch_THT
 SW_DIP_SPSTx12_Slide_9.78x32.66mm_W7.62mm_P2.54mm
 12x-dip-switch SPST , Slide, row spacing 7.62 mm (300 mils), body size 9.78x32.66mm (see e.g. https://www.ctscorp.com/wp-content/uploads/206-208.pdf)
-0
+DIP Switch SPST Slide 7.62mm 300mil
 0
 24
 24
 Button_Switch_THT
 SW_E-Switch_EG1224_SPDT_Angled
 E-Switch slide switch, EG series, SPDT, right angle, http://spec_sheets.e-switch.com/specs/P040042.pdf
-0
+switch SPDT
 0
 7
 3
 Button_Switch_THT
 SW_E-Switch_EG1271_DPDT
 E-Switch sub miniature slide switch, EG series, DPDT, http://spec_sheets.e-switch.com/specs/P040047.pdf
-0
+switch DPDT
 0
 6
 6
 Button_Switch_THT
 SW_E-Switch_EG2219_DPDT_Angled
 E-Switch slide switch, EG series, DPDT, right angle, http://spec_sheets.e-switch.com/specs/P040170.pdf
-0
+switch DPDT
 0
 10
 6
 Button_Switch_THT
 SW_Lever_1P2T_NKK_GW12LxH
 Switch, single pole double throw, right angle, http://www.nkkswitches.com/pdf/GW.pdf
-0
+switch single-pole double-throw spdt ON-ON horizontal
 0
 5
 3
 Button_Switch_THT
 SW_MEC_5GTH9
 MEC 5G single pole normally-open tactile switch https://cdn.sos.sk/productdata/80/f6/aabf7be6/5gth9358222.pdf
-0
+switch normally-open pushbutton push-button
 0
 4
 2
 Button_Switch_THT
 SW_NKK_BB15AH
 https://www.nkkswitches.com/pdf/Bpushbuttons-1.pdf
-0
+Pushbutton Right-angle
 0
 5
 3
 Button_Switch_THT
 SW_NKK_G1xJP
 Switch NKK G1xJP http://www.nkkswitches.com/pdf/gwillum.pdf
-0
+SWITCH TOGGLE ILLUM SPDT NKK
 0
 6
 6
 Button_Switch_THT
 SW_NKK_GW12LJP
 Switch, single pole double throw, illuminated paddle, http://www.nkkswitches.com/pdf/gwillum.pdf
-0
+switch single-pole double-throw spdt ON-ON illuminated LED
 0
 6
 6
 Button_Switch_THT
 SW_PUSH-12mm
 SW PUSH 12mm https://www.e-switch.com/system/asset/product_line/data_sheet/143/TL1100.pdf
-0
+tact sw push 12mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH-12mm_Wuerth-430476085716
 SW PUSH 12mm http://katalog.we-online.de/em/datasheet/430476085716.pdf
-0
+tact sw push 12mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm
 https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H4.3mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=4.3mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H5mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H7.3mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=7.3mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H8.5mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=8.5mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H8mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=8mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H9.5mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=9.5mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_6mm_H13mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=13mm
-0
+tact sw push 6mm
 0
 4
 2
 Button_Switch_THT
 SW_PUSH_E-Switch_FS5700DP_DPDT
 FS5700 series pushbutton footswitch, DPDT, https://www.e-switch.com/system/asset/product_line/data_sheet/226/FS5700.pdf
-0
+switch DPDT footswitch
 0
 6
 6
 Button_Switch_THT
 SW_PUSH_LCD_E3_SAxxxx
 Switch with LCD screen E3 SAxxxx
-0
+switch normally-open pushbutton push-button LCD
 0
 6
 6
 Button_Switch_THT
 SW_PUSH_LCD_E3_SAxxxx_SocketPins
 Switch with LCD screen E3 SAxxxx
-0
+switch normally-open pushbutton push-button LCD
 0
 6
 6
 Button_Switch_THT
 SW_Push_1P1T_NO_LED_E-Switch_TL1250
 illuminated right angle tact switch https://www.e-switch.com/system/asset/product_line/data_sheet/148/TL1250.pdf
-0
+led push switch right angle
 0
 6
 4
 Button_Switch_THT
 SW_Push_1P2T_Vertical_E-Switch_800UDP8P1A1M6
  right angle SPDT push button https://www.e-switch.com/system/asset/product_line/data_sheet/210/800U.pdf
-0
+IP67 ultra-miniture horizontal
 0
 5
 3
 Button_Switch_THT
 SW_Push_2P2T_Vertical_E-Switch_800UDP8P1A1M6
  right angle DPDT push button https://www.e-switch.com/system/asset/product_line/data_sheet/210/800U.pdf
-0
+IP67 ultra-miniture horizontal
 0
 8
 6
 Button_Switch_THT
 SW_Slide_1P2T_CK_OS102011MS2Q
 CuK miniature slide switch, OS series, SPDT, https://www.ckswitches.com/media/1428/os.pdf
-0
+switch SPDT
 0
 5
 3
 Button_Switch_THT
 SW_TH_Tactile_Omron_B3F-10xx
 SW_TH_Tactile_Omron_B3F-10xx_https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-0
+Omron B3F-10xx
 0
 4
-2
-Button_Switch_THT
-SW_Tactile_SPST_Angled_PTS645Vx31-2LFS
-tactile switch SPST right angle, PTS645VL31-2 LFS
-0
-0
 4
 Button_Switch_THT
 SW_Tactile_SKHH_Angled
