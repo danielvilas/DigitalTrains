@@ -18,7 +18,7 @@ Cosas a Corregir en la version 0.0.1 antes de empezar con la 0.0.2
 ### Mejoras
 Cosas que hay quiero poner en la 0.0.2
 - [ ] Tener preparado un PCB modulo, Lector DCC (aprovechar Gastos de envio) con PCBA para probar tambien
-- [ ] Separar pins de Arudino, con nombre, ubicarlos donde sea más facil
+- [ ] Separar pins de Arudino, con nombre, ubicarlos donde sea más facil, Grupos de 8 por puerto y marcar nombre arduino y AVR
 - [ ] Dejar solo la conexion util al motor shield
 - [ ] limpiar la hoja raiz con los conectores, usar un bus
 - [ ] Añadir un NeoPixel y un conector para crear bus
@@ -26,6 +26,7 @@ Cosas que hay quiero poner en la 0.0.2
   - [ ] Probar conexion al Ehternet Modulo ENC28J60
   - [ ] Si falla el anterior, usar HC-04 (u otro BT-serie)
   - [ ] Añadir Header correspondiente
+- [ ] Cambiar el conector USB
 - [ ] ...
 ### Correcciones
 PDTE
