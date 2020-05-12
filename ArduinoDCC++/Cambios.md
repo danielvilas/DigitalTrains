@@ -30,6 +30,7 @@ Cosas que hay quiero poner en la 0.0.2
   - [ ] Si falla el anterior, usar HC-04 (u otro BT-serie)
   - [ ] Añadir Header correspondiente
 - [ ] Cambiar el conector USB
+  - Poner los tres (el actual, y los dos "faciles" de soldar)
 - [ ] Añadir TestPoints
 - [ ] Cambiar Circuito de Reset
 - [ ] ...

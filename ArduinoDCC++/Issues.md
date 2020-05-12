@@ -65,7 +65,7 @@ Pasos a realizar
 Al intentar probar la parte USB-FTDI, el Conector USB no suelda bien, muchos cortos (entre VCC y GND) y salta enseguida. Aplica a las revisiones b, c y c-j.
 
 * __Causa Real__: El footprint es para 10103594 pero yo compre 10118193 por lo que no encaja por decimas de milimetro.
-  * [ ] __Posible Solucion__: Romper un cable USB y soldar los cables con cuidado direcamente a las resistencias.
+  * [ ] ~~__Posible Solucion__: Romper un cable USB y soldar los cables con cuidado direcamente a las resistencias~~ __Descartado__.
     * Esto me serviria para probar unicamente la parte USB-FTDI, pero no como solucion definitiva
   * [x] __Posible Solucion__: Comprar el 10103594
   * [] __Posible Solucion__: Cambiar el FootPrint __No Viable__
