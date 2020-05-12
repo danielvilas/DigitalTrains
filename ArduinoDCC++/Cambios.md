@@ -21,8 +21,11 @@ Cosas que hay quiero poner en la 0.0.2
 - [ ] Separar pins de Arudino, con nombre, ubicarlos donde sea más facil, Grupos de 8 por puerto y marcar nombre arduino y AVR
 - [ ] Dejar solo la conexion util al motor shield
 - [ ] limpiar la hoja raiz con los conectores, usar un bus
-- [ ] Añadir un NeoPixel y un conector para crear bus
+- [ ] Añadir dos NeoPixel y un conector para crear bus
+- [ ] Añadir señal Run (led + pin) y de error (led + pin)
+- [ ] Corregir señal de reset, poner npn como opcion.
 - [ ] Añadir conexion externa
+  - Esto no veo que vaya a ser posible, y requiera otra MCU para gestionar las conexiones de RED, en ese caso poner conector IDC.
   - [ ] Probar conexion al Ehternet Modulo ENC28J60
   - [ ] Si falla el anterior, usar HC-04 (u otro BT-serie)
   - [ ] Añadir Header correspondiente
