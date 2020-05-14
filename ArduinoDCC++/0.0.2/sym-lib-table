@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Connector)(type Legacy)(uri ${KIPRJMOD}/Connector.lib)(options "")(descr ""))
+  (lib (name ArduinoDCC++-rescue)(type Legacy)(uri ${KIPRJMOD}/ArduinoDCC++-rescue.lib)(options "")(descr ""))
+)
