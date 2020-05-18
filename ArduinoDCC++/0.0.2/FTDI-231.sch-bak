@@ -21,7 +21,7 @@ Text HLabel 6400 1300 2    50   Output ~ 0
 TX
 Text HLabel 6350 1600 2    50   Output ~ 0
 RX
-Text HLabel 6350 1750 2    50   Output ~ 0
+Text HLabel 10050 2300 2    50   Output ~ 0
 RST
 $Comp
 L Device:R R2
@@ -241,7 +241,7 @@ Connection ~ 3850 3200
 Wire Wire Line
 	3850 3200 3050 3200
 Wire Wire Line
-	3250 1600 3050 1600
+	3250 1600 3200 1600
 Wire Wire Line
 	3050 1600 3050 2200
 Wire Wire Line
@@ -275,19 +275,6 @@ F 3 "~" H 2450 3700 50  0001 C CNN
 	1    2450 3700
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C7
-U 1 1 5E95A209
-P 5850 2000
-F 0 "C7" V 5598 2000 50  0000 C CNN
-F 1 "100nF" V 5689 2000 50  0000 C CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5888 1850 50  0001 C CNN
-F 3 "~" H 5850 2000 50  0001 C CNN
-	1    5850 2000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6200 1750 6200 2000
 Wire Wire Line
 	6350 1600 6000 1600
 Wire Wire Line
@@ -297,11 +284,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 1300 5700 1300
 Wire Wire Line
-	6000 2000 6200 2000
-Wire Wire Line
 	4650 2000 5700 2000
-Wire Wire Line
-	6350 1750 6200 1750
 $Comp
 L power:+5V #PWR018
 U 1 1 5E95AE01
@@ -432,4 +415,131 @@ NoConn ~ 4650 2200
 NoConn ~ 4650 1900
 NoConn ~ 4650 1800
 NoConn ~ 4650 2100
+$Comp
+L power:+3.3V #PWR046
+U 1 1 5ECD4A75
+P 3200 1400
+F 0 "#PWR046" H 3200 1250 50  0001 C CNN
+F 1 "+3.3V" H 3215 1573 50  0000 C CNN
+F 2 "" H 3200 1400 50  0001 C CNN
+F 3 "" H 3200 1400 50  0001 C CNN
+	1    3200 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1400 3200 1600
+Connection ~ 3200 1600
+Wire Wire Line
+	3200 1600 3050 1600
+$Comp
+L Transistor_FET:2N7002 Q2
+U 1 1 5ECDC016
+P 9250 2200
+F 0 "Q2" V 9499 2200 50  0000 C CNN
+F 1 "2N7002" V 9590 2200 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9450 2125 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 9250 2200 50  0001 L CNN
+	1    9250 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R22
+U 1 1 5ECE6E8A
+P 8750 2100
+F 0 "R22" V 8543 2100 50  0000 C CNN
+F 1 "10K" V 8634 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8680 2100 50  0001 C CNN
+F 3 "~" H 8750 2100 50  0001 C CNN
+	1    8750 2100
+	-1   0    0    1   
+$EndComp
+Text Label 5700 2000 0    50   ~ 0
+DTR
+Text Label 7650 2300 2    50   ~ 0
+DTR
+Wire Wire Line
+	8300 2300 8750 2300
+Wire Wire Line
+	8750 2250 8750 2300
+Connection ~ 8750 2300
+Wire Wire Line
+	8750 2300 9050 2300
+Wire Wire Line
+	8750 1950 8750 1700
+Wire Wire Line
+	8750 1700 9250 1700
+Wire Wire Line
+	9250 1700 9250 2000
+$Comp
+L power:+3.3V #PWR047
+U 1 1 5ECF2AC8
+P 8750 1600
+F 0 "#PWR047" H 8750 1450 50  0001 C CNN
+F 1 "+3.3V" H 8765 1773 50  0000 C CNN
+F 2 "" H 8750 1600 50  0001 C CNN
+F 3 "" H 8750 1600 50  0001 C CNN
+	1    8750 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8750 1600 8750 1700
+Connection ~ 8750 1700
+$Comp
+L Device:Jumper_NO_Small JP1
+U 1 1 5ED0243C
+P 8200 2300
+F 0 "JP1" H 8200 2485 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 8200 2394 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8200 2300 50  0001 C CNN
+F 3 "~" H 8200 2300 50  0001 C CNN
+	1    8200 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 2300 7950 2300
+$Comp
+L Transistor_BJT:BC849 Q1
+U 1 1 5ED0B048
+P 8650 2650
+F 0 "Q1" H 8841 2696 50  0000 L CNN
+F 1 "BC849" H 8841 2605 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8850 2575 50  0001 L CIN
+F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 8650 2650 50  0001 L CNN
+	1    8650 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8750 2450 8750 2300
+Wire Wire Line
+	8450 2650 7950 2650
+Wire Wire Line
+	7950 2650 7950 2300
+Connection ~ 7950 2300
+Wire Wire Line
+	7950 2300 8100 2300
+$Comp
+L power:GND #PWR048
+U 1 1 5ED0E96B
+P 8750 3050
+F 0 "#PWR048" H 8750 2800 50  0001 C CNN
+F 1 "GND" H 8755 2877 50  0000 C CNN
+F 2 "" H 8750 3050 50  0001 C CNN
+F 3 "" H 8750 3050 50  0001 C CNN
+	1    8750 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8750 3050 8750 2850
+Wire Wire Line
+	9450 2300 10050 2300
+Text Notes 8100 1250 0    50   ~ 0
+Q1 esta de Negador DTR.\nSi no funciona bien el reset:\nUnir JP1 e invertir DTR desde la configuracion de FT_PROG
+Wire Notes Line
+	7100 800  10700 800 
+Wire Notes Line
+	10700 800  10700 3450
+Wire Notes Line
+	10700 3450 7100 3450
+Wire Notes Line
+	7100 3450 7100 800 
 $EndSCHEMATC

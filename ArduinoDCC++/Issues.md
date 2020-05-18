@@ -5,7 +5,7 @@ Listado de problemas encontrados. En esta pagina sera un apartado por version, y
 ## v0.0.1
 La version enviada a crear las pcbs tiene los siguientes problemas
 
-### __0.0.1-1 Problema__: Avr-Dude no puede detectar el chip.
+### __0.0.1-1 Problema__: Avr-Dude no puede detectar el chip. :heavy_check_mark:
 Al intentar Grabar el BootLoader de Arduino, AVR_DUDE no detecta el chip
 * [x] __Causa Real__: USBAsp no Auto-reconoce la velocidad para un chip virgen
   * Los Fuses por defecto estan para usar el Reloj interno dividido por 8, por lo que va a 1 MHz, la opcion por defecto del AvrDude no lo reconce
@@ -92,4 +92,11 @@ Esto no es facil solucionarlo, al final las patas estan expuestas en el chip, la
 * [ ] __Posible Solucion__: Optoclopar todas las señales
   * Tiene que ser un optoclopado rapido
   * Implica tener dos lineas de VCC
-  * Poner en un sitio facil de cambiar, o usar DIP con riser
+  * Poner en un sitio facil de cambiar, o usar DIP con zocalo
+
+
+### __0.0.1-4 Problema__: No reconoce ACK en via de programacion
+Con JMRI no lee los datos del decoder en la via de programacion
+
+* __Causa Real__: R14 y R15 tienen los desigandores cambiados en la capa F.SILK
+  * [ ] Cambiar en 0.0.2
