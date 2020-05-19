@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 1 5
 Title "Arduino DCC++"
 Date "2020-05-14"
 Rev "v0.0.2a"
@@ -100,104 +100,47 @@ Wire Wire Line
 Wire Wire Line
 	5200 2400 5900 2400
 $Comp
-L Device:R R?
-U 1 1 5EA069FF
-P 1950 1300
-AR Path="/5E94B185/5EA069FF" Ref="R?"  Part="1" 
-AR Path="/5EA069FF" Ref="R1"  Part="1" 
-F 0 "R1" V 1743 1300 50  0000 C CNN
-F 1 "1K" V 1834 1300 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1880 1300 50  0001 C CNN
-F 3 "~" H 1950 1300 50  0001 C CNN
-	1    1950 1300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 5EA06A05
-P 1500 1300
-AR Path="/5E94B185/5EA06A05" Ref="D?"  Part="1" 
-AR Path="/5EA06A05" Ref="D1"  Part="1" 
-F 0 "D1" H 1493 1516 50  0000 C CNN
-F 1 "LED_GREEN" H 1493 1425 50  0000 C CNN
-F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1500 1300 50  0001 C CNN
-F 3 "~" H 1500 1300 50  0001 C CNN
-F 4 "PWR" H 1500 1300 50  0001 C CNN "Function"
-	1    1500 1300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2100 1300 2250 1300
-Wire Wire Line
-	2250 1300 2250 1000
-Wire Wire Line
-	1800 1300 1650 1300
-Wire Wire Line
-	950  1300 1350 1300
-$Comp
-L power:+5V #PWR04
-U 1 1 5EA09912
-P 2250 1000
-F 0 "#PWR04" H 2250 850 50  0001 C CNN
-F 1 "+5V" H 2265 1173 50  0000 C CNN
-F 2 "" H 2250 1000 50  0001 C CNN
-F 3 "" H 2250 1000 50  0001 C CNN
-	1    2250 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01
-U 1 1 5EA09DB2
-P 950 1300
-F 0 "#PWR01" H 950 1050 50  0001 C CNN
-F 1 "GND" H 955 1127 50  0000 C CNN
-F 2 "" H 950 1300 50  0001 C CNN
-F 3 "" H 950 1300 50  0001 C CNN
-	1    950  1300
-	1    0    0    -1  
-$EndComp
-$Comp
 L Mechanical:MountingHole H1
 U 1 1 5EA3C7C2
-P 1200 1900
-F 0 "H1" H 1300 1946 50  0000 L CNN
-F 1 "MountingHole" H 1300 1855 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1200 1900 50  0001 C CNN
-F 3 "~" H 1200 1900 50  0001 C CNN
-	1    1200 1900
+P 700 800
+F 0 "H1" H 800 846 50  0000 L CNN
+F 1 "MountingHole" H 800 755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 700 800 50  0001 C CNN
+F 3 "~" H 700 800 50  0001 C CNN
+	1    700  800 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 5EA3D5E2
-P 2000 1900
-F 0 "H3" H 2100 1946 50  0000 L CNN
-F 1 "MountingHole" H 2100 1855 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 2000 1900 50  0001 C CNN
-F 3 "~" H 2000 1900 50  0001 C CNN
-	1    2000 1900
+P 1500 800
+F 0 "H3" H 1600 846 50  0000 L CNN
+F 1 "MountingHole" H 1600 755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1500 800 50  0001 C CNN
+F 3 "~" H 1500 800 50  0001 C CNN
+	1    1500 800 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5EA3D882
-P 1200 2100
-F 0 "H2" H 1300 2146 50  0000 L CNN
-F 1 "MountingHole" H 1300 2055 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1200 2100 50  0001 C CNN
-F 3 "~" H 1200 2100 50  0001 C CNN
-	1    1200 2100
+P 700 1000
+F 0 "H2" H 800 1046 50  0000 L CNN
+F 1 "MountingHole" H 800 955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 700 1000 50  0001 C CNN
+F 3 "~" H 700 1000 50  0001 C CNN
+	1    700  1000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5EA3DAE7
-P 2000 2100
-F 0 "H4" H 2100 2146 50  0000 L CNN
-F 1 "MountingHole" H 2100 2055 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 2000 2100 50  0001 C CNN
-F 3 "~" H 2000 2100 50  0001 C CNN
-	1    2000 2100
+P 1500 1000
+F 0 "H4" H 1600 1046 50  0000 L CNN
+F 1 "MountingHole" H 1600 955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1500 1000 50  0001 C CNN
+F 3 "~" H 1500 1000 50  0001 C CNN
+	1    1500 1000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -785,6 +728,172 @@ Wire Wire Line
 	2000 4400 2000 3850
 Wire Wire Line
 	2000 3850 1600 3850
+$Comp
+L Connector:USB_B_Micro J11
+U 1 1 5EC40D48
+P 1250 5350
+F 0 "J11" H 1307 5817 50  0000 C CNN
+F 1 "USB_B_Micro" H 1307 5726 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Molex-105017-0001" H 1400 5300 50  0001 C CNN
+F 3 "~" H 1400 5300 50  0001 C CNN
+	1    1250 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:USB_B_Micro J12
+U 1 1 5EC41E7D
+P 1250 6700
+F 0 "J12" H 1307 7167 50  0000 C CNN
+F 1 "USB_B_Micro" H 1307 7076 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Wuerth_629105150521" H 1400 6650 50  0001 C CNN
+F 3 "~" H 1400 6650 50  0001 C CNN
+	1    1250 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 3550 1750 5150
+Wire Wire Line
+	1750 5150 1550 5150
+Connection ~ 1750 3550
+Wire Wire Line
+	1550 6500 1750 6500
+Wire Wire Line
+	1750 6500 1750 5150
+Connection ~ 1750 5150
+Wire Wire Line
+	1550 5350 2100 5350
+Wire Wire Line
+	2100 5350 2100 4300
+Connection ~ 2100 4300
+Wire Wire Line
+	2100 5350 2100 6700
+Wire Wire Line
+	2100 6700 1550 6700
+Connection ~ 2100 5350
+Wire Wire Line
+	2000 5450 2000 4400
+Connection ~ 2000 4400
+Wire Wire Line
+	1550 6800 2000 6800
+Wire Wire Line
+	2000 6800 2000 5450
+Connection ~ 2000 5450
+Wire Wire Line
+	1550 5450 2000 5450
+NoConn ~ 1550 5550
+NoConn ~ 1550 6900
+$Comp
+L power:GND #PWR050
+U 1 1 5EC6CC2B
+P 1150 7200
+F 0 "#PWR050" H 1150 6950 50  0001 C CNN
+F 1 "GND" H 1155 7027 50  0000 C CNN
+F 2 "" H 1150 7200 50  0001 C CNN
+F 3 "" H 1150 7200 50  0001 C CNN
+	1    1150 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR049
+U 1 1 5EC6D2B0
+P 1150 5850
+F 0 "#PWR049" H 1150 5600 50  0001 C CNN
+F 1 "GND" H 1155 5677 50  0000 C CNN
+F 2 "" H 1150 5850 50  0001 C CNN
+F 3 "" H 1150 5850 50  0001 C CNN
+	1    1150 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 5750 1150 5800
+Wire Wire Line
+	1250 5750 1250 5800
+Wire Wire Line
+	1250 5800 1150 5800
+Connection ~ 1150 5800
+Wire Wire Line
+	1150 5800 1150 5850
+Wire Wire Line
+	1150 7100 1150 7150
+Wire Wire Line
+	1250 7100 1250 7150
+Wire Wire Line
+	1250 7150 1150 7150
+Connection ~ 1150 7150
+Wire Wire Line
+	1150 7150 1150 7200
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J13
+U 1 1 5ECA6D4F
+P 2900 1950
+F 0 "J13" H 2950 2267 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 2950 2176 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 2900 1950 50  0001 C CNN
+F 3 "~" H 2900 1950 50  0001 C CNN
+	1    2900 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5ECA6D5B
+P 3300 2250
+F 0 "#PWR04" H 3300 2000 50  0001 C CNN
+F 1 "GND" H 3305 2077 50  0000 C CNN
+F 2 "" H 3300 2250 50  0001 C CNN
+F 3 "" H 3300 2250 50  0001 C CNN
+	1    3300 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1850 3300 1850
+Wire Wire Line
+	3300 1850 3300 1950
+Wire Wire Line
+	3200 1950 3300 1950
+Connection ~ 3300 1950
+Wire Wire Line
+	3300 1950 3300 2050
+Wire Wire Line
+	3200 2050 3300 2050
+Connection ~ 3300 2050
+Wire Wire Line
+	3300 2050 3300 2250
+Wire Wire Line
+	2300 1750 2300 1850
+Wire Wire Line
+	2300 1850 2600 1850
+Wire Wire Line
+	2700 1950 2600 1950
+Wire Wire Line
+	2600 1950 2600 1850
+Connection ~ 2600 1850
+Wire Wire Line
+	2600 1850 2700 1850
+Wire Wire Line
+	2700 2050 2600 2050
+Wire Wire Line
+	2600 2050 2600 1950
+Connection ~ 2600 1950
+$Comp
+L power:+3.3V #PWR01
+U 1 1 5ECD815F
+P 2300 1750
+F 0 "#PWR01" H 2300 1600 50  0001 C CNN
+F 1 "+3.3V" H 2315 1923 50  0000 C CNN
+F 2 "" H 2300 1750 50  0001 C CNN
+F 3 "" H 2300 1750 50  0001 C CNN
+	1    2300 1750
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 7250 1750 1400 1250
+U 5ECE48FE
+F0 "UserInterface" 50
+F1 "UserInterface.sch" 50
+F2 "NeoPixelIn" I L 7250 2150 50 
+F3 "RUN" I L 7250 2300 50 
+F4 "ERROR" I L 7250 2450 50 
+$EndSheet
 Wire Bus Line
 	10200 2600 10200 4050
 Wire Bus Line
