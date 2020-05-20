@@ -455,10 +455,8 @@ F 3 "~" H 8750 2100 50  0001 C CNN
 $EndComp
 Text Label 5700 2000 0    50   ~ 0
 DTR
-Text Label 7650 2300 2    50   ~ 0
+Text Label 7550 2300 2    50   ~ 0
 DTR
-Wire Wire Line
-	8300 2300 8750 2300
 Wire Wire Line
 	8750 2250 8750 2300
 Connection ~ 8750 2300
@@ -487,16 +485,14 @@ Connection ~ 8750 1700
 $Comp
 L Device:Jumper_NO_Small JP1
 U 1 1 5ED0243C
-P 8200 2300
-F 0 "JP1" H 8200 2485 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 8200 2394 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8200 2300 50  0001 C CNN
-F 3 "~" H 8200 2300 50  0001 C CNN
-	1    8200 2300
+P 8350 2300
+F 0 "JP1" H 8350 2485 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 8350 2394 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8350 2300 50  0001 C CNN
+F 3 "~" H 8350 2300 50  0001 C CNN
+	1    8350 2300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7650 2300 7950 2300
 $Comp
 L Transistor_BJT:BC849 Q1
 U 1 1 5ED0B048
@@ -511,12 +507,8 @@ $EndComp
 Wire Wire Line
 	8750 2450 8750 2300
 Wire Wire Line
-	8450 2650 7950 2650
-Wire Wire Line
-	7950 2650 7950 2300
-Connection ~ 7950 2300
-Wire Wire Line
-	7950 2300 8100 2300
+	8000 2650 8000 2300
+Connection ~ 8000 2300
 $Comp
 L power:GND #PWR048
 U 1 1 5ED0E96B
@@ -542,4 +534,25 @@ Wire Notes Line
 	10700 3450 7100 3450
 Wire Notes Line
 	7100 3450 7100 800 
+Wire Wire Line
+	8450 2650 8400 2650
+$Comp
+L Device:R R26
+U 1 1 5EC5C531
+P 8250 2650
+F 0 "R26" V 8043 2650 50  0000 C CNN
+F 1 "10K" V 8134 2650 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8180 2650 50  0001 C CNN
+F 3 "~" H 8250 2650 50  0001 C CNN
+	1    8250 2650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8100 2650 8000 2650
+Wire Wire Line
+	8000 2300 8250 2300
+Wire Wire Line
+	8450 2300 8750 2300
+Wire Wire Line
+	7550 2300 8000 2300
 $EndSCHEMATC

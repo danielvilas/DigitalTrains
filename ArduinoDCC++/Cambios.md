@@ -26,7 +26,7 @@ Cosas que hay quiero poner en la 0.0.2
 - [x] Añadir tres NeoPixel y un conector para crear bus
 - [x] Añadir señal Run (led + pin) y de error (led + pin)
 - [X] Corregir señal de reset, poner npn como opcion.
-- [ ] Añadir conexion externa
+- [X] Añadir conexion externa
   - Esto no veo que vaya a ser posible, y requiera otra MCU para gestionar las conexiones de RED, en ese caso poner conector IDC.
   - [ ] Probar conexion al Ehternet Modulo ENC28J60
   - [ ] Si falla el anterior, usar HC-04 (u otro BT-serie)
