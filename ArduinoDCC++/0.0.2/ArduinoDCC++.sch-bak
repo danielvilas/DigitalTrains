@@ -890,6 +890,9 @@ S 7250 1750 1400 1250
 U 5ECE48FE
 F0 "UserInterface" 50
 F1 "UserInterface.sch" 50
+F2 "NeoPixelIn" I L 7250 2150 50 
+F3 "RUN" I L 7250 2300 50 
+F4 "ERROR" I L 7250 2450 50 
 $EndSheet
 Wire Bus Line
 	10200 2600 10200 4050

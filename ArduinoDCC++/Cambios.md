@@ -19,18 +19,19 @@ Cosas a Corregir en la version 0.0.1 antes de empezar con la 0.0.2
 Cosas que hay quiero poner en la 0.0.2
 - [ ] Tener preparado un PCB modulo, Lector DCC (aprovechar Gastos de envio) con PCBA para probar tambien
 - [x] Separar pins de Arduino, con nombre, ubicarlos donde sea más facil, Grupos de 8 por puerto y marcar nombre arduino y AVR
-- [ ] Cambios en Documento Impreso
+- [x] Cambios en Documento Impreso
+  - Quedan algunos que no hare para 0.0.2
 - [x] Dejar solo la conexion util al motor shield
 - [X] limpiar la hoja raiz con los conectores, usar un bus
-- [ ] Añadir tres NeoPixel y un conector para crear bus
-- [ ] Añadir señal Run (led + pin) y de error (led + pin)
+- [x] Añadir tres NeoPixel y un conector para crear bus
+- [x] Añadir señal Run (led + pin) y de error (led + pin)
 - [X] Corregir señal de reset, poner npn como opcion.
 - [ ] Añadir conexion externa
   - Esto no veo que vaya a ser posible, y requiera otra MCU para gestionar las conexiones de RED, en ese caso poner conector IDC.
   - [ ] Probar conexion al Ehternet Modulo ENC28J60
   - [ ] Si falla el anterior, usar HC-04 (u otro BT-serie)
   - [ ] Añadir Header correspondiente
-- [ ] Cambiar el conector USB
+- [x] Cambiar el conector USB
   - Poner los tres (el actual, y los dos "faciles" de soldar)
 - [ ] Añadir TestPoints
 - [x] Revisar Designadores en PCB

@@ -894,6 +894,18 @@ F2 "NeoPixelIn" I L 7250 2150 50
 F3 "RUN" I L 7250 2300 50 
 F4 "ERROR" I L 7250 2450 50 
 $EndSheet
+Text Label 7000 2450 2    50   ~ 0
+PD7
+Wire Wire Line
+	7000 2150 7250 2150
+Text Label 7000 2300 2    50   ~ 0
+PD6
+Wire Wire Line
+	7000 2300 7250 2300
+Text Label 7000 2150 2    50   ~ 0
+PD4
+Wire Wire Line
+	7000 2450 7250 2450
 Wire Bus Line
 	10200 2600 10200 4050
 Wire Bus Line
