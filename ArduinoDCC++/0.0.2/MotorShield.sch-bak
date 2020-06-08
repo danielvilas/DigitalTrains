@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 4 5
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.2a"
+Rev "v0.0.2b"
 Comp "Daniel Vilas"
 Comment1 "Change r to Network of Resistances?"
 Comment2 "Pin 3 on J6, conected to 2 when disconnected, open"
@@ -120,7 +120,7 @@ U 1 1 5E97A392
 P 10100 1400
 F 0 "J9" H 10200 1400 50  0000 L CNN
 F 1 "Screw_Terminal_01x02" H 10180 1301 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 10100 1400 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal" H 10100 1400 50  0001 C CNN
 F 3 "~" H 10100 1400 50  0001 C CNN
 	1    10100 1400
 	1    0    0    -1  
@@ -131,7 +131,7 @@ U 1 1 5E97ACF3
 P 10100 1800
 F 0 "J10" H 10250 1700 50  0000 C CNN
 F 1 "Screw_Terminal_01x02" H 10600 1800 50  0000 C CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 10100 1800 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal" H 10100 1800 50  0001 C CNN
 F 3 "~" H 10100 1800 50  0001 C CNN
 	1    10100 1800
 	1    0    0    1   

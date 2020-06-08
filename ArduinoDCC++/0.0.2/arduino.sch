@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 3 5
 Title "Arduino DCC++"
 Date "2020-04-16"
-Rev "v0.0.2a"
+Rev "v0.0.2b"
 Comp "Daniel Vilas"
 Comment1 "Check Crystal "
 Comment2 "Inductor for AVCC"

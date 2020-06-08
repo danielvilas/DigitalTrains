@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 5
 Title "Arduino DCC++"
 Date "2020-05-14"
-Rev "v0.0.2a"
+Rev "v0.0.2b"
 Comp "Daniel Vilas"
 Comment1 "NeoPixel for V0.0.2"
 Comment2 ""

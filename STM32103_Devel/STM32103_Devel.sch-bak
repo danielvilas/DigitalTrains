@@ -1537,9 +1537,9 @@ F 3 "~" H 6150 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
-	10900 -1350 10900 5900
+	7350 550  7350 4150
 Wire Notes Line
-	10900 1250 13050 1250
+	7350 3150 9500 3150
 Text Label 10800 1050 1    50   ~ 0
 PA[0..15]
 Entry Wire Line
