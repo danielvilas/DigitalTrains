@@ -41,6 +41,7 @@ Cosas que hay quiero poner en la 0.0.2
 PDTE
 
 ## Version 0.0.3
+Cancelada - A partir de ahora ire por modulos, para abaratar costes...
 ### Mejoras
 Mejoras segun plan inicial documentado en el blog.
 - [ ] Crear distribucion energia desde la entrada DC Jack
