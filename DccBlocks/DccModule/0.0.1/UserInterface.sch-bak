@@ -1,0 +1,386 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev "v0.0.2b"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R?
+U 1 1 5ECF0696
+P 2050 1500
+AR Path="/5E94B185/5ECF0696" Ref="R?"  Part="1" 
+AR Path="/5ECF0696" Ref="R?"  Part="1" 
+AR Path="/5ECE48FE/5ECF0696" Ref="R1"  Part="1" 
+AR Path="/5F47A4AC/5ECF0696" Ref="R3"  Part="1" 
+F 0 "R3" V 1843 1500 50  0000 C CNN
+F 1 "1K" V 1934 1500 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1980 1500 50  0001 C CNN
+F 3 "~" H 2050 1500 50  0001 C CNN
+	1    2050 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5ECF069D
+P 1600 1500
+AR Path="/5E94B185/5ECF069D" Ref="D?"  Part="1" 
+AR Path="/5ECF069D" Ref="D?"  Part="1" 
+AR Path="/5ECE48FE/5ECF069D" Ref="D1"  Part="1" 
+AR Path="/5F47A4AC/5ECF069D" Ref="D2"  Part="1" 
+F 0 "D2" H 1593 1716 50  0000 C CNN
+F 1 "LED_GREEN" H 1593 1625 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1600 1500 50  0001 C CNN
+F 3 "~" H 1600 1500 50  0001 C CNN
+F 4 "PWR" H 1600 1500 50  0001 C CNN "Function"
+	1    1600 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1500 2350 1500
+Wire Wire Line
+	2350 1500 2350 1200
+Wire Wire Line
+	1900 1500 1750 1500
+Wire Wire Line
+	1050 1500 1450 1500
+$Comp
+L power:+5V #PWR?
+U 1 1 5ECF06A7
+P 2350 1200
+AR Path="/5ECF06A7" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5ECF06A7" Ref="#PWR052"  Part="1" 
+AR Path="/5F47A4AC/5ECF06A7" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 2350 1050 50  0001 C CNN
+F 1 "+5V" H 2365 1373 50  0000 C CNN
+F 2 "" H 2350 1200 50  0001 C CNN
+F 3 "" H 2350 1200 50  0001 C CNN
+	1    2350 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ECF06AD
+P 1050 1500
+AR Path="/5ECF06AD" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5ECF06AD" Ref="#PWR051"  Part="1" 
+AR Path="/5F47A4AC/5ECF06AD" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 1050 1250 50  0001 C CNN
+F 1 "GND" H 1055 1327 50  0000 C CNN
+F 2 "" H 1050 1500 50  0001 C CNN
+F 3 "" H 1050 1500 50  0001 C CNN
+	1    1050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B D5
+U 1 1 5EC43FB4
+P 4650 3350
+F 0 "D5" H 4994 3396 50  0000 L CNN
+F 1 "WS2812B" H 4994 3305 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 4700 3050 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 4750 2975 50  0001 L TNN
+	1    4650 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B D6
+U 1 1 5EC446BE
+P 5650 3350
+F 0 "D6" H 5994 3396 50  0000 L CNN
+F 1 "WS2812B" H 5994 3305 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 5700 3050 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 5750 2975 50  0001 L TNN
+	1    5650 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B D7
+U 1 1 5EC44A02
+P 6700 3350
+F 0 "D7" H 7044 3396 50  0000 L CNN
+F 1 "WS2812B" H 7044 3305 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 6750 3050 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 6800 2975 50  0001 L TNN
+	1    6700 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 3350 5950 3350
+Wire Wire Line
+	5350 3350 4950 3350
+$Comp
+L Device:R R?
+U 1 1 5EC4633A
+P 5050 1200
+AR Path="/5E94B185/5EC4633A" Ref="R?"  Part="1" 
+AR Path="/5EC4633A" Ref="R?"  Part="1" 
+AR Path="/5ECE48FE/5EC4633A" Ref="R24"  Part="1" 
+AR Path="/5F47A4AC/5EC4633A" Ref="R5"  Part="1" 
+F 0 "R5" V 4843 1200 50  0000 C CNN
+F 1 "1K" V 4934 1200 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4980 1200 50  0001 C CNN
+F 3 "~" H 5050 1200 50  0001 C CNN
+	1    5050 1200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5EC46345
+P 4600 1200
+AR Path="/5E94B185/5EC46345" Ref="D?"  Part="1" 
+AR Path="/5EC46345" Ref="D?"  Part="1" 
+AR Path="/5ECE48FE/5EC46345" Ref="D18"  Part="1" 
+AR Path="/5F47A4AC/5EC46345" Ref="D3"  Part="1" 
+F 0 "D3" H 4593 1416 50  0000 C CNN
+F 1 "LED_GREEN" H 4593 1325 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4600 1200 50  0001 C CNN
+F 3 "~" H 4600 1200 50  0001 C CNN
+F 4 "PWR" H 4600 1200 50  0001 C CNN "Function"
+	1    4600 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1200 5350 1200
+Wire Wire Line
+	5350 1200 5350 900 
+Wire Wire Line
+	4900 1200 4750 1200
+Wire Wire Line
+	4050 1200 4450 1200
+$Comp
+L power:GND #PWR?
+U 1 1 5EC46353
+P 4050 1200
+AR Path="/5EC46353" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5EC46353" Ref="#PWR055"  Part="1" 
+AR Path="/5F47A4AC/5EC46353" Ref="#PWR0120"  Part="1" 
+F 0 "#PWR0120" H 4050 950 50  0001 C CNN
+F 1 "GND" H 4055 1027 50  0000 C CNN
+F 2 "" H 4050 1200 50  0001 C CNN
+F 3 "" H 4050 1200 50  0001 C CNN
+	1    4050 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EC4917A
+P 5050 1800
+AR Path="/5E94B185/5EC4917A" Ref="R?"  Part="1" 
+AR Path="/5EC4917A" Ref="R?"  Part="1" 
+AR Path="/5ECE48FE/5EC4917A" Ref="R25"  Part="1" 
+AR Path="/5F47A4AC/5EC4917A" Ref="R6"  Part="1" 
+F 0 "R6" V 4843 1800 50  0000 C CNN
+F 1 "1K" V 4934 1800 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4980 1800 50  0001 C CNN
+F 3 "~" H 5050 1800 50  0001 C CNN
+	1    5050 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5EC49185
+P 4600 1800
+AR Path="/5E94B185/5EC49185" Ref="D?"  Part="1" 
+AR Path="/5EC49185" Ref="D?"  Part="1" 
+AR Path="/5ECE48FE/5EC49185" Ref="D19"  Part="1" 
+AR Path="/5F47A4AC/5EC49185" Ref="D4"  Part="1" 
+F 0 "D4" H 4593 2016 50  0000 C CNN
+F 1 "LED_RED" H 4593 1925 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4600 1800 50  0001 C CNN
+F 3 "~" H 4600 1800 50  0001 C CNN
+F 4 "PWR" H 4600 1800 50  0001 C CNN "Function"
+	1    4600 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1800 5350 1800
+Wire Wire Line
+	5350 1800 5350 1500
+Wire Wire Line
+	4900 1800 4750 1800
+Wire Wire Line
+	4050 1800 4450 1800
+$Comp
+L power:GND #PWR?
+U 1 1 5EC49193
+P 4050 1800
+AR Path="/5EC49193" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5EC49193" Ref="#PWR056"  Part="1" 
+AR Path="/5F47A4AC/5EC49193" Ref="#PWR0121"  Part="1" 
+F 0 "#PWR0121" H 4050 1550 50  0001 C CNN
+F 1 "GND" H 4055 1627 50  0000 C CNN
+F 2 "" H 4050 1800 50  0001 C CNN
+F 3 "" H 4050 1800 50  0001 C CNN
+	1    4050 1800
+	1    0    0    -1  
+$EndComp
+Text HLabel 4050 3350 0    50   Input ~ 0
+NeoPixelIn
+Wire Wire Line
+	4050 3350 4350 3350
+Text HLabel 5350 900  2    50   Input ~ 0
+RUN
+Text HLabel 5350 1500 2    50   Input ~ 0
+ERROR
+$Comp
+L power:+5V #PWR?
+U 1 1 5EC4E188
+P 4650 2850
+AR Path="/5EC4E188" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5EC4E188" Ref="#PWR057"  Part="1" 
+AR Path="/5F47A4AC/5EC4E188" Ref="#PWR0122"  Part="1" 
+F 0 "#PWR0122" H 4650 2700 50  0001 C CNN
+F 1 "+5V" H 4665 3023 50  0000 C CNN
+F 2 "" H 4650 2850 50  0001 C CNN
+F 3 "" H 4650 2850 50  0001 C CNN
+	1    4650 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 2850 4650 2950
+Wire Wire Line
+	4650 2950 5650 2950
+Wire Wire Line
+	5650 2950 5650 3050
+Connection ~ 4650 2950
+Wire Wire Line
+	4650 2950 4650 3050
+Wire Wire Line
+	6700 3050 6700 2950
+Wire Wire Line
+	6700 2950 5650 2950
+Connection ~ 5650 2950
+$Comp
+L power:GND #PWR?
+U 1 1 5EC50205
+P 4650 3800
+AR Path="/5EC50205" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5EC50205" Ref="#PWR058"  Part="1" 
+AR Path="/5F47A4AC/5EC50205" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 4650 3550 50  0001 C CNN
+F 1 "GND" H 4655 3627 50  0000 C CNN
+F 2 "" H 4650 3800 50  0001 C CNN
+F 3 "" H 4650 3800 50  0001 C CNN
+	1    4650 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 3650 4650 3750
+Wire Wire Line
+	6700 3650 6700 3750
+Wire Wire Line
+	6700 3750 5650 3750
+Connection ~ 4650 3750
+Wire Wire Line
+	4650 3750 4650 3800
+Wire Wire Line
+	5650 3650 5650 3750
+Connection ~ 5650 3750
+Wire Wire Line
+	5650 3750 4650 3750
+$Comp
+L Connector_Generic:Conn_01x04 J6
+U 1 1 5EC54C36
+P 8400 3350
+F 0 "J6" H 8480 3342 50  0000 L CNN
+F 1 "Conn_01x04" H 8480 3251 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 8400 3350 50  0001 C CNN
+F 3 "~" H 8400 3350 50  0001 C CNN
+	1    8400 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 3350 7000 3350
+Wire Wire Line
+	6700 2950 8200 2950
+Wire Wire Line
+	8200 2950 8200 3250
+Connection ~ 6700 2950
+Wire Wire Line
+	8200 3550 8200 3750
+Wire Wire Line
+	8200 3750 6700 3750
+Connection ~ 6700 3750
+NoConn ~ 8200 3450
+$Comp
+L Device:R R?
+U 1 1 5F480D1E
+P 2100 2600
+AR Path="/5E94B185/5F480D1E" Ref="R?"  Part="1" 
+AR Path="/5F480D1E" Ref="R?"  Part="1" 
+AR Path="/5ECE48FE/5F480D1E" Ref="R?"  Part="1" 
+AR Path="/5F47A4AC/5F480D1E" Ref="R4"  Part="1" 
+F 0 "R4" V 1893 2600 50  0000 C CNN
+F 1 "1K" V 1984 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2030 2600 50  0001 C CNN
+F 3 "~" H 2100 2600 50  0001 C CNN
+	1    2100 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2250 2600 2400 2600
+Wire Wire Line
+	2400 2600 2400 2300
+Wire Wire Line
+	1950 2600 1900 2600
+$Comp
+L power:+5V #PWR?
+U 1 1 5F480D2B
+P 2400 2300
+AR Path="/5F480D2B" Ref="#PWR?"  Part="1" 
+AR Path="/5ECE48FE/5F480D2B" Ref="#PWR?"  Part="1" 
+AR Path="/5F47A4AC/5F480D2B" Ref="#PWR0124"  Part="1" 
+F 0 "#PWR0124" H 2400 2150 50  0001 C CNN
+F 1 "+5V" H 2415 2473 50  0000 C CNN
+F 2 "" H 2400 2300 50  0001 C CNN
+F 3 "" H 2400 2300 50  0001 C CNN
+	1    2400 2300
+	1    0    0    -1  
+$EndComp
+Text HLabel 1800 2600 0    50   Input ~ 0
+btnRun
+$Comp
+L power:GND #PWR?
+U 1 1 5F4B9CA8
+P 1300 3300
+AR Path="/5F478771/5F4B9CA8" Ref="#PWR?"  Part="1" 
+AR Path="/5F47A4AC/5F4B9CA8" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 1300 3050 50  0001 C CNN
+F 1 "GND" H 1305 3127 50  0000 C CNN
+F 2 "" H 1300 3300 50  0001 C CNN
+F 3 "" H 1300 3300 50  0001 C CNN
+	1    1300 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 3300 1300 3100
+Wire Wire Line
+	1700 3100 1900 3100
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5F4B9CB2
+P 1500 3100
+AR Path="/5F478771/5F4B9CB2" Ref="SW?"  Part="1" 
+AR Path="/5F47A4AC/5F4B9CB2" Ref="SW2"  Part="1" 
+F 0 "SW2" H 1500 3385 50  0000 C CNN
+F 1 "SW_Push" H 1500 3294 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H4.3mm" H 1500 3300 50  0001 C CNN
+F 3 "~" H 1500 3300 50  0001 C CNN
+	1    1500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 2600 1900 3100
+Connection ~ 1900 2600
+Wire Wire Line
+	1900 2600 1800 2600
+$EndSCHEMATC
