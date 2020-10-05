@@ -21,7 +21,7 @@ Al intentar Grabar el BootLoader de Arduino, AVR_DUDE no detecta el chip
   * [x] Revisar pines header con Patas (arriba)
     * Mala conexion entre MISO/MOSI/SCK con el Header 
   * [x] Soldar con Solder Paste y HotAir
-  * [ ] Soldar con Stencil y HotAir
+  * [x] Soldar con Stencil y HotAir
     * [x] Pedir Stencil
   * [x] Mandar fabricar con PCBA
     * [x] ~~Diseñar para usar CH-340 y otros basicos~~
@@ -59,7 +59,7 @@ Pasos a realizar
 9. [x] Rediseñar 0.0.1c-j para usar componentes basic y ~~ch340~~
 10. [x] Pedir 0.0.1c, 0.0.1c-j y breakout
 11. [x] probar SolderPaste (intentar recuperar algun chip)
-12. [ ] Probar los fabricados
+12. [x] Probar los fabricados
 
 ### __0.0.1-2 Problema__: Conector USB micro-B.
 Al intentar probar la parte USB-FTDI, el Conector USB no suelda bien, muchos cortos (entre VCC y GND) y salta enseguida. Aplica a las revisiones b, c y c-j.
@@ -99,4 +99,4 @@ Esto no es facil solucionarlo, al final las patas estan expuestas en el chip, la
 Con JMRI no lee los datos del decoder en la via de programacion
 
 * __Causa Real__: R14 y R15 tienen los desigandores cambiados en la capa F.SILK
-  * [ ] Cambiar en 0.0.2
+  * [x] Cambiar en 0.0.2
