@@ -510,7 +510,7 @@ Wire Wire Line
 Wire Wire Line
 	6950 2900 6950 3050
 $Comp
-L Transistor_BJT:BC849 Q1
+L Transistor_BJT:MMBT3904 Q1
 U 1 1 5C6567E8
 P 7050 4050
 F 0 "Q1" H 7240 4096 50  0000 L CNN
