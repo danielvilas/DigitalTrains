@@ -1,34 +1,4 @@
-# For PCBs designed using KiCad: http://www.kicad-pcb.org/
-# Format documentation: http://kicad-pcb.org/help/file-formats/
 
-# Temporary files
-*.000
-*.bak
-*.bck
-*.kicad_pcb-bak
-*~
-_autosave-*
-*.tmp
-*-cache.lib
-*-rescue.lib
-*-save.pro
-*-save.kicad_pcb
-
-# Netlist files (exported from Eeschema)
-*.net
-
-# Autorouter files (exported from Pcbnew)
-*.dsn
-*.ses
-
-# Exported BOM files
-*.xml
-*.csv
-**/.DS_Store
-docs/HowTo/Book/main.pdf
-
-
-#latex files
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -52,6 +22,8 @@ docs/HowTo/Book/main.pdf
 # *.eps
 # *.pdf
 
+## Generated if empty string is given at "Please type another file name for output:"
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl

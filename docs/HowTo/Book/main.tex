@@ -50,6 +50,9 @@
 
 %----------------------------------------------------------------------------------------
 
+\addbibresource[label=intro]{chapters/00_intro/intro.bib}
+\addbibresource[label=jugar]{chapters/01_jugar/jugar.bib}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -60,7 +63,7 @@
 \thispagestyle{empty} % Suppress headers and footers on the title page
 \begin{tikzpicture}[remember picture,overlay]
 \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{background.pdf}};
-\draw (current page.center) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Como hacer una maqueta ...\\[15pt] % Book title
+\draw (current page.center) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Como hacer una maqueta de trenes ...\\[15pt] % Book title
 {\Large ... y no perderse en el intento}\\[20pt] % Subtitle
 {\huge Daniel Vilas}}}; % Author name
 \end{tikzpicture}
@@ -107,6 +110,16 @@
 
 \part{Motivación}
 
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+
+\chapter{Introduccion}
+
+\include{chapters/00_Intro/introducion}
+
+\chapter{Como Jugamos}
+\input{chapters/01_jugar/jugar.tex}
+
+\part{Examples}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
@@ -356,13 +369,14 @@ Referencing Figure \ref{fig:placeholder} in-text automatically.
 %----------------------------------------------------------------------------------------
 
 \chapter*{Bibliography}
+\nocite{*}
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
 
 %------------------------------------------------
 
 \section*{Articles}
 \addcontentsline{toc}{section}{Articles}
-\printbibliography[heading=bibempty,type=article]
+\printbibliography[segment=*,heading=bibempty,type=article]
 
 %------------------------------------------------
 
