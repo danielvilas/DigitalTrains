@@ -62,7 +62,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\addbibresource[label=intro]{chapters/00_intro/intro.bib}
+\addbibresource[label=intro]{chapters/00_Intro/intro.bib}
 \addbibresource[label=jugar]{chapters/01_jugar/jugar.bib}
 
 \begin{document}
@@ -136,6 +136,8 @@
 
 %%% EXAMPLES
 \input{Examples}
+\chapter{Base}
+\input{chapters/0x_example/chapter}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
@@ -155,6 +157,10 @@
 \section*{Books}
 \addcontentsline{toc}{section}{Books}
 \printbibliography[heading=bibempty,type=book]
+
+\section*{Paginas Web}
+\addcontentsline{toc}{section}{Paginas Web}
+\printbibliography[heading=bibempty,type=online]
 
 %----------------------------------------------------------------------------------------
 %	INDEX
