@@ -598,7 +598,7 @@ L Device:CP C10
 U 1 1 5ED13F7D
 P 3300 2500
 F 0 "C10" H 3418 2546 50  0000 L CNN
-F 1 "CP" H 3418 2455 50  0000 L CNN
+F 1 "10uf" H 3418 2455 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" H 3338 2350 50  0001 C CNN
 F 3 "~" H 3300 2500 50  0001 C CNN
 F 4 " C7171" H 3300 2500 50  0001 C CNN "LCSC"
@@ -1318,7 +1318,7 @@ Wire Wire Line
 Wire Notes Line
 	5100 2400 8950 2400
 $Comp
-L Connector:USB_B_Micro J2
+L STM32103_Devel-rescue:USB_B_Micro-Connector J2
 U 1 1 5F2F7F4D
 P 5500 3150
 F 0 "J2" H 5557 3617 50  0000 C CNN
@@ -1829,6 +1829,10 @@ SWO
 Text Label 8500 1600 0    50   ~ 0
 RST
 NoConn ~ 8500 1500
+Text Label 6050 3150 0    50   ~ 0
+USB_P
+Text Label 6050 3250 0    50   ~ 0
+USB_N
 Wire Bus Line
 	9200 1050 9200 2650
 Wire Bus Line
@@ -1837,8 +1841,4 @@ Wire Bus Line
 	750  3000 750  4600
 Wire Bus Line
 	2850 3000 2850 4600
-Text Label 6050 3150 0    50   ~ 0
-USB_P
-Text Label 6050 3250 0    50   ~ 0
-USB_N
 $EndSCHEMATC

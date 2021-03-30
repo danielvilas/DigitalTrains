@@ -1421,9 +1421,9 @@ Wire Wire Line
 Wire Wire Line
 	7000 3250 7050 3250
 Text Label 7050 3150 0    50   ~ 0
-USB_DP
+USBD_P
 Text Label 7050 3250 0    50   ~ 0
-USB_DM
+USBD_N
 $Comp
 L power:VCC #PWR028
 U 1 1 5F36A26B
@@ -1473,9 +1473,9 @@ Wire Wire Line
 Wire Wire Line
 	5900 2950 5800 2950
 Text Label 3500 6450 2    50   ~ 0
-USB_DP
+USBD_P
 Text Label 3500 6550 2    50   ~ 0
-USB_DM
+USBD_N
 Text Label 3700 6550 0    50   ~ 0
 PA11
 Wire Wire Line
@@ -1840,5 +1840,5 @@ Wire Bus Line
 Text Label 6050 3150 0    50   ~ 0
 USB_P
 Text Label 6050 3250 0    50   ~ 0
-USB_M
+USB_N
 $EndSCHEMATC
