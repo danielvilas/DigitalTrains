@@ -24,58 +24,6 @@ F4 "DCC_ACK" I R 2750 1650 50
 F5 "DCC_OUT" I R 2750 1750 50 
 $EndSheet
 $Comp
-L Mechanical:MountingHole H?
-U 1 1 60636319
-P 1550 6250
-AR Path="/6062EBB5/60636319" Ref="H?"  Part="1" 
-AR Path="/60636319" Ref="H1"  Part="1" 
-F 0 "H1" H 1650 6296 50  0000 L CNN
-F 1 "MountingHole" H 1650 6205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1550 6250 50  0001 C CNN
-F 3 "~" H 1550 6250 50  0001 C CNN
-	1    1550 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H?
-U 1 1 6063631F
-P 2300 6250
-AR Path="/6062EBB5/6063631F" Ref="H?"  Part="1" 
-AR Path="/6063631F" Ref="H3"  Part="1" 
-F 0 "H3" H 2400 6296 50  0000 L CNN
-F 1 "MountingHole" H 2400 6205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 2300 6250 50  0001 C CNN
-F 3 "~" H 2300 6250 50  0001 C CNN
-	1    2300 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H?
-U 1 1 60636325
-P 1550 6550
-AR Path="/6062EBB5/60636325" Ref="H?"  Part="1" 
-AR Path="/60636325" Ref="H2"  Part="1" 
-F 0 "H2" H 1650 6596 50  0000 L CNN
-F 1 "MountingHole" H 1650 6505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 1550 6550 50  0001 C CNN
-F 3 "~" H 1550 6550 50  0001 C CNN
-	1    1550 6550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H?
-U 1 1 6063632B
-P 2300 6550
-AR Path="/6062EBB5/6063632B" Ref="H?"  Part="1" 
-AR Path="/6063632B" Ref="H4"  Part="1" 
-F 0 "H4" H 2400 6596 50  0000 L CNN
-F 1 "MountingHole" H 2400 6505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5" H 2300 6550 50  0001 C CNN
-F 3 "~" H 2300 6550 50  0001 C CNN
-	1    2300 6550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x06 J3
 U 1 1 60662605
 P 10050 4000

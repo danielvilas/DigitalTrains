@@ -298,19 +298,8 @@ DCC_OUT
 $Comp
 L Jumper:Jumper_2_Open JP4
 U 1 1 6064F8BF
-P 4100 2150
-F 0 "JP4" H 4100 2345 50  0000 C CNN
-F 1 "Jumper_NO" H 4100 2254 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4100 2150 50  0001 C CNN
-F 3 "~" H 4100 2150 50  0001 C CNN
-	1    4100 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:Jumper_2_Open JP3
-U 1 1 60650330
 P 4000 900
-F 0 "JP3" H 4000 1095 50  0000 C CNN
+F 0 "JP4" H 4000 1095 50  0000 C CNN
 F 1 "Jumper_NO" H 4000 1004 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4000 900 50  0001 C CNN
 F 3 "~" H 4000 900 50  0001 C CNN
@@ -318,14 +307,25 @@ F 3 "~" H 4000 900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
+L Jumper:Jumper_2_Open JP3
+U 1 1 60650330
+P 4100 2150
+F 0 "JP3" H 4100 2345 50  0000 C CNN
+F 1 "Jumper_NO" H 4100 2254 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4100 2150 50  0001 C CNN
+F 3 "~" H 4100 2150 50  0001 C CNN
+	1    4100 2150
+	1    0    0    -1  
+$EndComp
+$Comp
 L power:+12V #PWR08
 U 1 1 60650EA4
-P 4500 800
-F 0 "#PWR08" H 4500 650 50  0001 C CNN
-F 1 "+12V" H 4515 973 50  0000 C CNN
-F 2 "" H 4500 800 50  0001 C CNN
-F 3 "" H 4500 800 50  0001 C CNN
-	1    4500 800 
+P 4450 2150
+F 0 "#PWR08" H 4450 2000 50  0001 C CNN
+F 1 "+12V" H 4465 2323 50  0000 C CNN
+F 2 "" H 4450 2150 50  0001 C CNN
+F 3 "" H 4450 2150 50  0001 C CNN
+	1    4450 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -342,18 +342,16 @@ Wire Wire Line
 $Comp
 L power:GND #PWR07
 U 1 1 60657619
-P 4450 2150
-F 0 "#PWR07" H 4450 1900 50  0001 C CNN
-F 1 "GND" H 4455 1977 50  0000 C CNN
-F 2 "" H 4450 2150 50  0001 C CNN
-F 3 "" H 4450 2150 50  0001 C CNN
-	1    4450 2150
+P 4500 900
+F 0 "#PWR07" H 4500 650 50  0001 C CNN
+F 1 "GND" H 4505 727 50  0000 C CNN
+F 2 "" H 4500 900 50  0001 C CNN
+F 3 "" H 4500 900 50  0001 C CNN
+	1    4500 900 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	4450 2150 4300 2150
-Wire Wire Line
-	4500 800  4500 900 
 $Comp
 L Regulator_Linear:AMS1117-5.0 U4
 U 1 1 606AAF5E
@@ -465,7 +463,7 @@ F 3 "" H 2250 1600 50  0001 L BNN
 F 4 "Rectron Semiconductor" H 2250 1600 50  0001 L BNN "MANUFACTURER"
 F 5 "C5377" H 2250 1600 50  0001 C CNN "LCSC"
 	1    2250 1600
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	2250 1200 2250 1150
