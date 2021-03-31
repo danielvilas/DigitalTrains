@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
-Title "Arduino DCC++"
-Date "2020-04-16"
-Rev "v0.0.2b"
+Title "Dcc Decoder Devel Board"
+Date "2021-03-31"
+Rev "1.0.0"
 Comp "Daniel Vilas"
 Comment1 "Check Crystal "
 Comment2 "Inductor for AVCC"
@@ -173,9 +173,9 @@ U 1 1 5E9AC57F
 P 7800 1200
 F 0 "D6" H 7750 1300 50  0000 L CNN
 F 1 "CD1206-S01575" H 7500 1400 50  0000 L CNN
-F 2 "Diode_SMD:D_1206_3216Metric" H 7800 1200 50  0001 C CNN
+F 2 "Diode_SMD:D_SOD-323F" H 7800 1200 50  0001 C CNN
 F 3 "~" H 7800 1200 50  0001 C CNN
-F 4 "C75465" H 7800 1200 50  0001 C CNN "LCSC"
+F 4 " C2128" H 7800 1200 50  0001 C CNN "LCSC"
 	1    7800 1200
 	0    1    1    0   
 $EndComp

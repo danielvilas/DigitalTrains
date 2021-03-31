@@ -4,10 +4,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 3
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Dcc Decoder Devel Board"
+Date "2021-03-31"
+Rev "1.0.0"
+Comp "Daniel Vilas"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -87,10 +87,10 @@ L Device:R R2
 U 1 1 5F3F8A47
 P 3400 3150
 F 0 "R2" V 3193 3150 50  0000 C CNN
-F 1 "3k9" V 3284 3150 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 3330 3150 50  0001 C CNN
+F 1 "3k" V 3284 3150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3330 3150 50  0001 C CNN
 F 3 "~" H 3400 3150 50  0001 C CNN
-F 4 " C25662" H 3400 3150 50  0001 C CNN "LCSC"
+F 4 "C17661" H 3400 3150 50  0001 C CNN "LCSC"
 	1    3400 3150
 	0    1    1    0   
 $EndComp
