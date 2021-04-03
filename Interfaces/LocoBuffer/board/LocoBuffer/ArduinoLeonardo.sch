@@ -13,48 +13,42 @@ Comment2 "Inductor for AVCC"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 6350 2300 2    50   BiDi ~ 0
-PB0_ap_8_icp
-Text HLabel 6350 3500 2    50   BiDi ~ 0
-PD0_ap_0_rx
-Text HLabel 6350 3600 2    50   BiDi ~ 0
-PD1_ap_1_tx
-Text HLabel 6350 3700 2    50   BiDi ~ 0
-PD2_ap_2_int0
-Text HLabel 6350 3800 2    50   BiDi ~ 0
-PD3_ap_3*_int1
-Text HLabel 6350 3900 2    50   BiDi ~ 0
-PD4_ap_4_t0
-Text HLabel 6350 4000 2    50   BiDi ~ 0
-PD5_ap_5*_t1
-Text HLabel 6350 4100 2    50   BiDi ~ 0
-PD6_ap_6*_ain0
-Text HLabel 6350 4200 2    50   BiDi ~ 0
-PD7_ap_7_ain1
-Text HLabel 6350 2400 2    50   BiDi ~ 0
-PB1_ap_9*_osc1
-Text HLabel 6350 2500 2    50   BiDi ~ 0
-PB2_ap_10_ss
-Text HLabel 6350 2600 2    50   BiDi ~ 0
-PB3_ap_11*_mosi
 Text HLabel 6350 2700 2    50   BiDi ~ 0
-PB4_ap_12_miso
+PB4_D8
+Text HLabel 6350 3700 2    50   BiDi ~ 0
+PD2_D0_RX
+Text HLabel 6350 3800 2    50   BiDi ~ 0
+PD3_D1_TX
+Text HLabel 6350 3600 2    50   BiDi ~ 0
+PD1_D2_SDA
+Text HLabel 6350 3500 2    50   BiDi ~ 0
+PD0_D3_SCL
+Text HLabel 6350 3900 2    50   BiDi ~ 0
+PD4_D4_A6
+Text HLabel 6350 3200 2    50   BiDi ~ 0
+PC6_D5
+Text HLabel 6350 4200 2    50   BiDi ~ 0
+PD7_D6_A7
+Text HLabel 6350 4500 2    50   BiDi ~ 0
+PE6_D7
 Text HLabel 6350 2800 2    50   BiDi ~ 0
-PB5_ap_13_sck
-Text HLabel 6350 5200 2    50   BiDi ~ 0
-PC5_ap_a5_scl
-Text HLabel 6350 4900 2    50   BiDi ~ 0
-PC2_ap_a2
-Text HLabel 6350 4800 2    50   BiDi ~ 0
-PC1_ap_a1
+PB5_D9_A8
+Text HLabel 6350 2900 2    50   BiDi ~ 0
+PB6_D10
+Text HLabel 6350 3000 2    50   BiDi ~ 0
+PB7_D11
+Text HLabel 6350 4100 2    50   BiDi ~ 0
+PB6_D12
+Text HLabel 6350 3300 2    50   BiDi ~ 0
+PC7_D13
 Text HLabel 6350 4700 2    50   BiDi ~ 0
-PC0_ap_a0
-Text Label 6300 2800 2    50   ~ 0
-sck
-Text Label 6300 2700 2    50   ~ 0
-miso
-Text Label 6300 2600 2    50   ~ 0
-mosi
+PF0_A5
+Text HLabel 6350 5000 2    50   BiDi ~ 0
+PF5_A2
+Text HLabel 6350 5100 2    50   BiDi ~ 0
+PF6_A1
+Text HLabel 6350 5200 2    50   BiDi ~ 0
+PF7_A0
 Wire Wire Line
 	6100 4000 6350 4000
 Wire Wire Line
@@ -93,22 +87,20 @@ Wire Wire Line
 	6100 4100 6350 4100
 Wire Wire Line
 	6100 3800 6350 3800
-Text HLabel 6350 5300 2    50   BiDi ~ 0
-PC6_ap_rst
+Text HLabel 4650 2300 0    50   BiDi ~ 0
+RESET
 $Comp
 L MCU_Microchip_ATmega:ATmega32U4-MU U?
 U 1 1 5E94DA0E
 P 5500 3800
-F 0 "U?" H 5500 2211 50  0000 C CNN
-F 1 "ATmega328P-AU" H 5500 2120 50  0000 C CNN
-F 2 "Project:TQFP-32_7x7mm_P0.8mm" H 5500 3800 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/40001906C.pdf" H 5500 3800 50  0001 C CNN
+F 0 "U?" H 5900 2050 50  0000 C CNN
+F 1 "ATmega32U4-MU" H 5400 2600 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-44-1EP_7x7mm_P0.5mm_EP5.2x5.2mm" H 5500 3800 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 5500 3800 50  0001 C CNN
 F 4 "C45874" H 5500 3800 50  0001 C CNN "LCSC"
 	1    5500 3800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6350 5300 6100 5300
 Text Label 4800 2300 2    50   ~ 0
 rst
 $Comp
@@ -167,18 +159,6 @@ F 4 "C17414" H 7500 1200 50  0001 C CNN "LCSC"
 	1    7500 1200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:D D?
-U 1 1 5E9AC57F
-P 7800 1200
-F 0 "D?" H 7750 1300 50  0000 L CNN
-F 1 "CD1206-S01575" H 7500 1400 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-323F" H 7800 1200 50  0001 C CNN
-F 3 "~" H 7800 1200 50  0001 C CNN
-F 4 " C2128" H 7800 1200 50  0001 C CNN "LCSC"
-	1    7800 1200
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	7350 1600 7500 1600
 Wire Wire Line
@@ -186,22 +166,6 @@ Wire Wire Line
 Connection ~ 7500 1600
 Wire Wire Line
 	7500 1050 7500 900 
-Wire Wire Line
-	7500 900  7700 900 
-Wire Wire Line
-	7700 850  7700 900 
-Wire Wire Line
-	7700 900  7800 900 
-Wire Wire Line
-	7800 900  7800 1050
-Connection ~ 7700 900 
-Wire Wire Line
-	7800 1350 7800 1600
-Wire Wire Line
-	7500 1600 7800 1600
-Connection ~ 7800 1600
-Wire Wire Line
-	7800 1600 8300 1600
 Connection ~ 8300 1600
 Wire Wire Line
 	8300 1600 8700 1600
@@ -224,10 +188,8 @@ Wire Wire Line
 	8100 2100 8300 2100
 Wire Wire Line
 	8300 1600 8300 2100
-Text HLabel 4650 2900 0    50   Input ~ 0
+Text HLabel 4100 2900 0    50   Input ~ 0
 ap_aref
-Wire Wire Line
-	4650 2900 4900 2900
 $Comp
 L Device:C C?
 U 1 1 5E9CD93E
@@ -306,12 +268,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5E9DB6DC
-P 5500 6450
-F 0 "#PWR?" H 5500 6200 50  0001 C CNN
-F 1 "GND" H 5505 6277 50  0000 C CNN
-F 2 "" H 5500 6450 50  0001 C CNN
-F 3 "" H 5500 6450 50  0001 C CNN
-	1    5500 6450
+P 5450 5750
+F 0 "#PWR?" H 5450 5500 50  0001 C CNN
+F 1 "GND" H 5455 5577 50  0000 C CNN
+F 2 "" H 5450 5750 50  0001 C CNN
+F 3 "" H 5450 5750 50  0001 C CNN
+	1    5450 5750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -358,10 +320,10 @@ F 3 "~" H 7900 2300 50  0001 C CNN
 	1    7900 2100
 	1    0    0    -1  
 $EndComp
-Text HLabel 6350 5000 2    50   BiDi ~ 0
-PC3_ap_a3
-Text HLabel 6350 5100 2    50   BiDi ~ 0
-PC4_ap_a4_sda
+Text HLabel 6350 4900 2    50   BiDi ~ 0
+PF4_A3
+Text HLabel 6350 4800 2    50   BiDi ~ 0
+PF1_A4
 Wire Wire Line
 	6100 5100 6350 5100
 $Comp
@@ -463,12 +425,12 @@ $EndComp
 $Comp
 L power:VCC #PWR?
 U 1 1 607A36D4
-P 7700 850
-F 0 "#PWR?" H 7700 700 50  0001 C CNN
-F 1 "VCC" H 7715 1023 50  0000 C CNN
-F 2 "" H 7700 850 50  0001 C CNN
-F 3 "" H 7700 850 50  0001 C CNN
-	1    7700 850 
+P 7500 900
+F 0 "#PWR?" H 7500 750 50  0001 C CNN
+F 1 "VCC" H 7515 1073 50  0000 C CNN
+F 2 "" H 7500 900 50  0001 C CNN
+F 3 "" H 7500 900 50  0001 C CNN
+	1    7500 900 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -483,8 +445,6 @@ F 3 "" H 9300 1200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 2300 4900 2300
-Wire Wire Line
 	4900 2500 4700 2500
 Wire Wire Line
 	4700 2500 4700 2450
@@ -496,7 +456,98 @@ Wire Wire Line
 	4700 2700 4900 2700
 Wire Wire Line
 	4300 2750 4700 2750
+$Comp
+L Device:C C?
+U 1 1 60690F7F
+P 4300 3100
+AR Path="/5E94B185/60690F7F" Ref="C?"  Part="1" 
+AR Path="/5E94B246/60690F7F" Ref="C?"  Part="1" 
+AR Path="/606363C7/60690F7F" Ref="C?"  Part="1" 
+AR Path="/60687109/60690F7F" Ref="C?"  Part="1" 
+F 0 "C?" H 4415 3146 50  0000 L CNN
+F 1 "100nf" H 4415 3055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4338 2950 50  0001 C CNN
+F 3 "~" H 4300 3100 50  0001 C CNN
+F 4 "C14663" H 4300 3100 50  0001 C CNN "LCSC"
+	1    4300 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60690F85
+P 4300 3350
+F 0 "#PWR?" H 4300 3100 50  0001 C CNN
+F 1 "GND" V 4305 3222 50  0000 R CNN
+F 2 "" H 4300 3350 50  0001 C CNN
+F 3 "" H 4300 3350 50  0001 C CNN
+	1    4300 3350
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	5400 2000 5400 1800
-Connection ~ 5400 1800
+	4300 3250 4300 3350
+Wire Wire Line
+	4100 2900 4300 2900
+Wire Wire Line
+	4300 2950 4300 2900
+Connection ~ 4300 2900
+Wire Wire Line
+	4300 2900 4900 2900
+Text Label 6200 3700 0    50   ~ 0
+RXI
+Text Label 6200 3800 0    50   ~ 0
+TXI
+Wire Wire Line
+	6350 3200 6100 3200
+Wire Wire Line
+	6350 3300 6100 3300
+Wire Wire Line
+	6350 2900 6100 2900
+Wire Wire Line
+	6350 3000 6100 3000
+Wire Wire Line
+	7500 1600 8300 1600
+Wire Wire Line
+	6100 4500 6350 4500
+Text Label 6300 2600 2    50   ~ 0
+miso
+Text Label 6300 2500 2    50   ~ 0
+mosi
+Text Label 6250 2400 2    50   ~ 0
+sck
+Text HLabel 6350 2600 2    50   BiDi ~ 0
+PB3_D14_MISO
+Text HLabel 6350 2400 2    50   BiDi ~ 0
+PB1_D15_SCK
+Text HLabel 6350 2500 2    50   BiDi ~ 0
+PB2_D16_MOSI
+Text HLabel 6350 2300 2    50   BiDi ~ 0
+PB0_D17_SS_RXLED
+Text HLabel 6350 4000 2    50   BiDi ~ 0
+PD5_D18_TXLED
+Wire Wire Line
+	4650 2300 4900 2300
+Wire Wire Line
+	5450 5750 5450 5650
+Wire Wire Line
+	5450 5650 5500 5650
+Wire Wire Line
+	5500 5650 5500 5600
+Wire Wire Line
+	5400 5600 5400 5650
+Wire Wire Line
+	5400 5650 5450 5650
+Connection ~ 5450 5650
+$Comp
+L power:GND #PWR?
+U 1 1 606C47DC
+P 7000 4400
+F 0 "#PWR?" H 7000 4150 50  0001 C CNN
+F 1 "GND" H 7005 4227 50  0000 C CNN
+F 2 "" H 7000 4400 50  0001 C CNN
+F 3 "" H 7000 4400 50  0001 C CNN
+	1    7000 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4400 6100 4400
 $EndSCHEMATC
