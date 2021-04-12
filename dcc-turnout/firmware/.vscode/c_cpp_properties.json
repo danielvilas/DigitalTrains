@@ -8,10 +8,10 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/home/daniel/CLionProjects/dcc-turnout/include",
-                "/home/daniel/CLionProjects/dcc-turnout/src",
-                "/home/daniel/CLionProjects/dcc-turnout/.pio/libdeps/pro16MHzatmega328/NmraDcc",
-                "/home/daniel/CLionProjects/dcc-turnout/.pio/libdeps/pro16MHzatmega328/Servo/src",
+                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
+                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
+                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
+                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
@@ -25,10 +25,10 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/home/daniel/CLionProjects/dcc-turnout/include",
-                    "/home/daniel/CLionProjects/dcc-turnout/src",
-                    "/home/daniel/CLionProjects/dcc-turnout/.pio/libdeps/pro16MHzatmega328/NmraDcc",
-                    "/home/daniel/CLionProjects/dcc-turnout/.pio/libdeps/pro16MHzatmega328/Servo/src",
+                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
+                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
+                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
+                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
