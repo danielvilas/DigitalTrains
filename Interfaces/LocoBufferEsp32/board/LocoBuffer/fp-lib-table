@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name LocoNetInterface)(type KiCad)(uri ${KIPRJMOD}/lib/LocoNetInterface_V1.pretty)(options "")(descr ""))
-)
