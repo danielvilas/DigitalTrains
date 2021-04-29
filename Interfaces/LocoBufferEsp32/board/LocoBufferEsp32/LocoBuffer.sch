@@ -161,7 +161,7 @@ rst
 $Sheet
 S 4650 3750 1150 1950
 U 60687109
-F0 "Arduino Leonardo" 50
+F0 "Esp32" 50
 F1 "ArduinoLeonardo.sch" 50
 F2 "PB4_D8" B R 5800 4600 50 
 F3 "PD2_D0_RX" B R 5800 3800 50 

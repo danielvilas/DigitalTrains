@@ -20,6 +20,7 @@ enum DccCliCommands{
     dc_dec='-',   //Moves, removes from current position
     dc_error='e', //Error, internal use
     dc_help='h',  //Print Help
+    dc_middle='m', //Move to Middle Point
 };
 
 class DccTurnOutCli

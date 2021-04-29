@@ -112,6 +112,17 @@ void DccTurnOutCli::execute()
     case dc_help:
         this->printHelp();
         break;
+    case dc_middle:
+        arg=90;
+        if(servoOut.status==SERVO_POS_CLOSED){
+            this->close();
+        }
+        if(servoOut.status==SERVO_POS_THROWN){
+            this->thrown();
+        }
+
+        this->printHelp();
+        break;
 
     default:
         break;
@@ -237,7 +248,7 @@ void DccTurnOutCli::process()
         }
         else if (isAlpha(tmp) || tmp == '+' || tmp == '-')
         {
-            if (tmp == 't' || tmp == 'c' || tmp == 'f' || tmp == 'p' || tmp == 's' || tmp == 'w' || tmp == 'r' || tmp == 'a' || tmp == 'e' || tmp == '+' || tmp == '-' || tmp == 'h')
+            if (tmp == 't' || tmp == 'c' || tmp == 'f' || tmp == 'p' || tmp == 's' || tmp == 'w' || tmp == 'r' || tmp == 'a' || tmp == 'e' || tmp == '+' || tmp == '-' || tmp == 'h' || tmp == 'm')
             {
                 cmd = tmp;
                 arg = -1;

@@ -3,8 +3,8 @@ CVPair FactoryDefaultCVs[] =
     {
         {CV_ACCESSORY_DECODER_ADDRESS_LSB, 1},
         {CV_ACCESSORY_DECODER_ADDRESS_MSB, 0},
-        {CV_SERVO_CLOSED, 165},
-        {CV_SERVO_THROWN, 15},
+        {CV_SERVO_CLOSED, 115},
+        {CV_SERVO_THROWN, 65},
         {CV_SERVO_SPEED, 5},
 };
 

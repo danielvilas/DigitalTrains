@@ -11,7 +11,9 @@
 #include <Servo.h>
 #include "cli.h"
 
+#define PIN_SERVO 9
 #define PIN_RESET 8
+#define PIN_SERVO_PWR 7
 #define PIN_ACK 3
 
 extern NmraDcc Dcc;
@@ -36,6 +38,14 @@ struct CVPair
 
 extern CVPair FactoryDefaultCVs[];
 
+
+enum servoInternalState{
+    SERVO_WAIT,
+    SERVO_MOVE,
+    SERVO_POST_MOVE,
+    SERVO_REFRESH,
+};
+
 struct ServoStatus
 {
     uint8_t status; //Thrown or closed
@@ -44,6 +54,8 @@ struct ServoStatus
     uint8_t closed_pos;
     uint8_t speed;
     long lastPosMillis;
+    servoInternalState intState;
+    uint8_t stateCounter;
 };
 extern ServoStatus servoOut;
 void setServoCV(uint16_t CV, uint8_t Value);

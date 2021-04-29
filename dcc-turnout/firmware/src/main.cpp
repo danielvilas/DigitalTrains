@@ -17,6 +17,8 @@ void setup()
 
     // Configure the DCC CV Programing ACK pin for an output
     pinMode(PIN_ACK, OUTPUT);
+    pinMode(PIN_SERVO, OUTPUT);
+    pinMode(PIN_SERVO_PWR, OUTPUT);
 
     Serial.println("NMRA DCC Example 1");
 
@@ -38,9 +40,8 @@ void setup()
         setServoCV(CV_SERVO_CLOSED, Dcc.getCV(CV_SERVO_CLOSED));
         setServoCV(CV_SERVO_SPEED, Dcc.getCV(CV_SERVO_SPEED));
     }
-    myServo.attach(9);
-
     Serial.println("Init Done");
+    pinMode(LED_BUILTIN,OUTPUT);
 }
 
 void loop()
