@@ -29,8 +29,16 @@ iface can0 inet manual
 ```
 
 ## The hub
-https://github.com/bakerstu/openmrn
+```
+git clone https://github.com/bakerstu/openmrn
 
+cd openmrn/applications/hub/targets/linux.x86
+
+sudo apt install libavahi-client-dev
+make
+./hub -p 12024
+ 
+```
 ## The tests
 http://nmra2015.sbcrailway.ca/sites/default/files/clinics/Racz_OpenMRN%20hands-on%20introduction.pdf
 
