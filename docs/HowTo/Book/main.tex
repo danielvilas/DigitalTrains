@@ -51,7 +51,11 @@
 \input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
 \usepackage[spanish,es-nolists]{babel}
 \usepackage{epigraph}
+\setlength \epigraphwidth {0.65\textwidth}
+\renewcommand {\epigraphflush}{center}
 
+\let\originalepigraph\epigraph 
+\renewcommand\epigraph[2]{\originalepigraph{``#1'' }{\textsc{#2}}}
 %   Reduce the margin of the summary:
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
@@ -132,7 +136,14 @@
 \chapter{Como Jugamos}
 \input{chapters/01_jugar/jugar.tex}
 
+\part{Normativa}
+\chapterimage{chapter_head_1.pdf} % Chapter heading image
 
+\chapter{Introducción a las normativas}
+\input{chapters/0X_Normativas_01_Intro/introducion.tex}
+\chapter{Normativa General}
+
+\part{Original}
 
 %%% EXAMPLES
 \input{Examples}
