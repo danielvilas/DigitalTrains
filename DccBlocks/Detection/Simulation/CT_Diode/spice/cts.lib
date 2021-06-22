@@ -1,0 +1,22 @@
+.SUBCKT Murata53100C 1 2 3 4
+* inductances
+L1 1 2 80u
+L2 3 4 2mu
+* coupling factors
+K1 L1 L2 1
+* Series Resistors
+R1 1 2 7m
+R2 3 4 5.6
+.ENDS Murata53100C
+
+
+.SUBCKT Murata56050C 1 2 3 4
+* inductances
+L1 1 2 320u
+L2 3 4 4.5m
+* coupling factors
+K1 L1 L2 1
+* Series Resistors
+R2 3 4 0.2
+.ENDS Murata56050C
+
