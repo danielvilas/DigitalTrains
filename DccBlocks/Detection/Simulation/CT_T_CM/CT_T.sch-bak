@@ -1,0 +1,347 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V2
+U 1 1 60D1A7E0
+P 1450 2750
+F 0 "V2" H 1580 2841 50  0000 L CNN
+F 1 "VPULSE" H 1580 2750 50  0000 L CNN
+F 2 "" H 1450 2750 50  0001 C CNN
+F 3 "~" H 1450 2750 50  0001 C CNN
+F 4 "Y" H 1450 2750 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 1450 2750 50  0001 L CNN "Spice_Primitive"
+F 6 "pulse(0 14 0 0 0 100u 200u)" H 1580 2659 50  0000 L CNN "Spice_Model"
+	1    1450 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 60D1AB74
+P 1050 3200
+F 0 "V1" H 1180 3291 50  0000 L CNN
+F 1 "VPULSE" H 1180 3200 50  0000 L CNN
+F 2 "" H 1050 3200 50  0001 C CNN
+F 3 "~" H 1050 3200 50  0001 C CNN
+F 4 "Y" H 1050 3200 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 1050 3200 50  0001 L CNN "Spice_Primitive"
+F 6 "pulse(14 0 0 0 0 100u 200u)" H 1180 3109 50  0000 L CNN "Spice_Model"
+	1    1050 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 60D1B54F
+P 1050 3500
+F 0 "#PWR01" H 1050 3250 50  0001 C CNN
+F 1 "GND" H 1055 3327 50  0000 C CNN
+F 2 "" H 1050 3500 50  0001 C CNN
+F 3 "" H 1050 3500 50  0001 C CNN
+	1    1050 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 60D1B8B1
+P 1450 3500
+F 0 "#PWR02" H 1450 3250 50  0001 C CNN
+F 1 "GND" H 1455 3327 50  0000 C CNN
+F 2 "" H 1450 3500 50  0001 C CNN
+F 3 "" H 1450 3500 50  0001 C CNN
+	1    1450 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2950 1450 3500
+Wire Wire Line
+	1050 3400 1050 3500
+$Comp
+L Device:R RL1
+U 1 1 60D1C205
+P 3800 1700
+F 0 "RL1" H 3870 1746 50  0000 L CNN
+F 1 "150" H 3870 1655 50  0000 L CNN
+F 2 "" V 3730 1700 50  0001 C CNN
+F 3 "~" H 3800 1700 50  0001 C CNN
+	1    3800 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2550 1450 1850
+Wire Wire Line
+	1450 1850 2700 1850
+Wire Wire Line
+	3800 1550 1050 1550
+Wire Wire Line
+	1050 1550 1050 3000
+$Comp
+L Device:Transformer_1P_1S T1
+U 1 1 60D1CE33
+P 4850 3750
+F 0 "T1" H 4850 4131 50  0000 C CNN
+F 1 "Transformer_1P_1S" H 4850 4040 50  0000 C CNN
+F 2 "" H 4850 3750 50  0001 C CNN
+F 3 "~" H 4850 3750 50  0001 C CNN
+F 4 "X" H 4850 3750 50  0001 C CNN "Spice_Primitive"
+F 5 "Murata53100C" H 4850 3750 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4850 3750 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "spice/cts.lib" H 4850 3750 50  0001 C CNN "Spice_Lib_File"
+	1    4850 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 1850 3800 1850
+Text Label 1800 1550 0    50   ~ 0
+DCC_1
+Text Label 3100 1850 0    50   ~ 0
+DCC_2_O
+Text Label 2700 1850 2    50   ~ 0
+DCC_2_I
+Text Label 4450 3550 2    50   ~ 0
+DCC_2_I
+Text Label 4450 3950 2    50   ~ 0
+DCC_2_O
+$Comp
+L power:GND #PWR03
+U 1 1 60D253FD
+P 6950 3950
+F 0 "#PWR03" H 6950 3700 50  0001 C CNN
+F 1 "GND" H 6955 3777 50  0000 C CNN
+F 2 "" H 6950 3950 50  0001 C CNN
+F 3 "" H 6950 3950 50  0001 C CNN
+	1    6950 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V3
+U 1 1 60D2755A
+P 1300 5200
+F 0 "V3" H 1528 5246 50  0000 L CNN
+F 1 "VSOURCE" H 1528 5155 50  0000 L CNN
+F 2 "" H 1300 5200 50  0001 C CNN
+F 3 "~" H 1300 5200 50  0001 C CNN
+F 4 "V" H 1300 5200 50  0001 C CNN "Spice_Primitive"
+F 5 "dc 5" H 1300 5200 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 1300 5200 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    1300 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 60D2A005
+P 1300 5650
+F 0 "#PWR04" H 1300 5400 50  0001 C CNN
+F 1 "GND" H 1305 5477 50  0000 C CNN
+F 2 "" H 1300 5650 50  0001 C CNN
+F 3 "" H 1300 5650 50  0001 C CNN
+	1    1300 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 5650 1300 5500
+Wire Wire Line
+	1300 4900 1300 4750
+$Comp
+L power:+5V #PWR05
+U 1 1 60D610C6
+P 1300 4750
+F 0 "#PWR05" H 1300 4600 50  0001 C CNN
+F 1 "+5V" H 1315 4923 50  0000 C CNN
+F 2 "" H 1300 4750 50  0001 C CNN
+F 3 "" H 1300 4750 50  0001 C CNN
+	1    1300 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2N2219 Q1
+U 1 1 60D783AD
+P 6850 3550
+F 0 "Q1" H 7040 3596 50  0000 L CNN
+F 1 "2N2222" H 7040 3505 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-39-3" H 7050 3475 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 6850 3550 50  0001 L CNN
+F 4 "Q" H 6850 3550 50  0001 C CNN "Spice_Primitive"
+F 5 "2N2222" H 6850 3550 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6850 3550 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "spice/cts.lib" H 6850 3550 50  0001 C CNN "Spice_Lib_File"
+F 8 "3 2 1" H 6850 3550 50  0001 C CNN "Spice_Node_Sequence"
+	1    6850 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 3550 6650 3550
+Wire Wire Line
+	6950 3950 6950 3750
+$Comp
+L Device:R R2
+U 1 1 60D6F9F2
+P 6400 3550
+F 0 "R2" V 6193 3550 50  0000 C CNN
+F 1 "10k" V 6284 3550 50  0000 C CNN
+F 2 "" V 6330 3550 50  0001 C CNN
+F 3 "~" H 6400 3550 50  0001 C CNN
+	1    6400 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5650 3900 5650 3950
+Wire Wire Line
+	5250 3950 5650 3950
+$Comp
+L power:GND #PWR09
+U 1 1 60D96DE9
+P 5650 4050
+F 0 "#PWR09" H 5650 3800 50  0001 C CNN
+F 1 "GND" H 5655 3877 50  0000 C CNN
+F 2 "" H 5650 4050 50  0001 C CNN
+F 3 "" H 5650 4050 50  0001 C CNN
+	1    5650 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4050 5650 3950
+Connection ~ 5650 3950
+$Comp
+L Device:C C2
+U 1 1 60D9A4E6
+P 5650 3750
+F 0 "C2" H 5765 3796 50  0000 L CNN
+F 1 "0.1u" H 5765 3705 50  0000 L CNN
+F 2 "" H 5688 3600 50  0001 C CNN
+F 3 "~" H 5650 3750 50  0001 C CNN
+	1    5650 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 60D9BBBA
+P 5400 3550
+F 0 "D2" H 5400 3767 50  0000 C CNN
+F 1 "D" H 5400 3676 50  0000 C CNN
+F 2 "" H 5400 3550 50  0001 C CNN
+F 3 "~" H 5400 3550 50  0001 C CNN
+F 4 "D" H 5400 3550 50  0001 C CNN "Spice_Primitive"
+F 5 "D" H 5400 3550 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5400 3550 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2 1" H 5400 3550 50  0001 C CNN "Spice_Node_Sequence"
+	1    5400 3550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5550 3550 5650 3550
+Wire Wire Line
+	5650 3600 5650 3550
+Connection ~ 5650 3550
+Wire Wire Line
+	5650 3550 6250 3550
+Wire Wire Line
+	6950 3350 6950 3200
+Wire Wire Line
+	7700 2950 8400 2950
+Wire Wire Line
+	8400 3050 8400 2950
+Wire Wire Line
+	8400 3500 8400 3350
+$Comp
+L power:GND #PWR06
+U 1 1 60DC00B0
+P 8400 3500
+F 0 "#PWR06" H 8400 3250 50  0001 C CNN
+F 1 "GND" H 8405 3327 50  0000 C CNN
+F 2 "" H 8400 3500 50  0001 C CNN
+F 3 "" H 8400 3500 50  0001 C CNN
+	1    8400 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 60DBD774
+P 8400 3200
+F 0 "C1" H 8515 3246 50  0000 L CNN
+F 1 "0.1u" H 8515 3155 50  0000 L CNN
+F 2 "" H 8438 3050 50  0001 C CNN
+F 3 "~" H 8400 3200 50  0001 C CNN
+	1    8400 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 2150 7700 2500
+Wire Wire Line
+	7700 2950 7700 3000
+Connection ~ 7700 2950
+Wire Wire Line
+	7700 2800 7700 2950
+$Comp
+L Device:R ROut1
+U 1 1 60D7C68B
+P 7700 2650
+F 0 "ROut1" H 7630 2604 50  0000 R CNN
+F 1 "1k" H 7630 2695 50  0000 R CNN
+F 2 "" V 7630 2650 50  0001 C CNN
+F 3 "~" H 7700 2650 50  0001 C CNN
+	1    7700 2650
+	1    0    0    -1  
+$EndComp
+Text Label 8400 2950 0    50   ~ 0
+Test
+$Comp
+L power:+5V #PWR07
+U 1 1 60D67FE5
+P 7700 2150
+F 0 "#PWR07" H 7700 2000 50  0001 C CNN
+F 1 "+5V" H 7715 2323 50  0000 C CNN
+F 2 "" H 7700 2150 50  0001 C CNN
+F 3 "" H 7700 2150 50  0001 C CNN
+	1    7700 2150
+	1    0    0    -1  
+$EndComp
+Connection ~ 6650 3550
+Wire Wire Line
+	6650 3200 6650 3550
+Wire Wire Line
+	6650 3200 6950 3200
+Connection ~ 6950 3200
+Wire Wire Line
+	6950 3200 7400 3200
+Wire Wire Line
+	7700 3500 7700 3400
+$Comp
+L power:GND #PWR08
+U 1 1 60D8C76A
+P 7700 3500
+F 0 "#PWR08" H 7700 3250 50  0001 C CNN
+F 1 "GND" H 7705 3327 50  0000 C CNN
+F 2 "" H 7700 3500 50  0001 C CNN
+F 3 "" H 7700 3500 50  0001 C CNN
+	1    7700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2N2219 Q2
+U 1 1 60D8A3E5
+P 7600 3200
+F 0 "Q2" H 7790 3246 50  0000 L CNN
+F 1 "2N2222" H 7790 3155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-39-3" H 7800 3125 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 7600 3200 50  0001 L CNN
+F 4 "Q" H 7600 3200 50  0001 C CNN "Spice_Primitive"
+F 5 "2N2222" H 7600 3200 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7600 3200 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "spice/cts.lib" H 7600 3200 50  0001 C CNN "Spice_Lib_File"
+F 8 "3 2 1" H 7600 3200 50  0001 C CNN "Spice_Node_Sequence"
+	1    7600 3200
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

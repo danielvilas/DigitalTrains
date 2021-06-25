@@ -1,0 +1,41 @@
+* Only one wrap, it is SMD
+.SUBCKT Murata53100C 1 2 3 4
+* inductances
+L1 1 2 20u
+L2 3 4 2mu
+* coupling factors
+K1 L1 L2 1
+* Series Resistors
+*R1 1 2 7m
+*R2 3 4 5.6
+.ENDS Murata53100C
+
+*Four wraps
+.SUBCKT Murata56050C 1 2 3 4
+* inductances
+L1 1 2 320u
+L2 3 4 4.5m
+* coupling factors
+*K1 L1 L2 1
+* Series Resistors
+*R2 3 4 0.2
+.ENDS Murata56050C
+
+* Modified from LTspice standard library
+.model 2N2222 NPN (IS=1E-14 VAF=100
++ BF=200 IKF=0.3 XTB=1.5 BR=3
++ CJC=8E-12 CJE=25E-12 TR=100E-9 TF=400E-12
++ ITF=1 VTF=2 XTF=3 RB=10 RC=.3 RE=.2)
+
+.MODEL 1N4148 D 
++ IS = 4.352E-9 
++ N = 1.906 
++ BV = 110 
++ IBV = 0.0001 
++ RS = 0.6458 
++ CJO = 7.048E-13 
++ VJ = 0.869 
++ M = 0.03 
++ FC = 0.5 
++ TT = 3.48E-9 
+
