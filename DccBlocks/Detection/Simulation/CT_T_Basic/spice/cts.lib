@@ -16,7 +16,7 @@ K1 L1 L2 1
 L1 1 2 320u
 L2 3 4 4.5m
 * coupling factors
-*K1 L1 L2 1
+K1 L1 L2 1
 * Series Resistors
 *R2 3 4 0.2
 .ENDS Murata56050C
