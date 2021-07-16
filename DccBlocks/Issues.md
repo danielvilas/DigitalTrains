@@ -33,3 +33,6 @@ Esta primera version ha sido de prueba y tiene los siguientes problemas:
 * [ ] el PCB no es coherente con Boost
 * [ ] Falta entrada de 5v y GND ¿Que conector?
 * [ ] Modificar para romper y añadir conectores
+
+## Detection
+Componentes deteccion de presencia
