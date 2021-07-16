@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name DB107S)(type Legacy)(uri /home/daniel/OHS/DigitalTrains/dcc-turnout/board/DccDecoder/lib/DB107S.lib)(options "")(descr ""))
+)

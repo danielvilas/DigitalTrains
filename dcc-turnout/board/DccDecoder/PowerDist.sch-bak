@@ -1,0 +1,429 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 1150 950  0    50   Input ~ 0
+Vin
+Text HLabel 1150 1200 0    50   Input ~ 0
+DccVin
+Text HLabel 2550 950  2    50   Output ~ 0
+Vdrive
+Text HLabel 2550 1100 2    50   Output ~ 0
+5V
+Text HLabel 2550 1250 2    50   Output ~ 0
+3.3V
+$Comp
+L Regulator_Linear:AMS1117-5.0 U?
+U 1 1 60F2DA25
+P 8100 1400
+AR Path="/60F01DAF/60F2DA25" Ref="U?"  Part="1" 
+AR Path="/60F01BD8/60F2DA25" Ref="U1"  Part="1" 
+F 0 "U1" H 8100 1642 50  0000 C CNN
+F 1 "AMS1117-5.0" H 8100 1551 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 8100 1600 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 8200 1150 50  0001 C CNN
+F 4 "C6187" H 8100 1400 50  0001 C CNN "LCSC"
+	1    8100 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 60F2DA2C
+P 8750 1650
+AR Path="/60F01DAF/60F2DA2C" Ref="C?"  Part="1" 
+AR Path="/60F01BD8/60F2DA2C" Ref="C2"  Part="1" 
+F 0 "C2" H 8868 1696 50  0000 L CNN
+F 1 "10uf" H 8868 1605 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" H 8788 1500 50  0001 C CNN
+F 3 "~" H 8750 1650 50  0001 C CNN
+F 4 " C7171" H 8750 1650 50  0001 C CNN "LCSC"
+	1    8750 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 60F2DA33
+P 7500 1650
+AR Path="/60F01DAF/60F2DA33" Ref="C?"  Part="1" 
+AR Path="/60F01BD8/60F2DA33" Ref="C1"  Part="1" 
+F 0 "C1" H 7618 1696 50  0000 L CNN
+F 1 "10uf" H 7618 1605 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" H 7538 1500 50  0001 C CNN
+F 3 "~" H 7500 1650 50  0001 C CNN
+F 4 " C7171" H 7500 1650 50  0001 C CNN "LCSC"
+	1    7500 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60F2DA39
+P 8100 2000
+AR Path="/60F01DAF/60F2DA39" Ref="#PWR?"  Part="1" 
+AR Path="/60F01BD8/60F2DA39" Ref="#PWR0105"  Part="1" 
+F 0 "#PWR0105" H 8100 1750 50  0001 C CNN
+F 1 "GND" H 8105 1827 50  0000 C CNN
+F 2 "" H 8100 2000 50  0001 C CNN
+F 3 "" H 8100 2000 50  0001 C CNN
+	1    8100 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1300 6850 1400
+Wire Wire Line
+	9350 1400 9350 1250
+Wire Wire Line
+	8750 1850 8100 1850
+Wire Wire Line
+	8100 1850 8100 2000
+Wire Wire Line
+	8100 1700 8100 1850
+Connection ~ 8100 1850
+Wire Wire Line
+	8100 1850 7500 1850
+Wire Wire Line
+	7500 1850 7500 1800
+Wire Wire Line
+	8750 1800 8750 1850
+Wire Wire Line
+	6850 1400 7500 1400
+Wire Wire Line
+	8400 1400 8750 1400
+Wire Wire Line
+	7500 1500 7500 1400
+Connection ~ 7500 1400
+Wire Wire Line
+	7500 1400 7800 1400
+Wire Wire Line
+	8750 1500 8750 1400
+Connection ~ 8750 1400
+Wire Wire Line
+	8750 1400 9350 1400
+Text Label 2250 950  2    50   ~ 0
+_Vdrive
+Text Label 2250 1100 2    50   ~ 0
+_5V
+Wire Wire Line
+	2250 950  2550 950 
+Wire Wire Line
+	2250 1100 2550 1100
+Text Label 6850 1300 2    50   ~ 0
+_Vdrive
+Text Label 9350 1250 2    50   ~ 0
+_5V
+Text Label 2250 1250 2    50   ~ 0
+_3V
+Wire Wire Line
+	2250 1250 2550 1250
+$Comp
+L Regulator_Linear:AMS1117-5.0 U?
+U 1 1 60F56ACA
+P 2250 2500
+AR Path="/60F01DAF/60F56ACA" Ref="U?"  Part="1" 
+AR Path="/60F01BD8/60F56ACA" Ref="U4"  Part="1" 
+F 0 "U4" H 2250 2742 50  0000 C CNN
+F 1 "AMS1117-3.3" H 2250 2651 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2250 2700 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 2350 2250 50  0001 C CNN
+F 4 "C6186" H 2250 2500 50  0001 C CNN "LCSC"
+	1    2250 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 60F56AD1
+P 2900 2750
+AR Path="/60F01DAF/60F56AD1" Ref="C?"  Part="1" 
+AR Path="/60F01BD8/60F56AD1" Ref="C6"  Part="1" 
+F 0 "C6" H 3018 2796 50  0000 L CNN
+F 1 "10uf" H 3018 2705 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" H 2938 2600 50  0001 C CNN
+F 3 "~" H 2900 2750 50  0001 C CNN
+F 4 " C7171" H 2900 2750 50  0001 C CNN "LCSC"
+	1    2900 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 60F56AD8
+P 1650 2750
+AR Path="/60F01DAF/60F56AD8" Ref="C?"  Part="1" 
+AR Path="/60F01BD8/60F56AD8" Ref="C5"  Part="1" 
+F 0 "C5" H 1768 2796 50  0000 L CNN
+F 1 "10uf" H 1768 2705 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" H 1688 2600 50  0001 C CNN
+F 3 "~" H 1650 2750 50  0001 C CNN
+F 4 " C7171" H 1650 2750 50  0001 C CNN "LCSC"
+	1    1650 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60F56ADE
+P 2250 3100
+AR Path="/60F01DAF/60F56ADE" Ref="#PWR?"  Part="1" 
+AR Path="/60F01BD8/60F56ADE" Ref="#PWR03"  Part="1" 
+F 0 "#PWR03" H 2250 2850 50  0001 C CNN
+F 1 "GND" H 2255 2927 50  0000 C CNN
+F 2 "" H 2250 3100 50  0001 C CNN
+F 3 "" H 2250 3100 50  0001 C CNN
+	1    2250 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 2400 1000 2500
+Wire Wire Line
+	3500 2500 3500 2350
+Wire Wire Line
+	2900 2950 2250 2950
+Wire Wire Line
+	2250 2950 2250 3100
+Wire Wire Line
+	2250 2800 2250 2950
+Connection ~ 2250 2950
+Wire Wire Line
+	2250 2950 1650 2950
+Wire Wire Line
+	1650 2950 1650 2900
+Wire Wire Line
+	2900 2900 2900 2950
+Wire Wire Line
+	1000 2500 1650 2500
+Wire Wire Line
+	2550 2500 2900 2500
+Wire Wire Line
+	1650 2600 1650 2500
+Connection ~ 1650 2500
+Wire Wire Line
+	1650 2500 1950 2500
+Wire Wire Line
+	2900 2600 2900 2500
+Connection ~ 2900 2500
+Wire Wire Line
+	2900 2500 3500 2500
+Text Label 1000 2400 2    50   ~ 0
+_5V
+Text Label 3500 2350 2    50   ~ 0
+_3V
+Text Label 1300 950  0    50   ~ 0
+_Vin
+Text Label 1300 1200 0    50   ~ 0
+_DccVin
+Wire Wire Line
+	1300 1200 1150 1200
+Wire Wire Line
+	1300 950  1150 950 
+Wire Notes Line
+	500  1750 3900 1750
+Wire Notes Line
+	3900 3650 500  3650
+Text Notes 600  650  0    50   ~ 0
+Mapping
+Text Notes 600  1850 0    50   ~ 0
+3.3V LDO
+Wire Notes Line
+	3900 500  3900 7750
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 60F6B8B1
+P 1300 4000
+F 0 "J3" H 1380 4042 50  0000 L CNN
+F 1 "Conn_01x03" H 1380 3951 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 4000 50  0001 C CNN
+F 3 "~" H 1300 4000 50  0001 C CNN
+	1    1300 4000
+	1    0    0    -1  
+$EndComp
+Text Label 850  3900 2    50   ~ 0
+_Vin
+Text Label 850  4000 2    50   ~ 0
+_Vdrive
+Text Label 850  4100 2    50   ~ 0
+_DccVin
+Wire Wire Line
+	850  3900 1100 3900
+Wire Wire Line
+	850  4000 1100 4000
+Wire Wire Line
+	850  4100 1100 4100
+Text Notes 600  3750 0    50   ~ 0
+Power Selector
+Text Label 850  4600 2    50   ~ 0
+_DccVin
+$Comp
+L Device:Q_PMOS_GSD Q4
+U 1 1 60F7942A
+P 2650 4700
+F 0 "Q4" V 2992 4700 50  0000 C CNN
+F 1 "NXV90EPR" V 2901 4700 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2850 4800 50  0001 C CNN
+F 3 "~" H 2650 4700 50  0001 C CNN
+	1    2650 4700
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 60F7AE8D
+P 1150 4600
+F 0 "D2" H 1150 4383 50  0000 C CNN
+F 1 "D" H 1150 4474 50  0000 C CNN
+F 2 "Diode_SMD:D_1206_3216Metric" H 1150 4600 50  0001 C CNN
+F 3 "~" H 1150 4600 50  0001 C CNN
+	1    1150 4600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	850  4600 1000 4600
+Wire Wire Line
+	2450 4600 2300 4600
+Wire Wire Line
+	2850 4600 3100 4600
+Text Label 3100 4600 0    50   ~ 0
+_Vdrive
+$Comp
+L power:GND #PWR02
+U 1 1 60F81602
+P 1400 5000
+F 0 "#PWR02" H 1400 4750 50  0001 C CNN
+F 1 "GND" H 1405 4827 50  0000 C CNN
+F 2 "" H 1400 5000 50  0001 C CNN
+F 3 "" H 1400 5000 50  0001 C CNN
+	1    1400 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 5000 1400 4950
+Text Label 850  5250 2    50   ~ 0
+_Vin
+$Comp
+L Transistor_BJT:BC817 Q3
+U 1 1 60F82DFE
+P 1800 5250
+F 0 "Q3" H 1991 5296 50  0000 L CNN
+F 1 "BC817" H 1991 5205 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2000 5175 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC818-D.pdf" H 1800 5250 50  0001 L CNN
+	1    1800 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 4700 2300 4600
+Connection ~ 2300 4600
+Wire Wire Line
+	2300 4600 1400 4600
+Wire Wire Line
+	1300 4600 1400 4600
+Connection ~ 1400 4600
+$Comp
+L power:GND #PWR04
+U 1 1 60F8E52A
+P 2300 5600
+F 0 "#PWR04" H 2300 5350 50  0001 C CNN
+F 1 "GND" H 2305 5427 50  0000 C CNN
+F 2 "" H 2300 5600 50  0001 C CNN
+F 3 "" H 2300 5600 50  0001 C CNN
+	1    2300 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 60F8E87C
+P 2300 5350
+F 0 "R8" H 2370 5396 50  0000 L CNN
+F 1 "100k" H 2370 5305 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 2230 5350 50  0001 C CNN
+F 3 "~" H 2300 5350 50  0001 C CNN
+	1    2300 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 5600 2300 5550
+$Comp
+L Device:R R7
+U 1 1 60F90D1D
+P 1100 5250
+F 0 "R7" H 1170 5296 50  0000 L CNN
+F 1 "100K" H 1170 5205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 1030 5250 50  0001 C CNN
+F 3 "~" H 1100 5250 50  0001 C CNN
+	1    1100 5250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1250 5250 1600 5250
+Wire Wire Line
+	1050 6550 900  6550
+Text Label 1450 6550 0    50   ~ 0
+_Vdrive
+Text Label 900  6550 2    50   ~ 0
+_Vin
+Wire Wire Line
+	1400 4650 1400 4600
+$Comp
+L Device:CP C4
+U 1 1 60F7F763
+P 1400 4800
+F 0 "C4" H 1518 4846 50  0000 L CNN
+F 1 "10u" H 1518 4755 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-1608-08_AVX-J" H 1438 4650 50  0001 C CNN
+F 3 "~" H 1400 4800 50  0001 C CNN
+	1    1400 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D3
+U 1 1 60F223B9
+P 1200 6550
+F 0 "D3" H 1200 6333 50  0000 C CNN
+F 1 "D" H 1200 6424 50  0000 C CNN
+F 2 "Diode_SMD:D_1206_3216Metric" H 1200 6550 50  0001 C CNN
+F 3 "~" H 1200 6550 50  0001 C CNN
+	1    1200 6550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1350 6550 1450 6550
+Wire Wire Line
+	2650 4900 2650 5150
+Wire Wire Line
+	850  5250 950  5250
+$Comp
+L Transistor_BJT:BC807 Q2
+U 1 1 60F2F410
+P 2200 4900
+F 0 "Q2" H 2391 4854 50  0000 L CNN
+F 1 "BC807" H 2391 4945 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2400 4825 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC808-D.pdf" H 2200 4900 50  0001 L CNN
+	1    2200 4900
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2300 5150 2650 5150
+Wire Wire Line
+	2300 5200 2300 5150
+Connection ~ 2300 5150
+Wire Wire Line
+	2300 5150 2300 5100
+Wire Wire Line
+	1900 5050 1900 4900
+Wire Wire Line
+	1900 4900 2000 4900
+Wire Wire Line
+	1900 5450 1900 5550
+Wire Wire Line
+	1900 5550 2300 5550
+Connection ~ 2300 5550
+Wire Wire Line
+	2300 5550 2300 5500
+$EndSCHEMATC
