@@ -193,7 +193,7 @@ F 8 "2 1" H 3900 1200 50  0001 C CNN "Spice_Node_Sequence"
 $EndComp
 Wire Wire Line
 	3600 1200 3750 1200
-Text Label 6200 1200 0    50   ~ 0
+Text Label 6600 1200 0    50   ~ 0
 _Vdrive
 Wire Wire Line
 	4300 1500 4300 1200
@@ -210,7 +210,7 @@ F 3 "" H 4300 2000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4300 2000 4300 1800
-Text Label 4350 3300 2    50   ~ 0
+Text Label 3400 2650 2    50   ~ 0
 _Vin
 $Comp
 L Transistor_BJT:BC817 Q1
@@ -244,12 +244,12 @@ $EndComp
 $Comp
 L Device:R R2
 U 1 1 60F8E87C
-P 5400 2450
-F 0 "R2" H 5470 2496 50  0000 L CNN
-F 1 "100k" H 5470 2405 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 5330 2450 50  0001 C CNN
-F 3 "~" H 5400 2450 50  0001 C CNN
-	1    5400 2450
+P 5750 1850
+F 0 "R2" H 5820 1896 50  0000 L CNN
+F 1 "10k" H 5820 1805 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 5680 1850 50  0001 C CNN
+F 3 "~" H 5750 1850 50  0001 C CNN
+	1    5750 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -257,18 +257,16 @@ Wire Wire Line
 $Comp
 L Device:R R1
 U 1 1 60F90D1D
-P 4350 2750
-F 0 "R1" H 4420 2796 50  0000 L CNN
-F 1 "100K" H 4420 2705 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 4280 2750 50  0001 C CNN
-F 3 "~" H 4350 2750 50  0001 C CNN
-	1    4350 2750
-	1    0    0    -1  
+P 3700 2650
+F 0 "R1" H 3770 2696 50  0000 L CNN
+F 1 "100K" H 3770 2605 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 3630 2650 50  0001 C CNN
+F 3 "~" H 3700 2650 50  0001 C CNN
+	1    3700 2650
+	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4350 3300 4350 2900
-Wire Wire Line
-	4350 2600 4350 2400
+	3400 2650 3550 2650
 Wire Wire Line
 	4350 2400 4500 2400
 $Comp
@@ -344,24 +342,6 @@ F 3 "" H 2600 4050 50  0001 C CNN
 	1    2600 4050
 	1    0    0    -1  
 $EndComp
-$Comp
-L Transistor_BJT:BC807 Q3
-U 1 1 60F90B5E
-P 5300 1950
-F 0 "Q3" H 5491 1904 50  0000 L CNN
-F 1 "BC807" H 5491 1995 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5500 1875 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BC808-D.pdf" H 5300 1950 50  0001 L CNN
-F 4 "Q" H 5300 1950 50  0001 C CNN "Spice_Primitive"
-F 5 "BC807-25" H 5300 1950 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 5300 1950 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "/usr/share/oregano/models/BC807-25.model" H 5300 1950 50  0001 C CNN "Spice_Lib_File"
-F 8 "3 1 2" H 5300 1950 50  0001 C CNN "Spice_Node_Sequence"
-	1    5300 1950
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	5400 2150 5400 2200
 Wire Wire Line
 	5100 1950 4800 1950
 Wire Wire Line
@@ -372,17 +352,7 @@ Connection ~ 5400 2700
 Wire Wire Line
 	5400 2700 5400 2600
 Wire Wire Line
-	5400 1750 5400 1200
-Connection ~ 5400 1200
-Wire Wire Line
-	5400 1200 5550 1200
-Wire Wire Line
-	5750 1500 5750 2200
-Wire Wire Line
-	5750 2200 5400 2200
-Connection ~ 5400 2200
-Wire Wire Line
-	5400 2200 5400 2300
+	5750 1500 5750 1700
 Text Label 5950 4350 0    50   ~ 0
 _Vdrive
 Text Label 4200 4350 2    50   ~ 0
@@ -422,24 +392,117 @@ Wire Wire Line
 	4050 1200 4300 1200
 Connection ~ 4300 1200
 Wire Wire Line
-	4300 1200 5400 1200
-Wire Wire Line
-	5950 1200 6200 1200
+	4300 1200 4800 1200
 Wire Wire Line
 	2600 4050 2600 4200
 Wire Wire Line
 	2600 4200 2850 4200
 $Comp
-L power:GND #PWR?
+L power:GND #PWR09
 U 1 1 6100E834
-P 2650 4400
-F 0 "#PWR?" H 2650 4150 50  0001 C CNN
-F 1 "GND" H 2655 4227 50  0000 C CNN
-F 2 "" H 2650 4400 50  0001 C CNN
-F 3 "" H 2650 4400 50  0001 C CNN
-	1    2650 4400
+P 2600 4350
+F 0 "#PWR09" H 2600 4100 50  0001 C CNN
+F 1 "GND" H 2605 4177 50  0000 C CNN
+F 2 "" H 2600 4350 50  0001 C CNN
+F 3 "" H 2600 4350 50  0001 C CNN
+	1    2600 4350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5300 4350 5950 4350
+$Comp
+L Device:D D4
+U 1 1 61039E0E
+P 4100 2650
+F 0 "D4" H 4100 2433 50  0000 C CNN
+F 1 "D" H 4100 2524 50  0000 C CNN
+F 2 "" H 4100 2650 50  0001 C CNN
+F 3 "~" H 4100 2650 50  0001 C CNN
+F 4 "D" H 4100 2650 50  0001 C CNN "Spice_Primitive"
+F 5 "D1N4148" H 4100 2650 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4100 2650 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/usr/share/oregano/models/1N4148.model" H 4100 2650 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 4100 2650 50  0001 C CNN "Spice_Node_Sequence"
+	1    4100 2650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4250 2650 4350 2650
+Wire Wire Line
+	4350 2400 4350 2650
+Wire Wire Line
+	3950 2650 3850 2650
+$Comp
+L Device:R R3
+U 1 1 61043153
+P 4800 1550
+F 0 "R3" H 4870 1596 50  0000 L CNN
+F 1 "100k" H 4870 1505 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 4730 1550 50  0001 C CNN
+F 3 "~" H 4800 1550 50  0001 C CNN
+	1    4800 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 1400 4800 1200
+Connection ~ 4800 1200
+Wire Wire Line
+	4800 1700 4800 1950
+Connection ~ 4800 1950
+Connection ~ 5750 1700
+$Comp
+L Device:Q_NMOS_DGS Q3
+U 1 1 6105396F
+P 5650 2300
+F 0 "Q3" H 5854 2346 50  0000 L CNN
+F 1 "Q_NMOS_DGS" H 5854 2255 50  0000 L CNN
+F 2 "" H 5850 2400 50  0001 C CNN
+F 3 "~" H 5650 2300 50  0001 C CNN
+F 4 "X" H 5650 2300 50  0001 C CNN "Spice_Primitive"
+F 5 "N7002" H 5650 2300 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5650 2300 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2N7002.spice.txt" H 5650 2300 50  0001 C CNN "Spice_Lib_File"
+	1    5650 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 2000 5450 2000
+Wire Wire Line
+	5450 2000 5450 2300
+Wire Wire Line
+	5100 1950 5100 2000
+Wire Wire Line
+	5750 2600 5750 2500
+Wire Wire Line
+	5400 2600 5750 2600
+Wire Wire Line
+	5750 2000 5750 2100
+Wire Wire Line
+	4800 1200 5400 1200
+$Comp
+L Device:R R4
+U 1 1 6106AA8A
+P 5400 1500
+F 0 "R4" H 5470 1546 50  0000 L CNN
+F 1 "100k" H 5470 1455 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 5330 1500 50  0001 C CNN
+F 3 "~" H 5400 1500 50  0001 C CNN
+	1    5400 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 1350 5400 1200
+Connection ~ 5400 1200
+Wire Wire Line
+	5400 1200 5550 1200
+Wire Wire Line
+	5400 1650 5400 1800
+Wire Wire Line
+	5400 1800 5550 1800
+Wire Wire Line
+	5550 1800 5550 1700
+Wire Wire Line
+	5550 1700 5750 1700
+Wire Wire Line
+	5950 1200 6600 1200
 $EndSCHEMATC

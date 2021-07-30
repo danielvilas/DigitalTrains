@@ -34,5 +34,5 @@ First is to determine the power requirments of the diferent main sections, wihch
 |Others |10|50|60| extra margins
 |**Sum**|45|**380**|*1020*|
 
-In the reality, the max compsution of the servo (Stall) may only occurr when the user is setting up the device. So with this information we can design our power stage, from VDrive to 5V using "WEBENCH Power Designer" indicating we want 1 AMP output wiht nominal output of 500ma
+In the reality, the max compsution of the servo (Stall) may only occurr when the user is setting up the device. So with this information we can design our power stage, from VDrive to 5V using "WEBENCH Power Designer" indicating we want **1 AMP output** wiht nominal output of **500mA**
 
