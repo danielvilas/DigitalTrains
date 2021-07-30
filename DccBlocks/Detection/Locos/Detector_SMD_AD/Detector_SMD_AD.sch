@@ -204,13 +204,13 @@ Wire Wire Line
 Text Label 8450 2500 0    50   ~ 0
 A_Out
 $Comp
-L Transistor_BJT:BC859 Q1
+L Transistor_BJT:BC807 Q1
 U 1 1 60DD8BD2
 P 6400 5100
 F 0 "Q1" H 6591 5054 50  0000 L CNN
-F 1 "BC859" H 6591 5145 50  0000 L CNN
+F 1 "BC807" H 6591 5145 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 6600 5025 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC857SERIES_BC858SERIES_BC859SERIES_BC860SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541da0e3a1661" H 6400 5100 50  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/BC808-D.pdf" H 6400 5100 50  0001 L CNN
 	1    6400 5100
 	1    0    0    1   
 $EndComp

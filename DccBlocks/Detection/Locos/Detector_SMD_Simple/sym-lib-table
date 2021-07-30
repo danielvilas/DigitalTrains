@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Detector_SMD_Simple-rescue)(type Legacy)(uri ${KIPRJMOD}/Detector_SMD_Simple-rescue.lib)(options "")(descr ""))
+)

@@ -204,13 +204,13 @@ Wire Wire Line
 Text Label 8450 2500 0    50   ~ 0
 A_Out
 $Comp
-L Transistor_BJT:BC859 Q1
+L Transistor_BJT:BC807 Q1
 U 1 1 60DD8BD2
 P 6400 5100
 F 0 "Q1" H 6591 5054 50  0000 L CNN
 F 1 "BC859" H 6591 5145 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 6600 5025 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC857SERIES_BC858SERIES_BC859SERIES_BC860SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541da0e3a1661" H 6400 5100 50  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/BC808-D.pdf" H 6400 5100 50  0001 L CNN
 	1    6400 5100
 	1    0    0    1   
 $EndComp
@@ -308,7 +308,7 @@ U 1 1 60DF87A1
 P 10150 4850
 F 0 "J3" H 10230 4842 50  0000 L CNN
 F 1 "Conn_01x04" H 10230 4751 50  0000 L CNN
-F 2 "" H 10150 4850 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 10150 4850 50  0001 C CNN
 F 3 "~" H 10150 4850 50  0001 C CNN
 	1    10150 4850
 	1    0    0    -1  
@@ -375,4 +375,43 @@ F 3 "~" H 9950 5050 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 9950 5050
+Text Label 3600 3700 1    50   ~ 0
+DCC_J
+Text Label 3800 3300 0    50   ~ 0
+DCC_K_1
+Text Label 3800 3700 0    50   ~ 0
+DCC_K_2
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 60E26E42
+P 1250 6100
+F 0 "H1" H 1350 6191 50  0000 L CNN
+F 1 "MountingHole" H 1350 6100 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 1350 6009 50  0000 L CNN
+F 3 "~" H 1250 6100 50  0001 C CNN
+	1    1250 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 60E276C9
+P 1250 6400
+F 0 "H2" H 1350 6491 50  0000 L CNN
+F 1 "MountingHole" H 1350 6400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 1350 6309 50  0000 L CNN
+F 3 "~" H 1250 6400 50  0001 C CNN
+	1    1250 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 60E27852
+P 1250 6700
+F 0 "H3" H 1350 6791 50  0000 L CNN
+F 1 "MountingHole" H 1350 6700 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 1350 6609 50  0000 L CNN
+F 3 "~" H 1250 6700 50  0001 C CNN
+	1    1250 6700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
