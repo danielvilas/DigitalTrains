@@ -9,7 +9,7 @@ NmraDcc Dcc;
 DCC_MSG Packet;
 
 DccTurnOutCli cli = DccTurnOutCli(&SERIAL_OUT);
-Servo myServo;
+DccServo dccServo=DccServo(PIN_SERVO,SERVO_LED,PIN_SERVO_PWR);
 
 void setup()
 {
@@ -52,9 +52,9 @@ void loop()
 
     processReset();
     long cMillis = millis();
-    if (cMillis - servoOut.lastPosMillis > 50)
+    if (cMillis - dccServo.status.lastPosMillis > 50)
     {
-        processServo();
-        servoOut.lastPosMillis = cMillis;
+        dccServo.processServo();
+        dccServo.status.lastPosMillis = cMillis;
     }
 }

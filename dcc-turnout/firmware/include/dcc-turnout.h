@@ -35,9 +35,6 @@ extern DccTurnOutCli cli;
 #define SERVO_POS_CLOSED 1
 #define SERVO_POS_THROWN 0
 
-
-extern Servo myServo;
-
 struct CVPair
 {
     uint16_t CV;
@@ -46,30 +43,11 @@ struct CVPair
 
 extern CVPair FactoryDefaultCVs[];
 
-
-enum servoInternalState{
-    SERVO_WAIT,
-    SERVO_MOVE,
-    SERVO_POST_MOVE,
-    SERVO_REFRESH,
-};
-
-struct ServoStatus
-{
-    uint8_t status; //Thrown or closed
-    uint8_t current_pos;
-    uint8_t thrown_pos;
-    uint8_t closed_pos;
-    uint8_t speed;
-    long lastPosMillis;
-    servoInternalState intState;
-    uint8_t stateCounter;
-};
-extern ServoStatus servoOut;
 void setServoCV(uint16_t CV, uint8_t Value);
-void processServo();
-
 void processReset();
+
+#include "dccServo.h"
+extern DccServo dccServo;
 
 
 #endif

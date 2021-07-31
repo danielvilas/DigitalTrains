@@ -114,10 +114,10 @@ void DccTurnOutCli::execute()
         break;
     case dc_middle:
         arg=90;
-        if(servoOut.status==SERVO_POS_CLOSED){
+        if(dccServo.status.status==SERVO_POS_CLOSED){
             this->close();
         }
-        if(servoOut.status==SERVO_POS_THROWN){
+        if(dccServo.status.status==SERVO_POS_THROWN){
             this->thrown();
         }
 
@@ -153,23 +153,23 @@ void DccTurnOutCli::speed()
 {
     if (arg > 0 && arg < 20)
     {
-        servoOut.speed = arg;
+        dccServo.status.speed = arg;
     }
 }
 
 void DccTurnOutCli::reload()
 {
-    servoOut.thrown_pos = Dcc.getCV(CV_SERVO_THROWN);
-    servoOut.closed_pos = Dcc.getCV(CV_SERVO_CLOSED);
-    servoOut.speed = Dcc.getCV(CV_SERVO_SPEED);
+    dccServo.status.thrown_pos = Dcc.getCV(CV_SERVO_THROWN);
+    dccServo.status.closed_pos = Dcc.getCV(CV_SERVO_CLOSED);
+    dccServo.status.speed = Dcc.getCV(CV_SERVO_SPEED);
 }
 
 void DccTurnOutCli::save()
 {
 
-    Dcc.setCV(CV_SERVO_THROWN, servoOut.thrown_pos);
-    Dcc.setCV(CV_SERVO_CLOSED, servoOut.closed_pos);
-    Dcc.setCV(CV_SERVO_SPEED, servoOut.speed);
+    Dcc.setCV(CV_SERVO_THROWN, dccServo.status.thrown_pos);
+    Dcc.setCV(CV_SERVO_CLOSED, dccServo.status.closed_pos);
+    Dcc.setCV(CV_SERVO_SPEED, dccServo.status.speed);
 }
 
 void DccTurnOutCli::printCfg()
@@ -177,15 +177,15 @@ void DccTurnOutCli::printCfg()
     stream->print("Address: ");
     stream->println(Dcc.getAddr());
     stream->print("Status: ");
-    stream->print(servoOut.status ? "Closed" : "Thrown");
+    stream->print(dccServo.status.status ? "Closed" : "Thrown");
     stream->print(" - ");
-    stream->println(servoOut.current_pos);
+    stream->println(dccServo.status.current_pos);
     stream->print("Thrown: ");
-    stream->println(servoOut.thrown_pos);
+    stream->println(dccServo.status.thrown_pos);
     stream->print("Closed: ");
-    stream->println(servoOut.closed_pos);
+    stream->println(dccServo.status.closed_pos);
     stream->print("Speed: ");
-    stream->println(servoOut.speed);
+    stream->println(dccServo.status.speed);
 }
 void DccTurnOutCli::printHelp()
 {
@@ -198,18 +198,18 @@ void DccTurnOutCli::factoryReset()
 }
 void DccTurnOutCli::close()
 {
-    servoOut.status = SERVO_POS_CLOSED;
+    dccServo.status.status = SERVO_POS_CLOSED;
     if (arg >= 0)
     {
-        servoOut.closed_pos = arg;
+        dccServo.status.closed_pos = arg;
     }
 }
 void DccTurnOutCli::thrown()
 {
-    servoOut.status = SERVO_POS_THROWN;
+    dccServo.status.status = SERVO_POS_THROWN;
     if (arg >= 0)
     {
-        servoOut.thrown_pos = arg;
+        dccServo.status.thrown_pos = arg;
     }
 }
 
@@ -217,13 +217,13 @@ void DccTurnOutCli::move(int delta)
 {
     if (arg >= 0)
     {
-        if (servoOut.status == SERVO_POS_THROWN)
+        if (dccServo.status.status == SERVO_POS_THROWN)
         {
-            servoOut.thrown_pos += delta;
+            dccServo.status.thrown_pos += delta;
         }
         else
         {
-            servoOut.closed_pos += delta;
+            dccServo.status.closed_pos += delta;
         }
     }
 }

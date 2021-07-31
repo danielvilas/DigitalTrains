@@ -8,10 +8,10 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
-                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
-                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
-                "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
+                "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
+                "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
+                "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
+                "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/variants/standard",
@@ -19,16 +19,15 @@
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                "/home/daniel/.platformio/packages/tool-unity",
                 ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
-                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
-                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
-                    "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
+                    "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/include",
+                    "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src",
+                    "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/NmraDcc",
+                    "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/libdeps/pro16MHzatmega328/Servo/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/variants/standard",
@@ -36,7 +35,6 @@
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                    "/home/daniel/.platformio/packages/tool-unity",
                     ""
                 ]
             },

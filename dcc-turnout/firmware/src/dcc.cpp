@@ -78,7 +78,7 @@ void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputP
 
     if (Addr == Dcc.getAddr())
     {
-        servoOut.status = Direction;
+        dccServo.status.status = Direction;
     }
 }
 
