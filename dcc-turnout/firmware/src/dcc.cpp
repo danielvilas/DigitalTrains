@@ -12,7 +12,7 @@ uint8_t FactoryDefaultCVIndex = 0;
 
 void notifyCVResetFactoryDefault()
 {
-    Serial.println("notifyCVResetFactoryDefault");
+    SERIAL_OUT.println("notifyCVResetFactoryDefault");
     // Make FactoryDefaultCVIndex non-zero and equal to num CV's to be reset
     // to flag to the loop() function that a reset to Factory Defaults needs to be done
     FactoryDefaultCVIndex = sizeof(FactoryDefaultCVs) / sizeof(CVPair);
@@ -22,7 +22,7 @@ void notifyCVResetFactoryDefault()
 // Calling this function should cause an increased 60ma current drain on the power supply for 6ms to ACK a CV Read
 void notifyCVAck(void)
 {
-    Serial.println("notifyCVAck");
+    SERIAL_OUT.println("notifyCVAck");
 
     digitalWrite(PIN_ACK, HIGH);
     delay(6);
@@ -34,22 +34,22 @@ void notifyCVAck(void)
 #ifdef NOTIFY_DCC_MSG
 void notifyDccMsg(DCC_MSG *Msg)
 {
-    Serial.print("notifyDccMsg: ");
+    SERIAL_OUT.print("notifyDccMsg: ");
     for (uint8_t i = 0; i < Msg->Size; i++)
     {
-        Serial.print(Msg->Data[i], HEX);
-        Serial.write(' ');
+        SERIAL_OUT.print(Msg->Data[i], HEX);
+        SERIAL_OUT.write(' ');
     }
-    Serial.println();
+    SERIAL_OUT.println();
 }
 #endif
 
 void notifyCVChange(uint16_t CV, uint8_t Value)
 {
-    Serial.print("notifyCVChange: CV: ");
-    Serial.print(CV, DEC);
-    Serial.print(" Value: ");
-    Serial.println(Value, DEC);
+    SERIAL_OUT.print("notifyCVChange: CV: ");
+    SERIAL_OUT.print(CV, DEC);
+    SERIAL_OUT.print(" Value: ");
+    SERIAL_OUT.println(Value, DEC);
 
     Value = Value; // Silence Compiler Warnings...
     setServoCV(CV, Value);
@@ -58,23 +58,23 @@ void notifyCVChange(uint16_t CV, uint8_t Value)
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Board Addressing Mode
 void notifyDccAccTurnoutBoard(uint16_t BoardAddr, uint8_t OutputPair, uint8_t Direction, uint8_t OutputPower)
 {
-    Serial.print("notifyDccAccTurnoutBoard: ");
-    Serial.print(BoardAddr, DEC);
-    Serial.print(" Direction: ");
-    Serial.print(Direction ? "Closed" : "Thrown");
-    Serial.print(" Output: ");
-    Serial.println(OutputPower ? "On" : "Off");
+    SERIAL_OUT.print("notifyDccAccTurnoutBoard: ");
+    SERIAL_OUT.print(BoardAddr, DEC);
+    SERIAL_OUT.print(" Direction: ");
+    SERIAL_OUT.print(Direction ? "Closed" : "Thrown");
+    SERIAL_OUT.print(" Output: ");
+    SERIAL_OUT.println(OutputPower ? "On" : "Off");
 }
 
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Output Addressing Mode
 void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputPower)
 {
-    Serial.print("notifyDccAccTurnoutOutput: Turnout: ");
-    Serial.print(Addr, DEC);
-    Serial.print(" Direction: ");
-    Serial.print(Direction ? "Closed" : "Thrown");
-    Serial.print(" Output: ");
-    Serial.println(OutputPower ? "On" : "Off");
+    SERIAL_OUT.print("notifyDccAccTurnoutOutput: Turnout: ");
+    SERIAL_OUT.print(Addr, DEC);
+    SERIAL_OUT.print(" Direction: ");
+    SERIAL_OUT.print(Direction ? "Closed" : "Thrown");
+    SERIAL_OUT.print(" Output: ");
+    SERIAL_OUT.println(OutputPower ? "On" : "Off");
 
     if (Addr == Dcc.getAddr())
     {
@@ -85,10 +85,10 @@ void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputP
 // This function is called whenever a DCC Signal Aspect Packet is received
 void notifyDccSigOutputState(uint16_t Addr, uint8_t State)
 {
-    Serial.print("notifyDccSigOutputState: ");
-    Serial.print(Addr, DEC);
-    Serial.print(',');
-    Serial.println(State, HEX);
+    SERIAL_OUT.print("notifyDccSigOutputState: ");
+    SERIAL_OUT.print(Addr, DEC);
+    SERIAL_OUT.print(',');
+    SERIAL_OUT.println(State, HEX);
 }
 
 void processReset()

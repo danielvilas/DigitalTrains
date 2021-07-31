@@ -8,22 +8,22 @@
 NmraDcc Dcc;
 DCC_MSG Packet;
 
-DccTurnOutCli cli = DccTurnOutCli(&Serial);
+DccTurnOutCli cli = DccTurnOutCli(&SERIAL_OUT);
 Servo myServo;
 
 void setup()
 {
-    Serial.begin(115200);
+    SERIAL_OUT.begin(115200);
 
     // Configure the DCC CV Programing ACK pin for an output
     pinMode(PIN_ACK, OUTPUT);
     pinMode(PIN_SERVO, OUTPUT);
     pinMode(PIN_SERVO_PWR, OUTPUT);
 
-    Serial.println("NMRA DCC Example 1");
+    SERIAL_OUT.println("NMRA DCC Example 1");
 
     // Setup which External Interrupt, the Pin it's associated with that we're using and enable the Pull-Up
-    Dcc.pin(0, 2, 1);
+    Dcc.pin(PIN_DCC, 1);
 
     // Call the main DCC Init function to enable the DCC Receiver
     Dcc.init(MAN_ID_DIY, 10, CV29_ACCESSORY_DECODER | CV29_OUTPUT_ADDRESS_MODE, 0);
@@ -40,8 +40,8 @@ void setup()
         setServoCV(CV_SERVO_CLOSED, Dcc.getCV(CV_SERVO_CLOSED));
         setServoCV(CV_SERVO_SPEED, Dcc.getCV(CV_SERVO_SPEED));
     }
-    Serial.println("Init Done");
-    pinMode(LED_BUILTIN,OUTPUT);
+    SERIAL_OUT.println("Init Done");
+    pinMode(SERVO_LED,OUTPUT);
 }
 
 void loop()

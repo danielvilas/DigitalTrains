@@ -1,6 +1,18 @@
 #ifndef DCC_TURNOUT_H
 #define DCC_TURNOUT_H
 
+#ifdef ARDUINO_AVR_UNO
+#include "board_avr.h"
+#endif
+
+#ifdef ARDUINO_GENERIC_F411CEUX
+#include "board_blackpill.h"
+#endif
+
+#ifndef SERIAL_OUT
+#error "No Serial Out Defined"
+#endif
+
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
 #else
@@ -11,10 +23,6 @@
 #include <Servo.h>
 #include "cli.h"
 
-#define PIN_SERVO 9
-#define PIN_RESET 8
-#define PIN_SERVO_PWR 7
-#define PIN_ACK 3
 
 extern NmraDcc Dcc;
 extern DCC_MSG Packet;

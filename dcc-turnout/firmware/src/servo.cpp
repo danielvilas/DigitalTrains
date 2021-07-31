@@ -9,19 +9,19 @@ void setServoCV(uint16_t CV, uint8_t Value)
     case CV_SERVO_THROWN:
         servoOut.thrown_pos = Value;
         servoOut.status = SERVO_POS_THROWN;
-        Serial.print("Servo Thrown: ");
-        Serial.println(Value, DEC);
+        SERIAL_OUT.print("Servo Thrown: ");
+        SERIAL_OUT.println(Value, DEC);
         break;
     case CV_SERVO_CLOSED:
         servoOut.closed_pos = Value;
         servoOut.status = SERVO_POS_CLOSED;
-        Serial.print("Servo Closed: ");
-        Serial.println(Value, DEC);
+        SERIAL_OUT.print("Servo Closed: ");
+        SERIAL_OUT.println(Value, DEC);
         break;
     case CV_SERVO_SPEED:
         servoOut.speed = Value;
-        Serial.print("Servo Speed: ");
-        Serial.println(Value, DEC);
+        SERIAL_OUT.print("Servo Speed: ");
+        SERIAL_OUT.println(Value, DEC);
         break;
     default:
         break;
@@ -43,19 +43,19 @@ uint8_t moveServo(uint8_t pos, uint8_t dest, uint8_t speed)
         if (ret < dest)
             ret = dest;
     }
-    // Serial.print("moveServo: ");
-    // Serial.print(pos, DEC);
-    // Serial.print(" to: ");
-    // Serial.print(dest, DEC);
-    // Serial.print(" next: ");
-    // Serial.println(ret, DEC);
+    // SERIAL_OUT.print("moveServo: ");
+    // SERIAL_OUT.print(pos, DEC);
+    // SERIAL_OUT.print(" to: ");
+    // SERIAL_OUT.print(dest, DEC);
+    // SERIAL_OUT.print(" next: ");
+    // SERIAL_OUT.println(ret, DEC);
     return ret;
 }
 
 void processServo()
 {
-    // Serial.print(" Direction: ");
-    // Serial.println(servoOut.status ? "Closed" : "Thrown");
+    // SERIAL_OUT.print(" Direction: ");
+    // SERIAL_OUT.println(servoOut.status ? "Closed" : "Thrown");
     uint8_t desiredPos;
 
     if (servoOut.status == SERVO_POS_CLOSED)
@@ -110,6 +110,10 @@ void processServo()
     myServo.write(servoOut.current_pos);
     boolean power = false;
     if (servoOut.intState != SERVO_WAIT) power = true;
-    digitalWrite(LED_BUILTIN, power);
+#ifdef SERVO_LED_NEGATED
+    digitalWrite(SERVO_LED, !power); //On this board is inverted
+#else
+    digitalWrite(SERVO_LED, power);
+#endif
     digitalWrite(PIN_SERVO_PWR,!power); //Low on
 }
