@@ -1,4 +1,188 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 30 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 6107AEB5
+P 1700 1750
+F 0 "J1" H 1780 1742 50  0000 L CNN
+F 1 "Conn_01x04" H 1780 1651 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1700 1750 50  0001 C CNN
+F 3 "~" H 1700 1750 50  0001 C CNN
+	1    1700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PMOS_GSD Q1
+U 1 1 6107C471
+P 3700 1750
+F 0 "Q1" V 4042 1750 50  0000 C CNN
+F 1 "Q_PMOS_GSD" V 3951 1750 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3900 1850 50  0001 C CNN
+F 3 "~" H 3700 1750 50  0001 C CNN
+	1    3700 1750
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 6107DB79
+P 6500 2100
+F 0 "J2" H 6580 2142 50  0000 L CNN
+F 1 "Conn_01x03" H 6580 2051 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6500 2100 50  0001 C CNN
+F 3 "~" H 6500 2100 50  0001 C CNN
+	1    6500 2100
+	1    0    0    -1  
+$EndComp
+Text Label 6050 2000 2    50   ~ 0
+pwm
+Text Label 6050 2100 2    50   ~ 0
+pwr_out
+Wire Wire Line
+	6050 2000 6300 2000
+Wire Wire Line
+	6300 2100 6050 2100
+$Comp
+L power:GND #PWR03
+U 1 1 6107ED5F
+P 6250 2250
+F 0 "#PWR03" H 6250 2000 50  0001 C CNN
+F 1 "GND" H 6255 2077 50  0000 C CNN
+F 2 "" H 6250 2250 50  0001 C CNN
+F 3 "" H 6250 2250 50  0001 C CNN
+	1    6250 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 2250 6250 2200
+Wire Wire Line
+	6250 2200 6300 2200
+Text Label 4150 1650 0    50   ~ 0
+pwr_out
+Wire Wire Line
+	4150 1650 3900 1650
+Text Label 2900 1650 2    50   ~ 0
+pwr_in
+Wire Wire Line
+	3250 1650 3500 1650
+Text Label 1300 1650 2    50   ~ 0
+pwr_in
+Wire Wire Line
+	1300 1650 1500 1650
+Text Label 1300 1750 2    50   ~ 0
+pwr_en
+Wire Wire Line
+	1300 1750 1500 1750
+Text Label 1300 1850 2    50   ~ 0
+pwm
+Wire Wire Line
+	1300 1850 1500 1850
+$Comp
+L power:GND #PWR01
+U 1 1 610811D6
+P 1450 2000
+F 0 "#PWR01" H 1450 1750 50  0001 C CNN
+F 1 "GND" H 1455 1827 50  0000 C CNN
+F 2 "" H 1450 2000 50  0001 C CNN
+F 3 "" H 1450 2000 50  0001 C CNN
+	1    1450 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2000 1450 1950
+Wire Wire Line
+	1450 1950 1500 1950
+$Comp
+L Device:R R1
+U 1 1 6108245B
+P 3250 1850
+F 0 "R1" H 3320 1896 50  0000 L CNN
+F 1 "10K" H 3320 1805 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 3180 1850 50  0001 C CNN
+F 3 "~" H 3250 1850 50  0001 C CNN
+	1    3250 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 1950 3700 2100
+Wire Wire Line
+	3700 2100 3250 2100
+Wire Wire Line
+	3250 2100 3250 2000
+Wire Wire Line
+	3250 1700 3250 1650
+Wire Wire Line
+	3250 1650 2900 1650
+Connection ~ 3250 1650
+$Comp
+L Device:R R2
+U 1 1 61084A9E
+P 3250 2300
+F 0 "R2" H 3320 2346 50  0000 L CNN
+F 1 "1K" H 3320 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 3180 2300 50  0001 C CNN
+F 3 "~" H 3250 2300 50  0001 C CNN
+	1    3250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 2150 3250 2100
+Connection ~ 3250 2100
+$Comp
+L Device:R R3
+U 1 1 6108672B
+P 5100 2400
+F 0 "R3" H 5170 2446 50  0000 L CNN
+F 1 "1K" H 5170 2355 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 5030 2400 50  0001 C CNN
+F 3 "~" H 5100 2400 50  0001 C CNN
+	1    5100 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 61086FD1
+P 5100 2000
+F 0 "D1" V 5139 1882 50  0000 R CNN
+F 1 "LED" V 5048 1882 50  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 5100 2000 50  0001 C CNN
+F 3 "~" H 5100 2000 50  0001 C CNN
+	1    5100 2000
+	0    -1   -1   0   
+$EndComp
+Text Label 5100 1700 0    50   ~ 0
+pwr_out
+Wire Wire Line
+	5100 1700 5100 1850
+Wire Wire Line
+	5100 2150 5100 2250
+$Comp
+L power:GND #PWR02
+U 1 1 61088C94
+P 5100 2600
+F 0 "#PWR02" H 5100 2350 50  0001 C CNN
+F 1 "GND" H 5105 2427 50  0000 C CNN
+F 2 "" H 5100 2600 50  0001 C CNN
+F 3 "" H 5100 2600 50  0001 C CNN
+	1    5100 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 2600 5100 2550
+Text Label 3050 2450 2    50   ~ 0
+pwr_en
+Wire Wire Line
+	3050 2450 3250 2450
 $EndSCHEMATC
