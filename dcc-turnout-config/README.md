@@ -29,13 +29,13 @@ The schematic is only for having a registry of connections
 The menus are implemented to this detail, but no conection is made to other board.
 
 ## Next Steps
-* [] Connect the boards
-* [] Implement basic communication
-* [] Improve protocol
-* [] Use as a proxy (usb - tool - turnout)
-* [] Add more parammeters (and turnout funcs)
-  * [] Speed Cycle time
-  * [] Servo Power off 
-  * [] Rele control
-  * [] status leds (signaling)
-  * [] ...
+* [ ] Connect the boards
+* [ ] Implement basic communication
+* [ ] Improve protocol
+* [ ] Use as a proxy (usb - tool - turnout)
+* [ ] Add more parammeters (and turnout funcs)
+  * [ ] Speed Cycle time
+  * [ ] Servo Power off 
+  * [ ] Rele control
+  * [ ] status leds (signaling)
+  * [ ] ...
