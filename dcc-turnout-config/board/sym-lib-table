@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name STM32103_Devel-rescue)(type Legacy)(uri /home/daniel/OHS/Referencias/STM32-kicad-reference-designs/STM32F1/STM32F103/STM32F103CBT8_Devel/STM32103_Devel-rescue.lib)(options "")(descr ""))
+)

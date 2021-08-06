@@ -1,0 +1,268 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 "Document white Breadboard"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 850  950  1800 2500
+U 610BBBB3
+F0 "MCU" 50
+F1 "mcu.sch" 50
+F2 "PA0" I R 2650 1750 50 
+F3 "PA1" I R 2650 1850 50 
+F4 "PA2" I R 2650 1950 50 
+F5 "PA3" I R 2650 2050 50 
+F6 "PA4" I R 2650 2150 50 
+F7 "PA5" I R 2650 2250 50 
+F8 "PA6" I R 2650 2350 50 
+F9 "PA7" I R 2650 2450 50 
+F10 "PA8" I R 2650 2550 50 
+F11 "PA9" I R 2650 2650 50 
+F12 "PA10" I R 2650 2750 50 
+F13 "PA11" I R 2650 2850 50 
+F14 "PA12" I R 2650 2950 50 
+F15 "PA13" I R 2650 3050 50 
+F16 "PA14" I R 2650 3150 50 
+F17 "PA15" I R 2650 3250 50 
+F18 "PB0" I L 850 1750 50 
+F19 "PB1" I L 850 1850 50 
+F20 "PB2" I L 850 1950 50 
+F21 "PB3" I L 850 2050 50 
+F22 "PB4" I L 850 2150 50 
+F23 "PB5" I L 850 2250 50 
+F24 "PB6" I L 850 2350 50 
+F25 "PB7" I L 850 2450 50 
+F26 "PB8" I L 850 2550 50 
+F27 "PB9" I L 850 2650 50 
+F28 "PB10" I L 850 2750 50 
+F29 "PB11" I L 850 2850 50 
+F30 "PB12" I L 850 2950 50 
+F31 "PB13" I L 850 3050 50 
+F32 "PB14" I L 850 3150 50 
+F33 "PB15" I L 850 3250 50 
+F34 "PC13" I L 850 1200 50 
+F35 "PC14" I L 850 1300 50 
+F36 "PC15" I L 850 1400 50 
+F37 "PD0" I R 2650 1150 50 
+F38 "PD1" I R 2650 1250 50 
+F39 "BOOT0" I R 2650 1400 50 
+F40 "NRST" I R 2650 1550 50 
+$EndSheet
+$Sheet
+S 3500 2750 1150 550 
+U 610C031D
+F0 "USB" 50
+F1 "usb.sch" 50
+F2 "USBD_P" I L 3500 2950 50 
+F3 "USBD_N" I L 3500 2850 50 
+$EndSheet
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 610C1490
+P 5000 1150
+F 0 "J?" H 5080 1142 50  0000 L CNN
+F 1 "I2C OLED" H 5080 1051 50  0000 L CNN
+F 2 "" H 5000 1150 50  0001 C CNN
+F 3 "~" H 5000 1150 50  0001 C CNN
+	1    5000 1150
+	1    0    0    -1  
+$EndComp
+Text Label 4600 1050 0    50   ~ 0
+SDA
+Text Label 4600 1150 0    50   ~ 0
+SCL
+Text Label 4600 1250 0    50   ~ 0
+VCC
+Text Label 4600 1350 0    50   ~ 0
+GND
+Wire Wire Line
+	4800 1050 4600 1050
+Wire Wire Line
+	4800 1150 4600 1150
+$Comp
+L power:GND #PWR?
+U 1 1 610C2BC8
+P 4450 1450
+F 0 "#PWR?" H 4450 1200 50  0001 C CNN
+F 1 "GND" H 4455 1277 50  0000 C CNN
+F 2 "" H 4450 1450 50  0001 C CNN
+F 3 "" H 4450 1450 50  0001 C CNN
+	1    4450 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 1450 4450 1350
+Wire Wire Line
+	4450 1350 4800 1350
+$Comp
+L power:VCC #PWR?
+U 1 1 610C3062
+P 4450 1200
+F 0 "#PWR?" H 4450 1050 50  0001 C CNN
+F 1 "VCC" H 4465 1373 50  0000 C CNN
+F 2 "" H 4450 1200 50  0001 C CNN
+F 3 "" H 4450 1200 50  0001 C CNN
+	1    4450 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 1200 4450 1250
+Wire Wire Line
+	4450 1250 4800 1250
+$Comp
+L Connector_Generic:Conn_01x05 J?
+U 1 1 610C40D7
+P 6400 1200
+F 0 "J?" H 6480 1242 50  0000 L CNN
+F 1 "HW04 RotEnc" H 6480 1151 50  0000 L CNN
+F 2 "" H 6400 1200 50  0001 C CNN
+F 3 "~" H 6400 1200 50  0001 C CNN
+	1    6400 1200
+	1    0    0    -1  
+$EndComp
+Text Label 6000 1200 0    50   ~ 0
+SW
+Text Label 6000 1300 0    50   ~ 0
+VCC
+Text Label 6000 1400 0    50   ~ 0
+GND
+Wire Wire Line
+	6200 1200 6000 1200
+$Comp
+L power:GND #PWR?
+U 1 1 610C50A9
+P 5850 1500
+F 0 "#PWR?" H 5850 1250 50  0001 C CNN
+F 1 "GND" H 5855 1327 50  0000 C CNN
+F 2 "" H 5850 1500 50  0001 C CNN
+F 3 "" H 5850 1500 50  0001 C CNN
+	1    5850 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 1500 5850 1400
+Wire Wire Line
+	5850 1400 6200 1400
+$Comp
+L power:VCC #PWR?
+U 1 1 610C50B5
+P 5850 1250
+F 0 "#PWR?" H 5850 1100 50  0001 C CNN
+F 1 "VCC" H 5865 1423 50  0000 C CNN
+F 2 "" H 5850 1250 50  0001 C CNN
+F 3 "" H 5850 1250 50  0001 C CNN
+	1    5850 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 1250 5850 1300
+Wire Wire Line
+	5850 1300 6200 1300
+Text Label 6000 1100 0    50   ~ 0
+DT
+Wire Wire Line
+	6000 1100 6200 1100
+Text Label 6000 1000 0    50   ~ 0
+CLK
+Wire Wire Line
+	6000 1000 6200 1000
+Wire Notes Line
+	4300 700  4300 1750
+Wire Notes Line
+	4300 1750 7150 1750
+Wire Notes Line
+	7150 1750 7150 700 
+Wire Notes Line
+	7150 700  4300 700 
+Text Notes 4350 800  0    50   ~ 0
+Conectors, to UI Modules
+$Comp
+L Connector_Generic:Conn_01x06 J?
+U 1 1 610CB115
+P 9000 1150
+F 0 "J?" H 9080 1142 50  0000 L CNN
+F 1 "FTDI" H 9080 1051 50  0000 L CNN
+F 2 "" H 9000 1150 50  0001 C CNN
+F 3 "~" H 9000 1150 50  0001 C CNN
+	1    9000 1150
+	1    0    0    -1  
+$EndComp
+Text Label 8500 950  0    50   ~ 0
+fDTR
+Text Label 8500 1050 0    50   ~ 0
+fRXD
+Text Label 8500 1150 0    50   ~ 0
+fTXD
+Text Label 8500 1250 0    50   ~ 0
+5V
+Text Label 8500 1350 0    50   ~ 0
+CTS
+Text Label 8500 1450 0    50   ~ 0
+GND
+Wire Wire Line
+	8500 1450 8800 1450
+Wire Wire Line
+	8800 1350 8500 1350
+Wire Wire Line
+	8500 1250 8800 1250
+Wire Wire Line
+	8800 1150 8500 1150
+Wire Wire Line
+	8500 1050 8800 1050
+Wire Wire Line
+	8800 950  8500 950 
+Text Label 650  1200 0    50   ~ 0
+LED
+Wire Wire Line
+	650  1200 850  1200
+Wire Wire Line
+	3500 2850 2650 2850
+Wire Wire Line
+	2650 2950 3500 2950
+Text Label 2900 2650 0    50   ~ 0
+fTXD
+Wire Wire Line
+	2900 2650 2650 2650
+Text Label 2900 2750 0    50   ~ 0
+fRXD
+Wire Wire Line
+	2900 2750 2650 2750
+Text Label 650  2450 0    50   ~ 0
+SDA
+Text Label 650  2350 0    50   ~ 0
+SCL
+Wire Wire Line
+	650  2350 850  2350
+Wire Wire Line
+	850  2450 650  2450
+Text Label 650  2250 0    50   ~ 0
+MOSI
+Wire Wire Line
+	650  2250 850  2250
+Wire Wire Line
+	650  2150 850  2150
+Text Label 650  2150 0    50   ~ 0
+MISO
+Text Label 2800 1950 0    50   ~ 0
+CLK
+Text Label 2800 1850 0    50   ~ 0
+DT
+Text Label 2800 1750 0    50   ~ 0
+SW
+Wire Wire Line
+	2800 1750 2650 1750
+Wire Wire Line
+	2800 1850 2650 1850
+Wire Wire Line
+	2650 1950 2800 1950
+$EndSCHEMATC
