@@ -1,6 +1,9 @@
 kibot:
   version: 1
-  
+
+global:
+  kiauto_time_out_scale: 25.0
+  kiauto_wait_start: 10
 preflight:
   run_erc: true
   erc_warnings: false
@@ -115,7 +118,6 @@ outputs:
     options:
       dnf_filter: ''
       output: '%f-%i%v.%x'
-      variant: ''
 
   - name: 'pdf_example'
     comment: 'Exports the PCB to the most common exhange format. Suitable for printing.'
@@ -138,7 +140,6 @@ outputs:
       plot_sheet_reference: false
       tent_vias: true
       uppercase_extensions: false
-      variant: ''
     layers: all
 
   - name: 'step_example'
@@ -154,7 +155,6 @@ outputs:
       no_virtual: false
       origin: 'grid'
       output: '%f-%i%v.%x'
-      variant: ''
   - name: 'pcbdraw_example'
     comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
     type: 'pcbdraw'
@@ -183,5 +183,4 @@ outputs:
         pads: '#b5ae30'
         silk: '#f0f0f0'
         vcut: '#bf2600'
-        vcuts: false
       warnings: 'visible'
