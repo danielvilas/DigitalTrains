@@ -1,26 +1,26 @@
 # Dcc Decoder
 This is a Dcc Decoder Module to move a turnout with a Servo
 
-## Desired Specs
-* Power selection from DCC or External 12V supply
-  * A switch is OK
-  * Auto selecction if possible
-* Power Rails
-  * 12V Vin
-  * 5V for accesories (servo, rele), Buck
-  * 3.3V for MCU If needed, LDO
-* 2 Outputs for LEDs Aspects, to Vin
+## Desired Specs Status
+* [x] Power selection from DCC or External 12V supply
+  * [ ] A switch is OK
+  * [x] Auto selecction if possible
+* [x] Power Rails
+  * [x] 12V Vin
+  * [x] 5V for accesories (servo, rele), Buck
+  * [x] 3.3V for MCU If needed, LDO
+* [ ] 2 Outputs for LEDs Aspects, to Vin
 * 1 Rele Ouput (5V or 0)
-* UART for advanced configuration
-* Configure Pins
-  * CV Program to advanced CF
-    * POM if possible
-  * Config mode to capture dcc Address
-  * Advanced config mode (2 packets, CV, value)
-* Reset Button
-* Programing port
-  * Bootloader for uart if possible
-  * if possible no BootX pins
+* [ ] UART for advanced configuration
+* [ ] Configure Pins
+  * [ ] CV Program to advanced CF
+    * [ ] POM if possible
+  * [ ] Config mode to capture dcc Address
+  * [ ] Advanced config mode (2 packets, CV, value)
+* [ ] Reset Button
+* [ ] Programing port
+  * [ ] Bootloader for uart if possible
+  * [ ] if possible no BootX pins
 
 ## Power Design
 First is to determine the power requirments of the diferent main sections, wihch are:
@@ -36,3 +36,22 @@ First is to determine the power requirments of the diferent main sections, wihch
 
 In the reality, the max compsution of the servo (Stall) may only occurr when the user is setting up the device. So with this information we can design our power stage, from VDrive to 5V using "WEBENCH Power Designer" indicating we want **1 AMP output** wiht nominal output of **500mA**
 
+## ChangeLog
+### v0.1.0
+* Initial Version
+### v0.2.0
+* [x] Buck Converter
+* [x] Power Switch with mosfet
+### v0.3.0
+* [ ] D1 FootPrint
+* [ ] D7 Check stock and review footprint
+* [ ] Output Connectors, following amps and voltage
+* [ ] Check 12v DC Jack size with layout
+* [ ] J7 (Dcc iface) horizontal
+* [ ] J7 Silk explanation
+* [ ] J1,J2 and J3, place a bit low and add Mount Hole
+* [ ] J1,J2 and J3, explain in silk.
+* [ ] JP* (all) explain in silk (back)
+* [ ] Dcc iface add jumper Normally Open to isolate 5v rail from buck
+* [ ] Copy design to new Project (Dcc Power Distributor)
+* [ ] Add Mcu and outputs first version.
