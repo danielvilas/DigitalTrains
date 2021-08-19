@@ -53,5 +53,5 @@ In the reality, the max compsution of the servo (Stall) may only occurr when the
 * [x] J1,J2 and J3, explain in silk.
 * [x] JP* (all) explain in silk (back)
 * [x] Dcc iface add jumper Normally Open to isolate 5v rail from buck
-* [ ] Copy design to new Project (Dcc Power Distributor)
+* [x] Copy design to new Project (Dcc Power Distributor)
 * [ ] Add Mcu and outputs first version.
