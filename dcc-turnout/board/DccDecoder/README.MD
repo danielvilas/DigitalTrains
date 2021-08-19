@@ -43,15 +43,15 @@ In the reality, the max compsution of the servo (Stall) may only occurr when the
 * [x] Buck Converter
 * [x] Power Switch with mosfet
 ### v0.3.0
-* [ ] D1 FootPrint
-* [ ] D7 Check stock and review footprint
-* [ ] Output Connectors, following amps and voltage
-* [ ] Check 12v DC Jack size with layout
-* [ ] J7 (Dcc iface) horizontal
-* [ ] J7 Silk explanation
-* [ ] J1,J2 and J3, place a bit low and add Mount Hole
-* [ ] J1,J2 and J3, explain in silk.
-* [ ] JP* (all) explain in silk (back)
-* [ ] Dcc iface add jumper Normally Open to isolate 5v rail from buck
+* [X] D1 FootPrint
+* [x] D7 Check stock and review footprint
+* [x] Output Connectors, following amps and voltage
+* [x] Check 12v DC Jack size with layout
+* [X] J7 (Dcc iface) horizontal
+* [X] J7 Silk explanation
+* [x] J1,J2 and J3, place a bit low and add Mount Hole
+* [x] J1,J2 and J3, explain in silk.
+* [x] JP* (all) explain in silk (back)
+* [x] Dcc iface add jumper Normally Open to isolate 5v rail from buck
 * [ ] Copy design to new Project (Dcc Power Distributor)
 * [ ] Add Mcu and outputs first version.

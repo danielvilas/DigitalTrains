@@ -114,7 +114,7 @@ U 1 1 5F3F9098
 P 3600 3350
 F 0 "D1" V 3554 3430 50  0000 L CNN
 F 1 "1N4148" V 3645 3430 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-323" H 3600 3175 50  0001 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 3600 3175 50  0001 C CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 3600 3350 50  0001 C CNN
 F 4 "C2128" H 3600 3350 50  0001 C CNN "LCSC"
 F 5 "833-1N4148WX-TP" H 3600 3350 50  0001 C CNN "Mouser"
@@ -263,7 +263,7 @@ $EndComp
 Wire Wire Line
 	4650 3250 5600 3250
 Wire Wire Line
-	4700 2700 4700 2750
+	4700 2550 4700 2750
 Wire Wire Line
 	4900 3500 4900 3450
 Connection ~ 4900 3450
@@ -386,19 +386,10 @@ F 3 "~" H 4000 900 50  0001 C CNN
 	1    4000 900 
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+5V #PWR0109
-U 1 1 60F3C10B
-P 4700 2700
-F 0 "#PWR0109" H 4700 2550 50  0001 C CNN
-F 1 "+5V" H 4715 2873 50  0000 C CNN
-F 2 "" H 4700 2700 50  0001 C CNN
-F 3 "" H 4700 2700 50  0001 C CNN
-	1    4700 2700
-	1    0    0    -1  
-$EndComp
 Text Label 2300 1150 0    50   ~ 0
 DccP-
 Text Label 2300 2050 0    50   ~ 0
 DccP+
+Text HLabel 4700 2550 0    50   Input ~ 0
+5V_iface
 $EndSCHEMATC

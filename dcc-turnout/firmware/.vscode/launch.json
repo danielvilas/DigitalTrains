@@ -12,25 +12,23 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/blackpill_f411ce/firmware.elf",
-            "projectEnvName": "blackpill_f411ce",
-            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "executable": "/Volumes/Datos/Daniel/GoogleDrive/trenes/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/pro16MHzatmega328/firmware.elf",
+            "projectEnvName": "pro16MHzatmega328",
+            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F411xx.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
-                "task": "Pre-Debug (blackpill_f411ce)"
+                "task": "Pre-Debug (pro16MHzatmega328)"
             }
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/blackpill_f411ce/firmware.elf",
-            "projectEnvName": "blackpill_f411ce",
-            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
-            "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F411xx.svd"
+            "executable": "/Volumes/Datos/Daniel/GoogleDrive/trenes/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/pro16MHzatmega328/firmware.elf",
+            "projectEnvName": "pro16MHzatmega328",
+            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-atmelavr/bin",
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
