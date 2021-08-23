@@ -1,2 +1,3 @@
 #!/bin/bash
-kibot  -e DccDecoder.sch -b DccDecoder.kicad_pcb -d kibot_out -c DccDecoder.kibot.yaml
+rm -rf doc
+kibot  -e DccDecoder.sch -b DccDecoder.kicad_pcb -d doc -c DccDecoder.kibot.yaml

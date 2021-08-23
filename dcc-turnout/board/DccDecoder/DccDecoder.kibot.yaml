@@ -2,7 +2,7 @@ kibot:
   version: 1
 
 global:
-  kiauto_time_out_scale: 25.0
+  kiauto_time_out_scale: 2.0
   kiauto_wait_start: 10
 preflight:
   run_erc: true
@@ -163,15 +163,13 @@ outputs:
       bottom: false
       dnf_filter: ''
       dpi: 300
-      format: 'svg'
+      format: 'png'
       highlight: []
       libs: []
       mirror: false
       no_drillholes: false
       output: '%f-%i%v.%x'
       placeholder: false
-      remap:
-      show_components: none
       style:
         board: '#4ca06c'
         clad: '#9c6b28'
