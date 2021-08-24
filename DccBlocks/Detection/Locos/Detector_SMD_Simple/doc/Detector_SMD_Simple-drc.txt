@@ -1,0 +1,8 @@
+** Drc report for /data/daniel/OHS/DigitalTrains/DccBlocks/Detection/Locos/Detector_SMD_Simple/Detector_SMD_Simple.kicad_pcb **
+** Created on 2021-08-24 09:59:52 **
+
+** Found 0 DRC errors **
+
+** Found 0 unconnected pads **
+
+** End of Report **
