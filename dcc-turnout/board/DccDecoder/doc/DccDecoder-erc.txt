@@ -1,9 +1,9 @@
-ERC report (Mon Aug 23 14:43:22 2021, Encoding UTF8 )
+ERC report (Mon Sep  6 15:15:29 2021, Encoding UTF8 )
 
 ***** Sheet /
 
-***** Sheet /Power Distribution/
+***** Sheet /Out Puts/
 
-***** Sheet /Dcc Interface/
+***** Sheet /uC 030K6/
 
  ** ERC messages: 0  Errors 0  Warnings 0

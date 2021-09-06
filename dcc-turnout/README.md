@@ -5,13 +5,6 @@ This board is a controller for moving a turnout using a servo.
 Alive, current project
 
 ## Desired Specs
-* Power selection from DCC or External 12V supply
-  * A switch is OK
-  * Auto selecction if possible
-* Power Rails
-  * 12V Vin
-  * 5V for accesories (servo, rele), Buck
-  * 3.3V for MCU If needed, LDO
 * 2 Outputs for LEDs Aspects, to Vin
 * 1 Rele Ouput (5V or 0)
 * UART for advanced configuration
@@ -25,7 +18,20 @@ Alive, current project
   * Bootloader for uart if possible
   * if possible no BootX pins
 
+> Power and Dcc interface is moved to [Power Distribution](../DccBlocks/DccPowerDistribution/)
+
+From PowerDistribution:
+* Power selection from DCC or External 12V supply
+  * A switch is OK
+  * Auto selecction if possible
+* Power Rails
+  * 12V Vin
+  * 5V for accesories (servo, rele), Buck
+  * 3.3V for MCU If needed, LDO
+
+
 ## Subprojects
 * __[Devel Board](board/DccDev)__: Starting board, arduino factor. Finished.
 * __[Board](board/DccDecoder)__: Final board, under development
 * __[ServoPmosModule](modules/ServoPmosModule)__: Small board to enable/disable power to a servo.
+* __[Power Distribution](../DccBlocks/DccPowerDistribution/)__: Check this to see Power Distribution

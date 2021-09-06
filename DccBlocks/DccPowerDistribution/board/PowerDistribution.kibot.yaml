@@ -165,11 +165,26 @@ outputs:
       dpi: 300
       format: 'png'
       highlight: []
-      libs: []
       mirror: false
       no_drillholes: false
       output: '%f-%i%v.%x'
       placeholder: false
+      show_components: all
+      remap:
+        H1: dummy:dummy
+        H2: dummy:dummy
+        H3: dummy:dummy
+        H4: dummy:dummy
+        JP1: dummy:dummy
+        JP2: dummy:dummy
+        JP3: dummy:dummy
+        JP4: dummy:dummy
+        JP5: dummy:dummy
+        JP5: dummy:dummy
+        JP6: dummy:dummy
+        JP7: dummy:dummy
+        JP8: dummy:dummy
+        J1: Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
       style:
         board: '#4ca06c'
         clad: '#9c6b28'
@@ -181,4 +196,4 @@ outputs:
         pads: '#b5ae30'
         silk: '#f0f0f0'
         vcut: '#bf2600'
-      warnings: 'visible'
+      warnings: 'all'

@@ -2,25 +2,20 @@
 This is a Dcc Decoder Module to move a turnout with a Servo
 
 ## Desired Specs Status
-* [x] Power selection from DCC or External 12V supply
-  * [ ] A switch is OK
-  * [x] Auto selecction if possible
-* [x] Power Rails
-  * [x] 12V Vin
-  * [x] 5V for accesories (servo, rele), Buck
-  * [x] 3.3V for MCU If needed, LDO
+* ̣[x]Remove Power Distribution to project:  [Power Distribution](../DccBlocks/DccPowerDistribution/)
 * [ ] 2 Outputs for LEDs Aspects, to Vin
-* 1 Rele Ouput (5V or 0)
-* [ ] UART for advanced configuration
-* [ ] Configure Pins
+* [ ] 1 Rele Ouput (5V or 0)
+* [x] UART for advanced configuration
+* [x] Configure Pins
   * [ ] CV Program to advanced CF
     * [ ] POM if possible
   * [ ] Config mode to capture dcc Address
-  * [ ] Advanced config mode (2 packets, CV, value)
-* [ ] Reset Button
-* [ ] Programing port
+  * [x] Advanced config mode (2 packets, CV, value)
+* [x] Reset Button
+* [x] Programing port
   * [ ] Bootloader for uart if possible
   * [ ] if possible no BootX pins
+* [x] I2C for EzyBus
 
 ## Power Design
 First is to determine the power requirments of the diferent main sections, wihch are:
@@ -54,4 +49,17 @@ In the reality, the max compsution of the servo (Stall) may only occurr when the
 * [x] JP* (all) explain in silk (back)
 * [x] Dcc iface add jumper Normally Open to isolate 5v rail from buck
 * [x] Copy design to new Project (Dcc Power Distributor)
-* [ ] Add Mcu and outputs first version.
+## v0.4.0
+* [x] Remove Power Distritubion
+* [x Basic MCU
+  * [x] MCU
+  * [x] SWD
+  * [x] Boot 0
+* [x] UART.
+* [x] I2C
+* [x] LEDS
+* [x] RELE
+* [x] Servo
+  * [ ] full
+  * [x] enabled
+* [x] Config Pins 
