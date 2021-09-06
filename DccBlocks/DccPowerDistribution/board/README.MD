@@ -16,6 +16,14 @@ Intended to use inside a module for its own power ussage.
 ## Power Design
 From the dcc turnout we want **1 AMP output** wiht nominal output of **500mA**, enought for a Servo in stall and some accesories.
 
+Degub led consumption with provided Resistences:
+
+|Led|Color used| VLed| Current | V Mesured| VR | R|
+|---|---|---|---|---|---|---|
+|D4 Vdrive|White|2.92V| 12.9 mA|14.54V|11.62V|900|
+|D5 5V|Blue|2.89V| 10.4 mA|2.08V|4.97V|200|
+|D6 3.3V|Light Blue|2.75V| 5.6 mA|0.56V|11.62V|100|
+
 ## ChangeLog
 ### v1.0.0-RC1
 * [x] Initial Version from Dcc Turnout Decoder
