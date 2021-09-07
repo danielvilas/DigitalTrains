@@ -673,6 +673,7 @@ F8 "CfgBasic" I R 7550 3400 50
 F9 "CfgAdvanced" I R 7550 3500 50 
 F10 "CfgPwr" I R 7550 3300 50 
 F11 "StatusLed" I R 7550 3700 50 
+F12 "Servo_EN" I R 7550 3800 50 
 $EndSheet
 $Comp
 L Device:R R6
@@ -833,7 +834,7 @@ Wire Wire Line
 	9300 2700 9600 2700
 Wire Wire Line
 	9600 2800 9300 2800
-NoConn ~ 9600 1400
+NoConn ~ 9100 1550
 NoConn ~ 9600 1500
 NoConn ~ 9600 1600
 NoConn ~ 9600 1700
@@ -921,4 +922,12 @@ F 3 "" H 2500 6850 50  0001 C CNN
 	1    2500 6850
 	1    0    0    -1  
 $EndComp
+Text Label 7700 3800 0    50   ~ 0
+ServoEn
+Wire Wire Line
+	7550 3800 7700 3800
+Text Label 9400 1400 2    50   ~ 0
+ServoEn
+Wire Wire Line
+	9400 1400 9600 1400
 $EndSCHEMATC

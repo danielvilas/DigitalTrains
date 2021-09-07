@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 3
+Sheet 2 3
 Title ""
 Date ""
 Rev ""
@@ -268,41 +268,37 @@ ClosedLed
 $Comp
 L Connector_Generic:Conn_01x03 J?
 U 1 1 614A5415
-P 5750 1500
+P 6600 2350
 AR Path="/614A5415" Ref="J?"  Part="1" 
 AR Path="/6144CE74/614A5415" Ref="J15"  Part="1" 
-F 0 "J15" H 5830 1542 50  0000 L CNN
-F 1 "Conn_01x03" H 5830 1451 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5750 1500 50  0001 C CNN
-F 3 "~" H 5750 1500 50  0001 C CNN
-	1    5750 1500
+F 0 "J15" H 6680 2392 50  0000 L CNN
+F 1 "Conn_01x03" H 6680 2301 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6600 2350 50  0001 C CNN
+F 3 "~" H 6600 2350 50  0001 C CNN
+	1    6600 2350
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
 	3700 500  3700 7750
-Text HLabel 5200 1500 0    50   Input ~ 0
-ServoPwr
 Wire Wire Line
-	5200 1400 5550 1400
-Text HLabel 5200 1400 0    50   Input ~ 0
+	6300 2250 6400 2250
+Text HLabel 6300 2250 0    50   Input ~ 0
 ServoSig
-Wire Wire Line
-	5200 1500 5550 1500
 $Comp
 L power:GND #PWR027
 U 1 1 614C58B9
-P 5450 1650
-F 0 "#PWR027" H 5450 1400 50  0001 C CNN
-F 1 "GND" H 5455 1477 50  0000 C CNN
-F 2 "" H 5450 1650 50  0001 C CNN
-F 3 "" H 5450 1650 50  0001 C CNN
-	1    5450 1650
+P 6300 2500
+F 0 "#PWR027" H 6300 2250 50  0001 C CNN
+F 1 "GND" H 6305 2327 50  0000 C CNN
+F 2 "" H 6300 2500 50  0001 C CNN
+F 3 "" H 6300 2500 50  0001 C CNN
+	1    6300 2500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5450 1650 5450 1600
+	6300 2500 6300 2450
 Wire Wire Line
-	5450 1600 5550 1600
+	6300 2450 6400 2450
 $Comp
 L Device:Q_NMOS_GSD Q?
 U 1 1 614D9528
@@ -548,4 +544,117 @@ Text HLabel 9850 4050 2    50   Input ~ 0
 CfgPwr
 Text HLabel 8500 4050 0    50   Input ~ 0
 StatusLed
+$Comp
+L Device:Q_NMOS_GSD Q?
+U 1 1 61382D26
+P 5550 3200
+AR Path="/61382D26" Ref="Q?"  Part="1" 
+AR Path="/6144CE74/61382D26" Ref="Q6"  Part="1" 
+F 0 "Q6" H 5755 3246 50  0000 L CNN
+F 1 "NXV55UNR" H 5755 3155 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5750 3300 50  0001 C CNN
+F 3 "~" H 5550 3200 50  0001 C CNN
+	1    5550 3200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR030
+U 1 1 61382D2C
+P 5450 3550
+F 0 "#PWR030" H 5450 3300 50  0001 C CNN
+F 1 "GND" H 5455 3377 50  0000 C CNN
+F 2 "" H 5450 3550 50  0001 C CNN
+F 3 "" H 5450 3550 50  0001 C CNN
+	1    5450 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3550 5450 3400
+$Comp
+L Device:R R?
+U 1 1 61382D33
+P 6150 3200
+AR Path="/61382D33" Ref="R?"  Part="1" 
+AR Path="/6144CE74/61382D33" Ref="R18"  Part="1" 
+F 0 "R18" V 5943 3200 50  0000 C CNN
+F 1 "1K" V 6034 3200 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6080 3200 50  0001 C CNN
+F 3 "~" H 6150 3200 50  0001 C CNN
+	1    6150 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6000 3200 5750 3200
+Wire Wire Line
+	6300 3200 6700 3200
+Text HLabel 4550 2350 0    50   Input ~ 0
+ServoPwr
+$Comp
+L Device:R R?
+U 1 1 61382D3C
+P 4900 2600
+AR Path="/61382D3C" Ref="R?"  Part="1" 
+AR Path="/6144CE74/61382D3C" Ref="R17"  Part="1" 
+F 0 "R17" V 4693 2600 50  0000 C CNN
+F 1 "1K" V 4784 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 4830 2600 50  0001 C CNN
+F 3 "~" H 4900 2600 50  0001 C CNN
+	1    4900 2600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4900 2450 4900 2350
+Wire Wire Line
+	4900 2350 5250 2350
+Wire Wire Line
+	4550 2350 4900 2350
+Connection ~ 4900 2350
+Wire Wire Line
+	4900 2750 4900 2900
+Wire Wire Line
+	4900 2900 5450 2900
+Wire Wire Line
+	5450 2900 5450 3000
+Wire Wire Line
+	5450 2650 5450 2900
+Connection ~ 5450 2900
+Wire Wire Line
+	5650 2350 5850 2350
+$Comp
+L Device:Q_PMOS_GSD Q5
+U 1 1 61382D4C
+P 5450 2450
+F 0 "Q5" V 5792 2450 50  0000 C CNN
+F 1 "NXV90EPR" V 5701 2450 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5650 2550 50  0001 C CNN
+F 3 "~" H 5450 2450 50  0001 C CNN
+	1    5450 2450
+	0    1    -1   0   
+$EndComp
+Text HLabel 6700 3200 2    50   Input ~ 0
+Servo_EN
+$Comp
+L Jumper:Jumper_2_Open JP5
+U 1 1 613A24D1
+P 5450 1750
+F 0 "JP5" H 5450 1985 50  0000 C CNN
+F 1 "Jumper_2_Open" H 5450 1894 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5450 1750 50  0001 C CNN
+F 3 "~" H 5450 1750 50  0001 C CNN
+	1    5450 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1750 4900 1750
+Wire Wire Line
+	4900 1750 4900 2350
+Wire Wire Line
+	5650 1750 5850 1750
+Wire Wire Line
+	5850 1750 5850 2350
+Connection ~ 5850 2350
+Wire Wire Line
+	5850 2350 6400 2350
+Text Label 5850 1750 0    50   ~ 0
+_ServoPwr
 $EndSCHEMATC

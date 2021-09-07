@@ -1,6 +1,11 @@
 # Dcc Decoder
 This is a Dcc Decoder Module to move a turnout with a Servo
 
+> __WARN__: this folder is a second iteration, to try to model PCB different. and check with version is more addecuate
+>
+> After testing some iterations only one will be on the repository.
+
+
 ## Desired Specs Status
 * ̣[x]Remove Power Distribution to project:  [Power Distribution](../DccBlocks/DccPowerDistribution/)
 * [ ] 2 Outputs for LEDs Aspects, to Vin
