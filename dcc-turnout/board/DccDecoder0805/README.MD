@@ -67,5 +67,7 @@ In the reality, the max compsution of the servo (Stall) may only occurr when the
 * [x] Servo
   * [ ] full
   * [x] enabled
-* [x] Config Pins 
+* [x] Config Pins
+## v0.4.1
 * [x] Remove 6p SWD
+* [x] Return to th SWD

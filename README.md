@@ -16,7 +16,9 @@ Each folder is a project I started. some are finished, others are Work In Progre
 |docs| Different documents may be usefull| Alive - Slow|
 |Esp32Lcc| Use an ESP32 as node for LCC| Stall - Reading about|
 |Interfaces| Reference Designs to add conectivity| Done - until new needs|
-STM32103_Devel|STM32F103 Custom board| Depecated for refenece repository|
+|Kibot| Yaml Config for kibot scripts..| Done - until new needs|
+|MimicPanel| Hardware and software to create Mimic Panels| WIP|
+|STM32103_Devel|STM32F103 Custom board| Depecated for refenece repository|
 
 [^1]: More info inside each project
 [^2]: Let the central handle shorts :sunglasses:
