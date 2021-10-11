@@ -1,0 +1,8 @@
+** Drc report for /data/daniel/OHS/DigitalTrains/MimicPanel/BoardArduinos/BoardArduinos.kicad_pcb **
+** Created on 2021-10-08 15:29:42 **
+
+** Found 0 DRC errors **
+
+** Found 0 unconnected pads **
+
+** End of Report **
