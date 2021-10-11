@@ -9,6 +9,14 @@
 #include "board_blackpill.h"
 #endif
 
+#ifdef ARDUINO_STM32F030K6T6TR_DEVEL
+#include "board_030k6_devel.h"
+#endif
+
+#ifdef ARDUINO_GENERIC_F030K6TX
+#include "board_030k6_devel.h"
+#endif
+
 #ifndef SERIAL_OUT
 #error "No Serial Out Defined"
 #endif

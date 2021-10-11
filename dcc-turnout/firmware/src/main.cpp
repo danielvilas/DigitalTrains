@@ -9,7 +9,7 @@ NmraDcc Dcc;
 DCC_MSG Packet;
 
 DccTurnOutCli cli = DccTurnOutCli(&SERIAL_OUT);
-DccServo dccServo=DccServo(PIN_SERVO,SERVO_LED,PIN_SERVO_PWR);
+DccServo dccServo = DccServo(PIN_SERVO, PIN_STATUS, PIN_SERVO_PWR);
 
 void setup()
 {
@@ -17,10 +17,21 @@ void setup()
 
     // Configure the DCC CV Programing ACK pin for an output
     pinMode(PIN_ACK, OUTPUT);
+    //Servo
     pinMode(PIN_SERVO, OUTPUT);
     pinMode(PIN_SERVO_PWR, OUTPUT);
+    //Rele
+    pinMode(RELE_EN,OUTPUT);
+    //TH y CL leds
+    pinMode(THROWN_LED,OUTPUT);
+    pinMode(CLOSED_LED,OUTPUT);
 
     SERIAL_OUT.println("NMRA DCC Example 1");
+   
+    digitalWrite(PIN_STATUS,LOW);
+
+    pinMode(PIN_CFG_BASIC, INPUT);
+    pinMode(PIN_CFG_ADVANCED, INPUT);
 
     // Setup which External Interrupt, the Pin it's associated with that we're using and enable the Pull-Up
     Dcc.pin(PIN_DCC, 1);
@@ -28,8 +39,13 @@ void setup()
     // Call the main DCC Init function to enable the DCC Receiver
     Dcc.init(MAN_ID_DIY, 10, CV29_ACCESSORY_DECODER | CV29_OUTPUT_ADDRESS_MODE, 0);
 
+
+#ifdef PIN_RESET
     pinMode(PIN_RESET, INPUT_PULLUP);
-    if (!digitalRead(PIN_RESET))
+    if (!digitalRead(PIN_RESET) || digitalRead(PIN_CFG_BASIC)&&digitalRead(PIN_CFG_ADVANCED))
+#else
+    if(digitalRead(PIN_CFG_BASIC)&&digitalRead(PIN_CFG_ADVANCED))
+#endif
     {
         notifyCVResetFactoryDefault();
     }
@@ -40,8 +56,11 @@ void setup()
         setServoCV(CV_SERVO_CLOSED, Dcc.getCV(CV_SERVO_CLOSED));
         setServoCV(CV_SERVO_SPEED, Dcc.getCV(CV_SERVO_SPEED));
     }
+
     SERIAL_OUT.println("Init Done");
-    pinMode(SERVO_LED,OUTPUT);
+    pinMode(PIN_STATUS, OUTPUT);
+    digitalWrite(PIN_STATUS,LOW);
+
 }
 
 void loop()

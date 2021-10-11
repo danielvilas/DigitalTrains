@@ -1,0 +1,8 @@
+** Drc report for /data/daniel/OHS/DigitalTrains/dcc-turnout/board/DccDecoderIt2/DccDecoder.kicad_pcb **
+** Created on 2021-10-08 15:28:34 **
+
+** Found 0 DRC errors **
+
+** Found 0 unconnected pads **
+
+** End of Report **

@@ -1,0 +1,5 @@
+/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/CMakeFiles/edit_cache.dir
+/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/CMakeFiles/Z_DUMMY_TARGET.dir
+/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/CMakeFiles/Debug.dir
+/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/CMakeFiles/rebuild_cache.dir
+/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/CMakeFiles/Production.dir

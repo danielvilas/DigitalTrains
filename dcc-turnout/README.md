@@ -33,5 +33,6 @@ From PowerDistribution:
 ## Subprojects
 * __[Devel Board](board/DccDev)__: Starting board, arduino factor. Finished.
 * __[Board](board/DccDecoder)__: Final board, under development
+* __[Board 0805](board/DccDecoder0805)__: The same board using 0805 components to PCBA
 * __[ServoPmosModule](modules/ServoPmosModule)__: Small board to enable/disable power to a servo.
 * __[Power Distribution](../DccBlocks/DccPowerDistribution/)__: Check this to see Power Distribution

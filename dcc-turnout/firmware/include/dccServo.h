@@ -32,6 +32,7 @@ class DccServo{
     public:
     DccServo( uint8_t servo_pin, uint8_t servo_led, uint8_t servo_pwr);
     void processServo();
+    void servo_en(boolean);
     ServoStatus status;
 };
 

@@ -12,23 +12,25 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/Volumes/Datos/Daniel/GoogleDrive/trenes/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/pro16MHzatmega328/firmware.elf",
-            "projectEnvName": "pro16MHzatmega328",
-            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-atmelavr/bin",
+            "executable": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/STM32F030K6T6TR_Devel/firmware.elf",
+            "projectEnvName": "STM32F030K6T6TR_Devel",
+            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F030.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
-                "task": "Pre-Debug (pro16MHzatmega328)"
+                "task": "Pre-Debug (STM32F030K6T6TR_Devel)"
             }
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/Volumes/Datos/Daniel/GoogleDrive/trenes/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/pro16MHzatmega328/firmware.elf",
-            "projectEnvName": "pro16MHzatmega328",
-            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-atmelavr/bin",
-            "internalConsoleOptions": "openOnSessionStart"
+            "executable": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/STM32F030K6T6TR_Devel/firmware.elf",
+            "projectEnvName": "STM32F030K6T6TR_Devel",
+            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F030.svd"
         }
     ]
 }

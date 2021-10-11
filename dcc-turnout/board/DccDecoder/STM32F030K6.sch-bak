@@ -195,7 +195,7 @@ AR Path="/6115F145/61267F6D" Ref="Y?"  Part="1"
 AR Path="/6134FEA3/61267F6D" Ref="Y1"  Part="1" 
 F 0 "Y1" V 8154 3681 50  0000 L CNN
 F 1 "8MHz" V 8245 3681 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm" V 8291 3681 50  0001 L CNN
+F 2 "Project:HC-49SM8MH" V 8291 3681 50  0001 L CNN
 F 3 "~" H 8200 3550 50  0001 C CNN
 F 4 "" V 8200 3550 50  0001 C CNN "LCSC"
 	1    8200 3550
@@ -694,18 +694,6 @@ Wire Wire Line
 	4350 3200 4650 3200
 Wire Wire Line
 	4650 3200 4650 3400
-$Comp
-L MCU_ST_STM32F0:STM32F030K6Tx U1
-U 1 1 61256AE0
-P 2050 2600
-F 0 "U1" H 2050 2600 50  0000 C CNN
-F 1 "STM32F030K6Tx" H 2550 1600 50  0000 C CNN
-F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 1550 1700 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00088500.pdf" H 2050 2600 50  0001 C CNN
-F 4 "C88446" H 2050 2600 50  0001 C CNN "LCSC"
-	1    2050 2600
-	1    0    0    -1  
-$EndComp
 Text HLabel 1150 3400 0    50   Input ~ 0
 PB7
 Text HLabel 1150 3300 0    50   Input ~ 0
@@ -726,8 +714,6 @@ Wire Wire Line
 	1450 2900 1150 2900
 Wire Wire Line
 	1450 3000 1150 3000
-Wire Wire Line
-	1150 3100 1450 3100
 Wire Wire Line
 	1450 3200 1150 3200
 Wire Wire Line
@@ -751,8 +737,6 @@ PB0
 Wire Wire Line
 	2550 1900 2850 1900
 Wire Wire Line
-	2550 2000 2850 2000
-Wire Wire Line
 	2550 2100 2850 2100
 Wire Wire Line
 	2550 2200 2850 2200
@@ -772,8 +756,6 @@ Wire Wire Line
 	2550 2900 2850 2900
 Wire Wire Line
 	2550 3000 2850 3000
-Wire Wire Line
-	2550 3100 2850 3100
 Wire Wire Line
 	2550 3200 2850 3200
 Wire Wire Line
@@ -821,4 +803,22 @@ F 3 "~" H 4750 1450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3700 1450 4550 1450
+Wire Wire Line
+	2550 3100 2850 3100
+Wire Wire Line
+	2550 2000 2850 2000
+Wire Wire Line
+	1150 3100 1450 3100
+$Comp
+L MCU_ST_STM32F0:STM32F030K6Tx U1
+U 1 1 61256AE0
+P 2050 2600
+F 0 "U1" H 2050 2600 50  0000 C CNN
+F 1 "STM32F030K6Tx" H 2550 1600 50  0000 C CNN
+F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 1550 1700 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00088500.pdf" H 2050 2600 50  0001 C CNN
+F 4 "C88446" H 2050 2600 50  0001 C CNN "LCSC"
+	1    2050 2600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

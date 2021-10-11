@@ -31,6 +31,45 @@ uint8_t DccServo::moveServo(uint8_t pos, uint8_t dest, uint8_t speed)
     return ret;
 }
 
+//Status is high if thrown
+void rele_en(boolean status){
+#ifdef RELE_EN_NEGATED
+    digitalWrite(RELE_EN,!status);
+#else
+    digitalWrite(RELE_EN,status);
+#endif
+
+
+//Thrown led
+#ifdef THROWN_LED_NEGATED
+    digitalWrite(THROWN_LED,!status);
+#else
+    digitalWrite(THROWN_LED,status);
+#endif
+//Closes led
+#ifdef CLOSED_LED_NEGATED
+    digitalWrite(CLOSED_LED,status);
+#else
+    digitalWrite(CLOSED_LED,!status);
+#endif
+
+
+}
+
+
+
+void DccServo::servo_en(bool power){
+#ifdef SERVO_LED_NEGATED
+    digitalWrite(this->servo_led, !power); //On this board is inverted
+#else
+    digitalWrite(this->servo_led, power);
+#endif
+#ifdef SERVO_POWER_NEGATED
+    digitalWrite(this->servo_pwr,!power); //Low on
+#else
+    digitalWrite(this->servo_pwr,power); //Low on
+#endif
+}
 
 void DccServo::processServo(){
         // SERIAL_OUT.print(" Direction: ");
@@ -40,10 +79,13 @@ void DccServo::processServo(){
     if (status.status == SERVO_POS_CLOSED)
     {
         desiredPos = status.closed_pos;
+        rele_en(LOW);
+
     }
     if (status.status == SERVO_POS_THROWN)
     {
         desiredPos = status.thrown_pos;
+        rele_en(HIGH);
     }
 
     if (status.current_pos != desiredPos)
@@ -89,10 +131,5 @@ void DccServo::processServo(){
     this->servo.write(status.current_pos);
     boolean power = false;
     if (status.intState != SERVO_WAIT) power = true;
-#ifdef SERVO_LED_NEGATED
-    digitalWrite(this->servo_led, !power); //On this board is inverted
-#else
-    digitalWrite(this->servo_led, power);
-#endif
-    digitalWrite(this->servo_pwr,!power); //Low on
+    servo_en(power);
 }

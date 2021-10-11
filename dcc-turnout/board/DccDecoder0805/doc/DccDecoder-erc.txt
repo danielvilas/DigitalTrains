@@ -1,0 +1,9 @@
+ERC report (Fri Oct  8 15:28:28 2021, Encoding UTF8 )
+
+***** Sheet /
+
+***** Sheet /Out Puts/
+
+***** Sheet /uC 030K6/
+
+ ** ERC messages: 0  Errors 0  Warnings 0
