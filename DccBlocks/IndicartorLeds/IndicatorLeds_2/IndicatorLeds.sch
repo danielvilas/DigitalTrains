@@ -1,0 +1,197 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L LED:WS2812B D1
+U 1 1 6156BDB1
+P 3300 2250
+F 0 "D1" H 3644 2296 50  0000 L CNN
+F 1 "WS2812B" H 3644 2205 50  0000 L CNN
+F 2 "IndicatorLeds:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 3350 1950 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 3400 1875 50  0001 L TNN
+	1    3300 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B D2
+U 1 1 6156C522
+P 4500 2250
+F 0 "D2" H 4844 2296 50  0000 L CNN
+F 1 "WS2812B" H 4844 2205 50  0000 L CNN
+F 2 "IndicatorLeds:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 4550 1950 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 4600 1875 50  0001 L TNN
+	1    4500 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 1950 3300 1800
+Wire Wire Line
+	3300 1800 4500 1800
+Wire Wire Line
+	4500 1950 4500 1800
+Connection ~ 4500 1800
+Wire Wire Line
+	3300 2550 3300 2700
+$Comp
+L power:VCC #PWR05
+U 1 1 6156DC0A
+P 4500 1550
+F 0 "#PWR05" H 4500 1400 50  0001 C CNN
+F 1 "VCC" H 4515 1723 50  0000 C CNN
+F 2 "" H 4500 1550 50  0001 C CNN
+F 3 "" H 4500 1550 50  0001 C CNN
+	1    4500 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1550 4500 1800
+$Comp
+L power:GND #PWR06
+U 1 1 6156EA44
+P 4500 2700
+F 0 "#PWR06" H 4500 2450 50  0001 C CNN
+F 1 "GND" H 4505 2527 50  0000 C CNN
+F 2 "" H 4500 2700 50  0001 C CNN
+F 3 "" H 4500 2700 50  0001 C CNN
+	1    4500 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 6156FBD1
+P 2000 2200
+F 0 "J1" H 2050 2517 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 2050 2426 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 2000 2200 50  0001 C CNN
+F 3 "~" H 2000 2200 50  0001 C CNN
+	1    2000 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR01
+U 1 1 61570DAA
+P 1300 1850
+F 0 "#PWR01" H 1300 1700 50  0001 C CNN
+F 1 "VCC" H 1315 2023 50  0000 C CNN
+F 2 "" H 1300 1850 50  0001 C CNN
+F 3 "" H 1300 1850 50  0001 C CNN
+	1    1300 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR03
+U 1 1 6157101A
+P 2750 1800
+F 0 "#PWR03" H 2750 1650 50  0001 C CNN
+F 1 "VCC" H 2765 1973 50  0000 C CNN
+F 2 "" H 2750 1800 50  0001 C CNN
+F 3 "" H 2750 1800 50  0001 C CNN
+	1    2750 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 1800 2750 2100
+Wire Wire Line
+	2750 2100 2300 2100
+Wire Wire Line
+	1800 2100 1300 2100
+Wire Wire Line
+	1300 2100 1300 1850
+$Comp
+L power:GND #PWR04
+U 1 1 61571B58
+P 2750 2300
+F 0 "#PWR04" H 2750 2050 50  0001 C CNN
+F 1 "GND" H 2755 2127 50  0000 C CNN
+F 2 "" H 2750 2300 50  0001 C CNN
+F 3 "" H 2750 2300 50  0001 C CNN
+	1    2750 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 615722AF
+P 1300 2300
+F 0 "#PWR02" H 1300 2050 50  0001 C CNN
+F 1 "GND" H 1305 2127 50  0000 C CNN
+F 2 "" H 1300 2300 50  0001 C CNN
+F 3 "" H 1300 2300 50  0001 C CNN
+	1    1300 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 2300 1300 2200
+Wire Wire Line
+	1300 2200 1800 2200
+Wire Wire Line
+	2300 2200 2750 2200
+Wire Wire Line
+	2750 2200 2750 2300
+Wire Wire Line
+	3000 2250 2850 2250
+Text Label 2850 2250 0    50   ~ 0
+Din
+Text Label 5250 2250 0    50   ~ 0
+Dout
+Text Label 2400 2300 0    50   ~ 0
+Dout
+Text Label 1650 2300 0    50   ~ 0
+Din
+Wire Wire Line
+	1650 2300 1800 2300
+Wire Wire Line
+	2300 2300 2400 2300
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 6156D2F9
+P 1300 1850
+F 0 "#FLG0101" H 1300 1925 50  0001 C CNN
+F 1 "PWR_FLAG" V 1300 1977 50  0000 L CNN
+F 2 "" H 1300 1850 50  0001 C CNN
+F 3 "~" H 1300 1850 50  0001 C CNN
+	1    1300 1850
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1300 1850
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 6156DCA2
+P 1300 2200
+F 0 "#FLG0102" H 1300 2275 50  0001 C CNN
+F 1 "PWR_FLAG" V 1300 2327 50  0000 L CNN
+F 2 "" H 1300 2200 50  0001 C CNN
+F 3 "~" H 1300 2200 50  0001 C CNN
+	1    1300 2200
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1300 2200
+Wire Wire Line
+	4500 2550 4500 2700
+$Comp
+L power:GND #PWR0101
+U 1 1 61694B1E
+P 3300 2700
+F 0 "#PWR0101" H 3300 2450 50  0001 C CNN
+F 1 "GND" H 3305 2527 50  0000 C CNN
+F 2 "" H 3300 2700 50  0001 C CNN
+F 3 "" H 3300 2700 50  0001 C CNN
+	1    3300 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2250 5250 2250
+Wire Wire Line
+	3600 2250 4200 2250
+$EndSCHEMATC
