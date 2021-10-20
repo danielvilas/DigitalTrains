@@ -49,7 +49,7 @@
 \documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
 
 \input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
-\usepackage[spanish,es-nolists]{babel}
+\usepackage[spanish]{babel}
 \usepackage{epigraph}
 \setlength \epigraphwidth {0.65\textwidth}
 \renewcommand {\epigraphflush}{center}
@@ -68,6 +68,7 @@
 
 \addbibresource[label=intro]{chapters/00_Intro/intro.bib}
 \addbibresource[label=jugar]{chapters/01_jugar/jugar.bib}
+\addbibresource[label=jugar]{chapters/01_Ing_02_requisitos/requisitos.bib}
 
 \begin{document}
 
@@ -136,8 +137,14 @@
 \chapter{Como Jugamos}
 \input{chapters/01_jugar/jugar.tex}
 
-\part{Normativa}
+\part{Ingenieria en la maqueta}
 \chapterimage{chapter_head_1.pdf} % Chapter heading image
+\chapter{¿Ingenieria?¿en la maqueta?}
+\chapter{Requisitos}
+\input{chapters/01_Ing_02_requisitos/requisitos.tex}
+
+\part{Normativa}
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
 
 \chapter{Introducción a las normativas}
 \input{chapters/0X_Normativas_01_Intro/introducion.tex}
