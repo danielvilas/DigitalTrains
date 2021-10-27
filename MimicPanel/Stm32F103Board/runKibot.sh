@@ -1,6 +1,13 @@
 #!/bin/bash
 KIBOT_DIR=$(git rev-parse --show-toplevel)
-KIBOT_DIR=$KIBOT_DIR/kibot
+RES=$?
+if [ $RES -eq 0 ] 
+then
+    KIBOT_DIR=$KIBOT_DIR/kibot
+else
+    KIBOT_DIR=/home/$USER/workdir/kibot
+fi    
+echo $KIBOT_DIR
 rm -rf doc
 CURRENT=`pwd`
 

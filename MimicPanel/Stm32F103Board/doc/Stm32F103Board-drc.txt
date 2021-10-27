@@ -1,0 +1,8 @@
+** Drc report for /home/daniel/workdir/MimicPanel/Stm32F103Board/Stm32F103Board.kicad_pcb **
+** Created on 2021-10-27 12:52:12 **
+
+** Found 0 DRC errors **
+
+** Found 0 unconnected pads **
+
+** End of Report **

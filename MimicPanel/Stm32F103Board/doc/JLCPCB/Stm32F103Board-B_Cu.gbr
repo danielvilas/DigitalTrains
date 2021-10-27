@@ -1,12 +1,12 @@
-G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,5.99.0-unknown-dd99b2dc2f~142~ubuntu21.10.1*
-G04 #@! TF.CreationDate,2021-10-27T13:54:22+02:00*
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,5.1.9+dfsg1-1~bpo10+1*
+G04 #@! TF.CreationDate,2021-10-27T12:52:50+00:00*
 G04 #@! TF.ProjectId,Stm32F103Board,53746d33-3246-4313-9033-426f6172642e,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Copper,L2,Bot*
 G04 #@! TF.FilePolarity,Positive*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 5.99.0-unknown-dd99b2dc2f~142~ubuntu21.10.1) date 2021-10-27 13:54:22*
+G04 Created by KiCad (PCBNEW 5.1.9+dfsg1-1~bpo10+1) date 2021-10-27 12:52:50*
 %MOMM*%
 %LPD*%
 G01*
@@ -43,6 +43,9 @@ G04 #@! TA.AperFunction,Conductor*
 G04 #@! TD*
 G04 #@! TA.AperFunction,Conductor*
 %ADD20C,0.254000*%
+G04 #@! TD*
+G04 #@! TA.AperFunction,Conductor*
+%ADD21C,0.100000*%
 G04 #@! TD*
 G04 APERTURE END LIST*
 D10*
@@ -5205,9 +5208,9 @@ X28706924Y-63923895D01*
 X29329039Y-63731318D01*
 X30007584Y-63660000D01*
 X125967722Y-63660000D01*
-X126648126Y-63726714D02*
-X125967722Y-63660000D01*
+X126648126Y-63726714D01*
 G04 #@! TA.AperFunction,Conductor*
+D21*
 G36*
 X126648126Y-63726714D02*
 G01*
