@@ -315,3 +315,5 @@ TSWLatexianTemp*
 *.cbddlp
 *.chitubox
 *.FCStd1
+
+/kibot/docker.tmp/
