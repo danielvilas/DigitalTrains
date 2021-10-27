@@ -31,6 +31,17 @@
             "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/data/daniel/OHS/DigitalTrains/MimicPanel/Firmware/.pio/build/NUCLEO-F103RB/firmware.elf",
+            "projectEnvName": "NUCLEO-F103RB",
+            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
+            "loadMode": "manual"
         }
     ]
 }
