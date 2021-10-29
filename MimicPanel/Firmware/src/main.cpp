@@ -1,6 +1,6 @@
 #include <WS2812FX.h>
 
-#define LED_COUNT 25
+#define LED_COUNT 41
 #define LED_PIN PA_1
 
 // A basic everyday NeoPixel strip test program.
