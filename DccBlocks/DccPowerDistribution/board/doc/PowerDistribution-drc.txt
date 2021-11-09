@@ -1,5 +1,5 @@
-** Drc report for /data/daniel/OHS/DigitalTrains/DccBlocks/DccPowerDistribution/board/PowerDistribution.kicad_pcb **
-** Created on 2021-09-08 16:27:07 **
+** Drc report for /home/daniel/workdir/DccBlocks/DccPowerDistribution/board/PowerDistribution.kicad_pcb **
+** Created on 2021-11-09 16:34:57 **
 
 ** Found 0 DRC errors **
 
