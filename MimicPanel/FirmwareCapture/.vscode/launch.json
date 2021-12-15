@@ -29,6 +29,16 @@
             "projectEnvName": "Promini",
             "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/data/daniel/OHS/DigitalTrains/MimicPanel/FirmwareCapture/.pio/build/Promini/firmware.elf",
+            "projectEnvName": "Promini",
+            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "loadMode": "manual"
         }
     ]
 }

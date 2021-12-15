@@ -2,25 +2,25 @@
 
 #include <Wire.h>
 
-#define LED_CAPTURE 13
+#define LED_CAPTURE A7
 
-#define PIN_1_THROWN 2
-#define PIN_1_CLOSED 3
-#define PIN_2_THROWN 4
-#define PIN_2_CLOSED 5
+#define PIN_1_THROWN 3
+#define PIN_1_CLOSED 2
+#define PIN_2_THROWN 5
+#define PIN_2_CLOSED 4
 #define PIN_3_THROWN 7
 #define PIN_3_CLOSED 6
-#define PIN_4_THROWN 8
-#define PIN_4_CLOSED 9
+#define PIN_4_THROWN 9
+#define PIN_4_CLOSED 8
 
 #define PIN_5_THROWN 11
 #define PIN_5_CLOSED 10
-#define PIN_6_THROWN 13
+#define PIN_6_THROWN 13 //Disable
 #define PIN_6_CLOSED 12
-#define PIN_7_THROWN A3
-#define PIN_7_CLOSED A2
-#define PIN_8_THROWN A1
-#define PIN_8_CLOSED A0
+#define PIN_7_THROWN A1 // A1
+#define PIN_7_CLOSED A0 //A0
+#define PIN_8_THROWN A3 //A3
+#define PIN_8_CLOSED A2 // A2
 
 enum pointStatus
 {
@@ -37,11 +37,16 @@ typedef struct servoPins_s
     unsigned lastCaptured;
 } servoPins_t;
 
-#define N_SERVOS 4
-servoPins_t servos[] = {{UNCHANGED, PIN_2_THROWN, PIN_2_CLOSED, 0},
-                        {UNCHANGED, PIN_3_THROWN, PIN_3_CLOSED, 0},
-                        {UNCHANGED, PIN_4_THROWN, PIN_4_CLOSED, 0},
-                        {UNCHANGED, PIN_5_THROWN, PIN_5_CLOSED, 0}};
+#define N_SERVOS 8
+servoPins_t servos[] = {
+    {UNCHANGED, PIN_1_THROWN, PIN_1_CLOSED, 0},
+    {UNCHANGED, PIN_2_THROWN, PIN_2_CLOSED, 0},
+    {UNCHANGED, PIN_3_THROWN, PIN_3_CLOSED, 0},
+    {UNCHANGED, PIN_4_THROWN, PIN_4_CLOSED, 0},
+    {UNCHANGED, PIN_5_THROWN, PIN_5_CLOSED, 0},
+    {UNCHANGED, PIN_6_THROWN, PIN_6_CLOSED, 0},
+    {UNCHANGED, PIN_7_THROWN, PIN_7_CLOSED, 0},
+    {UNCHANGED, PIN_8_THROWN, PIN_8_CLOSED, 0}};
 
 unsigned lastCaptured;
 
@@ -94,14 +99,14 @@ void loop()
             lastCaptured = millis() + 500;
             digitalWrite(LED_CAPTURE, HIGH);
             servos[i].status = CLOSED;
-            return;
+            continue;
         }
         if (digitalRead(servos[i].pinThrown) == 0)
         {
             lastCaptured = millis() + 500;
             digitalWrite(LED_CAPTURE, HIGH);
             servos[i].status = TRHOWN;
-            return;
+            continue;
         }
     }
 }

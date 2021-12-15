@@ -10,13 +10,13 @@
             "includePath": [
                 "/data/daniel/OHS/DigitalTrains/MimicPanel/FirmwareCapture/include",
                 "/data/daniel/OHS/DigitalTrains/MimicPanel/FirmwareCapture/src",
+                "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 ""
             ],
             "browse": {
@@ -24,18 +24,18 @@
                 "path": [
                     "/data/daniel/OHS/DigitalTrains/MimicPanel/FirmwareCapture/include",
                     "/data/daniel/OHS/DigitalTrains/MimicPanel/FirmwareCapture/src",
+                    "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                    "/home/daniel/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     ""
                 ]
             },
             "defines": [
-                "PLATFORMIO=50201",
+                "PLATFORMIO=50203",
                 "ARDUINO_AVR_PRO",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
