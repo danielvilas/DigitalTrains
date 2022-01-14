@@ -2,10 +2,14 @@
 
 |number|Description|version|issues|Dc|Dcc|Dc + Dcc|Decoder|
 |-|-|:--|:--|:--|:--|:--|--|
+|D1|v0.2.0|Devel board| |OK|OK|OK|OK|
 |0|v0.3.0|Devel board| |OK|OK|OK|OK|
 |1|v0.3.0|Board point 1||OK|OK|OK||
-|2|v0.3.0|Board point 2|2N7002 -> NXV55UNR|OK|OK|OK||
-|3|v0.3.0|Board point 3|2N7002 -> NXV55UNR <br> No Optos|OK|OK|OK||
+|2|v0.3.0|Devel board|2N7002 -> NXV55UNR|OK|OK|OK||
+|3|v0.3.0|Board point 3|2N7002 -> NXV55UNR|OK|OK|OK||
+|4|v1.0.0-RC2|Board point 2||OK|OK|OK||
+|D2|v1.0.0-RC2|Devel board|Led Cambiado|OK|OK|OK||
+
 
 ## Test Description:
 __DC__ is only with DC plug adapator should measure:
