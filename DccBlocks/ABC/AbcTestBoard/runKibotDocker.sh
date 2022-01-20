@@ -31,4 +31,4 @@ docker run --rm -it  \
     --volume="$KIBOT_DIR/docker.tmp/local:/home/$USER/.local/share/kicad:rw" \
     --rm \
     --hostname kibot \
-    setsoft/kicad_auto:nightly /bin/bash -c "ls -la /home/$USER; cd workdir/$SUBDIR; bash ./runKibot.sh"
+    setsoft/kicad_auto:latest /bin/bash -c "ls -la /home/$USER; cd workdir/$SUBDIR; bash ./runKibot.sh"

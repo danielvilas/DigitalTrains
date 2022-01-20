@@ -15,7 +15,6 @@ outputs:
     type: 'pdf_sch_print'
     dir: 'pdf'
     options:
-      dnf_filter: ''
       output: '%f-%i%v.%x'
 
   - name: 'pdf_pcb'

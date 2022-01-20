@@ -5,12 +5,17 @@ This folder contains the kibot scripts in order to document the projects. So, al
 ## Install
 
 ```
-sudo apt install xvfb recordmydesktop xdotool librsvg2-bin imagemagick
-curl -OL https://github.com/INTI-CMNB/InteractiveHtmlBom/releases/download/v2.3.4-2/interactivehtmlbom.inti-cmnb_2.3.4-2_all.deb 
-sudo apt install ./interactivehtmlbom.inti-cmnb_2.3.4-2_all.deb
-rm ./interactivehtmlbom.inti-cmnb_2.3.4-2_all.deb
+sudo apt install xvfb recordmydesktop xdotool librsvg2-bin imagemagick xclip
+curl -OL https://github.com/INTI-CMNB/InteractiveHtmlBom/releases/download/v2.4.1/interactivehtmlbom.inti-cmnb_2.4.1-1_all.deb
+sudo apt install ./interactivehtmlbom.inti-cmnb_2.4.1-1_all.deb
+rm ./interactivehtmlbom.inti-cmnb_2.4.1-1_all.deb
 
-pip3 install kibot --no-compile
-pip3 install kikit pcbdraw
+#pip3 install kibot --no-compile
+#pip3 install kikit pcbdraw
+
+pip3 uninstall kibot kiauto kibot
+pip3 install git+https://github.com/INTI-CMNB/KiBot/ --no-compile
+pip3 install git+https://github.com/INTI-CMNB/KiAuto/ 
+
 
 ```

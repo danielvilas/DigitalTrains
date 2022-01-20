@@ -11,7 +11,21 @@ echo $KIBOT_DIR
 rm -rf doc
 CURRENT=`pwd`
 
+#Check current DirName
 BOARD=`basename $CURRENT`
+if [ ! -f  $BOARD.kicad_sch ]
+then
+    BOARD=$(dirname "$CURRENT")
+    BOARD=`basename $BOARD`
+fi
+#If not found, check with parent Dir name
+if [ ! -f  $BOARD.kicad_sch ]
+then   
+    echo Expected file not found: $BOARD.sch
+    #exit 0
+    #If not found change manually.
+    BOARD=CHANGE_ME
+fi
 FILES="00_erc_drc.kibot.yaml 01_pdf_doc.kibot.yaml 02_build_doc.kibot.yaml 03_graphic_doc.kibot.yaml 04_fab_board.kibot.yaml"  
 
 for i in $FILES 
@@ -19,7 +33,6 @@ do
     echo "Running $i"
     kibot -e $BOARD.sch -b $BOARD.kicad_pcb -d doc -c $KIBOT_DIR/$i $@
 done 
-
 
 rm -f doc/*.ogv
 
