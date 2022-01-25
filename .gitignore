@@ -317,3 +317,4 @@ TSWLatexianTemp*
 *.FCStd1
 
 /kibot/docker.tmp/
+**/*-backups/
