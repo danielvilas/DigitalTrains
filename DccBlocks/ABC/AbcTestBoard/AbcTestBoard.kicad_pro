@@ -381,9 +381,11 @@
         "name": "Power",
         "nets": [
           "/J_1",
+          "/J_Hight",
           "/J_IN",
           "/J_OUT",
           "/K_1",
+          "/K_Hight",
           "/K_IN",
           "/K_OUT"
         ],

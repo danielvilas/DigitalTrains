@@ -1,0 +1,34 @@
+** Drc report for /data/daniel/OHS/DigitalTrains/DccBlocks/ABC/AbcTestBoard/AbcTestBoard.kicad_pcb **
+** Created on 2022-01-27 12:33:05 **
+
+** Found 6 DRC violations **
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(40.6400 mm, 109.2200 mm): Line on Edge.Cuts
+    @(47.6100 mm, 82.0100 mm): Line on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(40.6400 mm, 109.2200 mm): Line on Edge.Cuts
+    @(47.6100 mm, 89.1300 mm): Line on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(109.2200 mm, 62.2300 mm): Line on Edge.Cuts
+    @(101.5500 mm, 89.1300 mm): Line on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(109.2200 mm, 62.2300 mm): Line on Edge.Cuts
+    @(109.2700 mm, 89.1300 mm): Line on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(109.2200 mm, 62.2300 mm): Line on Edge.Cuts
+    @(108.8700 mm, 89.3700 mm): Line on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Rule: board setup constraints silk; Severity: warning
+    @(109.2200 mm, 62.2300 mm): Line on Edge.Cuts
+    @(101.5500 mm, 82.0100 mm): Line on F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
