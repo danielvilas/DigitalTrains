@@ -13,6 +13,13 @@ if [ ! -d $KIBOT_DIR/docker.tmp/cache ]
 then
     mkdir -p $KIBOT_DIR/docker.tmp/cache
 fi
+if [ ! -d $KIBOT_DIR/docker.tmp/local ]
+then
+    mkdir -p $KIBOT_DIR/docker.tmp/local
+fi
+
+#VERSION=latest
+VERSION=ki6
 
 docker run --rm -it  \
     -v $LOCAL_BASE:/home/$USER/workdir \
@@ -22,8 +29,9 @@ docker run --rm -it  \
     --env USER=$USER \
     --workdir="/home/$USER/" \
     --volume="$PASS_FILE:/etc/passwd:ro" \
-    --volume="$KIBOT_DIR/docker.tmp/config:/home/$USER/.config/kicad:rw" \
-    --volume="$KIBOT_DIR/docker.tmp/cache:/home/$USER/.cache/kicad:rw" \
+    --volume="$KIBOT_DIR/docker.tmp/config:/home/$USER/.config:rw" \
+    --volume="$KIBOT_DIR/docker.tmp/cache:/home/$USER/.cache:rw" \
+    --volume="$KIBOT_DIR/docker.tmp/local:/home/$USER/.local:rw" \
     --rm \
     --hostname kibot \
-    setsoft/kicad_auto:latest /bin/bash -c "cd workdir/$SUBDIR; bash ./runKibot.sh"
+    setsoft/kicad_auto:$VERSION /bin/bash -c "cd workdir/$SUBDIR; bash ./runKibot.sh  $@"
