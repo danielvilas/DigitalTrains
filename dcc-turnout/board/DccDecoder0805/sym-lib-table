@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name DB107S)(type Legacy)(uri "${KIPRJMOD}/lib/DB107S.lib")(options "")(descr ""))
+  (lib (name "DB107S")(type "Legacy")(uri "${KIPRJMOD}/lib/DB107S.lib")(options "")(descr ""))
+  (lib (name "DccDecoder-rescue")(type "Legacy")(uri "${KIPRJMOD}/DccDecoder-rescue.lib")(options "")(descr ""))
 )

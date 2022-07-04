@@ -1,8 +1,10 @@
-** Drc report for /data/daniel/OHS/DigitalTrains/dcc-turnout/board/DccDecoderIt2/DccDecoder.kicad_pcb **
-** Created on 2021-10-08 15:28:34 **
+** Drc report for /data/daniel/OHS/DigitalTrains/dcc-turnout/board/DccDecoder0805/DccDecoder.kicad_pcb **
+** Created on 2022-07-04 14:51:55 **
 
-** Found 0 DRC errors **
+** Found 0 DRC violations **
 
 ** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
 
 ** End of Report **
