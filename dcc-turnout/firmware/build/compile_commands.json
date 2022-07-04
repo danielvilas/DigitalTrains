@@ -1,27 +1,32 @@
 [
 {
-  "directory": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/cli.cpp.obj -c /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/cli.cpp",
-  "file": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/cli.cpp"
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/cli.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/cli.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/cli.cpp"
 },
 {
-  "directory": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/dcc.cpp.obj -c /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dcc.cpp",
-  "file": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dcc.cpp"
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/clicommands.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/clicommands.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/clicommands.cpp"
 },
 {
-  "directory": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/dccservo.cpp.obj -c /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dccservo.cpp",
-  "file": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dccservo.cpp"
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/dcc.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dcc.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dcc.cpp"
 },
 {
-  "directory": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj -c /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/main.cpp",
-  "file": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/main.cpp"
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/dccservo.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dccservo.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/dccservo.cpp"
 },
 {
-  "directory": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/servo.cpp.obj -c /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/servo.cpp",
-  "file": "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/servo.cpp"
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/main.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/main.cpp"
+},
+{
+  "directory": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+  "command": "/home/daniel/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g -std=gnu++11 -o CMakeFiles/Z_DUMMY_TARGET.dir/src/servo.cpp.obj -c /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/servo.cpp",
+  "file": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/src/servo.cpp"
 }
 ]

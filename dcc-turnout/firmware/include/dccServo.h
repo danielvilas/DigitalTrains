@@ -16,6 +16,9 @@ struct ServoStatus
     uint8_t thrown_pos;
     uint8_t closed_pos;
     uint8_t speed;
+    int8_t refreshInterval;
+    u_int8_t refreshTime;
+    u_int8_t postMoveTime;
     long lastPosMillis;
     servoInternalState intState;
     uint8_t stateCounter;

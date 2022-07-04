@@ -6,6 +6,7 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
@@ -56,7 +57,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Z_DUMMY_TARGET::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Z_DUMMY_TARGET-Debug-3af54a058ebab30c0c6c.json",
+					"jsonFile" : "target-Z_DUMMY_TARGET-Debug-2a7700ca1d45379e365c.json",
 					"name" : "Z_DUMMY_TARGET",
 					"projectIndex" : 0
 				}
@@ -66,12 +67,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
-		"source" : "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware"
+		"build" : "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build",
+		"source" : "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 1
+		"minor" : 3
 	}
 }

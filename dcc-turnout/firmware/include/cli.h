@@ -7,43 +7,55 @@
 #include "WProgram.h"
 #endif
 
-enum DccCliCommands{
-    dc_reset='f', //Reset to factory defaults (No param)
-    dc_thown='t', //Change to Thrown (If param, change and move)
-    dc_close='c', //Change to Close (If param, change and move)
-    dc_print='p', //Print config (No param)
-    dc_speed='s', //Change speed (Requires Param)
-    dc_write='w', //Write to CVs (no param)
-    dc_read='r',  //Read CV (no param)
-    dc_addr='a',  //Change Addres (requires param)
-    dc_inc='+',   //Moves, adds to current position
-    dc_dec='-',   //Moves, removes from current position
-    dc_error='e', //Error, internal use
-    dc_help='h',  //Print Help
-    dc_middle='m', //Move to Middle Point
+class CommandHelper{
+private:
+    char* _args=NULL;
+    uint8_t _argsSize=0;
+    uint8_t _argPtr=0;
+
+public:
+    void setArgs(char* args);
+    char* nextArg();
+
+    char* _cmd;
+    Stream *stream;
 };
+
+typedef struct s_DccTurnOutCliCommand{
+    const char* _cmd;
+    void (*execute)(CommandHelper*,const s_DccTurnOutCliCommand*);
+    const s_DccTurnOutCliCommand* next;
+} t_DccTurnOutCliCommand;
 
 class DccTurnOutCli
 {
 private:
     Stream *stream;
-    void execute();
-    char cmd = 0;
-    int arg = -1;
-    void printHelp();
-    void printCfg();
-    void factoryReset();
-    void thrown();
-    void close();
-    void move(int delta);
-    void reload();
-    void save();
-    void addr();
-    void speed();
+
+    uint8_t isCmd(const t_DccTurnOutCliCommand* cmdCB, char* cb);
+    char _buff[32];
+    uint8_t _buffPtr;
+    char* _args;
+    const t_DccTurnOutCliCommand* _cmdObj;
+    CommandHelper _cmdHelper;
+
 public:
     DccTurnOutCli(Stream *st);
     void process();
 };
 
-
+void DebugExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void PrintCfgExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void HelpExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void ReloadExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void SaveExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void FactoryResetExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void ThrowExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void CloseExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void SpeedExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void MiddleExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void MoveExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void AddrExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void RefreshExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void PostMoveExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
 #endif

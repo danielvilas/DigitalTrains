@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build"
+			"value" : "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "18"
+			"value" : "22"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "4"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -154,7 +154,7 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/c++"
 		},
 		{
@@ -282,7 +282,7 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/cc"
 		},
 		{
@@ -863,7 +863,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/share/cmake-3.18"
+			"value" : "/usr/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1111,7 +1111,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build"
+			"value" : "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build"
+		},
+		{
+			"name" : "dcc-turnout_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
 		},
 		{
 			"name" : "dcc-turnout_SOURCE_DIR",
@@ -1123,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware"
+			"value" : "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware"
 		}
 	],
 	"kind" : "cache",

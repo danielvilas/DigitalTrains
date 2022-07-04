@@ -2,230 +2,32 @@
 #include "dcc-turnout.h"
 
 //#define CLI_DEBUG
+const t_DccTurnOutCliCommand cmdRefresh={"refresh",&RefreshExecute,NULL};
+const t_DccTurnOutCliCommand cmdPostMove={"postmove",&PostMoveExecute,&cmdRefresh};
+const t_DccTurnOutCliCommand cmdAddr={"address",&AddrExecute,&cmdPostMove};
+const t_DccTurnOutCliCommand cmdMove={"move",&MoveExecute,&cmdAddr};
+const t_DccTurnOutCliCommand cmdMiddle={"middle",&MiddleExecute,&cmdMove};
+const t_DccTurnOutCliCommand cmdSpeed={"speed",&SpeedExecute,&cmdMiddle};
+const t_DccTurnOutCliCommand cmdClose={"close",&CloseExecute,&cmdSpeed};
+const t_DccTurnOutCliCommand cmdThrow={"throw",&ThrowExecute,&cmdClose};
+const t_DccTurnOutCliCommand cmdFactory={"factory",&FactoryResetExecute,&cmdThrow};
+const t_DccTurnOutCliCommand cmdSave={"save",&SaveExecute,&cmdFactory};
+const t_DccTurnOutCliCommand cmdReload={"reload",&ReloadExecute,&cmdSave};
+const t_DccTurnOutCliCommand cmdPrint={"print",&PrintCfgExecute,&cmdReload};
+const t_DccTurnOutCliCommand cmdHelp={"help",&HelpExecute,&cmdPrint};
+
+
+const t_DccTurnOutCliCommand* start = &cmdHelp;
 
 DccTurnOutCli::DccTurnOutCli(Stream *st)
 {
     this->stream = st;
-}
+    this->_buff[0]=0;
+    this->_buffPtr=0;
+    this->_args=this->_buff;
+    this->_cmdObj=NULL;
+    _cmdHelper.stream=stream;
 
-void DccTurnOutCli::execute()
-{
-    DccCliCommands cmd_cli;
-    if (cmd == 0)
-    {
-        cmd_cli = dc_error;
-    }
-    else
-    {
-        cmd_cli = (DccCliCommands)cmd;
-    }
-#ifdef CLI_DEBUG
-    stream->print("Command: ");
-
-    switch (cmd_cli)
-    {
-    case dc_reset:
-        stream->print(" Factory Reset (");
-        break;
-    case dc_thown:
-        stream->print(" Thrown (");
-        break;
-    case dc_close:
-        stream->print(" Close (");
-        break;
-    case dc_print:
-        stream->print(" Print (");
-        break;
-    case dc_speed:
-        stream->print(" Speed (");
-        break;
-    case dc_write:
-        stream->print(" Save (");
-        break;
-    case dc_read:
-        stream->print(" Reload (");
-        break;
-    case dc_addr:
-        stream->print(" Address (");
-        break;
-    case dc_inc:
-        stream->print(" Inc (");
-        break;
-    case dc_dec:
-        stream->print(" Dec (");
-        break;
-    case dc_error:
-        stream->print(" Error (");
-        break;
-    case dc_help:
-        stream->print(" Help (");
-        break;
-
-    default:
-        break;
-    }
-
-    stream->print((char)cmd_cli);
-    stream->print(")");
-    if (arg >= 0)
-    {
-        stream->print(" arg: ");
-        stream->print(arg);
-    }
-    stream->println();
-#endif
-
-    switch (cmd_cli)
-    {
-    case dc_reset:
-        this->factoryReset();
-        break;
-    case dc_thown:
-        this->thrown();
-        break;
-    case dc_close:
-        this->close();
-        break;
-    case dc_print:
-        this->printCfg();
-        break;
-    case dc_speed:
-        this->speed();
-        break;
-    case dc_write:
-        this->save();
-        break;
-    case dc_read:
-        this->reload();
-        break;
-    case dc_addr:
-        this->addr();
-        break;
-    case dc_inc:
-        this->move(arg);
-        break;
-    case dc_dec:
-        this->move(-arg);
-        break;
-    case dc_error:
-        break;
-    case dc_help:
-        this->printHelp();
-        break;
-    case dc_middle:
-        arg=90;
-        if(dccServo.status.status==SERVO_POS_CLOSED){
-            this->close();
-        }
-        if(dccServo.status.status==SERVO_POS_THROWN){
-            this->thrown();
-        }
-
-        this->printHelp();
-        break;
-
-    default:
-        break;
-    }
-}
-
-void DccTurnOutCli::addr()
-{
-    if (arg > 0)
-    {
-        uint16_t LSB = 0x00FF & arg;
-        uint16_t MSB = 0x00FF & (arg >> 8);
-#ifdef CLI_DEBUG
-        stream->print("Change adress to ");
-        stream->print(arg);
-        stream->print(" ");
-        stream->print(MSB);
-        stream->print(" ");
-        stream->println(LSB);
-#endif
-
-        Dcc.setCV(CV_ACCESSORY_DECODER_ADDRESS_LSB, LSB);
-        Dcc.setCV(CV_ACCESSORY_DECODER_ADDRESS_MSB, MSB);
-    }
-}
-
-void DccTurnOutCli::speed()
-{
-    if (arg > 0 && arg < 20)
-    {
-        dccServo.status.speed = arg;
-    }
-}
-
-void DccTurnOutCli::reload()
-{
-    dccServo.status.thrown_pos = Dcc.getCV(CV_SERVO_THROWN);
-    dccServo.status.closed_pos = Dcc.getCV(CV_SERVO_CLOSED);
-    dccServo.status.speed = Dcc.getCV(CV_SERVO_SPEED);
-}
-
-void DccTurnOutCli::save()
-{
-
-    Dcc.setCV(CV_SERVO_THROWN, dccServo.status.thrown_pos);
-    Dcc.setCV(CV_SERVO_CLOSED, dccServo.status.closed_pos);
-    Dcc.setCV(CV_SERVO_SPEED, dccServo.status.speed);
-}
-
-void DccTurnOutCli::printCfg()
-{
-    stream->print("Address: ");
-    stream->println(Dcc.getAddr());
-    stream->print("Status: ");
-    stream->print(dccServo.status.status ? "Closed" : "Thrown");
-    stream->print(" - ");
-    stream->println(dccServo.status.current_pos);
-    stream->print("Thrown: ");
-    stream->println(dccServo.status.thrown_pos);
-    stream->print("Closed: ");
-    stream->println(dccServo.status.closed_pos);
-    stream->print("Speed: ");
-    stream->println(dccServo.status.speed);
-}
-void DccTurnOutCli::printHelp()
-{
-    stream->println("Dcc Turnout");
-}
-
-void DccTurnOutCli::factoryReset()
-{
-    notifyCVResetFactoryDefault();
-}
-void DccTurnOutCli::close()
-{
-    dccServo.status.status = SERVO_POS_CLOSED;
-    if (arg >= 0)
-    {
-        dccServo.status.closed_pos = arg;
-    }
-}
-void DccTurnOutCli::thrown()
-{
-    dccServo.status.status = SERVO_POS_THROWN;
-    if (arg >= 0)
-    {
-        dccServo.status.thrown_pos = arg;
-    }
-}
-
-void DccTurnOutCli::move(int delta)
-{
-    if (arg >= 0)
-    {
-        if (dccServo.status.status == SERVO_POS_THROWN)
-        {
-            dccServo.status.thrown_pos += delta;
-        }
-        else
-        {
-            dccServo.status.closed_pos += delta;
-        }
-    }
 }
 
 void DccTurnOutCli::process()
@@ -233,31 +35,72 @@ void DccTurnOutCli::process()
     while (stream->available() > 0)
     {
         char tmp = stream->read();
+        if(tmp=='\r')continue;
         stream->print(tmp);
-        if (tmp == '\n')
-        {
-            this->execute();
-            cmd = 0;
-            arg = -1;
+        if(tmp == '\b'){
+            _buff[--_buffPtr]=0;
+        }else{
+            _buff[_buffPtr++]=tmp;
         }
-        if (isDigit(tmp) && cmd != 0)
-        {
-            if (arg == -1)
-                arg = 0;
-            arg = arg * 10 + (tmp - '0');
+
+
+        if(_buffPtr==sizeof(_buff)){
+            stream->print("\nerror: Buffer overflow\n");
+            _buffPtr=0;
         }
-        else if (isAlpha(tmp) || tmp == '+' || tmp == '-')
-        {
-            if (tmp == 't' || tmp == 'c' || tmp == 'f' || tmp == 'p' || tmp == 's' || tmp == 'w' || tmp == 'r' || tmp == 'a' || tmp == 'e' || tmp == '+' || tmp == '-' || tmp == 'h' || tmp == 'm')
-            {
-                cmd = tmp;
-                arg = -1;
+        _buff[_buffPtr]=0;
+
+        if(tmp==' ' && _args==_buff){
+            _args=&(_buff[_buffPtr]);
+            _buff[_buffPtr-1]=0;
+
+        }
+
+        if (tmp == '\n'){
+            _buff[_buffPtr-1]=0;
+            const t_DccTurnOutCliCommand* tmpCommand=start;
+            do{
+                if(isCmd(tmpCommand,_buff)==0){
+                    this->_cmdObj=tmpCommand;
+                }
+                tmpCommand=tmpCommand->next;
+            }while(this->_cmdObj==NULL && tmpCommand!=NULL);
+            
+            if(_cmdObj!=NULL){
+                if(_args!=_buff) _cmdHelper.setArgs(_args);
+                _cmdHelper._cmd=_buff;
+                _cmdObj->execute(&_cmdHelper,_cmdObj);
+                _cmdHelper.setArgs(NULL);
             }
-            else
-            {
-                cmd = 0;
-                arg = -1;
-            }
+            _buffPtr=0;
+            _args=_buff;
+            this->_cmdObj=NULL;
+
         }
+        
     }
+}
+
+
+u_int8_t DccTurnOutCli::isCmd(const t_DccTurnOutCliCommand* cmdCB, char* cmd){
+    return strcmp(cmdCB->_cmd,cmd);
+}
+
+void CommandHelper::setArgs(char* args){
+    _args=args;
+    _argPtr=0;
+    _argsSize=strlen(_args);
+}
+
+char* CommandHelper::nextArg(){
+    if(_args==NULL) return NULL;
+    if(_argPtr >= _argsSize) return NULL;
+
+    char* ret = &_args[_argPtr];
+    while(_args[_argPtr]!=' ' && _args[_argPtr]!=0)_argPtr++;
+    if(_args[_argPtr]==' '){
+        _args[_argPtr++]=0;
+    }
+
+    return ret;
 }

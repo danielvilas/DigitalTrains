@@ -39,6 +39,9 @@ extern DccTurnOutCli cli;
 #define CV_SERVO_THROWN 2
 #define CV_SERVO_CLOSED 3
 #define CV_SERVO_SPEED 4
+#define CV_SERVO_POST_MOVE_TIME 5
+#define CV_SERVO_REFERSH_INTERVAL 6
+#define CV_SERVO_REFRESH_TIME 7
 
 #define SERVO_POS_CLOSED 1
 #define SERVO_POS_THROWN 0

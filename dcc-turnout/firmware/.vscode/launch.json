@@ -31,6 +31,17 @@
             "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F030.svd"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/.pio/build/STM32F030K6T6TR_Devel/firmware.elf",
+            "projectEnvName": "STM32F030K6T6TR_Devel",
+            "toolchainBinDir": "/home/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "/home/daniel/.platformio/platforms/ststm32/misc/svd/STM32F030.svd",
+            "loadMode": "manual"
         }
     ]
 }

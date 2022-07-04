@@ -6,6 +6,9 @@ CVPair FactoryDefaultCVs[] =
         {CV_SERVO_CLOSED, 115},
         {CV_SERVO_THROWN, 65},
         {CV_SERVO_SPEED, 5},
+        {CV_SERVO_POST_MOVE_TIME, 20},
+        {CV_SERVO_REFERSH_INTERVAL, 0},
+        {CV_SERVO_REFRESH_TIME, 10},
 };
 
 uint8_t FactoryDefaultCVIndex = 0;
@@ -58,7 +61,7 @@ void notifyCVChange(uint16_t CV, uint8_t Value)
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Board Addressing Mode
 void notifyDccAccTurnoutBoard(uint16_t BoardAddr, uint8_t OutputPair, uint8_t Direction, uint8_t OutputPower)
 {
-    SERIAL_OUT.print("notifyDccAccTurnoutBoard: ");
+    SERIAL_OUT.print("Board: ");
     SERIAL_OUT.print(BoardAddr, DEC);
     SERIAL_OUT.print(" Direction: ");
     SERIAL_OUT.print(Direction ? "Closed" : "Thrown");
@@ -69,7 +72,7 @@ void notifyDccAccTurnoutBoard(uint16_t BoardAddr, uint8_t OutputPair, uint8_t Di
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Output Addressing Mode
 void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputPower)
 {
-    SERIAL_OUT.print("notifyDccAccTurnoutOutput: Turnout: ");
+    SERIAL_OUT.print("Turnout: Turnout: ");
     SERIAL_OUT.print(Addr, DEC);
     SERIAL_OUT.print(" Direction: ");
     SERIAL_OUT.print(Direction ? "Closed" : "Thrown");
@@ -85,7 +88,7 @@ void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputP
 // This function is called whenever a DCC Signal Aspect Packet is received
 void notifyDccSigOutputState(uint16_t Addr, uint8_t State)
 {
-    SERIAL_OUT.print("notifyDccSigOutputState: ");
+    SERIAL_OUT.print("Signal: ");
     SERIAL_OUT.print(Addr, DEC);
     SERIAL_OUT.print(',');
     SERIAL_OUT.println(State, HEX);

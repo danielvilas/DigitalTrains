@@ -55,6 +55,9 @@ void setup()
         setServoCV(CV_SERVO_THROWN, Dcc.getCV(CV_SERVO_THROWN));
         setServoCV(CV_SERVO_CLOSED, Dcc.getCV(CV_SERVO_CLOSED));
         setServoCV(CV_SERVO_SPEED, Dcc.getCV(CV_SERVO_SPEED));
+        setServoCV(CV_SERVO_POST_MOVE_TIME,Dcc.getCV(CV_SERVO_POST_MOVE_TIME));
+        setServoCV(CV_SERVO_REFERSH_INTERVAL, Dcc.getCV(CV_SERVO_REFERSH_INTERVAL));
+        setServoCV(CV_SERVO_REFRESH_TIME, Dcc.getCV(CV_SERVO_REFRESH_TIME));
     }
 
     SERIAL_OUT.println("Init Done");

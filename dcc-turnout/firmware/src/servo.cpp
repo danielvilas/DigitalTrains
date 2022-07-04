@@ -22,6 +22,21 @@ void setServoCV(uint16_t CV, uint8_t Value)
         SERIAL_OUT.print("Servo Speed: ");
         SERIAL_OUT.println(Value, DEC);
         break;
+    case CV_SERVO_POST_MOVE_TIME:
+        dccServo.status.postMoveTime = Value;
+        SERIAL_OUT.print("PostMove On-Time: ");
+        SERIAL_OUT.println(Value, DEC);
+        break;
+    case CV_SERVO_REFERSH_INTERVAL:
+        dccServo.status.refreshInterval = Value;
+        SERIAL_OUT.print("Refresh Interval: ");
+        SERIAL_OUT.println(Value, DEC);
+        break;
+    case CV_SERVO_REFRESH_TIME:
+        dccServo.status.refreshTime = Value;
+        SERIAL_OUT.print("Refresh On-Time: ");
+        SERIAL_OUT.println(Value, DEC);
+        break;
     default:
         break;
     }

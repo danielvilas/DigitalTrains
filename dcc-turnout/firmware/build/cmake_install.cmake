@@ -1,4 +1,4 @@
-# Install script for directory: /home/daniel/OHS/DigitalTrains/dcc-turnout/firmware
+# Install script for directory: /data/daniel/OHS/DigitalTrains/dcc-turnout/firmware
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/data/daniel/OHS/DigitalTrains/dcc-turnout/firmware/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

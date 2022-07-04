@@ -22,12 +22,6 @@ uint8_t DccServo::moveServo(uint8_t pos, uint8_t dest, uint8_t speed)
         if (ret < dest)
             ret = dest;
     }
-    // SERIAL_OUT.print("moveServo: ");
-    // SERIAL_OUT.print(pos, DEC);
-    // SERIAL_OUT.print(" to: ");
-    // SERIAL_OUT.print(dest, DEC);
-    // SERIAL_OUT.print(" next: ");
-    // SERIAL_OUT.println(ret, DEC);
     return ret;
 }
 
@@ -100,27 +94,32 @@ void DccServo::processServo(){
     else
     {
         if(status.intState == SERVO_MOVE){
-            status.intState=SERVO_POST_MOVE;
-            status.stateCounter=0;
+            if(status.refreshInterval!=0){
+                status.intState=SERVO_POST_MOVE;
+                status.stateCounter=0;
+            }
         }else if(status.intState == SERVO_POST_MOVE){
             status.stateCounter++;
-            if(status.stateCounter==20){ //TODO CV POST_WAIT
+            if(status.stateCounter==status.postMoveTime){
                 status.intState = SERVO_WAIT;
                 this->servo.detach();
                 status.stateCounter=0;
             }
         }else if (status.intState == SERVO_WAIT)
         {
-            status.stateCounter++;
-            if(status.stateCounter==100){ //TODO CV OFF_TIME
-                status.intState=SERVO_REFRESH;
-                this->servo.attach(this->servo_pin);
-                status.stateCounter=0; //TODO CV ON_TIME (CV_OFF - CV_ON)
+            if(status.refreshInterval>0){
+                status.stateCounter++;
+                if(status.stateCounter==status.refreshInterval){ 
+                    status.intState=SERVO_REFRESH;
+                    this->servo.attach(this->servo_pin);
+                    status.stateCounter=0; //TODO CV ON_TIME (CV_OFF - CV_ON)
+                }
             }
+            
         }else if (status.intState == SERVO_REFRESH)
         {
             status.stateCounter++;
-            if(status.stateCounter==10){ //TODO CV OFF_TIME
+            if(status.stateCounter==status.refreshTime){
                 status.intState=SERVO_WAIT;
                 this->servo.detach();
                 status.stateCounter=0; //TODO CV ON_TIME (CV_OFF - CV_ON)
@@ -130,6 +129,6 @@ void DccServo::processServo(){
 
     this->servo.write(status.current_pos);
     boolean power = false;
-    if (status.intState != SERVO_WAIT) power = true;
+    if (status.intState != SERVO_WAIT || status.refreshInterval==0) power = true;
     servo_en(power);
 }
