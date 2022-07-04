@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "DCC Decoder Turnout")
+    (date "2022-07-04")
+    (rev "0.4.1")
+  )
+
   (lib_symbols
     (symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 2.54 0)
@@ -679,7 +685,6 @@
     )
   )
 
-
   (junction (at 274.32 135.89) (diameter 0) (color 0 0 0 0)
     (uuid 418d3096-e7ea-404a-8672-8c8a78fcd40b)
   )
@@ -711,12 +716,12 @@
   (no_connect (at 243.84 45.72) (uuid 0b8d7c50-e083-4c4f-9abd-e64b8c14398f))
   (no_connect (at 243.84 55.88) (uuid 12ea7c16-296d-4667-95eb-90106faa2acc))
   (no_connect (at 265.43 31.75) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d09))
-  (no_connect (at 265.43 34.29) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d09))
-  (no_connect (at 265.43 25.4) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d09))
-  (no_connect (at 265.43 27.94) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d09))
+  (no_connect (at 265.43 34.29) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d0a))
+  (no_connect (at 265.43 25.4) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d0b))
+  (no_connect (at 265.43 27.94) (uuid 1496cdc6-7dd0-42c4-977a-35a9b0940d0c))
   (no_connect (at 243.84 74.93) (uuid 16b5f2d4-318a-4083-bfdb-7e68ec767382))
-  (no_connect (at 243.84 58.42) (uuid 16b5f2d4-318a-4083-bfdb-7e68ec767382))
-  (no_connect (at 243.84 60.96) (uuid 16b5f2d4-318a-4083-bfdb-7e68ec767382))
+  (no_connect (at 243.84 58.42) (uuid 16b5f2d4-318a-4083-bfdb-7e68ec767383))
+  (no_connect (at 243.84 60.96) (uuid 16b5f2d4-318a-4083-bfdb-7e68ec767384))
   (no_connect (at 243.84 38.1) (uuid 24ebb576-4ebf-445f-bf28-2945818d4a2a))
   (no_connect (at 243.84 40.64) (uuid 2524ba5c-1b23-4486-8770-819e3abba44f))
   (no_connect (at 45.72 40.64) (uuid 8c6f47da-11a5-429b-8fc2-7d89c54bd287))

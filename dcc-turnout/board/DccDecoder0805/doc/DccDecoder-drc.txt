@@ -1,5 +1,5 @@
 ** Drc report for /data/daniel/OHS/DigitalTrains/dcc-turnout/board/DccDecoder0805/DccDecoder.kicad_pcb **
-** Created on 2022-07-04 14:51:55 **
+** Created on 2022-07-04 15:19:34 **
 
 ** Found 0 DRC violations **
 
