@@ -30,6 +30,10 @@ void notifyCVAck(void)
     digitalWrite(PIN_ACK, HIGH);
     delay(6);
     digitalWrite(PIN_ACK, LOW);
+    if (dccServo.status.intState==SERVO_BOOT){
+        dccServo.status.stateCounter=0; //reset the counter to wait other 5 segs
+        SERIAL_OUT.println("Wait servo");
+    }
 }
 
 // Uncomment to print all DCC Packets
@@ -56,6 +60,10 @@ void notifyCVChange(uint16_t CV, uint8_t Value)
 
     Value = Value; // Silence Compiler Warnings...
     setServoCV(CV, Value);
+    if (dccServo.status.intState==SERVO_BOOT){
+        dccServo.status.stateCounter=0; //reset the counter to wait other 5 segs
+        SERIAL_OUT.println("Wait servo");
+    }
 }
 
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Board Addressing Mode
@@ -72,7 +80,7 @@ void notifyDccAccTurnoutBoard(uint16_t BoardAddr, uint8_t OutputPair, uint8_t Di
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Output Addressing Mode
 void notifyDccAccTurnoutOutput(uint16_t Addr, uint8_t Direction, uint8_t OutputPower)
 {
-    SERIAL_OUT.print("Turnout: Turnout: ");
+    SERIAL_OUT.print("Turnout: ");
     SERIAL_OUT.print(Addr, DEC);
     SERIAL_OUT.print(" Direction: ");
     SERIAL_OUT.print(Direction ? "Closed" : "Thrown");

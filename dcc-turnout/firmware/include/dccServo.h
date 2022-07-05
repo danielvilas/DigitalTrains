@@ -3,6 +3,7 @@
 #include "dcc-turnout.h"
 
 enum servoInternalState{
+    SERVO_BOOT,
     SERVO_WAIT,
     SERVO_MOVE,
     SERVO_POST_MOVE,

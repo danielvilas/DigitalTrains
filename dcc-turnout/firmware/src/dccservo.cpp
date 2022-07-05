@@ -5,6 +5,8 @@ DccServo::DccServo(uint8_t servo_pin, uint8_t servo_led, uint8_t servo_pwr){
     this->servo_pin=servo_pin;
     this->servo_led=servo_led;
     this->servo_pwr=servo_pwr;
+    this->status.intState=SERVO_BOOT;
+    this->status.stateCounter=0;
 }
 
 uint8_t DccServo::moveServo(uint8_t pos, uint8_t dest, uint8_t speed)
@@ -66,6 +68,18 @@ void DccServo::servo_en(bool power){
 }
 
 void DccServo::processServo(){
+
+    if(status.intState==SERVO_BOOT){
+            servo_en(false);
+            status.stateCounter++;
+            if(status.stateCounter==100){ //Wait 5 seconds
+                status.intState = SERVO_MOVE;
+                this->servo.attach(this->servo_pin);
+                status.stateCounter=0;
+            }else{
+                return;
+            }
+    }
         // SERIAL_OUT.print(" Direction: ");
     // SERIAL_OUT.println(status.status ? "Closed" : "Thrown");
     uint8_t desiredPos;
@@ -112,7 +126,7 @@ void DccServo::processServo(){
                 if(status.stateCounter==status.refreshInterval){ 
                     status.intState=SERVO_REFRESH;
                     this->servo.attach(this->servo_pin);
-                    status.stateCounter=0; //TODO CV ON_TIME (CV_OFF - CV_ON)
+                    status.stateCounter=0; 
                 }
             }
             
@@ -122,7 +136,7 @@ void DccServo::processServo(){
             if(status.stateCounter==status.refreshTime){
                 status.intState=SERVO_WAIT;
                 this->servo.detach();
-                status.stateCounter=0; //TODO CV ON_TIME (CV_OFF - CV_ON)
+                status.stateCounter=0; 
             }
         }
     }
