@@ -16,7 +16,7 @@ rm ./interactivehtmlbom.inti-cmnb_2.5.0-1_all.deb
 pip3 uninstall kibot kiauto kibot
 pip3 install git+https://github.com/INTI-CMNB/KiBot/ --no-compile
 pip3 install git+https://github.com/INTI-CMNB/KiAuto/ 
-pip3 install pcbdraw
+pip3 install git+https://github.com/yaqwsx/PcbDraw/
 
 
 ```

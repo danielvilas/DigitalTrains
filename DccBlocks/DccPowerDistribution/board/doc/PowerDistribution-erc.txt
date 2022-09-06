@@ -1,9 +1,18 @@
-ERC report (Fri Jun 17 14:08:05 2022, Encoding UTF8)
+ERC report (Thu Jul  7 09:30:45 2022, Encoding UTF8)
 
 ***** Sheet /
+[lib_symbol_issues]: Symbol '+3.3V' has been modified in library 'power'.
+    ; Severity: warning
+    @(63.50 mm, 173.99 mm): Symbol #PWR0114 [+3.3V]
+[lib_symbol_issues]: Symbol '+3.3V' has been modified in library 'power'.
+    ; Severity: warning
+    @(92.71 mm, 138.43 mm): Symbol #PWR07 [+3.3V]
+[lib_symbol_issues]: Symbol '+3.3V' has been modified in library 'power'.
+    ; Severity: warning
+    @(102.87 mm, 25.40 mm): Symbol #PWR0101 [+3.3V]
 
 ***** Sheet /Power Distribution/
 
 ***** Sheet /Dcc Interface/
 
- ** ERC messages: 0  Errors 0  Warnings 0
+ ** ERC messages: 3  Errors 0  Warnings 3
