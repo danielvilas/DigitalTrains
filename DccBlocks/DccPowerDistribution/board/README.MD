@@ -28,3 +28,17 @@ Degub led consumption with provided Resistences:
 ### v1.0.0-RC1
 * [x] Initial Version from Dcc Turnout Decoder
 * [x] Change project name with kicad project rename
+
+### V1.0.0-RC2
+* [ ] Add Test Points
+  * [] Voltage Main (GND, Vdrive,+5V, +3.3V)
+  * [] Voltage Others (VDcc,Gnd_Dcc, VDecoder,GND_Deco)
+  * [] Gate-Source Q4 (VDcc Blocker)
+* [ ] See U? on the silk (usefull for doc)
+* [ ]  Change Power Diodes 
+* [x]  Isolate Deco GND
+* [x]  Correct ECR (Net Ties - names)
+* [ ]  Add auto selection Debug Leds
+* [ ]  Add Pi Filter to VDrive
+* [ ]  Check CC only & DCC at the same time
+* [ ]  Check Position of JP3 And JP4
