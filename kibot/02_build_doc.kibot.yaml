@@ -4,7 +4,7 @@ kibot:
 preflight:
   run_erc: false
   erc_warnings: false
-  update_xml: false
+  update_xml: true
   run_drc: false
   check_zone_fills: false
   ignore_unconnected: false
@@ -48,4 +48,39 @@ outputs:
       variant_field: ''
       variants_blacklist: ''
       variants_whitelist: ''
- 
+
+  - name: 'bom_html'
+    comment: 'Used to generate the BoM in CSV, HTML, TSV, TXT, XML or XLSX format using the internal BoM.'
+    type: 'bom'
+    options:
+      group_fields: ['Part', 'Part Lib', 'Value', 'Footprint', 'Footprint Lib', 'Tolerance']
+      format: 'HTML'
+      html:
+        col_colors: true
+        style: 'modern-blue'
+        title: 'Bill of Materials'
+      count_smd_tht: true
+      group_connectors: false
+  
+  
+  - name: 'bom_xlsx'
+    comment: 'Used to generate the BoM in CSV, HTML, TSV, TXT, XML or XLSX format using the internal BoM.'
+    type: 'bom'
+    options:
+      format: 'XLSX'
+      group_fields: ['Part', 'Part Lib', 'Value', 'Footprint', 'Footprint Lib', 'Tolerance']
+      count_smd_tht: true
+      group_connectors: false      
+      xlsx:
+        col_colors: true
+        style: 'modern-blue'
+        title: 'Bill of Materials'
+  # - name: 'kicost'
+  #   comment: 'Used to generate the BoM in CSV, HTML, TSV, TXT, XML or XLSX format using the internal BoM.'
+  #   type: 'kicost'
+  #   options:
+  #     currency: 'EUR'
+  #     group_fields: ['Part', 'Part Lib', 'Value', 'Footprint', 'Footprint Lib', 'Tolerance']
+  #     ignore_fields: ['Tolerance']
+  #     number: 1
+      

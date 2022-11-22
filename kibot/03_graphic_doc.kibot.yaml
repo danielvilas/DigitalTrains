@@ -24,12 +24,42 @@ outputs:
       origin: 'grid'
       output: '%f-%i%v.%x'
 
-  - name: 'pcbdraw'
+  - name: 'pcbdraw-top'
     comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
     type: 'pcbdraw'
     dir: './'
     options:
       bottom: false
+      dpi: 300
+      format: 'png'
+      highlight: []
+      libs: [kicad-default]
+      mirror: false
+      no_drillholes: false
+      output: '%f-%i%v.%x'
+      placeholder: false
+      show_components: all
+ #     remap:
+ #     show_components: none
+      style:
+        board: '#4ca06c'
+        clad: '#9c6b28'
+        copper: '#417e5a'
+        highlight_on_top: false
+        highlight_padding: 1.5
+        highlight_style: 'stroke:none;fill:#ff0000;opacity:0.5;'
+        outline: '#000000'
+        pads: '#b5ae30'
+        silk: '#f0f0f0'
+        vcut: '#bf2600'
+      warnings: 'visible'
+
+  - name: 'pcbdraw-bottom'
+    comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
+    type: 'pcbdraw'
+    dir: './'
+    options:
+      bottom: true
       dpi: 300
       format: 'png'
       highlight: []
@@ -52,3 +82,14 @@ outputs:
         silk: '#f0f0f0'
         vcut: '#bf2600'
       warnings: 'visible'
+
+  - name: 'Render-3d'
+    comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
+    type: 'render_3d'
+    dir: './'
+    options:
+      download: true
+      zoom: 5
+      rotate_x: 3
+      rotate_y: 0
+      rotate_z: -2

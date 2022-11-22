@@ -13,7 +13,6 @@ outputs:
   - name: 'pdf_sch'
     comment: 'Exports the Schematic to the most common exhange format. Suitable for printing.'
     type: 'pdf_sch_print'
-    dir: 'pdf'
     options:
       output: '%f-%i%v.%x'
 
@@ -25,7 +24,7 @@ outputs:
       dnf_filter: ''
       drill_marks: 'full'
       edge_cut_extension: ''
-      exclude_edge_layer: true
+      exclude_edge_layer: false
       exclude_pads_from_silkscreen: false
       force_plot_invisible_refs_vals: false
       inner_extension_pattern: ''
@@ -35,7 +34,32 @@ outputs:
       output: '%f-%i%v.%x'
       plot_footprint_refs: true
       plot_footprint_values: true
-      plot_sheet_reference: false
       tent_vias: true
       uppercase_extensions: false
+      plot_sheet_reference: true
     layers: all
+    plot_sheet_reference: true
+
+  - name: 'pcb-documentation'
+    comment: 'Exports the Schematic to the most common exhange format. Suitable for printing.'
+    type: 'pdfunite'
+    options:
+      output: '%f-%i%v.%x'
+      outputs:
+        - from_output: 'pdf_pcb'
+  # Design report:
+  # Mainly oriented to be sent to the manufacturer or check PCB details.
+  - name: 'report_example'
+    comment: 'Generates a report about the design.'
+    type: 'report'
+    dir: 'report'
+    options:
+      convert_from: 'markdown'
+      convert_to: 'pdf'
+      converted_output: '%f-%i%I%v.%x'
+      do_convert: true
+      # [string='10F'] Which Eurocircuits class are we aiming at
+      eurocircuits_class_target: '10F'
+      eurocircuits_reduce_holes: 0.45
+      output: '%f-%i%I%v.%x'
+      template: 'full_svg'

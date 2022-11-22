@@ -28,6 +28,9 @@ then
 fi
 FILES="00_erc_drc.kibot.yaml 01_pdf_doc.kibot.yaml 02_build_doc.kibot.yaml 03_graphic_doc.kibot.yaml 04_fab_board.kibot.yaml"  
 
+#FILES="02_build_doc.kibot.yaml"  
+
+
 for i in $FILES 
 do
     echo "Running $i"
