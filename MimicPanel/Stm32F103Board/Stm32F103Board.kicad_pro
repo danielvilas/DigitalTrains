@@ -334,7 +334,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "BoardArduinos.kicad_pro",
+    "filename": "Stm32F103Board.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -367,11 +367,14 @@
         "microvia_drill": 0.1,
         "name": "Power",
         "nets": [
-          "+5V"
+          "+3V3",
+          "+5V",
+          "/LedPWR",
+          "VBUS"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.8,
+        "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -433,7 +436,7 @@
   },
   "sheets": [
     [
-      "2f011149-03f4-40e4-9b35-ac19d5c6054f",
+      "dc19ee83-1ab0-4624-a6cd-c5822e6ad8ce",
       ""
     ]
   ],

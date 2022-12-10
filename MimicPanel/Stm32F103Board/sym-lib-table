@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name BoardArduinos)(type Legacy)(uri ${KIPRJMOD}/libs/BoardArduinos.lib)(options "")(descr ""))
+  (lib (name "BoardArduinos")(type "Legacy")(uri "${KIPRJMOD}/libs/BoardArduinos.lib")(options "")(descr ""))
+  (lib (name "Stm32F103Board-rescue")(type "Legacy")(uri "${KIPRJMOD}/Stm32F103Board-rescue.lib")(options "")(descr ""))
 )
