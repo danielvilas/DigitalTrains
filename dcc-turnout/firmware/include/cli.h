@@ -58,4 +58,5 @@ void MoveExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
 void AddrExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
 void RefreshExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
 void PostMoveExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
+void VersionExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self);
 #endif

@@ -14,7 +14,9 @@ const t_DccTurnOutCliCommand cmdFactory={"factory",&FactoryResetExecute,&cmdThro
 const t_DccTurnOutCliCommand cmdSave={"save",&SaveExecute,&cmdFactory};
 const t_DccTurnOutCliCommand cmdReload={"reload",&ReloadExecute,&cmdSave};
 const t_DccTurnOutCliCommand cmdPrint={"print",&PrintCfgExecute,&cmdReload};
-const t_DccTurnOutCliCommand cmdHelp={"help",&HelpExecute,&cmdPrint};
+const t_DccTurnOutCliCommand cmdVersion={"version",&VersionExecute,&cmdPrint};
+const t_DccTurnOutCliCommand cmdHelp={"help",&HelpExecute,&cmdVersion};
+
 
 
 const t_DccTurnOutCliCommand* start = &cmdHelp;

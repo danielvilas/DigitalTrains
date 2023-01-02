@@ -1,6 +1,6 @@
 #include "cli.h"
 #include "dcc-turnout.h"
-
+#include "version.h"
 
 void DebugExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self){
     helper->stream->print("Executing DtoccDebug ");
@@ -36,10 +36,17 @@ void PrintCfgExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self){
     stream->println(dccServo.status.postMoveTime);
 }
 
+void VersionExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self){
+    Stream* stream = helper->stream;
+
+    //stream->print();
+    stream->println(FIRMWARE_NAME" "FIRMWARE_VERSION);
+}
+
 void HelpExecute(CommandHelper *helper, const t_DccTurnOutCliCommand* self){
     Stream* stream = helper->stream;
 
-    stream->println("Dcc Turnout");
+    stream->println(FIRMWARE_NAME" "FIRMWARE_VERSION);
     stream->println("Commands:");
     const t_DccTurnOutCliCommand* tmpCommand=self;
     do{

@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "dcc-turnout.h"
+#include "version.h"
 
 // This Example shows how to use the library as a DCC Accessory Decoder or a DCC Signalling Decoder
 // It responds to both the normal DCC Turnout Control packets and the newer DCC Signal Aspect packets
@@ -26,7 +27,7 @@ void setup()
     pinMode(THROWN_LED,OUTPUT);
     pinMode(CLOSED_LED,OUTPUT);
 
-    SERIAL_OUT.println("NMRA DCC Example 1");
+    SERIAL_OUT.println(FIRMWARE_NAME" "FIRMWARE_VERSION"\n");
    
     digitalWrite(PIN_STATUS,LOW);
 
