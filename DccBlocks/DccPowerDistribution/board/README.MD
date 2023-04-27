@@ -41,4 +41,9 @@ Degub led consumption with provided Resistences:
 * [ ]  Add auto selection Debug Leds
 * [ ]  Add Pi Filter to VDrive
 * [ ]  Check CC only & DCC at the same time
-* [ ]  Check Position of JP3 And JP4
+* [X]  Check Position of JP3 And JP4
+
+### V1.0.0-RC3
+* [ ] Change Bridge Rectifier
+* [ ] Change PMos (blocker) for IRLML9301TRPBF
+
