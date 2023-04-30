@@ -19,7 +19,7 @@ then
 fi
 
 #VERSION=latest
-VERSION=ki6
+VERSION=ghcr.io/inti-cmnb/kicad7_auto:latest
 
 docker run --rm -it  \
     -v $LOCAL_BASE:/home/$USER/workdir \
@@ -27,6 +27,7 @@ docker run --rm -it  \
     --user $USER_ID:$GROUP_ID \
     --env NO_AT_BRIDGE=1 \
     --env USER=$USER \
+    --env HOME=/home/daniel/ \
     --workdir="/home/$USER/" \
     --volume="$PASS_FILE:/etc/passwd:ro" \
     --volume="$KIBOT_DIR/docker.tmp/config:/home/$USER/.config:rw" \
@@ -34,4 +35,4 @@ docker run --rm -it  \
     --volume="$KIBOT_DIR/docker.tmp/local:/home/$USER/.local:rw" \
     --rm \
     --hostname kibot \
-    setsoft/kicad_auto:$VERSION /bin/bash -c "cd workdir/$SUBDIR; bash ./runKibot.sh  $@"
+    $VERSION /bin/bash -c "cd workdir/$SUBDIR; bash ./runKibot.sh  $@"
