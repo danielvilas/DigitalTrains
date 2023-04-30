@@ -30,20 +30,27 @@ Degub led consumption with provided Resistences:
 * [x] Change project name with kicad project rename
 
 ### V1.0.0-RC2
-* [ ] Add Test Points
-  * [] Voltage Main (GND, Vdrive,+5V, +3.3V)
-  * [] Voltage Others (VDcc,Gnd_Dcc, VDecoder,GND_Deco)
-  * [] Gate-Source Q4 (VDcc Blocker)
-* [ ] See U? on the silk (usefull for doc)
-* [ ]  Change Power Diodes 
-* [x]  Isolate Deco GND
-* [x]  Correct ECR (Net Ties - names)
-* [ ]  Add auto selection Debug Leds
-* [ ]  Add Pi Filter to VDrive
-* [ ]  Check CC only & DCC at the same time
-* [X]  Check Position of JP3 And JP4
+* [x] Correct Silk Version (0.3.0 -> 1.0.0-RC2)
+* [x] Added Bulk Capacitance on Vdrive
+* [x] Changed bridge to schottky one
+* [x] Correct ECR (Net Ties - names)
 
 ### V1.0.0-RC3
-* [ ] Change Bridge Rectifier
+* [X] Heat Analisys
+* [X]  Check Position of JP3 And JP4
+* [X]  Isolate Deco GND
+* [ ] Add Test Points
+  * [X] Voltage Main (GND, Vdrive,+5V, +3.3V)
+  * [X] Voltage Others (VDcc,Gnd_Dcc, VDecoder,GND_Deco)
+  * [X] Gate-Source Q4 (VDcc Blocker)
+  * [X] For Debug leds
+* [X] See U? on the silk (usefull for doc)
+* [X] Change Power Diodes 
+* [X] Change Bridge Rectifier To power Diodes
 * [ ] Change PMos (blocker) for IRLML9301TRPBF
 
+
+### V1.0.0-RC4
+* [ ] Check CC only & DCC at the same time
+* [ ] Add auto selection Debug Leds
+* [ ] Add Pi Filter to VDrive
