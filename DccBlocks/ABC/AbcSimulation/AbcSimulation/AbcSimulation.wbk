@@ -1,0 +1,14 @@
+version 2
+1
+9
+.tran 1n 300u 0{return}.kicad adjustpaths{return}.save all{return}.probe alli
+3
+2
+I(ROut1)
+ 
+2
+I(ROut2)
+ 
+1
+V(/VGg)
+ 
