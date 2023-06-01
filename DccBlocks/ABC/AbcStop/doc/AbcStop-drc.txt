@@ -1,0 +1,13 @@
+** Drc report for /home/dvilas/workdir/DccBlocks/ABC/AbcStop/AbcStop.kicad_pcb **
+** Created on 2023-06-01 11:28:50 **
+
+** Found 1 DRC violations **
+[lib_footprint_mismatch]: Footprint 'NetTie-2_SMD_Pad2.0mm' does not match copy in library 'NetTie'.
+    Local override; Severity: warning
+    @(82.0000 mm, 60.0000 mm): Footprint NT1
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
