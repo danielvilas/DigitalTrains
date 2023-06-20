@@ -1,4 +1,4 @@
-#include <arduino.h>
+#include <Arduino.h>
 #include <IoTT_LocoNetHBESP32.h> 
 
 #include <WiFi.h>
