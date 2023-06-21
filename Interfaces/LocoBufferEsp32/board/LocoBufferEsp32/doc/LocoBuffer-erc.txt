@@ -1,0 +1,15 @@
+ERC report (Wed Jun 21 13:50:03 2023, Encoding UTF8)
+
+***** Sheet /
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; Severity: error
+    @(240.0300 mm, 105.4100 mm): Symbol U4 Pin 1 [GND, Power input, Line]
+
+***** Sheet /LocoNet/
+
+***** Sheet /ESP32 Support HW/
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; Severity: error
+    @(105.4100 mm, 44.4500 mm): Symbol #PWR023 Hidden pin 1 [VBUS, Power input, Line]
+
+ ** ERC messages: 2  Errors 2  Warnings 0
