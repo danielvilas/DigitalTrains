@@ -443,6 +443,23 @@
         "via_diameter": 1.4,
         "via_drill": 0.8,
         "wire_width": 12
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "semiPower",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 8
       }
     ],
     "meta": {
@@ -457,19 +474,19 @@
       },
       {
         "netclass": "Power",
-        "pattern": "/Right_OUT"
-      },
-      {
-        "netclass": "Power",
         "pattern": "/Left_IN"
       },
       {
         "netclass": "Power",
-        "pattern": "/Right_IN"
+        "pattern": "/Right_*"
       },
       {
         "netclass": "Power",
         "pattern": "/d?"
+      },
+      {
+        "netclass": "semiPower",
+        "pattern": "/High_Right"
       }
     ]
   },
