@@ -1,5 +1,5 @@
 {
-    "name": "IoTT_Mux64Buttons",
+    "name": "IoTT_RemoteButtons",
     "version": "1.1.0",
     "keywords": [
       "serial", "io", "loconet"
@@ -8,7 +8,7 @@
     "repository":
     {
         "type": "git",
-        "url": "https://github.com/tanner87661/IoTT_Mux4067Buttons"
+        "url": "https://github.com/tanner87661/IoTTStick/tree/master/Sketchbook/libraries/IoTT_RemoteButtons"
     },
     "frameworks": "arduino",
     "platforms": "espressif32"

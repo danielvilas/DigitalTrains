@@ -1,6 +1,6 @@
 {
     "name": "IoTT_CommDef",
-    "version": "1.0.0"
+    "version": "1.0.0",
     "keywords": [
       "MQTT Gateway", "io", "LocoNet Gateway", "Digitrax Buffers"
     ],
@@ -8,7 +8,7 @@
     "repository":
     {
         "type": "git",
-        "url": "https://github.com/tanner87661/IoTT_CommDef"
+        "url": "https://github.com/tanner87661/IoTTStick/tree/master/Sketchbook/libraries/IoTT_CommDef"
     },
     "frameworks": "arduino",
     "platforms": "espressif32"
