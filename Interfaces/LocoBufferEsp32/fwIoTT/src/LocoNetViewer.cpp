@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include <IoTT_LocoNetHBESP32.h> 
 #include <IoTT_lbServer.h>
-#include <WiFi.h>
+
+#include "lbWifi.h"
+
 
 /////////USER CONFIGURATION//////////////////////////////////////////
 #define pinRx    22  //pin used to receive LocoNet signals
@@ -11,8 +13,6 @@
 #define showPerformance
 /////////END OF USER CONFIGURATION//////////////////////////////////////////
 
-const char* ssid     = "XXXXXX";
-const char* password = "XXXXXX";
 
 LocoNetESPSerial lnSerial(2); //true is inverted signals
 IoTT_LBServer * lbServer=NULL;
@@ -50,20 +50,6 @@ void callbackLocoNetMessageUpstream(lnReceiveBuffer * newData)
    Serial.println();
 }
  
-
-void initWifi(){
-  Serial.print("Setting AP (STA)…");
-  WiFi.begin(ssid,password);
-    while(WiFi.status() != WL_CONNECTED){
-        Serial.print(".");
-        delay(100);
-    }
-
-    Serial.println("\nConnected to the WiFi network");
-    Serial.print("Local ESP32 IP: ");
-    Serial.println(WiFi.localIP());
-
-}
 
 void setup() {
   // put your setup code here, to run once:
