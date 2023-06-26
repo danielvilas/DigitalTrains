@@ -191,7 +191,7 @@ static void IRAM_ATTR hybrid_driver() //timer interrupt occurs every 15 micros.
     case uart_transmit:
       //check for collisions, stop sending if collision is detected and send break. Not needed for MARK=1, but we do it anyway as it can not create a false collision detection
 
-      if (digitalRead(pinRx) == digitalRead(pinTx)) //collision detected
+      if (digitalRead(pinRx) == digitalRead(pinTx)) //collision detected //CHANGED
       {
 		Serial.print("coll");
         digitalWrite(pinTx, (inverseLogicTx ? 1:0)); //send BREAK
