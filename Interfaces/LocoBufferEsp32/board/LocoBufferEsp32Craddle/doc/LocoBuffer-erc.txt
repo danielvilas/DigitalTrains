@@ -1,0 +1,10 @@
+ERC report (Tue Jun 27 11:16:52 2023, Encoding UTF8)
+
+***** Sheet /
+[lib_symbol_issues]: The current configuration does not include the library 'PCM_Espressif'
+    ; Severity: warning
+    @(236.2200 mm, 57.1500 mm): Symbol U5 [ESP32-DevKitC]
+
+***** Sheet /LocoNet/
+
+ ** ERC messages: 1  Errors 0  Warnings 1
