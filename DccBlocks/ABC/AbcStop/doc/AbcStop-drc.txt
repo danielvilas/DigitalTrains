@@ -1,10 +1,13 @@
 ** Drc report for /home/dvilas/workdir/DccBlocks/ABC/AbcStop/AbcStop.kicad_pcb **
-** Created on 2023-06-01 11:28:50 **
+** Created on 2023-06-27 11:32:41 **
 
-** Found 1 DRC violations **
+** Found 2 DRC violations **
+[track_dangling]: Track has unconnected end
+    Local override; Severity: warning
+    @(98.5000 mm, 60.2500 mm): Track [/High_Right] on F.Cu, length 0.3536 mm
 [lib_footprint_mismatch]: Footprint 'NetTie-2_SMD_Pad2.0mm' does not match copy in library 'NetTie'.
     Local override; Severity: warning
-    @(82.0000 mm, 60.0000 mm): Footprint NT1
+    @(86.2500 mm, 60.0000 mm): Footprint NT1
 
 ** Found 0 unconnected pads **
 

@@ -8,7 +8,7 @@
   (title_block
     (title "AbcStop")
     (date "2023-06-01")
-    (rev "0.0.1")
+    (rev "0.0.2")
     (company "Dcc Diy Tools")
   )
 
@@ -1576,7 +1576,7 @@
 
   (gr_rect (start 58 35.25) (end 123.75 73)
     (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts") (tstamp d1a4fe04-f09c-47a6-8df2-66fb62c7e2a7))
-  (gr_text "AbcStop 0.0.1\nJLCJLCJLCJLC" (at 111 39) (layer "F.SilkS") (tstamp f0b3fa95-30c2-4a84-a76c-a54abca42da4)
+  (gr_text "AbcStop 0.0.2\nJLCJLCJLCJLC" (at 111 39) (layer "F.SilkS") (tstamp f0b3fa95-30c2-4a84-a76c-a54abca42da4)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom))
   )
 
