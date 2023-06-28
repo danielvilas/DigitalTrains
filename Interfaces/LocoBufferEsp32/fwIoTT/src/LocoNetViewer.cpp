@@ -53,6 +53,10 @@ void callbackLocoNetMessageUpstream(lnReceiveBuffer * newData)
 
 void setup() {
   // put your setup code here, to run once:
+  pinMode(PIN_CFG,INPUT);
+  pinMode(PIN_LED,OUTPUT);
+  digitalWrite(PIN_LED,0);
+
   Serial.begin(115200);
   initWifi();
   lnSerial.begin(pinRx,pinTx,false,true);

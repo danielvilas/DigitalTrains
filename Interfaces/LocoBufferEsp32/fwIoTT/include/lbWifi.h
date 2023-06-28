@@ -1,11 +1,8 @@
 #ifndef LB_WIFI_H
 #define LB_WIFI_H
-#include <WiFi.h>
-#include <Arduino.h>
-#include <ESPAsyncWiFiManager.h>
-#include <ESPAsyncWebServer.h> 
-
 void initWifi();
-
+#define USE_SPIFFS    true
+#define PIN_CFG 0
+#define PIN_LED 2
 
 #endif
