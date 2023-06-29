@@ -10,7 +10,6 @@
             "includePath": [
                 "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/include",
                 "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/src",
-                "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src",
                 "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/lib/IoTT_lbServer/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src",
                 "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/lib/IoTT_LocoNetESP32HB/src",
@@ -98,6 +97,7 @@
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src",
+                "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src",
                 "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src",
@@ -119,7 +119,6 @@
                 "path": [
                     "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/include",
                     "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/src",
-                    "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src",
                     "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/lib/IoTT_lbServer/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src",
                     "/home/dvilas/OHS/DigitalTrains/Interfaces/LocoBufferEsp32/fwIoTT/lib/IoTT_LocoNetESP32HB/src",
@@ -207,6 +206,7 @@
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src",
+                    "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src",
                     "/home/dvilas/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src",

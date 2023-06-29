@@ -4,10 +4,16 @@
 #include <SPIFFS.h>
 #include <ArduinoJson.h>
 
-#define BUFFER_SIZE 16384
 
-const char* ssid     = "LocoBuffer-AP";
-const char* password = "12345678";
+String ssid     = "LocoBuffer-AP";
+String password = "12345678";
+String hostname = "LocoBuffer-AP";
+bool staticIp=false;
+IPAddress ip;
+IPAddress nm;
+IPAddress gw;
+IPAddress dns[2];
+
 
 bool isAP=false;
 bool initCP=false;
@@ -96,9 +102,65 @@ bool loadConfigData()
     if(res){
       String _ssid=(*doc)["SSID"];
       Serial.printf("SSID: %s\n", _ssid.c_str());
+      if(_ssid !=""){
+        ssid=_ssid;
+      }else{
+        res=false;
+      }
+    }
+    res = res && doc->containsKey("password");
+    if(res){
+      String _password=(*doc)["password"];
+      Serial.printf("password: %s\n", _password.c_str());
+      if(_password !=""){
+        password=_password;
+      }else{
+        res=false;
+      }
+    }
+    res=res && doc->containsKey("hostname");
+    if(res){
+      String _hostname=(*doc)["hostname"];
+      Serial.printf("hostname: %s\n", _hostname.c_str());
+      if(_hostname !=""){
+        hostname=_hostname;
+      }else{
+        res=false;
+      }
+    }
+    res = res && doc->containsKey("ip");
+    if(res){
+      String _ip=(*doc)["ip"];
+      Serial.printf("ip: %s\n", _ip.c_str());
+      if(_ip==""||_ip=="0.0.0.0"){
+        staticIp=false;
+      }else{
+        staticIp=true;
+      }
+      ip.fromString(_ip);
+    }
+    res = res && doc->containsKey("nm");
+    if(res){
+      String _nm=(*doc)["nm"];
+      Serial.printf("nm: %s\n", _nm.c_str());
+      nm.fromString(_nm);
+    }
+    res = res && doc->containsKey("gw");
+    if(res){
+      String _gw=(*doc)["gw"];
+      Serial.printf("gw: %s\n", _gw.c_str());
+      gw.fromString(_gw);
+    }
+    res= res && doc->containsKey("dns");
+    if(res){
+      for(int i=0;i<2;i++){
+        String _dns = (*doc)["dns"][i];
+        Serial.printf("dns[%i]: %s\n",i, _dns.c_str());
+        dns[i].fromString(_dns);
+      }
     }
   }
-  
+  Serial.println("End Config");
   free(buffer);
   free(doc);
   return res;
@@ -114,17 +176,34 @@ void initWifi(){
   if(!bntCfg || !loadConfigData()){
     initCP=true;
   }
+
+  if(staticIp){
+    WiFi.config(ip,gw,nm,dns[0],dns[1]);
+  }
   
 
   if(isAP){
     WiFi.mode(WIFI_AP);
-    WiFi.softAP(ssid, password);
+    WiFi.softAP(ssid.c_str(), password.c_str());
+    if(!WiFi.softAPConfig(ip,gw,nm)){
+      Serial.println("Error Setting IP");
+    }
+    WiFi.setHostname(hostname.c_str());
     blinkTimes(2,300,200);
-    IPAddress IP = WiFi.softAPIP();
+    Serial.print("AP Hostname: ");
+    Serial.println(WiFi.getHostname());
     Serial.print("AP IP address: ");
-    Serial.println(IP);
+    Serial.println(WiFi.softAPIP());
+    Serial.print("AP GW address: ");
+    Serial.println(WiFi.gatewayIP());
+    Serial.print("AP NM address: ");
+    Serial.println(WiFi.subnetMask());
+    Serial.print("AP DNS[0] address: ");
+    Serial.println(WiFi.dnsIP(0));
+    Serial.print("AP DNS[1] address: ");
+    Serial.println(WiFi.dnsIP(1));
   }else{
     WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid,password);
+    WiFi.softAP(ssid.c_str(), password.c_str());
   }
 }
