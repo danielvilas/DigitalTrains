@@ -1,183 +1,16 @@
+#include <Arduino.h>
 #include "lbWifi.h"
-#include "lbWifiManager.h"
+#include <WiFi.h>
+#include <SPIFFS.h>
+#include <ArduinoJson.h>
 
-//const char* ssid     = "LocoBuffer-AP";
-//const char* password = "12345678";
+#define BUFFER_SIZE 16384
 
+const char* ssid     = "LocoBuffer-AP";
+const char* password = "12345678";
 
-// SSID and PW for your Router
-String Router_SSID;
-String Router_Pass;
-
-
-WiFi_AP_IPConfig  WM_AP_IPconfig;
-WiFi_STA_IPConfig WM_STA_IPconfig;
-
-void initAPIPConfigStruct(WiFi_AP_IPConfig &in_WM_AP_IPconfig)
-{
-  in_WM_AP_IPconfig._ap_static_ip   = APStaticIP;
-  in_WM_AP_IPconfig._ap_static_gw   = APStaticGW;
-  in_WM_AP_IPconfig._ap_static_sn   = APStaticSN;
-}
-
-void initSTAIPConfigStruct(WiFi_STA_IPConfig &in_WM_STA_IPconfig)
-{
-  in_WM_STA_IPconfig._sta_static_ip   = stationIP;
-  in_WM_STA_IPconfig._sta_static_gw   = gatewayIP;
-  in_WM_STA_IPconfig._sta_static_sn   = netMask;
-#if USE_CONFIGURABLE_DNS
-  in_WM_STA_IPconfig._sta_static_dns1 = dns1IP;
-  in_WM_STA_IPconfig._sta_static_dns2 = dns2IP;
-#endif
-}
-
-void displayIPConfigStruct(WiFi_STA_IPConfig in_WM_STA_IPconfig)
-{
-  LOGERROR3(F("stationIP ="), in_WM_STA_IPconfig._sta_static_ip, ", gatewayIP =", in_WM_STA_IPconfig._sta_static_gw);
-  LOGERROR1(F("netMask ="), in_WM_STA_IPconfig._sta_static_sn);
-#if USE_CONFIGURABLE_DNS
-  LOGERROR3(F("dns1IP ="), in_WM_STA_IPconfig._sta_static_dns1, ", dns2IP =", in_WM_STA_IPconfig._sta_static_dns2);
-#endif
-}
-
-void configWiFi(WiFi_STA_IPConfig in_WM_STA_IPconfig)
-{
-#if USE_CONFIGURABLE_DNS
-  // Set static IP, Gateway, Subnetmask, DNS1 and DNS2. New in v1.0.5
-  WiFi.config(in_WM_STA_IPconfig._sta_static_ip, in_WM_STA_IPconfig._sta_static_gw, in_WM_STA_IPconfig._sta_static_sn,
-              in_WM_STA_IPconfig._sta_static_dns1, in_WM_STA_IPconfig._sta_static_dns2);
-#else
-  // Set static IP, Gateway, Subnetmask, Use auto DNS1 and DNS2.
-  WiFi.config(in_WM_STA_IPconfig._sta_static_ip, in_WM_STA_IPconfig._sta_static_gw, in_WM_STA_IPconfig._sta_static_sn);
-#endif
-}
-
-///////////////////////////////////////////
-
-uint8_t connectMultiWiFi()
-{
-  digitalWrite(PIN_LED,1);
-  // For ESP32, this better be 0 to shorten the connect time.
-  // For ESP32-S2/C3, must be > 500
-#if ( USING_ESP32_S2 || USING_ESP32_C3 )
-#define WIFI_MULTI_1ST_CONNECT_WAITING_MS           500L
-#else
-  // For ESP32 core v1.0.6, must be >= 500
-#define WIFI_MULTI_1ST_CONNECT_WAITING_MS           800L
-#endif
-
-#define WIFI_MULTI_CONNECT_WAITING_MS                   500L
-
-  uint8_t status;
-
-  //WiFi.mode(WIFI_STA);
-
-  LOGERROR(F("ConnectMultiWiFi with :"));
-
-  if ( (Router_SSID != "") && (Router_Pass != "") )
-  {
-    LOGERROR3(F("* Flash-stored Router_SSID = "), Router_SSID, F(", Router_Pass = "), Router_Pass );
-    LOGERROR3(F("* Add SSID = "), Router_SSID, F(", PW = "), Router_Pass );
-    wifiMulti.addAP(Router_SSID.c_str(), Router_Pass.c_str());
-  }
-
-  for (uint8_t i = 0; i < NUM_WIFI_CREDENTIALS; i++)
-  {
-    // Don't permit NULL SSID and password len < MIN_AP_PASSWORD_SIZE (8)
-    if ( (String(WM_config.WiFi_Creds[i].wifi_ssid) != "")
-         && (strlen(WM_config.WiFi_Creds[i].wifi_pw) >= MIN_AP_PASSWORD_SIZE) )
-    {
-      LOGERROR3(F("* Additional SSID = "), WM_config.WiFi_Creds[i].wifi_ssid, F(", PW = "), WM_config.WiFi_Creds[i].wifi_pw );
-    }
-  }
-
-  LOGERROR(F("Connecting MultiWifi..."));
-
-  //WiFi.mode(WIFI_STA);
-
-#if !USE_DHCP_IP
-  // New in v1.4.0
-  configWiFi(WM_STA_IPconfig);
-  //////
-#endif
-
-  int i = 0;
-  status = wifiMulti.run();
-  delay(WIFI_MULTI_1ST_CONNECT_WAITING_MS);
-  while ( ( i++ < 20 ) && ( status != WL_CONNECTED ) )
-  {
-    status = WiFi.status();
-
-    if ( status == WL_CONNECTED )
-      break;
-    else
-      delay(WIFI_MULTI_CONNECT_WAITING_MS);
-    digitalWrite(PIN_LED,!digitalRead(PIN_LED));
-
-    if(!digitalRead(PIN_CFG)){
-    ESP.restart();
-    }
-  }
-
-  if ( status == WL_CONNECTED )
-  {
-    LOGERROR1(F("WiFi connected after time: "), i);
-    LOGERROR3(F("SSID:"), WiFi.SSID(), F(",RSSI="), WiFi.RSSI());
-    LOGERROR3(F("Channel:"), WiFi.channel(), F(",IP address:"), WiFi.localIP() );
-  }
-  else
-  {
-    LOGERROR(F("WiFi not connected"));
-    ESP.restart();
-  }
-
-  return status;
-}
-
-#if USE_ESP_WIFIMANAGER_NTP
-
-void printLocalTime()
-{
-  struct tm timeinfo;
-
-  getLocalTime( &timeinfo );
-
-  // Valid only if year > 2000.
-  // You can get from timeinfo : tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec
-  if (timeinfo.tm_year > 100 )
-  {
-    Serial.print("Local Date/Time: ");
-    Serial.print( asctime( &timeinfo ) );
-  }
-
-}
-
-#endif
-
-void heartBeatPrint()
-{
-#if USE_ESP_WIFIMANAGER_NTP
-  printLocalTime();
-#else
-  static int num = 1;
-
-  if (WiFi.status() == WL_CONNECTED)
-    Serial.print(F("H"));        // H means connected to WiFi
-  else
-    Serial.print(F("F"));        // F means not connected to WiFi
-
-  if (num == 80)
-  {
-    Serial.println();
-    num = 1;
-  }
-  else if (num++ % 10 == 0)
-  {
-    Serial.print(F(" "));
-  }
-
-#endif
-}
+bool isAP=false;
+bool initCP=false;
 
 void blinkTimes(int blinks, int onDelay=500, int offDelay=500){
   for(int i=0;i<blinks;i++){
@@ -188,436 +21,110 @@ void blinkTimes(int blinks, int onDelay=500, int offDelay=500){
   }
 }
 
-
-void check_WiFi()
+uint32_t readFileToBuffer(String fileName, char * thisBuffer, uint32_t maxSize)
 {
-  if ( (WiFi.status() != WL_CONNECTED) )
+  uint32_t bytesRead = 0;
+//  Serial.printf("Trying to read File %s\n", &fileName[0]);
+  if (SPIFFS.exists(fileName))
   {
-    Serial.println(F("\nWiFi lost. Call connectMultiWiFi in loop"));
-    connectMultiWiFi();
-  }
+    File dataFile = SPIFFS.open(fileName, "r");
+    if (dataFile)
+    {
+      if (dataFile.size() < maxSize)
+      {
+        bytesRead = dataFile.size();
+        dataFile.read((uint8_t*)thisBuffer, bytesRead);
+        thisBuffer[bytesRead] = '\0'; 
+      }
+      dataFile.close();
+    }
+    else 
+      Serial.printf("Can't open %s \n", &fileName[0]);
+  } 
+  else 
+    Serial.printf("File %s not found\n", &fileName[0]);
+  return bytesRead;
 }
 
-void check_status()
-{
-  static ulong checkstatus_timeout  = 0;
-  static ulong checkwifi_timeout    = 0;
 
-  static ulong current_millis;
-
-#define WIFICHECK_INTERVAL    1000L
-
-#if USE_ESP_WIFIMANAGER_NTP
-#define HEARTBEAT_INTERVAL    60000L
-#else
-#define HEARTBEAT_INTERVAL    10000L
-#endif
-
-  current_millis = millis();
-
-  // Check WiFi every WIFICHECK_INTERVAL (1) seconds.
-  if ((current_millis > checkwifi_timeout) || (checkwifi_timeout == 0))
-  {
-    check_WiFi();
-    checkwifi_timeout = current_millis + WIFICHECK_INTERVAL;
+DynamicJsonDocument * getDocument(char* buffer, const char* file){
+  if(SPIFFS.begin()){
+    uint32_t jsonData = readFileToBuffer(file, buffer, BUFFER_SIZE);
+    if (jsonData > 0){
+      uint16_t docSize = 4096 * (trunc((3 * jsonData) / 4096) + 1);
+      //Serial.println(buffer);
+      //Serial.printf("Size: %i Doc Size: %i\n", jsonData, docSize);
+      DynamicJsonDocument * thisDoc = new DynamicJsonDocument(docSize);
+      DeserializationError error;
+      error = deserializeJson(*thisDoc, buffer);
+      if(error) {
+        Serial.println("Deserialization error");
+        return NULL;
+      }
+      return thisDoc;
+    
+    }else{
+      Serial.println("error reading wifi.json");
+      return NULL;
+    }
+  }else{
+    Serial.println(F("Not able to open SPIFFS"));
+    return NULL;
   }
-
-  // Print hearbeat every HEARTBEAT_INTERVAL (10) seconds.
-  if ((current_millis > checkstatus_timeout) || (checkstatus_timeout == 0))
-  {
-    heartBeatPrint();
-    checkstatus_timeout = current_millis + HEARTBEAT_INTERVAL;
-  }
-}
-
-int calcChecksum(uint8_t* address, uint16_t sizeToCalc)
-{
-  uint16_t checkSum = 0;
-
-  for (uint16_t index = 0; index < sizeToCalc; index++)
-  {
-    checkSum += * ( ( (byte*) address ) + index);
-  }
-
-  return checkSum;
 }
 
 bool loadConfigData()
 {
-  File file = FileFS.open(CONFIG_FILENAME, "r");
-  LOGERROR(F("LoadWiFiCfgFile "));
-
-  memset((void *) &WM_config,       0, sizeof(WM_config));
-
-  // New in v1.4.0
-  memset((void *) &WM_STA_IPconfig, 0, sizeof(WM_STA_IPconfig));
-  //////
-
-  if (file)
-  {
-    file.readBytes((char *) &WM_config,   sizeof(WM_config));
-
-    // New in v1.4.0
-    file.readBytes((char *) &WM_STA_IPconfig, sizeof(WM_STA_IPconfig));
-    //////
-
-    file.close();
-    LOGERROR(F("OK"));
-
-    if ( WM_config.checksum != calcChecksum( (uint8_t*) &WM_config, sizeof(WM_config) - sizeof(WM_config.checksum) ) )
-    {
-      LOGERROR(F("WM_config checksum wrong"));
-
-      return false;
+  Serial.println("Reading wifi.json");
+  char* buffer= (char*) malloc(BUFFER_SIZE);
+  DynamicJsonDocument* doc = getDocument(buffer,"/wifi.json");
+  bool res =false;
+  if(doc!=NULL){
+    res= doc->containsKey("mode");
+    if(res){
+      String mode = (*doc)["mode"];
+      Serial.printf("MODE: %s\n",mode.c_str());
+      if(mode == "AP"){
+        isAP=true;
+      }else if(mode == "STA"){
+        isAP=false;
+      }else{
+        res=false;
+      }
     }
-
-    // New in v1.4.0
-    displayIPConfigStruct(WM_STA_IPconfig);
-    //////
-
-    return true;
+    res = res && doc->containsKey("SSID");
+    if(res){
+      String _ssid=(*doc)["SSID"];
+      Serial.printf("SSID: %s\n", _ssid.c_str());
+    }
   }
-  else
-  {
-    LOGERROR(F("failed"));
-
-    return false;
-  }
-}
-
-void saveConfigData()
-{
-  File file = FileFS.open(CONFIG_FILENAME, "w");
-  LOGERROR(F("SaveWiFiCfgFile "));
-
-  if (file)
-  {
-    WM_config.checksum = calcChecksum( (uint8_t*) &WM_config, sizeof(WM_config) - sizeof(WM_config.checksum) );
-
-    file.write((uint8_t*) &WM_config, sizeof(WM_config));
-
-    displayIPConfigStruct(WM_STA_IPconfig);
-
-    // New in v1.4.0
-    file.write((uint8_t*) &WM_STA_IPconfig, sizeof(WM_STA_IPconfig));
-    //////
-
-    file.close();
-    LOGERROR(F("OK"));
-  }
-  else
-  {
-    LOGERROR(F("failed"));
-  }
+  
+  free(buffer);
+  free(doc);
+  return res;
 }
 
 void initWifi(){
-  Serial.print("starting Wifi with WifiManager");
-
-
-  // put your setup code here, to run once:
-  Serial.begin(115200);
-
-  while (!Serial);
-
+  Serial.print("starting Wifi");
   delay(200);
+  blinkTimes(3);
+  int bntCfg=digitalRead(PIN_CFG);
 
-  Serial.print("\nStarting Async_AutoConnectAP using " + String(FS_Name));
-  Serial.println(" on " + String(ARDUINO_BOARD));
-  Serial.println(ESP_ASYNC_WIFIMANAGER_VERSION);
-
-#if defined(ESP_ASYNC_WIFIMANAGER_VERSION_INT)
-
-  if (ESP_ASYNC_WIFIMANAGER_VERSION_INT < ESP_ASYNC_WIFIMANAGER_VERSION_MIN)
-  {
-    Serial.print("Warning. Must use this example on Version later than : ");
-    Serial.println(ESP_ASYNC_WIFIMANAGER_VERSION_MIN_TARGET);
+  
+  if(!bntCfg || !loadConfigData()){
+    initCP=true;
   }
+  
 
-#endif
-
-  if (FORMAT_FILESYSTEM)
-    FileFS.format();
-
-  // Format FileFS if not yet
-
-  if (!FileFS.begin(true))
-
-  {
-    Serial.println(F("SPIFFS/LittleFS failed! Already tried formatting."));
-
-    if (!FileFS.begin())
-    {
-      // prevents debug info from the library to hide err message.
-      delay(100);
-
-#if USE_LITTLEFS
-      Serial.println(F("LittleFS failed!. Please use SPIFFS or EEPROM. Stay forever"));
-#else
-      Serial.println(F("SPIFFS failed!. Please use LittleFS or EEPROM. Stay forever"));
-#endif
-
-      while (true)
-      {
-        delay(1);
-      }
-    }
+  if(isAP){
+    WiFi.mode(WIFI_AP);
+    WiFi.softAP(ssid, password);
+    blinkTimes(2,300,200);
+    IPAddress IP = WiFi.softAPIP();
+    Serial.print("AP IP address: ");
+    Serial.println(IP);
+  }else{
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(ssid,password);
   }
-
-  unsigned long startedAt = millis();
-
-  // New in v1.4.0
-  initAPIPConfigStruct(WM_AP_IPconfig);
-  initSTAIPConfigStruct(WM_STA_IPconfig);
-  //////
-
-  //Local intialization. Once its business is done, there is no need to keep it around
-  // Use this to default DHCP hostname to ESP8266-XXXXXX or ESP32-XXXXXX
-  //ESPAsync_WiFiManager ESPAsync_wifiManager(&webServer, &dnsServer);
-  // Use this to personalize DHCP hostname (RFC952 conformed)
-  AsyncWebServer webServer(HTTP_PORT);
-
-#if ( USING_ESP32_S2 || USING_ESP32_C3 )
-  ESPAsync_WiFiManager ESPAsync_wifiManager(&webServer, NULL, "AutoConnectAP");
-#else
-  AsyncDNSServer dnsServer;
-
-  ESPAsync_WiFiManager ESPAsync_wifiManager(&webServer, &dnsServer, "AutoConnectAP");
-#endif
-
-  ESPAsync_wifiManager.setDebugOutput(true);
-
-  //reset settings - for testing
-  //ESPAsync_wifiManager.resetSettings();
-
-#if USE_CUSTOM_AP_IP
-  //set custom ip for portal
-  // New in v1.4.0
-  ESPAsync_wifiManager.setAPStaticIPConfig(WM_AP_IPconfig);
-  //////
-#endif
-
-  ESPAsync_wifiManager.setMinimumSignalQuality(-1);
-
-  // From v1.0.10 only
-  // Set config portal channel, default = 1. Use 0 => random channel from 1-13
-  ESPAsync_wifiManager.setConfigPortalChannel(0);
-  //////
-
-#if !USE_DHCP_IP
-  // Set (static IP, Gateway, Subnetmask, DNS1 and DNS2) or (IP, Gateway, Subnetmask). New in v1.0.5
-  // New in v1.4.0
-  ESPAsync_wifiManager.setSTAStaticIPConfig(WM_STA_IPconfig);
-  //////
-#endif
-
-  // New from v1.1.1
-#if USING_CORS_FEATURE
-  ESPAsync_wifiManager.setCORSHeader("Your Access-Control-Allow-Origin");
-#endif
-
-  // We can't use WiFi.SSID() in ESP32 as it's only valid after connected.
-  // SSID and Password stored in ESP32 wifi_ap_record_t and wifi_config_t are also cleared in reboot
-  // Have to create a new function to store in EEPROM/SPIFFS for this purpose
-  Router_SSID = ESPAsync_wifiManager.WiFi_SSID();
-  Router_Pass = ESPAsync_wifiManager.WiFi_Pass();
-
-  //Remove this line if you do not want to see WiFi password printed
-  Serial.println("ESP Self-Stored: SSID = " + Router_SSID + ", Pass = " + Router_Pass);
-
-  bool configDataLoaded = false;
-
-  // From v1.1.0, Don't permit NULL password
-  if ( (Router_SSID != "") && (Router_Pass != "") )
-  {
-    LOGERROR3(F("* Add SSID = "), Router_SSID, F(", PW = "), Router_Pass);
-    wifiMulti.addAP(Router_SSID.c_str(), Router_Pass.c_str());
-
-    ESPAsync_wifiManager.setConfigPortalTimeout(120); //If no access point name has been previously entered disable timeout.
-    Serial.println(F("Got ESP Self-Stored Credentials. Timeout 120s for Config Portal"));
-  }
-
-  if (loadConfigData())
-  {
-    configDataLoaded = true;
-
-    ESPAsync_wifiManager.setConfigPortalTimeout(120); //If no access point name has been previously entered disable timeout.
-    Serial.println(F("Got stored Credentials. Timeout 120s for Config Portal"));
-
-#if USE_ESP_WIFIMANAGER_NTP
-
-    if ( strlen(WM_config.TZ_Name) > 0 )
-    {
-      LOGERROR3(F("Current TZ_Name ="), WM_config.TZ_Name, F(", TZ = "), WM_config.TZ);
-      //configTzTime(WM_config.TZ, "pool.ntp.org" );
-      configTzTime(WM_config.TZ, "time.nist.gov", "0.pool.ntp.org", "1.pool.ntp.org");
-    }
-    else
-    {
-      Serial.println(F("Current Timezone is not set. Enter Config Portal to set."));
-    }
-
-#endif
-  }
-  else
-  {
-    // Enter CP only if no stored SSID on flash and file
-    Serial.println(F("Open Config Portal without Timeout: No stored Credentials."));
-    initialConfig = true;
-  }
-
-  if(!initialConfig){
-    bool t = digitalRead(0);
-    if(t){
-      Serial.println(F("BOOT is: HIGH"));
-    }else{
-      Serial.println(F("BOOT is: low"));
-      initialConfig=true;
-    }
-  }
-
-  String chipID = String(ESP_getChipId(), HEX);
-  chipID.toUpperCase();
-
-  // SSID and PW for Config Portal
-  String AP_SSID = "ESP_" + chipID + "_AutoConnectAP";
-  String AP_PASS = "MyESP_" + chipID;
-
-  if (initialConfig)
-  {
-    delay(1000);
-    blinkTimes(3,300,200);
-    Serial.println(F("We haven't got any access point credentials, so get them now"));
-
-    Serial.print(F("Starting configuration portal @ "));
-
-#if USE_CUSTOM_AP_IP
-    Serial.print(APStaticIP);
-#else
-    Serial.print(F("192.168.4.1"));
-#endif
-
-    Serial.print(F(", SSID = "));
-    Serial.print(AP_SSID);
-    Serial.print(F(", PWD = "));
-    Serial.println(AP_PASS);
-
-#if DISPLAY_STORED_CREDENTIALS_IN_CP
-    // New. Update Credentials, got from loadConfigData(), to display on CP
-    ESPAsync_wifiManager.setCredentials(WM_config.WiFi_Creds[0].wifi_ssid, WM_config.WiFi_Creds[0].wifi_pw,
-                                        WM_config.WiFi_Creds[1].wifi_ssid, WM_config.WiFi_Creds[1].wifi_pw);
-#endif
-
-    // Starts an access point
-    //if (!ESPAsync_wifiManager.startConfigPortal((const char *) ssid.c_str(), password))
-    if ( !ESPAsync_wifiManager.startConfigPortal(AP_SSID.c_str(), AP_PASS.c_str()) )
-      Serial.println(F("Not connected to WiFi but continuing anyway."));
-    else
-      Serial.println(F("WiFi connected...yeey :)"));
-
-    // Stored  for later usage, from v1.1.0, but clear first
-    memset(&WM_config, 0, sizeof(WM_config));
-
-    for (uint8_t i = 0; i < NUM_WIFI_CREDENTIALS; i++)
-    {
-      String tempSSID = ESPAsync_wifiManager.getSSID(i);
-      String tempPW   = ESPAsync_wifiManager.getPW(i);
-
-      if (strlen(tempSSID.c_str()) < sizeof(WM_config.WiFi_Creds[i].wifi_ssid) - 1)
-        strcpy(WM_config.WiFi_Creds[i].wifi_ssid, tempSSID.c_str());
-      else
-        strncpy(WM_config.WiFi_Creds[i].wifi_ssid, tempSSID.c_str(), sizeof(WM_config.WiFi_Creds[i].wifi_ssid) - 1);
-
-      if (strlen(tempPW.c_str()) < sizeof(WM_config.WiFi_Creds[i].wifi_pw) - 1)
-        strcpy(WM_config.WiFi_Creds[i].wifi_pw, tempPW.c_str());
-      else
-        strncpy(WM_config.WiFi_Creds[i].wifi_pw, tempPW.c_str(), sizeof(WM_config.WiFi_Creds[i].wifi_pw) - 1);
-
-      // Don't permit NULL SSID and password len < MIN_AP_PASSWORD_SIZE (8)
-      if ( (String(WM_config.WiFi_Creds[i].wifi_ssid) != "")
-           && (strlen(WM_config.WiFi_Creds[i].wifi_pw) >= MIN_AP_PASSWORD_SIZE) )
-      {
-        LOGERROR3(F("* Add SSID = "), WM_config.WiFi_Creds[i].wifi_ssid, F(", PW = "), WM_config.WiFi_Creds[i].wifi_pw );
-        wifiMulti.addAP(WM_config.WiFi_Creds[i].wifi_ssid, WM_config.WiFi_Creds[i].wifi_pw);
-      }
-    }
-
-#if USE_ESP_WIFIMANAGER_NTP
-    String tempTZ   = ESPAsync_wifiManager.getTimezoneName();
-
-    if (strlen(tempTZ.c_str()) < sizeof(WM_config.TZ_Name) - 1)
-      strcpy(WM_config.TZ_Name, tempTZ.c_str());
-    else
-      strncpy(WM_config.TZ_Name, tempTZ.c_str(), sizeof(WM_config.TZ_Name) - 1);
-
-    const char * TZ_Result = ESPAsync_wifiManager.getTZ(WM_config.TZ_Name);
-
-    if (strlen(TZ_Result) < sizeof(WM_config.TZ) - 1)
-      strcpy(WM_config.TZ, TZ_Result);
-    else
-      strncpy(WM_config.TZ, TZ_Result, sizeof(WM_config.TZ_Name) - 1);
-
-    if ( strlen(WM_config.TZ_Name) > 0 )
-    {
-      LOGERROR3(F("Saving current TZ_Name ="), WM_config.TZ_Name, F(", TZ = "), WM_config.TZ);
-
-      //configTzTime(WM_config.TZ, "pool.ntp.org" );
-      configTzTime(WM_config.TZ, "time.nist.gov", "0.pool.ntp.org", "1.pool.ntp.org");
-    }
-    else
-    {
-      LOGERROR(F("Current Timezone Name is not set. Enter Config Portal to set."));
-    }
-
-#endif
-
-    // New in v1.4.0
-    ESPAsync_wifiManager.getSTAStaticIPConfig(WM_STA_IPconfig);
-    //////
-
-    saveConfigData();
-  }
-  else
-  {
-    wifiMulti.addAP(Router_SSID.c_str(), Router_Pass.c_str());
-  }
-
-  startedAt = millis();
-
-  if (!initialConfig)
-  {
-    // Load stored data, the addAP ready for MultiWiFi reconnection
-    if (!configDataLoaded)
-      loadConfigData();
-
-    for (uint8_t i = 0; i < NUM_WIFI_CREDENTIALS; i++)
-    {
-      // Don't permit NULL SSID and password len < MIN_AP_PASSWORD_SIZE (8)
-      if ( (String(WM_config.WiFi_Creds[i].wifi_ssid) != "")
-           && (strlen(WM_config.WiFi_Creds[i].wifi_pw) >= MIN_AP_PASSWORD_SIZE) )
-      {
-        LOGERROR3(F("* Add SSID = "), WM_config.WiFi_Creds[i].wifi_ssid, F(", PW = "), WM_config.WiFi_Creds[i].wifi_pw );
-        wifiMulti.addAP(WM_config.WiFi_Creds[i].wifi_ssid, WM_config.WiFi_Creds[i].wifi_pw);
-      }
-    }
-
-    if ( WiFi.status() != WL_CONNECTED )
-    {
-      Serial.println(F("ConnectMultiWiFi in setup"));
-
-      connectMultiWiFi();
-    }
-  }
-
-  Serial.print(F("After waiting "));
-  Serial.print((float) (millis() - startedAt) / 1000L);
-  Serial.print(F(" secs more in setup(), connection result is "));
-
-  if (WiFi.status() == WL_CONNECTED)
-  {
-    Serial.print(F("connected. Local IP: "));
-    Serial.println(WiFi.localIP());
-  }
-  else
-    Serial.println(ESPAsync_wifiManager.getStatus(WiFi.status()));
 }

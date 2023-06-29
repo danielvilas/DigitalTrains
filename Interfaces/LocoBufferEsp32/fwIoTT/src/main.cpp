@@ -57,7 +57,9 @@ void setup() {
   pinMode(PIN_LED,OUTPUT);
   digitalWrite(PIN_LED,0);
 
-  Serial.begin(115200);
+  Serial.begin(115200); 
+  while (!Serial);
+
   initWifi();
   lnSerial.begin(pinRx,pinTx,false,true);
   digitraxBuffer = new IoTT_DigitraxBuffers(sendMsg);
