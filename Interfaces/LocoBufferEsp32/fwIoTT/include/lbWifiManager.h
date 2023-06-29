@@ -1,7 +1,7 @@
 #ifndef LB_WIFI_MANAGER_H
 #define LB_WIFI_MANAGER_H
-#if !( defined(ESP8266) ||  defined(ESP32) )
-  #error This code is intended to run on the ESP8266 or ESP32 platform! Please check your Tools->Board setting.
+#if !( defined(ESP32) )
+  #error This code is intended to run on the ESP32 platform! Please check your Tools->Board setting.
 #endif
 
 #define ESP_ASYNC_WIFIMANAGER_VERSION_MIN_TARGET      "ESPAsync_WiFiManager v1.15.0"
@@ -15,7 +15,7 @@
 //#define DISPLAY_STORED_CREDENTIALS_IN_CP        false
 
 //Ported to ESP32
-#ifdef ESP32
+
   #include <esp_wifi.h>
   #include <WiFi.h>
   #include <WiFiClient.h>
@@ -82,35 +82,6 @@
   #define LED_ON            HIGH
   #define LED_OFF           LOW
 
-#else
-
-  #include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
-  //needed for library
-  #include <ESPAsyncDNSServer.h>
-
-  // From v1.1.1
-  #include <ESP8266WiFiMulti.h>
-  ESP8266WiFiMulti wifiMulti;
-
-  #define USE_LITTLEFS      true
-  
-  #if USE_LITTLEFS
-    #include <LittleFS.h>
-    FS* filesystem =      &LittleFS;
-    #define FileFS        LittleFS
-    #define FS_Name       "LittleFS"
-  #else
-    FS* filesystem =      &SPIFFS;
-    #define FileFS        SPIFFS
-    #define FS_Name       "SPIFFS"
-  #endif
-  //////
-  
-  #define ESP_getChipId()   (ESP.getChipId())
-  
-  #define LED_ON      LOW
-  #define LED_OFF     HIGH
-#endif
 
 
 // From v1.1.1
@@ -225,11 +196,7 @@ bool initialConfig = false;
     #warning Using static IP
   #endif
   
-  #ifdef ESP32
-    IPAddress stationIP   = IPAddress(192, 168, 2, 232);
-  #else
-    IPAddress stationIP   = IPAddress(192, 168, 2, 186);
-  #endif
+  IPAddress stationIP   = IPAddress(192, 168, 2, 232);
   
   IPAddress gatewayIP   = IPAddress(192, 168, 2, 1);
   IPAddress netMask     = IPAddress(255, 255, 255, 0);

@@ -57,7 +57,6 @@ void configWiFi(WiFi_STA_IPConfig in_WM_STA_IPconfig)
 uint8_t connectMultiWiFi()
 {
   digitalWrite(PIN_LED,1);
-#if ESP32
   // For ESP32, this better be 0 to shorten the connect time.
   // For ESP32-S2/C3, must be > 500
 #if ( USING_ESP32_S2 || USING_ESP32_C3 )
@@ -65,10 +64,6 @@ uint8_t connectMultiWiFi()
 #else
   // For ESP32 core v1.0.6, must be >= 500
 #define WIFI_MULTI_1ST_CONNECT_WAITING_MS           800L
-#endif
-#else
-  // For ESP8266, this better be 2200 to enable connect the 1st time
-#define WIFI_MULTI_1ST_CONNECT_WAITING_MS             2200L
 #endif
 
 #define WIFI_MULTI_CONNECT_WAITING_MS                   500L
@@ -120,11 +115,7 @@ uint8_t connectMultiWiFi()
     digitalWrite(PIN_LED,!digitalRead(PIN_LED));
 
     if(!digitalRead(PIN_CFG)){
-#if ESP8266
-    ESP.reset();
-#else
     ESP.restart();
-#endif
     }
   }
 
@@ -137,12 +128,7 @@ uint8_t connectMultiWiFi()
   else
   {
     LOGERROR(F("WiFi not connected"));
-
-#if ESP8266
-    ESP.reset();
-#else
     ESP.restart();
-#endif
   }
 
   return status;
@@ -152,18 +138,6 @@ uint8_t connectMultiWiFi()
 
 void printLocalTime()
 {
-#if ESP8266
-  static time_t now;
-
-  now = time(nullptr);
-
-  if ( now > 1451602800 )
-  {
-    Serial.print("Local Date/Time: ");
-    Serial.print(ctime(&now));
-  }
-
-#else
   struct tm timeinfo;
 
   getLocalTime( &timeinfo );
@@ -176,7 +150,6 @@ void printLocalTime()
     Serial.print( asctime( &timeinfo ) );
   }
 
-#endif
 }
 
 #endif
@@ -367,17 +340,10 @@ void initWifi(){
     FileFS.format();
 
   // Format FileFS if not yet
-#ifdef ESP32
 
   if (!FileFS.begin(true))
-#else
-  if (!FileFS.begin())
-#endif
-  {
-#ifdef ESP8266
-    FileFS.format();
-#endif
 
+  {
     Serial.println(F("SPIFFS/LittleFS failed! Already tried formatting."));
 
     if (!FileFS.begin())
@@ -483,13 +449,8 @@ void initWifi(){
     if ( strlen(WM_config.TZ_Name) > 0 )
     {
       LOGERROR3(F("Current TZ_Name ="), WM_config.TZ_Name, F(", TZ = "), WM_config.TZ);
-
-#if ESP8266
-      configTime(WM_config.TZ, "pool.ntp.org");
-#else
       //configTzTime(WM_config.TZ, "pool.ntp.org" );
       configTzTime(WM_config.TZ, "time.nist.gov", "0.pool.ntp.org", "1.pool.ntp.org");
-#endif
     }
     else
     {
@@ -600,12 +561,8 @@ void initWifi(){
     {
       LOGERROR3(F("Saving current TZ_Name ="), WM_config.TZ_Name, F(", TZ = "), WM_config.TZ);
 
-#if ESP8266
-      configTime(WM_config.TZ, "pool.ntp.org");
-#else
       //configTzTime(WM_config.TZ, "pool.ntp.org" );
       configTzTime(WM_config.TZ, "time.nist.gov", "0.pool.ntp.org", "1.pool.ntp.org");
-#endif
     }
     else
     {
