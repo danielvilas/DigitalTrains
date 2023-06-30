@@ -3,6 +3,7 @@
 #include <IoTT_lbServer.h>
 
 #include "lbWifi.h"
+#include "WebServer.h"
 
 
 /////////USER CONFIGURATION//////////////////////////////////////////
@@ -68,7 +69,9 @@ void setup() {
   delay(1000);
   lnSerial.setBusyLED(16 );
   lbServer->startServer();
+  initWebServer();
   Serial.println("Init Done");
+
   randomSeed((uint32_t)ESP.getEfuseMac()); //initialize random generator with MAC
 }
 

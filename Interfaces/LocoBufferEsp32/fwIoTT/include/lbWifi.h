@@ -10,4 +10,13 @@
 void blinkTimes(int blinks, int onDelay=500, int offDelay=500);
 void initWifi();
 
+
+extern String ssid;
+extern String password;
+extern String hostname;
+extern IPAddress ip;
+extern IPAddress nm;
+extern IPAddress gw;
+extern IPAddress dns[2];
+extern bool isAP;
 #endif

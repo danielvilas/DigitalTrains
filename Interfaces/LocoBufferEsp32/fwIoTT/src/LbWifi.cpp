@@ -18,7 +18,7 @@ IPAddress dns[2];
 bool isAP=false;
 bool initCP=false;
 
-void blinkTimes(int blinks, int onDelay=500, int offDelay=500){
+void blinkTimes(int blinks, int onDelay, int offDelay){
   for(int i=0;i<blinks;i++){
     digitalWrite(PIN_LED,1);
     delay(onDelay);
