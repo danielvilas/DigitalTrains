@@ -4,6 +4,7 @@
 
 #include "lbWifi.h"
 #include "WebServer.h"
+#include "lbLcd.h"
 
 
 /////////USER CONFIGURATION//////////////////////////////////////////
@@ -60,7 +61,7 @@ void setup() {
 
   Serial.begin(115200); 
   while (!Serial);
-
+  initLcd();
   initWifi();
   lnSerial.begin(pinRx,pinTx,false,true);
   digitraxBuffer = new IoTT_DigitraxBuffers(sendMsg);
