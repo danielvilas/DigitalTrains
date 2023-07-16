@@ -1,11 +1,7 @@
 ** Drc report for /home/daniel/workdir/Interfaces/LocoBufferEsp32/board/LocoBufferEsp32Craddle/LocoBuffer.kicad_pcb **
-** Created on 2023-07-13 10:57:51 **
+** Created on 2023-07-16 18:37:56 **
 
-** Found 4 DRC violations **
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; Severity: warning
-    @(30.0000 mm, 120.0000 mm): Line on Edge.Cuts
-    @(80.0100 mm, 119.5034 mm): Reference 'U5'
+** Found 3 DRC violations **
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; Severity: warning
     @(30.0000 mm, 120.0000 mm): Line on Edge.Cuts

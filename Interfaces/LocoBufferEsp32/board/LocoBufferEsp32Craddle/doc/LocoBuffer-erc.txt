@@ -1,10 +1,22 @@
-ERC report (Thu Jul 13 10:57:48 2023, Encoding UTF8)
+ERC report (Sun Jul 16 18:37:50 2023, Encoding UTF8)
 
 ***** Sheet /
 [lib_symbol_issues]: The current configuration does not include the library 'PCM_Espressif'
     ; Severity: warning
     @(236.2200 mm, 57.1500 mm): Symbol U5 [ESP32-DevKitC]
+[no_connect_connected]: A pin with a "no connection" flag is connected
+    ; Severity: warning
+    @(20.3200 mm, 144.7800 mm): Symbol R14 Pin 1 [Passive, Line]
+    @(269.2400 mm, 85.0900 mm): No Connect
+[no_connect_connected]: A pin with a "no connection" flag is connected
+    ; Severity: warning
+    @(27.9400 mm, 144.7800 mm): Symbol R15 Pin 1 [Passive, Line]
+    @(269.2400 mm, 87.6300 mm): No Connect
+[no_connect_connected]: A pin with a "no connection" flag is connected
+    ; Severity: warning
+    @(35.5600 mm, 144.7800 mm): Symbol R16 Pin 1 [Passive, Line]
+    @(269.2400 mm, 44.4500 mm): No Connect
 
 ***** Sheet /LocoNet/
 
- ** ERC messages: 1  Errors 0  Warnings 1
+ ** ERC messages: 4  Errors 0  Warnings 4
