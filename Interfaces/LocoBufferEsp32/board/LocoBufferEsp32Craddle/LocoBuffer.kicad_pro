@@ -452,7 +452,9 @@
     "net_colors": null,
     "netclass_assignments": {
       "/LocoNet/RSyncA": "Power",
-      "/LocoNet/RSyncB": "Power"
+      "/LocoNet/RSyncB": "Power",
+      "/RSyncAC": "Power",
+      "/RSyncBC": "Power"
     },
     "netclass_patterns": [
       {
