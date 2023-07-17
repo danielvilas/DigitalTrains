@@ -1,5 +1,5 @@
-** Drc report for /home/daniel/workdir/Interfaces/LocoBufferEsp32/board/LocoBufferEsp32Craddle/LocoBuffer.kicad_pcb **
-** Created on 2023-07-16 18:37:56 **
+** Drc report for /home/dvilas/workdir/Interfaces/LocoBufferEsp32/board/LocoBufferEsp32Craddle/LocoBuffer.kicad_pcb **
+** Created on 2023-07-17 11:44:35 **
 
 ** Found 3 DRC violations **
 [silk_edge_clearance]: Silkscreen clipped by board edge

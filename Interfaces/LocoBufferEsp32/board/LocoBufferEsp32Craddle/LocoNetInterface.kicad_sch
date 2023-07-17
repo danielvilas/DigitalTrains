@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "LocoBuffer Esp32")
+    (date "2023-07-17")
+    (rev "0.0.1")
+    (company "Dcc Diy Tools")
+  )
+
   (lib_symbols
     (symbol "Comparator:LM311" (pin_names (offset 0.127)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 3.81 6.35 0)
