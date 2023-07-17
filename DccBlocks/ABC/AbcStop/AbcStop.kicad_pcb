@@ -1549,15 +1549,15 @@
     (property "ki_description" "Net tie, 2 pins")
     (property "ki_keywords" "net tie short")
     (path "/012dc960-99b5-4e8f-b579-4af80ad324d1")
-    (attr exclude_from_pos_files exclude_from_bom)
+    (attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
     (net_tie_pad_groups "1, 2")
-    (fp_text reference "NT1" (at 0 2) (layer "B.SilkS") hide
+    (fp_text reference "NT1" (at 0 2 180) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-      (tstamp 3430d647-0baf-4bbe-ae9a-5ee8dacfe654)
+      (tstamp e0e981ad-0c1e-4abe-979e-05146fd39971)
     )
-    (fp_text value "NetTie_2" (at 0 -2) (layer "B.Fab") hide
+    (fp_text value "NetTie_2" (at 0 -2 180) (layer "B.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-      (tstamp d657fe1b-d3dd-4272-8029-9bd2c0b80ae7)
+      (tstamp bb9c342d-cd6e-401a-b39c-a84df8cc9620)
     )
     (fp_poly
       (pts
@@ -1567,11 +1567,11 @@
         (xy -2 -1)
       )
 
-      (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 3f70469d-f075-4f9b-b93a-2e7a67a8d259))
+      (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 8b5eb71a-c853-42a5-aa99-84e5337395c0))
     (pad "1" smd circle (at -2 0) (size 2 2) (layers "B.Cu")
-      (net 6 "/Left_IN") (pinfunction "1") (pintype "passive") (tstamp 09077add-2a35-4b5b-a752-724e225f4f11))
+      (net 6 "/Left_IN") (pinfunction "1") (pintype "passive") (tstamp edc3d161-ea9d-4ae8-997d-8f73bff9d59c))
     (pad "2" smd circle (at 2 0) (size 2 2) (layers "B.Cu")
-      (net 7 "/Left_OUT") (pinfunction "2") (pintype "passive") (tstamp 2245ad06-498e-4722-9ed6-06a9871c34d2))
+      (net 7 "/Left_OUT") (pinfunction "2") (pintype "passive") (tstamp a2dd05ce-1de0-429e-b954-e6da4f96d4cd))
   )
 
   (gr_rect (start 58 35.25) (end 123.75 73)
@@ -1626,7 +1626,6 @@
   (segment (start 99 53.75) (end 99 57) (width 0.5) (layer "F.Cu") (net 8) (tstamp 6389a2f4-06d6-4cb4-91e7-a85e32dc06f4))
   (segment (start 98.3125 57.6875) (end 99 57) (width 0.5) (layer "F.Cu") (net 8) (tstamp 777775ca-e9b0-4883-8e1a-3802354aeb0f))
   (segment (start 97.65 57.6875) (end 98.3125 57.6875) (width 0.5) (layer "F.Cu") (net 8) (tstamp 87e80947-900f-4bc3-902d-19e2fafa45d2))
-  (segment (start 98.5 60.25) (end 98.25 60.5) (width 0.25) (layer "F.Cu") (net 8) (tstamp c94367e1-b898-43f9-8de5-10fb1e2199fb))
   (segment (start 99 58.5) (end 98.25 59.25) (width 0.5) (layer "F.Cu") (net 8) (tstamp cf9cfd69-9de9-4a56-b5fa-342f4384be06))
   (segment (start 99 57) (end 99 58.5) (width 0.5) (layer "F.Cu") (net 8) (tstamp d55b194d-ee58-4e59-984f-1463215e6c55))
   (via (at 99 53.75) (size 1.4) (drill 0.8) (layers "F.Cu" "B.Cu") (net 8) (tstamp bc2c87f1-b131-465d-868a-6bc50dc84fb6))
