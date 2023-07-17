@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>{v}</title>
+    <script>function c(l) { document.getElementById('s').value = l.innerText || l.textContent; document.getElementById('p').focus(); }
+        function menu(id){
+            document.getElementById("menu").classList.add("hidden");
+            document.getElementById(id).classList.remove("hidden");
+            return false;
+        }
+        function back(id){
+            document.getElementById("menu").classList.remove("hidden");
+            document.getElementById(id).classList.add("hidden");
+            return false;
+        }
+    </script>
+    <style>
+        .c {
+            text-align: center;
+        }
+
+        div,
+        input,
+        select {
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        input {
+            width: 95%;
+        }
+
+        select {
+            width: 99%;
+        }
+
+        body {
+            text-align: center;
+            font-family: verdana;
+        }
+
+        button {
+            border: 0;
+            border-radius: 0.3rem;
+            background-color: #1fa3ec;
+            color: #fff;
+            line-height: 2.4rem;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        .q {
+            float: right;
+            width: 64px;
+            text-align: right;
+        }
+
+        .l {
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAALVBMVEX///8EBwfBwsLw8PAzNjaCg4NTVVUjJiZDRUUUFxdiZGSho6OSk5Pg4eFydHTCjaf3AAAAZElEQVQ4je2NSw7AIAhEBamKn97/uMXEGBvozkWb9C2Zx4xzWykBhFAeYp9gkLyZE0zIMno9n4g19hmdY39scwqVkOXaxph0ZCXQcqxSpgQpONa59wkRDOL93eAXvimwlbPbwwVAegLS1HGfZAAAAABJRU5ErkJggg==") no-repeat left center;
+            background-size: 1em;
+        }
+        div.hidden{
+            display:none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu" style='text-align:left;display:inline-block;min-width:260px;'>
+        <h1>
+            Locobuffer ESP32
+        </h1>
+        <h3>Config</h3>
+        <form onsubmit="return false"><button onClick="menu('wifi')">Configure WiFi</button></form><br />
+        <form action="/0wifi" method="get"><button>Configure WiFi (No Scan)</button></form><br />
+        <form action="/i" method="get"><button>Info</button></form><br />
+        <form action="/r" method="post"><button>Reset</button></form>
+    </div>
+    <div id="wifi" class="hidden" style='text-align:left;display:inline-block;min-width:260px'>
+        <h1>
+            Locobuffer ESP32
+        </h1>
+        <form onsubmit="return false">
+            <button onClick="back('wifi')" style="width: fit-content;">&LessLess;</button>
+            <h3 style="display: inline;">WiFi</h3>
+        </form>
+        
+    </div>
+</body>
+
+</html>
