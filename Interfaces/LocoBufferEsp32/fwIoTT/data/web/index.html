@@ -7,7 +7,7 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
 
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
-    <title>{v}</title>
+    <title>LocoBuffer ESP32</title>
     <style>
         div {
             padding: 2px;
@@ -194,7 +194,6 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
             getJson("/scan").then((response) => {
                 if (response.status == 200) {
                     let nets = JSON.parse(response.response)
-                    alert("Found " + nets.length + " nets");
                     if (nets.length == 0) {
                         setTimeout(reloadWifi, 10 * 1000)
                         return
@@ -250,11 +249,9 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
             <small>*Hint: To reuse the saved WiFi credentials, leave SSID and PWD fields empty</small>
             <form method='get' action='wifisave'>
                 <fieldset>
-                    <div><label>SSID</label><input value='[[ssid]]' id='s' name='s' length=32 placeholder='SSID'>
-                        <div></div>
+                    <div><label>SSID</label><input value='' id='s' name='s' length=32 placeholder='SSID'>
                     </div>
-                    <div><label>Password</label><input value='[[pwd]]' id='p' name='p' length=64 placeholder='password'>
-                        <div></div>
+                    <div><label>Password</label><input value='' id='p' name='p' length=64 type="password" placeholder='password'>
                     </div>
 
                 </fieldset>
