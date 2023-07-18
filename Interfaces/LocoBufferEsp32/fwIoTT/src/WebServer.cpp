@@ -2,8 +2,14 @@
 #include "WebServer.h"
 #include "lbWifi.h"
 #include <ESPAsyncWebServer.h>
+#include <SPIFFS.h>
 
 AsyncWebServer server(HTTP_PORT);
+String webPass;
+
+#define GET_AUTH     if(!request->authenticate(webUser,webPass.c_str())){ \
+        return request->requestAuthentication(); \
+    }
 
 #define DEBUG_WS(text)                \
     Serial.print(F("[WebServer]: ")); \
@@ -101,24 +107,10 @@ void handleRoot(AsyncWebServerRequest *request)
         // if captive portal redirect instead of displaying the page
         return;
     }
+    GET_AUTH
 
     DEBUG_WS(F("Sending Captive Portal"));
-
-    String page = FPSTR(WFM_HTTP_HEAD);
-    page.replace("{v}", "Options");
-    page += FPSTR(HTTP_SCRIPT);
-    page += FPSTR(HTTP_STYLE);
-    //  page += _customHeadElement;
-    page += FPSTR(HTTP_HEAD_END);
-    page += "<h1>";
-    page += "Locobuffer ESP32";
-    page += "</h1>";
-    page += F("<h3>Config</h3>");
-    page += FPSTR(HTTP_PORTAL_OPTIONS);
-    //  page += _customOptionsElement;
-    page += FPSTR(HTTP_END);
-
-    request->send(200, "text/html", page);
+    request->send(SPIFFS, "/web/index.html");
     DEBUG_WS(F("Sent..."));
 }
 
@@ -267,88 +259,35 @@ void handleWifi(AsyncWebServerRequest *request, boolean scan)
 
 void handleWifiScan(AsyncWebServerRequest *request)
 {
-    handleWifi(request, true);
-}
-
-/*
-// handle the WLAN save form and redirect to WLAN config page again
-void handleWifiSave(AsyncWebServerRequest *request)
-{
-  DEBUG_WS(F("WiFi save"));
-
-  // SAVE/connect here
-  needInfo = true;
-  _ssid = request->arg("s").c_str();
-  _pass = request->arg("p").c_str();
-
-  // parameters
-  for (unsigned int i = 0; i < _paramsCount; i++)
-  {
-    if (_params[i] == NULL)
-    {
-      break;
+    DEBUG_WS(F("Handle Scan"));
+    //handleWifi(request, true);
+    GET_AUTH
+  String json = "[";
+  int n = WiFi.scanComplete();
+  if(n == -2){
+    WiFi.scanNetworks(true);
+  } else if(n){
+    for (int i = 0; i < n; ++i){
+      if(i) json += ",";
+      json += "{";
+      json += "\"rssi\":"+String(WiFi.RSSI(i));
+      json += ",\"ssid\":\""+WiFi.SSID(i)+"\"";
+      json += ",\"bssid\":\""+WiFi.BSSIDstr(i)+"\"";
+      json += ",\"channel\":"+String(WiFi.channel(i));
+      json += ",\"secure\":"+String(WiFi.encryptionType(i));
+      json += "}";
     }
-    // read parameter
-    String value = request->arg(_params[i]->getID()).c_str();
-    // store it in array
-    value.toCharArray(_params[i]->_value, _params[i]->_length);
-
-    DEBUG_WS(F("Parameter"));
-    DEBUG_WS(_params[i]->getID());
-    DEBUG_WS(value);
+    WiFi.scanDelete();
+    if(WiFi.scanComplete() == -2){
+      WiFi.scanNetworks(true);
+    }
   }
-
-  if (request->hasArg("ip"))
-  {
-    DEBUG_WS(F("static ip"));
-    DEBUG_WS(request->arg("ip"));
-    //_sta_static_ip.fromString(request->arg("ip"));
-    String ip = request->arg("ip");
-    optionalIPFromString(&_sta_static_ip, ip.c_str());
-  }
-  if (request->hasArg("gw"))
-  {
-    DEBUG_WS(F("static gateway"));
-    DEBUG_WS(request->arg("gw"));
-    String gw = request->arg("gw");
-    optionalIPFromString(&_sta_static_gw, gw.c_str());
-  }
-  if (request->hasArg("sn"))
-  {
-    DEBUG_WS(F("static netmask"));
-    DEBUG_WS(request->arg("sn"));
-    String sn = request->arg("sn");
-    optionalIPFromString(&_sta_static_sn, sn.c_str());
-  }
-  if (request->hasArg("dns1"))
-  {
-    DEBUG_WS(F("static DNS 1"));
-    DEBUG_WS(request->arg("dns1"));
-    String dns1 = request->arg("dns1");
-    optionalIPFromString(&_sta_static_dns1, dns1.c_str());
-  }
-  if (request->hasArg("dns2"))
-  {
-    DEBUG_WS(F("static DNS 2"));
-    DEBUG_WS(request->arg("dns2"));
-    String dns2 = request->arg("dns2");
-    optionalIPFromString(&_sta_static_dns2, dns2.cpager
-  page.replace("{v}", "Credentials Saved");
-  page += FPSTR(HTTP_SCRIPT);
-  page += FPSTR(HTTP_STYLE);
-  page += _customHeadElement;
-  page += F("<meta http-equiv=\"refresh\" content=\"5; url=/i\">");
-  page += FPSTR(HTTP_HEAD_END);
-  page += FPSTR(HTTP_SAVED);
-  page += FPSTR(HTTP_END);
-
-  request->send(200, "text/html", page);
-
-  DEBUG_WS(F("Sent wifi save page"));
-
-  connect = true; // signal ready to connect/reset
+  json += "]";
+  request->send(200, "application/json", json);
+  json = String();
+  DEBUG_WS(F("Sent Scan"));
 }
-*/
+
 // handle the info page
 String infoAsString()
 {
@@ -455,9 +394,11 @@ void initWebServer()
 {
     server.onNotFound(handleNotFound);
     server.on("/", HTTP_GET, handleRoot);
-    server.on("/i", HTTP_GET, handleInfo);
+    // server.on("/i", HTTP_GET, handleInfo);
     server.on("/r", HTTP_POST, handleReset);
-    server.on("/wifi", HTTP_GET, handleWifiScan);
+    // server.on("/wifi", HTTP_GET, handleWifiScan);
+    
+    server.on("/scan", HTTP_GET, handleWifiScan);
     server.begin();
 }
 

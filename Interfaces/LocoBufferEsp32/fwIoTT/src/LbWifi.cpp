@@ -3,6 +3,7 @@
 #include <WiFi.h>
 #include <SPIFFS.h>
 #include <ArduinoJson.h>
+#include "WebServer.h"
 
 
 String ssid     = "LocoBuffer-AP";
@@ -114,6 +115,16 @@ bool loadConfigData()
       Serial.printf("password: %s\n", _password.c_str());
       if(_password !=""){
         password=_password;
+      }else{
+        res=false;
+      }
+    }
+    res = res && doc->containsKey("webPass");
+    if(res){
+      String _webPass=(*doc)["webPass"];
+      Serial.printf("webPass: %s\n", _webPass.c_str());
+      if(_webPass !=""){
+        webPass=_webPass;
       }else{
         res=false;
       }

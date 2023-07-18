@@ -3,8 +3,11 @@
 
 #define HTTP_PORT 80
 
+extern String webPass;
+
 void initWebServer();
 
+const char webUser[] PROGMEM = "admin";
 
 
 const char WFM_HTTP_HEAD[] PROGMEM = "<!DOCTYPE html><html lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\"/><title>{v}</title>";
