@@ -158,6 +158,7 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
         function back(id) {
             document.getElementById("menu").classList.remove("hidden");
             document.getElementById(id).classList.add("hidden");
+            reportStatus();
             return false;
         }
         function getJson(url) {
@@ -212,14 +213,53 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
 
         }
 
+        function reportStatus(){
+            getJson("./status").then((response) => {
+                if (response.status == 200) {
+                    let status = JSON.parse(response.response)
+                    let menu = document.getElementById("menu")
+                    menu.querySelector("h2").textContent=status.name+" on "+status.wifi.SSID;
+
+                    let statusStr =""
+                    if(status.wifi.mode=="AP"){
+                        statusStr="AP Mode<br>"
+                    }else{
+                        statusStr="Conected to "+status.wifi.SSID+"<br>"
+                    }
+                    statusStr+="IP: "+status.wifi.ip+"<br>"
+                    statusStr+="HostName: "+status.wifi.hostname+"<br>"
+
+                    menu.querySelector("div.msg").innerHTML=statusStr
+
+                    document.getElementById("s").setAttribute("placeholder",status.wifi.SSID);
+                    document.getElementById("ip").value=status.wifi.ip;
+                    document.getElementById("sn").value=status.wifi.nm;
+                    document.getElementById("gw").value=status.wifi.gw;
+                    document.getElementById("dns1").value=status.wifi.dns[0];
+                    document.getElementById("dns2").value=status.wifi.dns[1];
+
+                    document.getElementById("m").value=status.wifi.mode
+
+                    
+                } else {
+                    alert("Error :" + response.status)
+                }
+            }).catch((reason) => { console.error(reason) })
+            
+        }
+        function reloadLoconet(){
+
+        }
         var open = {
-            wifi: reloadWifi
+            wifi: reloadWifi,
+            menu: reportStatus,
+            loconet:reloadLoconet
         }
 
     </script>
 </head>
 
-<body>
+<body  onload="reportStatus()">
     <div id='menu' class='container'>
         <div style='text-align:left;display:inline-block;min-width:260px;'>
             <h2> LB_ on SSID</h2>
@@ -231,12 +271,22 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
                 <br />
                 <form onsubmit="return false"><button class='btn'>Information</button></form><br />
                 <form onsubmit="return false"><button class='btn'>Exit Portal</button></form><br />
-                <div class=\"msg\">
+                <div class="msg">
                     reportStatus(page);
                 </div>
             </fieldset>
         </div>
     </div>
+    <div id='loconet' class='container hidden'>
+        <div style='text-align:left;display:inline-block;min-width:260px;'>
+            <button onClick="back('loconet')" style="width: fit-content;" class="btn">&LessLess;</button>
+            <h2 style="display: inline;">Loconet</h2>
+            <fieldset id="lnCfg">
+                LocoNet Configuration
+            </fieldset>
+        </div>
+    </div>
+
     <div id='wifi' class='container hidden'>
         <div style='text-align:left;display:inline-block;min-width:260px;'>
             <button onClick="back('wifi')" style="width: fit-content;" class="btn">&LessLess;</button>
@@ -249,6 +299,12 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
             <small>*Hint: To reuse the saved WiFi credentials, leave SSID and PWD fields empty</small>
             <form method='get' action='wifisave'>
                 <fieldset>
+                    <div><label>Mode</label>
+                        <select name="m" id="m">
+                            <option value="AP">AP</option>
+                            <option value="Client">Client</option>
+                        </select>
+                    </div>
                     <div><label>SSID</label><input value='' id='s' name='s' length=32 placeholder='SSID'>
                     </div>
                     <div><label>Password</label><input value='' id='p' name='p' length=64 type="password" placeholder='password'>

@@ -256,6 +256,28 @@ void handleWifi(AsyncWebServerRequest *request, boolean scan)
 
     DEBUG_WS(F("Sent config page"));
 }
+void handleStatus(AsyncWebServerRequest *request)
+{
+    DEBUG_WS(F("Handle status"));
+    //handleWifi(request, true);
+    GET_AUTH
+    String json = "{";
+    json+="\"name\":\"LB_"+getESP32ChipID()+"\",";
+    json+="\"wifi\":{";
+    json+="\"mode\":\"";
+    json+=isAP?"AP":"Client";
+    json+="\",";
+    json+="\"SSID\":\""+ssid+"\",";
+    json+="\"hostname\":\""+hostname+"\",";
+    json+="\"ip\":\""+ip.toString()+"\",";
+    json+="\"nm\":\""+nm.toString()+"\",";
+    json+="\"gw\":\""+gw.toString()+"\",";
+    json+="\"dns\":[\""+dns[0].toString()+"\",\""+dns[1].toString()+"\"]";
+    json += "}}";
+    request->send(200, "application/json", json);
+    json = String();
+    DEBUG_WS(F("Sent status"));
+}
 
 void handleWifiScan(AsyncWebServerRequest *request)
 {
@@ -396,9 +418,8 @@ void initWebServer()
     server.on("/", HTTP_GET, handleRoot);
     // server.on("/i", HTTP_GET, handleInfo);
     server.on("/r", HTTP_POST, handleReset);
-    // server.on("/wifi", HTTP_GET, handleWifiScan);
-    
     server.on("/scan", HTTP_GET, handleWifiScan);
+    server.on("/status",HTTP_GET,handleStatus);
     server.begin();
 }
 
