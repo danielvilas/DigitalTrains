@@ -27,6 +27,7 @@ String deviceName="Esp32LB";
 #ifdef showPerformance
   uint16_t loopCtr = 0;
   uint32_t myTimer = millis() + 1000;
+  uint8_t mode=0;
 #endif
 
 void callbackLocoNetMessage(lnReceiveBuffer * newData)
@@ -55,10 +56,33 @@ void callbackLocoNetMessageUpstream(lnReceiveBuffer * newData)
 
 void setup() {
   // put your setup code here, to run once:
+  pinMode(BTN,INPUT);
   pinMode(PIN_CFG,INPUT);
   pinMode(PIN_LED,OUTPUT);
+  pinMode(LED_R,OUTPUT);
+  pinMode(LED_G,OUTPUT);
+  pinMode(LED_B,OUTPUT);
   digitalWrite(PIN_LED,0);
 
+  digitalWrite(LED_R,1);
+  digitalWrite(LED_G,1);
+  digitalWrite(LED_B,1);
+
+  ledcSetup(0, 5000, 8);
+  ledcSetup(1, 5000, 8);
+  ledcSetup(2, 5000, 8);
+ // Assigns the PWM channel to pin 23
+  ledcAttachPin(LED_R, 0);
+  ledcAttachPin(LED_G, 1);
+  ledcAttachPin(LED_B, 2);
+    // Create the selected output voltage
+  ledcWrite(0, 255);
+  ledcWrite(1, 255);
+  ledcWrite(2, 255);
+  digitalWrite(LED_R,1);
+  digitalWrite(LED_G,1);
+  digitalWrite(LED_B,1);
+  
   Serial.begin(115200); 
   while (!Serial);
   initLcd();
@@ -86,6 +110,14 @@ void loop() {
     Serial.printf("Timer Loop: %i\n", loopCtr);
     loopCtr = 0;
     myTimer += 1000;
+    mode++;
+    mode%=3;
+    Serial.printf("BTN: %i\n", digitalRead(BTN));
+  ledcWrite(0, 255);
+  ledcWrite(1, 255);
+  ledcWrite(2, 255);
+  ledcWrite(mode, 0);
+    digitalWrite(LED_R+mode,0);
   }
 #endif
   lnSerial.processLoop();
