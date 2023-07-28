@@ -4,7 +4,7 @@
 #include <SPIFFS.h>
 #include <ArduinoJson.h>
 #include "WebServer.h"
-
+#include "lbLcd.h"
 
 String ssid     = "LocoBuffer-AP";
 String password = "12345678";
@@ -21,9 +21,9 @@ bool initCP=false;
 
 void blinkTimes(int blinks, int onDelay, int offDelay){
   for(int i=0;i<blinks;i++){
-    digitalWrite(PIN_LED,1);
+    digitalWrite(LED_R,0);
     delay(onDelay);
-    digitalWrite(PIN_LED,0);
+    digitalWrite(LED_R,1);
     delay(offDelay);
   }
 }
@@ -179,6 +179,7 @@ bool loadConfigData()
 
 void initWifi(){
   Serial.print("starting Wifi");
+  LCD_setStatusMsg("Starting Wifi ...");
   delay(200);
   blinkTimes(3);
   int bntCfg=digitalRead(PIN_CFG);
@@ -186,6 +187,17 @@ void initWifi(){
   
   if(!bntCfg || !loadConfigData()){
     initCP=true;
+    isAP=true;
+    ssid="LbEsp32-AP";
+    password = "12345678";
+    hostname = "lbesp32";
+    staticIp=true;
+    ip.fromString("192.168.4.1");
+    nm.fromString("255.255.255.0");
+    gw.fromString("192.168.4.1");
+    dns[0].fromString("192.168.4.1");
+    dns[1].fromString("8.8.8.8");
+    webPass="lbesp32";
   }
 
   if(staticIp){
@@ -194,26 +206,23 @@ void initWifi(){
   
 
   if(isAP){
+    LCD_setStatusMsg("Mode AP ...");
     WiFi.mode(WIFI_AP);
     WiFi.softAP(ssid.c_str(), password.c_str());
     if(!WiFi.softAPConfig(ip,gw,nm)){
       Serial.println("Error Setting IP");
     }
     WiFi.setHostname(hostname.c_str());
-    blinkTimes(2,300,200);
+    LCD_blinkLED(2,3,2);
     Serial.print("AP Hostname: ");
     Serial.println(WiFi.getHostname());
     Serial.print("AP IP address: ");
     Serial.println(WiFi.softAPIP());
     Serial.print("AP GW address: ");
-    Serial.println(WiFi.gatewayIP());
-    Serial.print("AP NM address: ");
-    Serial.println(WiFi.subnetMask());
-    Serial.print("AP DNS[0] address: ");
-    Serial.println(WiFi.dnsIP(0));
-    Serial.print("AP DNS[1] address: ");
-    Serial.println(WiFi.dnsIP(1));
+    LCD_setNetwork(ssid);
+    if(initCP)LCD_setStatusMsg("Reset Config");
   }else{
+    LCD_setStatusMsg("Connecting ...");
     WiFi.mode(WIFI_STA);
     WiFi.softAP(ssid.c_str(), password.c_str());
   }

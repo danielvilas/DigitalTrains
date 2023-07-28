@@ -5,15 +5,9 @@
 #include "lbWifi.h"
 #include "WebServer.h"
 #include "lbLcd.h"
+#include "loconet.h"
 
 
-/////////USER CONFIGURATION//////////////////////////////////////////
-#define pinRx    22  //pin used to receive LocoNet signals
-#define pinTx    23  //pin used to transmit LocoNet signals
-#define pinNop   30  //unused pin to set for the hardware Serial port as transmit pin
-#define InverseLogic true
-#define showPerformance
-/////////END OF USER CONFIGURATION//////////////////////////////////////////
 
 
 LocoNetESPSerial lnSerial(2); //true is inverted signals
@@ -27,74 +21,40 @@ String deviceName="Esp32LB";
 #ifdef showPerformance
   uint16_t loopCtr = 0;
   uint32_t myTimer = millis() + 1000;
-  uint8_t mode=0;
 #endif
 
-void callbackLocoNetMessage(lnReceiveBuffer * newData)
-{
-   Serial.printf("LN Msg Error Flags %2X ReqID %i with %i bytes requested %i response time %i echo time %i: ", newData->errorFlags, newData->requestID, newData->lnMsgSize, newData->reqRecTime, newData->reqRespTime, newData->echoTime); 
-   for (int i=0; i<newData->lnMsgSize; i++)
-   {
-     Serial.print(newData->lnData[i],16);
-     Serial.print(" ");
-   }
-   Serial.println();
-   lbServer->lnWriteMsg(newData);
-}
 
-void callbackLocoNetMessageUpstream(lnReceiveBuffer * newData)
-{
-   Serial.printf("LNU Msg Error Flags %2X ReqID %i with %i bytes requested %i response time %i echo time %i: ", newData->errorFlags, newData->requestID, newData->lnMsgSize, newData->reqRecTime, newData->reqRespTime, newData->echoTime); 
-   for (int i=0; i<newData->lnMsgSize; i++)
-   {
-     Serial.print(newData->lnData[i],16);
-     Serial.print(" ");
-   }
-   Serial.println();
-}
- 
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(BTN,INPUT);
+  pinMode(BTN,INPUT_PULLUP);
   pinMode(PIN_CFG,INPUT);
   pinMode(PIN_LED,OUTPUT);
   pinMode(LED_R,OUTPUT);
   pinMode(LED_G,OUTPUT);
   pinMode(LED_B,OUTPUT);
-  digitalWrite(PIN_LED,0);
-
   digitalWrite(LED_R,1);
   digitalWrite(LED_G,1);
-  digitalWrite(LED_B,1);
-
-  ledcSetup(0, 5000, 8);
-  ledcSetup(1, 5000, 8);
-  ledcSetup(2, 5000, 8);
- // Assigns the PWM channel to pin 23
-  ledcAttachPin(LED_R, 0);
-  ledcAttachPin(LED_G, 1);
-  ledcAttachPin(LED_B, 2);
-    // Create the selected output voltage
-  ledcWrite(0, 255);
-  ledcWrite(1, 255);
-  ledcWrite(2, 255);
-  digitalWrite(LED_R,1);
-  digitalWrite(LED_G,1);
-  digitalWrite(LED_B,1);
-  
-  Serial.begin(115200); 
-  while (!Serial);
+  digitalWrite(LED_B,1); 
   initLcd();
-  initWifi();
+
+  Serial.begin(115200); 
+  lnSerial.setBusyLED(PIN_LED);
   lnSerial.begin(pinRx,pinTx,false,true);
+  pinMode(LED_R,OUTPUT);
+  digitalWrite(LED_R,0);
+  digitalWrite(LED_R,1);
+
+  //while (!Serial);
+  initWifi();
   digitraxBuffer = new IoTT_DigitraxBuffers(sendMsg);
   lbServer=new IoTT_LBServer();
   lbServer->initLBServer(true);
+  lbServer->initMDNS();
   delay(1000);
-  lnSerial.setBusyLED(16 );
-  lbServer->startServer();
-  initWebServer();
+  
+  //lbServer->startServer();
+  //initWebServer();
   Serial.println("Init Done");
 
   randomSeed((uint32_t)ESP.getEfuseMac()); //initialize random generator with MAC
@@ -110,42 +70,10 @@ void loop() {
     Serial.printf("Timer Loop: %i\n", loopCtr);
     loopCtr = 0;
     myTimer += 1000;
-    mode++;
-    mode%=3;
-    Serial.printf("BTN: %i\n", digitalRead(BTN));
-  ledcWrite(0, 255);
-  ledcWrite(1, 255);
-  ledcWrite(2, 255);
-  ledcWrite(mode, 0);
-    digitalWrite(LED_R+mode,0);
   }
 #endif
   lnSerial.processLoop();
   lbServer->processLoop();
-
+  LCD_update_loop();
   yield();
-}
-
-
-uint16_t sendMsg(lnTransmitMsg txData)
-{
-//  Serial.printf("verifySyntax %i\n", useInterface.devId);
-//  if (!verifySyntax(&txData.lnData[0]))
-//  {
-//    Serial.printf("ERROR: Call sendMsg to %i: %i, %2X, %2X, %2X, %2X \n", useInterface.devId, txData.lnMsgSize, txData.lnData[0], txData.lnData[1], txData.lnData[2], txData.lnData[3]);
-//    Serial.printf("Outgoing Callback to %i ID %2X\n", useInterface.devId, txData.requestID);
-//    return 0;
-//  }
-lnTransmitMsg * newData=&txData;
-Serial.printf("LB Msg :ReqID %i with %i bytes requested %i RequestTime ", 
-newData->requestID, newData->lnMsgSize, newData->reqRecTime); 
-   for (int i=0; i<newData->lnMsgSize; i++)
-   {
-     Serial.print(newData->lnData[i],16);
-     Serial.print(" ");
-   }
-   Serial.println();
-
-  return lnSerial.lnWriteMsg(newData);
-  //return 0;
 }

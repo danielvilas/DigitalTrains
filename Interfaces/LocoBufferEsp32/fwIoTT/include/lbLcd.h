@@ -12,5 +12,9 @@
 #define BTN 33
 
 void initLcd();
+void LCD_setStatusMsg(String status);
+void LCD_setNetwork(String network);
+void LCD_update_loop();
 
+void LCD_blinkLED(uint8_t blinks, uint8_t onDelay=5, uint8_t offDelay=5);
 #endif
