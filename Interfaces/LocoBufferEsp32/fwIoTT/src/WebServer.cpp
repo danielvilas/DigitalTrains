@@ -3,6 +3,7 @@
 #include "lbWifi.h"
 #include <ESPAsyncWebServer.h>
 #include <SPIFFS.h>
+#include "ArduinoJson.h"
 
 AsyncWebServer server(HTTP_PORT);
 String webPass;
@@ -54,44 +55,7 @@ String getESP32ChipID()
     }
     return byteToHexString(chipid_arr, chipid_size, "");
 }
-boolean isIp(String str)
-{
-    for (unsigned int i = 0; i < str.length(); i++)
-    {
-        int c = str.charAt(i);
-        if (c != '.' && (c < '0' || c > '9'))
-        {
-            return false;
-        }
-    }
-    return true;
-}
 
-String toStringIp(IPAddress ip)
-{
-    String res = "";
-    for (int i = 0; i < 3; i++)
-    {
-        res += String((ip >> (8 * i)) & 0xFF) + ".";
-    }
-    res += String(((ip >> 8 * 3)) & 0xFF);
-    return res;
-}
-
-/** Redirect to captive portal if we got a request for another domain.
- * Return true in that case so the page handler do not try to handle the request again. */
-boolean captivePortal(AsyncWebServerRequest *request)
-{
-    if (!isIp(request->host()))
-    {
-        DEBUG_WS(F("Request redirected to captive portal"));
-        AsyncWebServerResponse *response = request->beginResponse(302, "text/plain", "");
-        response->addHeader("Location", String("http://") + toStringIp(request->client()->localIP()));
-        request->send(response);
-        return true;
-    }
-    return false;
-}
 
 void handleRoot(AsyncWebServerRequest *request)
 {
@@ -102,11 +66,11 @@ void handleRoot(AsyncWebServerRequest *request)
     //  scannow = 0;
     DEBUG_WS(F("Handle root"));
 
-    if (captivePortal(request))
-    {
-        // if captive portal redirect instead of displaying the page
-        return;
-    }
+    // if (captivePortal(request))
+    // {
+    //     // if captive portal redirect instead of displaying the page
+    //     return;
+    // }
     GET_AUTH
 
     DEBUG_WS(F("Sending Captive Portal"));
@@ -114,152 +78,9 @@ void handleRoot(AsyncWebServerRequest *request)
     DEBUG_WS(F("Sent..."));
 }
 
-// wifi config page handler
-
-void handleWifi(AsyncWebServerRequest *request, boolean scan)
-{
-    //  shouldscan = true;
-    //  scannow = 0;
-
-    DEBUG_WS(F("Handle wifi"));
-
-    String page = FPSTR(WFM_HTTP_HEAD);
-    page.replace("{v}", "Config ESP");
-    page += FPSTR(HTTP_SCRIPT);
-    page += FPSTR(HTTP_STYLE);
-    // page += _customHeadElement;
-    page += FPSTR(HTTP_HEAD_END);
-
-    if (scan)
-    {
-        /*
-        wifiSSIDscan = false;
-
-        DEBUG_WS(F("Scan done"));
-        if (wifiSSIDCount == 0)
-        {
-            DEBUG_WS(F("No networks found"));
-            page += F("No networks found. Refresh to scan again");
-        }
-        else
-        {
-            // display networks in page
-            String pager = networkListAsString();
-            page += pager;
-            page += "<br/>";
-        }*/
-    }
-   //wifiSSIDscan = true;
-
-    page+= FPSTR(HTTP_FORM_START);
-    page+= FPSTR(HTTP_FORM_SELEC_MODE_START);
-    String item=FPSTR(HTTP_FORM_SELEC_MODE_OPTION);
-    item.replace("{v}","c");
-    item.replace("{t}","Client");
-    item.replace("{s}", (!isAP)?"selected":"");
-    page+=item;
-    item=FPSTR(HTTP_FORM_SELEC_MODE_OPTION);
-    item.replace("{v}","a");
-    item.replace("{t}","Access Point");
-    item.replace("{s}", (isAP)?"selected":"");
-    page+=item;
-    page+= FPSTR(HTTP_FORM_SELEC_MODE_END);
-
-    item =  FPSTR(HTTP_FORM_SSID_PW);
-    item.replace("{vSsid}",ssid);
-    item.replace("{vPw}",password);
-    page +=item;
-    char parLength[2];
-
-    // add the extra parameters to the form
-    /*for (unsigned int i = 0; i < _paramsCount; i++)
-    {
-      if (_params[i] == NULL)
-      {
-        break;
-      }
-
-      String pitem = FPSTR(HTTP_FORM_PARAM);
-      if (_params[i]->getID() != NULL)
-      {
-        pitem.replace("{i}", _params[i]->getID());
-        pitem.replace("{n}", _params[i]->getID());
-        pitem.replace("{p}", _params[i]->getPlaceholder());
-        snprintf(parLength, 2, "%d", _params[i]->getValueLength());
-        pitem.replace("{l}", parLength);
-        pitem.replace("{v}", _params[i]->getValue());
-        pitem.replace("{c}", _params[i]->getCustomHTML());
-      }
-      else
-      {
-        pitem = _params[i]->getCustomHTML();
-      }
-
-      page += pitem;
-    }
-    if (_params[0] != NULL)
-    {
-      page += "<br/>";
-    }
-    */
-    item = FPSTR(HTTP_FORM_PARAM);
-    item.replace("{i}", "ip");
-    item.replace("{n}", "ip");
-    item.replace("{p}", "Static IP");
-    item.replace("{l}", "15");
-    item.replace("{v}", ip.toString());
-
-    page += item;
-
-    item = FPSTR(HTTP_FORM_PARAM);
-    item.replace("{i}", "gw");
-    item.replace("{n}", "gw");
-    item.replace("{p}", "Static Gateway");
-    item.replace("{l}", "15");
-    item.replace("{v}", gw.toString());
-
-    page += item;
-
-    item = FPSTR(HTTP_FORM_PARAM);
-    item.replace("{i}", "sn");
-    item.replace("{n}", "sn");
-    item.replace("{p}", "Subnet");
-    item.replace("{l}", "15");
-    item.replace("{v}", nm.toString());
-
-    page += item;
-
-    item = FPSTR(HTTP_FORM_PARAM);
-    item.replace("{i}", "dns1");
-    item.replace("{n}", "dns1");
-    item.replace("{p}", "DNS1");
-    item.replace("{l}", "15");
-    item.replace("{v}", dns[0].toString());
-
-    page += item;
-
-    item = FPSTR(HTTP_FORM_PARAM);
-    item.replace("{i}", "dns2");
-    item.replace("{n}", "dns2");
-    item.replace("{p}", "DNS2");
-    item.replace("{l}", "15");
-    item.replace("{v}", dns[1].toString());
-
-    page += item;
-    page += "<br/>";
-
-    page += FPSTR(HTTP_FORM_END);
-    page += FPSTR(HTTP_SCAN_LINK);
-    page += FPSTR(HTTP_END);
-
-    request->send(200, "text/html", page);
-
-    DEBUG_WS(F("Sent config page"));
-}
 void handleStatus(AsyncWebServerRequest *request)
 {
     DEBUG_WS(F("Handle status"));
-    //handleWifi(request, true);
     GET_AUTH
     String json = "{";
     json+="\"name\":\"LB_"+getESP32ChipID()+"\",";
@@ -269,20 +90,50 @@ void handleStatus(AsyncWebServerRequest *request)
     json+="\",";
     json+="\"SSID\":\""+ssid+"\",";
     json+="\"hostname\":\""+hostname+"\",";
+    if(staticIp){
+        json+="\"staticIp\":true,";
+    }else{
+        json+="\"staticIp\":false,";
+    }
     json+="\"ip\":\""+ip.toString()+"\",";
     json+="\"nm\":\""+nm.toString()+"\",";
     json+="\"gw\":\""+gw.toString()+"\",";
     json+="\"dns\":[\""+dns[0].toString()+"\",\""+dns[1].toString()+"\"]";
     json += "}}";
-    request->send(200, "application/json", json);
+
+    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response->addHeader("Pragma", "no-cache");
+    response->addHeader("Expires", "-1");
+    request->send(response);
     json = String();
     DEBUG_WS(F("Sent status"));
 }
 
+
+
+void handleSave(AsyncWebServerRequest *request,uint8_t *data, size_t len, size_t index, size_t total){
+
+    DEBUG_WS(F("Handle Save"));
+    GET_AUTH
+
+
+    String json = "{";
+    json += "}";
+    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response->addHeader("Pragma", "no-cache");
+    response->addHeader("Expires", "-1");
+    request->send(response);
+    json = String();
+    DEBUG_WS(F("Sent Save"));
+}
+
+
+
 void handleWifiScan(AsyncWebServerRequest *request)
 {
     DEBUG_WS(F("Handle Scan"));
-    //handleWifi(request, true);
     GET_AUTH
   String json = "[";
   int n = WiFi.scanComplete();
@@ -305,70 +156,25 @@ void handleWifiScan(AsyncWebServerRequest *request)
     }
   }
   json += "]";
-  request->send(200, "application/json", json);
+
+    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response->addHeader("Pragma", "no-cache");
+    response->addHeader("Expires", "-1");
+    request->send(response);
+
   json = String();
   DEBUG_WS(F("Sent Scan"));
 }
 
-// handle the info page
-String infoAsString()
-{
-    String page;
-    page += F("<dt>Chip ID</dt><dd>");
-    page += getESP32ChipID();
-    page += F("</dd>");
-    page += F("<dt>Flash Chip ID</dt><dd>");
-    page += F("N/A for ESP32");
-    page += F("</dd>");
-    page += F("<dt>IDE Flash Size</dt><dd>");
-    page += ESP.getFlashChipSize();
-    page += F(" bytes</dd>");
-    page += F("<dt>Real Flash Size</dt><dd>");
-    page += F("N/A for ESP32");
-    page += F(" bytes</dd>");
-    page += F("<dt>Soft AP IP</dt><dd>");
-    page += WiFi.softAPIP().toString();
-    page += F("</dd>");
-    page += F("<dt>Soft AP MAC</dt><dd>");
-    page += WiFi.softAPmacAddress();
-    page += F("</dd>");
-    page += F("<dt>Station SSID</dt><dd>");
-    page += WiFi.SSID();
-    page += F("</dd>");
-    page += F("<dt>Station IP</dt><dd>");
-    page += WiFi.localIP().toString();
-    page += F("</dd>");
-    page += F("<dt>Station MAC</dt><dd>");
-    page += WiFi.macAddress();
-    page += F("</dd>");
-    page += F("</dl>");
-    return page;
-}
 
-void handleInfo(AsyncWebServerRequest *request)
-{
-    DEBUG_WS(F("Info"));
 
-    String page = FPSTR(WFM_HTTP_HEAD);
-    page.replace("{v}", "Info");
-    page += FPSTR(HTTP_SCRIPT);
-    page += FPSTR(HTTP_STYLE);
-    // page += _customHeadElement;
-    page += FPSTR(HTTP_HEAD_END);
-    page += F("<dl>");
-    page += infoAsString();
-    page += FPSTR(HTTP_END);
-
-    request->send(200, "text/html", page);
-
-    DEBUG_WS(F("Sent info page"));
-}
 
 // handle the reset page
 void handleReset(AsyncWebServerRequest *request)
 {
     DEBUG_WS(F("Reset"));
-
+    GET_AUTH
     String page = FPSTR(WFM_HTTP_HEAD);
     page.replace("{v}", "Info");
     page += FPSTR(HTTP_SCRIPT);
@@ -386,11 +192,11 @@ void handleReset(AsyncWebServerRequest *request)
 void handleNotFound(AsyncWebServerRequest *request)
 {
     DEBUG_WS(F("Handle not found"));
-    if (captivePortal(request))
-    {
-        // if captive portal redirect instead of displaying the error page
-        return;
-    }
+    // if (captivePortal(request))
+    // {
+    //     // if captive portal redirect instead of displaying the error page
+    //     return;
+    // }
 
     String message = "File Not Found\n\n";
     message += "URI: ";
@@ -416,10 +222,11 @@ void initWebServer()
 {
     server.onNotFound(handleNotFound);
     server.on("/", HTTP_GET, handleRoot);
-    // server.on("/i", HTTP_GET, handleInfo);
-    server.on("/r", HTTP_POST, handleReset);
+    server.on("/reset", HTTP_POST, handleReset);
     server.on("/scan", HTTP_GET, handleWifiScan);
     server.on("/status",HTTP_GET,handleStatus);
+    server.on("/wifisave",HTTP_POST,handleSave);
     server.begin();
 }
+
 

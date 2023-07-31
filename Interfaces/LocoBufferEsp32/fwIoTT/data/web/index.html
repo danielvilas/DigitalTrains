@@ -231,14 +231,15 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
 
                     menu.querySelector("div.msg").innerHTML=statusStr
 
-                    document.getElementById("s").setAttribute("placeholder",status.wifi.SSID);
+                    document.getElementById("ssid").setAttribute("placeholder",status.wifi.SSID);
                     document.getElementById("ip").value=status.wifi.ip;
                     document.getElementById("sn").value=status.wifi.nm;
                     document.getElementById("gw").value=status.wifi.gw;
                     document.getElementById("dns1").value=status.wifi.dns[0];
                     document.getElementById("dns2").value=status.wifi.dns[1];
 
-                    document.getElementById("m").value=status.wifi.mode
+                    document.getElementById("mode").value=status.wifi.mode
+                    document.getElementById("ipMode").value=status.wifi.staticIp?"static":"dhcp"
 
                     
                 } else {
@@ -247,6 +248,31 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
             }).catch((reason) => { console.error(reason) })
             
         }
+
+        function saveWifi(){
+            data={
+                ssid:document.getElementById("ssid").value,
+                ip:document.getElementById("ip").value,
+                sn:document.getElementById("sn").value,
+                gw:document.getElementById("gw").value,
+                dns:[document.getElementById("dns1").value,document.getElementById("dns2").value],
+                mode:document.getElementById("mode").value,
+                ipMode:document.getElementById("ipMode").value
+            }
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "./wifisave", true);
+            xhr.onload = (response) => {
+                    alert(response)
+            }
+            xhr.onerror = (error) => {
+               alert("error")
+            }
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(data));
+
+        }
+
         function reloadLoconet(){
 
         }
@@ -296,34 +322,31 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
                 Network List
             </fieldset>
             <br>
-            <small>*Hint: To reuse the saved WiFi credentials, leave SSID and PWD fields empty</small>
-            <form method='get' action='wifisave'>
-                <fieldset>
+            <small>*Hint: To reuse the savsaveWifi
                     <div><label>Mode</label>
-                        <select name="m" id="m">
+                        <select name="mode" id="mode">
                             <option value="AP">AP</option>
                             <option value="Client">Client</option>
                         </select>
                     </div>
-                    <div><label>SSID</label><input value='' id='s' name='s' length=32 placeholder='SSID'>
-                    </div>
-                    <div><label>Password</label><input value='' id='p' name='p' length=64 type="password" placeholder='password'>
-                    </div>
-
+                    <div><label>SSID</label><input value='' id='ssid' name='ssid' length=32 placeholder='SSID'></div>
+                    <div><label>Password</label><input value='' id='pwd' name='pwd' length=64 type="password" placeholder='password'></div>
                 </fieldset>
                 <fieldset>
-                    <label for='ip'>Static IP</label><input id='ip' name='ip' length=15 placeholder='Static IP'
-                        value='192.168.4.1'>
-                    <label for='gw'>Gateway IP</label><input id='gw' name='gw' length=15 placeholder='Gateway IP'
-                        value='192.168.4.1'>
-                    <label for='sn'>Subnet</label><input id='sn' name='sn' length=15 placeholder='Subnet'
-                        value='255.255.255.0'>
-                    <label for='dns1'>DNS1 IP</label><input id='dns1' name='dns1' length=15 placeholder='DNS1 IP'
-                        value='255.255.255.0'>
-                    <label for='dns2'>DNS2 IP</label><input id='dns2' name='dns2' length=15 placeholder='DNS2 IP'
-                        value='255.255.255.0'>
+                    <label>Mode</label>
+                    <select name="ipMode" id="ipMode">
+                        <option value="dhcp">DHCP</option>
+                        <option value="static">Static</option>
+                    </select>
+                    <div id="staticIpForm">
+                        <label for='ip'>Static IP</label><input id='ip' name='ip' length=15 placeholder='Static IP'>
+                        <label for='gw'>Gateway IP</label><input id='gw' name='gw' length=15 placeholder='Gateway IP'>
+                        <label for='sn'>Subnet</label><input id='sn' name='sn' length=15 placeholder='Subnet'>
+                        <label for='dns1'>DNS1 IP</label><input id='dns1' name='dns1' length=15 placeholder='DNS1 IP'>
+                        <label for='dns2'>DNS2 IP</label><input id='dns2' name='dns2' length=15 placeholder='DNS2 IP'>
+                    </div>
                 </fieldset>
-                <button class='btn' type='submit'>Save</button>
+                <button class='btn' onClick="saveWifi()">Save</button>
             </form>
         </div>
     </div>

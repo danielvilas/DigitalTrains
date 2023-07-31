@@ -19,4 +19,5 @@ extern IPAddress nm;
 extern IPAddress gw;
 extern IPAddress dns[2];
 extern bool isAP;
+extern bool staticIp;
 #endif

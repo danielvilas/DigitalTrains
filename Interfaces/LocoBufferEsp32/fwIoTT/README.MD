@@ -1,9 +1,9 @@
 # LocoNet Buffer ESP32
 
-- [] MDNS
+- [x] MDNS
 - [x] Loconet Server 
 - [] Loconet Client
-- [] CFG-UI-Status
+- [x] CFG-UI-Status
 - [] Save to SD/FS
 - [] WiThrotle
 - [] WifiManager

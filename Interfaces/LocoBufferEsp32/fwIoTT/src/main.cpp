@@ -53,8 +53,8 @@ void setup() {
   lbServer->initMDNS();
   delay(1000);
   
-  //lbServer->startServer();
-  //initWebServer();
+  lbServer->startServer();
+  initWebServer();
   Serial.println("Init Done");
 
   randomSeed((uint32_t)ESP.getEfuseMac()); //initialize random generator with MAC
