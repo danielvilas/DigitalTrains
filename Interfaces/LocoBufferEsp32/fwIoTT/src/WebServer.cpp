@@ -4,6 +4,7 @@
 #include <ESPAsyncWebServer.h>
 #include <SPIFFS.h>
 #include "ArduinoJson.h"
+#include "lbLcd.h"
 
 AsyncWebServer server(HTTP_PORT);
 String webPass;
@@ -112,21 +113,77 @@ void handleStatus(AsyncWebServerRequest *request)
 
 
 
-void handleSave(AsyncWebServerRequest *request,uint8_t *data, size_t len, size_t index, size_t total){
+void handleSave(AsyncWebServerRequest *request){
 
     DEBUG_WS(F("Handle Save"));
     GET_AUTH
 
 
     String json = "{";
+    // for (unsigned int i = 0; i < request->args(); i++)
+    // {
+    //     json+=(i!=0)?(", \""):" \"";
+    //     json += request->argName(i) + "\": \"" + request->arg(i)+"\"";
+    // }
+
+
+    bool valid=true;
+    int code=200;
+    valid= valid && request->hasArg("mode");
+    valid= valid && request->hasArg("ssid");
+    valid= valid && request->hasArg("pwd");
+    valid= valid && request->hasArg("ipMode");
+    valid= valid && request->hasArg("ip");
+    valid= valid && request->hasArg("gw");
+    valid= valid && request->hasArg("sn");
+    valid= valid && request->hasArg("dns1");
+    valid= valid && request->hasArg("dns2");
+
+    if(valid){
+        if(!request->arg("mode").equals("")){
+            isAP=request->arg("mode").equals("AP");
+        }
+        if(!request->arg("ssid").equals(""))ssid=request->arg("ssid");
+        if(!request->arg("ssid").equals(""))password=request->arg("pwd");
+        if(!request->arg("ipMode").equals("")){
+            staticIp=request->arg("ipMode").equals("static");
+        }
+
+        if(!request->arg("ip").equals("")){
+            if(request->arg("ip").equals("0.0.0.0")){
+                staticIp=false;
+            }else{
+                valid= valid && ip.fromString(request->arg("ip"));
+            }
+        }if(!request->arg("gw").equals(""))valid= valid && gw.fromString(request->arg("gw"));
+        if(!request->arg("sn").equals(""))valid= valid && nm.fromString(request->arg("sn"));
+        if(!request->arg("dns1").equals(""))valid= valid && dns[0].fromString(request->arg("dns1"));
+        if(!request->arg("dns2").equals(""))valid= valid && dns[1].fromString(request->arg("dns2"));
+    }
+    if(!valid){
+        code=400;
+        json+="\"error\":\"Invalid Parameters\"";
+        loadConfigData();
+    }else{
+        saveConfigData();
+    }
+
     json += "}";
-    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    DEBUG_WS(json);
+
+    AsyncWebServerResponse *response = request->beginResponse(code, "application/json", json);
     response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response->addHeader("Pragma", "no-cache");
     response->addHeader("Expires", "-1");
     request->send(response);
+    LCD_blinkLED(2);
+    digitalWrite(LED_G,1);
+    digitalWrite(LED_B,1);
     json = String();
     DEBUG_WS(F("Sent Save"));
+    if(valid){
+        initWifi();
+    }
 }
 
 
@@ -162,9 +219,9 @@ void handleWifiScan(AsyncWebServerRequest *request)
     response->addHeader("Pragma", "no-cache");
     response->addHeader("Expires", "-1");
     request->send(response);
-
-  json = String();
-  DEBUG_WS(F("Sent Scan"));
+    LCD_blinkLED(5,1,1);
+    json = String();
+    DEBUG_WS(F("Sent Scan"));
 }
 
 

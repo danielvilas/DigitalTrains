@@ -250,16 +250,7 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
         }
 
         function saveWifi(){
-            data={
-                ssid:document.getElementById("ssid").value,
-                ip:document.getElementById("ip").value,
-                sn:document.getElementById("sn").value,
-                gw:document.getElementById("gw").value,
-                dns:[document.getElementById("dns1").value,document.getElementById("dns2").value],
-                mode:document.getElementById("mode").value,
-                ipMode:document.getElementById("ipMode").value
-            }
-            
+            var data = new FormData(document.getElementById("WifiSaveData"))
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "./wifisave", true);
             xhr.onload = (response) => {
@@ -268,8 +259,8 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
             xhr.onerror = (error) => {
                alert("error")
             }
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(data));
+            //xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(data);
 
         }
 
@@ -322,7 +313,9 @@ https://github.com/khoih-prog/ESPAsync_WiFiManager/blob/master/src/ESPAsync_WiFi
                 Network List
             </fieldset>
             <br>
-            <small>*Hint: To reuse the savsaveWifi
+            <small>*Hint: To reuse the saved WiFi credentials, leave SSID and PWD fields empty</small>
+            <form id="WifiSaveData" onsubmit="return false">
+                <fieldset>
                     <div><label>Mode</label>
                         <select name="mode" id="mode">
                             <option value="AP">AP</option>

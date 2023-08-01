@@ -46,7 +46,7 @@ void setup() {
   digitalWrite(LED_R,1);
 
   //while (!Serial);
-  initWifi();
+  initWifi();  
   digitraxBuffer = new IoTT_DigitraxBuffers(sendMsg);
   lbServer=new IoTT_LBServer();
   lbServer->initLBServer(true);

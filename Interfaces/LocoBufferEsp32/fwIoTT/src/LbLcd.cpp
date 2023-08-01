@@ -4,6 +4,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include "WebServer.h"
+#include <WiFi.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -85,6 +86,10 @@ void LCD_setNetwork(String network){
     if (isAP){
         display.setCursor(0, 1);
         display.print("AP: ");
+        display.print(network);
+    }else{
+        display.setCursor(0, 1);
+        display.print(" C: ");
         display.print(network);
     }
     display.display();
@@ -175,13 +180,13 @@ void printMode(){
     case LCD_PRE:
         break;
     case LCD_IP:
-        display.printf("IP: %s",ip.toString().c_str());
+        display.printf("IP: %s",WiFi.localIP().toString().c_str());
         break;
     case LCD_HOST_NAME:
-        display.printf("Host: %s",hostname.c_str());
+        display.printf("Host: %s",WiFi.getHostname());
         break;
     case LCD_MDNS_NAME:
-        display.printf("mDns: %s.local",hostname.c_str());
+        display.printf("mDns: %s.local",WiFi.getHostname());
         break;
     case LCD_PW:
         display.printf("WiFi PW");

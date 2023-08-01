@@ -177,6 +177,41 @@ bool loadConfigData()
   return res;
 }
 
+void saveConfigData(){
+  if(!SPIFFS.begin()){
+    Serial.println("Error opening spiffs");
+    return;
+  }
+  File file = SPIFFS.open("/wifi.json", "w");
+  if (!file) {
+    Serial.println("Error opening file for writing");
+    return;
+  }
+
+  int bytesWritten = file.print("{");
+  if(isAP)bytesWritten += file.print("\"mode\":\"AP\",");
+  else bytesWritten += file.print("\"mode\":\"STA\",");
+
+  bytesWritten += file.print("\"SSID\":\""+ssid+"\",");
+  bytesWritten += file.print("\"password\":\""+password+"\",");
+  bytesWritten += file.print("\"hostname\":\""+hostname+"\",");
+  if(!staticIp)bytesWritten += file.print("\"ip\":\"0.0.0.0\",");
+  else bytesWritten += file.print("\"ip\":\""+ip.toString()+"\",");
+  bytesWritten += file.print("\"nm\":\""+nm.toString()+"\",");
+  bytesWritten += file.print("\"gw\":\""+gw.toString()+"\",");
+  bytesWritten += file.print("\"dns\":[\""+dns[0].toString()+"\",\""+dns[1].toString()+"\"],");
+  bytesWritten += file.print("\"webPass\":\""+webPass+"\"");
+  bytesWritten += file.print("}");
+
+  if (bytesWritten > 0) {
+      Serial.println("File was written");
+      Serial.println(bytesWritten);
+  } else {
+      Serial.println("File write failed");
+  }	
+  file.close();
+}
+
 void initWifi(){
   Serial.print("starting Wifi");
   LCD_setStatusMsg("Starting Wifi ...");
@@ -198,6 +233,7 @@ void initWifi(){
     dns[0].fromString("192.168.4.1");
     dns[1].fromString("8.8.8.8");
     webPass="lbesp32";
+    saveConfigData();
   }
 
   if(staticIp){
@@ -219,11 +255,18 @@ void initWifi(){
     Serial.print("AP IP address: ");
     Serial.println(WiFi.softAPIP());
     Serial.print("AP GW address: ");
+    Serial.println(WiFi.gatewayIP());
+    WiFi.softAP(ssid.c_str(), password.c_str());
     LCD_setNetwork(ssid);
     if(initCP)LCD_setStatusMsg("Reset Config");
   }else{
     LCD_setStatusMsg("Connecting ...");
     WiFi.mode(WIFI_STA);
-    WiFi.softAP(ssid.c_str(), password.c_str());
+    WiFi.setHostname(hostname.c_str());
+    WiFi.begin(ssid.c_str(), password.c_str());
+    while(!WiFi.isConnected()){
+      delay(100);
+    }
+    LCD_setNetwork(ssid);
   }
 }
