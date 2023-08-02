@@ -19,43 +19,38 @@ String webPass;
 
 static const char HEX_CHAR_ARRAY[17] = "0123456789ABCDEF";
 
-/**
- * convert char array (hex values) to readable string by seperator
- * buf:           buffer to convert
- * length:        data length
- * strSeperator   seperator between each hex value
- * return:        formated value as String
- */
-static String byteToHexString(uint8_t *buf, uint8_t length, String strSeperator = "-")
+
+uint32_t getChipID()
 {
-    String dataString = "";
-    for (uint8_t i = 0; i < length; i++)
-    {
-        byte v = buf[i] / 16;
-        byte w = buf[i] % 16;
-        if (i > 0)
-        {
-            dataString += strSeperator;
-        }
-        dataString += String(HEX_CHAR_ARRAY[v]);
-        dataString += String(HEX_CHAR_ARRAY[w]);
-    }
-    dataString.toUpperCase();
-    return dataString;
-} // byteToHexString
+  uint64_t chipId64 = 0;
+
+  for (int i = 0; i < 6; i++)
+  {
+    chipId64 |= ( ( (uint64_t) ESP.getEfuseMac() >> (40 - (i * 8)) ) & 0xff ) << (i * 8);
+  }
+
+  return (uint32_t) (chipId64 & 0xFFFFFF);
+}
+
+//////////////////////////////////////////
+
+uint32_t getChipOUI()
+{
+  uint64_t chipId64 = 0;
+
+  for (int i = 0; i < 6; i++)
+  {
+    chipId64 |= ( ( (uint64_t) ESP.getEfuseMac() >> (40 - (i * 8)) ) & 0xff ) << (i * 8);
+  }
+
+  return (uint32_t) (chipId64 >> 24);
+}
 
 String getESP32ChipID()
 {
-    uint64_t chipid;
-    chipid = ESP.getEfuseMac(); // the chip ID is essentially its MAC address (length: 6 bytes)
-    uint8_t chipid_size = 6;
-    uint8_t chipid_arr[chipid_size];
-    for (uint8_t i = 0; i < chipid_size; i++)
-    {
-        chipid_arr[i] = (chipid >> (8 * i)) & 0xff;
-    }
-    return byteToHexString(chipid_arr, chipid_size, "");
+   return String(getChipID(),HEX);
 }
+
 
 
 void handleRoot(AsyncWebServerRequest *request)
@@ -111,7 +106,32 @@ void handleStatus(AsyncWebServerRequest *request)
     DEBUG_WS(F("Sent status"));
 }
 
+void handleInfo(AsyncWebServerRequest *request){
+    DEBUG_WS(F("Handle info"));
+    GET_AUTH
+    String json = "{";
+    json+="\"chipId\":\""+getESP32ChipID()+"\",";
+    json+="\"chipOID\":\""+String(getChipOUI(),HEX)+"\",";
+    json+="\"chipModel\":\""+String(ESP.getChipModel())+" Rev"+String(ESP.getChipRevision(),DEC)+"\",";
+    json+="\"flashId\":\""+String(ESP_getFlashChipId(),HEX)+"\",";
+    json+="\"flashSize\":\""+String(ESP.getFlashChipSize(),DEC) +" bytes\",";
+    json+="\"flashRealSize\":\""+String(ESP_getFlashChipRealSize(),DEC)+" Bytes\",";
+    json+="\"apIP\":\""+WiFi.softAPIP().toString()+"\",";
+    json+="\"apMAC\":\""+WiFi.softAPmacAddress()+"\",";
+    json+="\"apSSID\":\""+WiFi.softAPSSID()+"\",";
+    json+="\"staSSID\":\""+WiFi.SSID()+"\",";
+    json+="\"staIP\":\""+WiFi.localIP().toString()+"\",";
+    json+="\"staMAC\":\""+WiFi.macAddress()+"\"";
+    json += "}";
 
+    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response->addHeader("Pragma", "no-cache");
+    response->addHeader("Expires", "-1");
+    request->send(response);
+    json = String();
+    DEBUG_WS(F("Sent info"));
+}
 
 void handleSave(AsyncWebServerRequest *request){
 
@@ -282,6 +302,7 @@ void initWebServer()
     server.on("/reset", HTTP_POST, handleReset);
     server.on("/scan", HTTP_GET, handleWifiScan);
     server.on("/status",HTTP_GET,handleStatus);
+    server.on("/info",HTTP_GET,handleInfo);
     server.on("/wifisave",HTTP_POST,handleSave);
     server.begin();
 }

@@ -13,6 +13,8 @@ void initWifi();
 bool loadConfigData();
 void saveConfigData();
 
+uint32_t ESP_getFlashChipRealSize(void);
+uint32_t ESP_getFlashChipId(void);
 
 extern String ssid;
 extern String password;

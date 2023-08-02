@@ -51,6 +51,8 @@ void setup() {
   lbServer=new IoTT_LBServer();
   lbServer->initLBServer(true);
   lbServer->initMDNS();
+  MDNS.addService("http","tcp",80);
+  MDNS.addService("locobuffer","tcp",1234);
   delay(1000);
   
   lbServer->startServer();

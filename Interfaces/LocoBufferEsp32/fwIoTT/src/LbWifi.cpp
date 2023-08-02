@@ -112,7 +112,7 @@ bool loadConfigData()
     res = res && doc->containsKey("password");
     if(res){
       String _password=(*doc)["password"];
-      Serial.printf("password: %s\n", _password.c_str());
+      if(isAP)Serial.printf("password: %s\n", _password.c_str());
       if(_password !=""){
         password=_password;
       }else{
