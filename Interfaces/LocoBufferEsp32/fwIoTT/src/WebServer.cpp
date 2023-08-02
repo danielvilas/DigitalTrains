@@ -232,17 +232,17 @@ void handleReset(AsyncWebServerRequest *request)
 {
     DEBUG_WS(F("Reset"));
     GET_AUTH
-    String page = FPSTR(WFM_HTTP_HEAD);
-    page.replace("{v}", "Info");
-    page += FPSTR(HTTP_SCRIPT);
-    page += FPSTR(HTTP_STYLE);
-    page += FPSTR(HTTP_HEAD_END);
-    page += F("Module will reset in a few seconds");
-    page += FPSTR(HTTP_END);
-    request->send(200, "text/html", page);
+    String json="\"Module will restart in ";
+    json+=RESTART_TIME_OUT;
+    json+="ms\"";
+    AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);
+    response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response->addHeader("Pragma", "no-cache");
+    response->addHeader("Expires", "-1");
+    request->send(response);
 
     DEBUG_WS(F("Sent reset page"));
-    delay(5000);
+    delay(RESTART_TIME_OUT);
     ESP.restart();
 }
 
