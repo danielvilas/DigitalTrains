@@ -2,6 +2,7 @@ LOCAL_BASE=$(git rev-parse --show-toplevel)
 SUBDIR=$(git rev-parse --show-prefix)
 KIBOT_DIR=$LOCAL_BASE/kibot
 PASS_FILE=/etc/passwd
+
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -g)
 
@@ -40,6 +41,6 @@ docker run --rm -it  \
     --volume="$KIBOT_DIR/docker.tmp/local:/home/$USER/.local:rw" \
     --rm \
     --hostname kibot \
-    $VERSION /bin/bash -c "cd workdir/$SUBDIR; bash ./runKibot.sh  $@"
+    $VERSION /bin/bash -c "cd workdir/$SUBDIR; bash"
 
 rm tmp*.kicad_*
