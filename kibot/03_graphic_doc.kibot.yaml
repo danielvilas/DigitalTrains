@@ -33,7 +33,7 @@ outputs:
       dpi: 300
       format: 'png'
       highlight: []
-      libs: [kicad-default]
+      libs: [kicad-default,pcbdraw]
       mirror: false
       no_drillholes: false
       output: '%f-%i%v.%x'
@@ -63,7 +63,7 @@ outputs:
       dpi: 300
       format: 'png'
       highlight: []
-      libs: []
+      libs: [kicad-default,pcbdraw]
       mirror: false
       no_drillholes: false
       output: '%f-%i%v.%x'
