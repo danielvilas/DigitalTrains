@@ -7,7 +7,8 @@ then
 else
     KIBOT_DIR=/home/$USER/workdir/kibot
 fi    
-echo $KIBOT_DIR
+#echo $KIBOT_DIR
+export PCBDRAW_LIB_PATH=$KIBOT_DIR/../
 rm -rf doc
 CURRENT=`pwd`
 
@@ -24,12 +25,12 @@ then
     echo Expected file not found: $BOARD.kicad_sch
     #exit 0
     #If not found change manually.
-    BOARD=AbcStop
+    BOARD=CHANGE_ME
 fi
 FILES="00_erc_drc.kibot.yaml 01_pdf_doc.kibot.yaml 02_build_doc.kibot.yaml 03_graphic_doc.kibot.yaml 04_fab_board.kibot.yaml"  
 
 #FILES="02_build_doc.kibot.yaml"  
-
+#FILES=""
 
 for i in $FILES 
 do
@@ -37,12 +38,11 @@ do
     kibot -e $BOARD.kicad_sch -b $BOARD.kicad_pcb -d doc -c $KIBOT_DIR/$i $@
 done 
 
+if [ -f manual.kibot.yaml ]; 
+then
+kibot -e $BOARD.kicad_sch -b $BOARD.kicad_pcb -d manual -c manual.kibot.yaml $@
+fi
+
 rm -f doc/*.ogv
 
 exit 0
-
-
-
-
- 
-
