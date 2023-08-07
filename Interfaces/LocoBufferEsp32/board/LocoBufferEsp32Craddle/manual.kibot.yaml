@@ -18,10 +18,10 @@ outputs:
     options:
       bottom: false
       margin:
-        left: 6
-        right: 2
-        top: 1
-        bottom: 1
+        left: 1
+        right: 1
+        top: 2
+        bottom: 4
       dpi: 300
       format: 'png'
       highlight: []
@@ -33,7 +33,7 @@ outputs:
       show_components: all
  #     remap:
  #     show_components: none
-      style: 'manual/set-black-hasl.json' 
+      style: 'manual/set-purple-hasl.json' 
 
   - name: 'bottom'
     comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
@@ -57,4 +57,4 @@ outputs:
       show_components: all
  #     remap:
  #     show_components: none
-      style: 'manual/set-black-hasl.json' 
+      style: 'manual/set-purple-hasl.json' 
