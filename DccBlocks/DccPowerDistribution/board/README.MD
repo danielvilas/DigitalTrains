@@ -47,10 +47,13 @@ Degub led consumption with provided Resistences:
 * [X] See U? on the silk (usefull for doc)
 * [X] Change Power Diodes 
 * [X] Change Bridge Rectifier To power Diodes
-* [ ] Change PMos (blocker) for IRLML9301TRPBF
+* [X] Change PMos (blocker) for IRLML9301TRPBF
 
 
 ### V1.0.0-RC4
+* [ ] Find another D valid for D13/D2
+* [ ] Find another D valid for D1/D8
+* [ ] Rename components based on page num 
 * [ ] Check CC only & DCC at the same time
 * [ ] Add auto selection Debug Leds
 * [ ] Add Pi Filter to VDrive
