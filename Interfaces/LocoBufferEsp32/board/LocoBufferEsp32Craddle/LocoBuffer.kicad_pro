@@ -454,7 +454,8 @@
       "/LocoNet/RSyncA": "Power",
       "/LocoNet/RSyncB": "Power",
       "/RSyncAC": "Power",
-      "/RSyncBC": "Power"
+      "/RSyncBC": "Power",
+      "Net-(D9-K)": "Power"
     },
     "netclass_patterns": [
       {
@@ -537,6 +538,10 @@
     [
       "00000000-0000-0000-0000-000060685830",
       "LocoNet"
+    ],
+    [
+      "11f45055-334d-471e-b6ed-f72d2e3810be",
+      "StepDown5V"
     ]
   ],
   "text_variables": {}

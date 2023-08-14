@@ -1,18 +1,18 @@
-** Drc report for /home/dvilas/workdir/Interfaces/LocoBufferEsp32/board/LocoBufferEsp32Craddle/LocoBuffer.kicad_pcb **
-** Created on 2023-08-07 11:26:04 **
+** Drc report for /home/dvilascsic/workdir/Interfaces/LocoBufferEsp32/board/LocoBufferEsp32Craddle/LocoBuffer.kicad_pcb **
+** Created on 2023-08-14 13:52:22 **
 
 ** Found 3 DRC violations **
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; Severity: warning
     @(30.0000 mm, 120.0000 mm): Line on Edge.Cuts
-    @(88.9799 mm, 118.5238 mm): Line on F.Silkscreen
+    @(115.7199 mm, 119.0238 mm): Line on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; Severity: warning
     @(30.0000 mm, 120.0000 mm): Line on Edge.Cuts
-    @(70.9967 mm, 124.4166 mm): Line on F.Silkscreen
+    @(97.7367 mm, 124.9166 mm): Line on F.Silkscreen
 [lib_footprint_issues]: The current configuration does not include the library 'Espressif'.
     Local override; Severity: warning
-    @(92.7100 mm, 117.4034 mm): Footprint U5
+    @(119.4500 mm, 117.9034 mm): Footprint U5
 
 ** Found 0 unconnected pads **
 
