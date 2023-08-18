@@ -46,4 +46,4 @@ docker run --rm -it  \
     --volume="$KIBOT_DIR/docker.tmp/local:/home/$USER/.local:rw" \
     --rm \
     --hostname pcbdraw \
-    $VERSION /bin/bash -c "cd workdir/$SUBDIR; pip3 install git+https://github.com/yaqwsx/PcbDraw/@v0.9.0; bash"
+    $VERSION /bin/bash -c "cd workdir/$SUBDIR; pip3 install git+https://github.com/yaqwsx/PcbDraw/@v0.9.0 --break-system-packages; bash"
