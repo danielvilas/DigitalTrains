@@ -197,8 +197,8 @@ void handleSave(AsyncWebServerRequest *request){
     response->addHeader("Expires", "-1");
     request->send(response);
     LCD_blinkLED(2);
-    digitalWrite(LED_G,1);
-    digitalWrite(LED_B,1);
+    digitalWrite(LED_G,0);
+    digitalWrite(LED_B,0);
     json = String();
     DEBUG_WS(F("Sent Save"));
     if(valid){

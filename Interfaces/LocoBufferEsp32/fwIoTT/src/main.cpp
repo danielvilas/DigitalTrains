@@ -33,17 +33,17 @@ void setup() {
   pinMode(LED_R,OUTPUT);
   pinMode(LED_G,OUTPUT);
   pinMode(LED_B,OUTPUT);
-  digitalWrite(LED_R,1);
-  digitalWrite(LED_G,1);
-  digitalWrite(LED_B,1); 
+  digitalWrite(LED_R,0);
+  digitalWrite(LED_G,0);
+  digitalWrite(LED_B,0); 
   initLcd();
 
   Serial.begin(115200); 
-  lnSerial.setBusyLED(PIN_LED);
+  lnSerial.setBusyLED(LED_R);
   lnSerial.begin(pinRx,pinTx,false,true);
   pinMode(LED_R,OUTPUT);
-  digitalWrite(LED_R,0);
   digitalWrite(LED_R,1);
+  digitalWrite(LED_R,0);
 
   //while (!Serial);
   initWifi();  

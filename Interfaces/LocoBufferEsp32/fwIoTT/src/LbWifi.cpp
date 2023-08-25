@@ -21,9 +21,11 @@ bool initCP=false;
 
 void blinkTimes(int blinks, int onDelay, int offDelay){
   for(int i=0;i<blinks;i++){
-    digitalWrite(LED_R,0);
+    digitalWrite(LED_G,1);
+    digitalWrite(LED_B,1);
     delay(onDelay);
-    digitalWrite(LED_R,1);
+    digitalWrite(LED_G,0);
+    digitalWrite(LED_B,0);   
     delay(offDelay);
   }
 }

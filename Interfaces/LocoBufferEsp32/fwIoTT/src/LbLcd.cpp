@@ -131,7 +131,7 @@ void updateLed(){
 void updateBeat(){
     if(blinkMode==BLINK_STOP){
         blinkWait--;
-        digitalWrite(isAP?LED_B:LED_G,(blinkWait>0)?0:1);
+        digitalWrite(isAP?LED_B:LED_G,(blinkWait>0)?1:0);
         if(blinkWait==0)blinkWait=100;
     }
 }
@@ -207,7 +207,7 @@ void printMode(){
 
 void updateLoop(){
     updateLed();
-    digitalWrite(isAP?LED_B:LED_G,(blinkMode==BLINK_ON)?0:1);
+    digitalWrite(isAP?LED_B:LED_G,(blinkMode==BLINK_ON)?1:0);
     updateBeat();
 
     updateMode();
