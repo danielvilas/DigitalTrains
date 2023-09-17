@@ -91,10 +91,17 @@ void handleStatus(AsyncWebServerRequest *request)
     }else{
         json+="\"staticIp\":false,";
     }
-    json+="\"ip\":\""+ip.toString()+"\",";
-    json+="\"nm\":\""+nm.toString()+"\",";
-    json+="\"gw\":\""+gw.toString()+"\",";
-    json+="\"dns\":[\""+dns[0].toString()+"\",\""+dns[1].toString()+"\"]";
+    if(staticIp){
+        json+="\"ip\":\""+ip.toString()+"\",";
+        json+="\"nm\":\""+nm.toString()+"\",";
+        json+="\"gw\":\""+gw.toString()+"\",";
+        json+="\"dns\":[\""+dns[0].toString()+"\",\""+dns[1].toString()+"\"]";
+    }else{
+        json+="\"ip\":\""+WiFi.localIP().toString()+"\",";
+        json+="\"nm\":\""+WiFi.subnetMask().toString()+"\",";
+        json+="\"gw\":\""+WiFi.gatewayIP().toString()+"\",";
+        json+="\"dns\":[\""+WiFi.dnsIP(0).toString()+"\",\""+WiFi.dnsIP(1).toString()+"\"]";
+    }
     json += "}}";
 
     AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json);

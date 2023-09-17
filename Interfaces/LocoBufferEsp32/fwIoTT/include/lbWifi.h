@@ -2,7 +2,6 @@
 #define LB_WIFI_H
 
 // Hardware CFG
-#define PIN_CFG 0
 #define PIN_LED 2
 #define BUFFER_SIZE 16384
 #define RESTART_TIME_OUT 5000

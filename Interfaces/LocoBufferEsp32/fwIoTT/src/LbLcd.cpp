@@ -50,6 +50,13 @@ void IRAM_ATTR cfgIsr() {
   btnCfg=true;
 }
 
+bool isBtnCfg(){
+    return btnCfg;
+}
+void clearBtnCfg(){
+    btnCfg=false;
+}
+
 void initLcd()
 {
     Wire.begin(LCD_SDA, LCD_SCL);

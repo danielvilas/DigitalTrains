@@ -219,10 +219,11 @@ void initWifi(){
   LCD_setStatusMsg("Starting Wifi ...");
   delay(200);
   blinkTimes(3);
-  int bntCfg=digitalRead(PIN_CFG);
+  bool bntCfg=isBtnCfg();
+  clearBtnCfg();
 
   
-  if(!bntCfg || !loadConfigData()){
+  if(bntCfg || !loadConfigData()){
     initCP=true;
     isAP=true;
     ssid="LbEsp32-AP";
