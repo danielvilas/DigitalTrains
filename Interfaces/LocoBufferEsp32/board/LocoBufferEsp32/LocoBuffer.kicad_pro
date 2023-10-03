@@ -430,7 +430,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.25,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -440,7 +440,7 @@
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 0, 0)",
-        "track_width": 0.25,
+        "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
@@ -453,6 +453,12 @@
     "netclass_assignments": {
       "+3.3V": "Power",
       "+5V": "Power",
+      "/LnPower": "Power",
+      "/LocoNet/RSyncA": "Power",
+      "/LocoNet/RSyncB": "Power",
+      "/RSyncAC": "Power",
+      "/RSyncBC": "Power",
+      "Net-(D14-K)": "Power",
       "VBUS": "Power"
     },
     "netclass_patterns": [
@@ -536,6 +542,10 @@
     [
       "e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d",
       "ESP32 Support HW"
+    ],
+    [
+      "bef7fd2d-4068-4c59-b8d6-3c8351060df0",
+      "StepDown5V"
     ]
   ],
   "text_variables": {}

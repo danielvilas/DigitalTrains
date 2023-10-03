@@ -1602,7 +1602,7 @@
   (symbol (lib_id "Device:C") (at 149.86 133.35 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 04fd11f4-d3c3-49e3-87a5-886faf0c8382)
-    (property "Reference" "C6" (at 149.86 125.73 90)
+    (property "Reference" "C7" (at 149.86 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1uF/50V(10%)" (at 149.86 128.27 90)
@@ -1622,7 +1622,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C6") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -1631,7 +1631,7 @@
   (symbol (lib_id "Device:LED") (at 19.05 104.14 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0ba0987b-2011-43bd-840b-e2b2535e3ff3)
-    (property "Reference" "D7" (at 22.86 104.4575 90)
+    (property "Reference" "D9" (at 22.86 104.4575 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LED" (at 22.86 106.9975 90)
@@ -1651,7 +1651,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "D7") (unit 1)
+          (reference "D9") (unit 1)
         )
       )
     )
@@ -1660,7 +1660,7 @@
   (symbol (lib_id "power:+5V") (at 73.66 21.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 18f9a3f4-9003-406d-ae3e-5074cd34e6a1)
-    (property "Reference" "#PWR011" (at 73.66 25.4 0)
+    (property "Reference" "#PWR043" (at 73.66 25.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 73.66 16.51 0)
@@ -1676,7 +1676,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -1685,7 +1685,7 @@
   (symbol (lib_id "Device:Q_NPN_BEC") (at 54.61 172.72 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 22b53912-4921-416b-9930-1136766e42b3)
-    (property "Reference" "Q4" (at 59.69 173.99 0)
+    (property "Reference" "Q7" (at 59.69 173.99 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SS8050" (at 59.69 171.45 0)
@@ -1706,7 +1706,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "Q4") (unit 1)
+          (reference "Q7") (unit 1)
         )
       )
     )
@@ -1715,7 +1715,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 62.23 24.13 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 27a25ede-7741-41ad-887b-2d6e4a0bff43)
-    (property "Reference" "D3" (at 62.5475 17.78 0)
+    (property "Reference" "D13" (at 62.5475 17.78 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BAT760-7" (at 62.5475 20.32 0)
@@ -1735,7 +1735,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "D3") (unit 1)
+          (reference "D13") (unit 1)
         )
       )
     )
@@ -1744,7 +1744,7 @@
   (symbol (lib_id "power:GND") (at 172.72 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 29315f39-ae28-4c93-b96c-db725a7b3a00)
-    (property "Reference" "#PWR029" (at 172.72 77.47 0)
+    (property "Reference" "#PWR052" (at 172.72 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 172.72 76.2 0)
@@ -1760,7 +1760,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -1769,7 +1769,7 @@
   (symbol (lib_id "Device:R") (at 40.64 172.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2d3c5776-6eab-41d2-90b0-927d132ccad6)
-    (property "Reference" "R16" (at 40.64 179.07 90)
+    (property "Reference" "R25" (at 40.64 179.07 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10K (5%)" (at 40.64 176.53 90)
@@ -1789,7 +1789,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R16") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -1798,7 +1798,7 @@
   (symbol (lib_id "Device:C") (at 142.24 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2ea6f498-cbdf-43b9-b6fe-d707e7b81914)
-    (property "Reference" "C3" (at 147.32 29.21 0)
+    (property "Reference" "C6" (at 147.32 29.21 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7uF/6.3V(10%)" (at 146.05 30.48 90)
@@ -1818,7 +1818,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C3") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -1827,7 +1827,7 @@
   (symbol (lib_id "power:GND") (at 60.96 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 342e48d4-2ec3-4818-b9fa-c00fa125887d)
-    (property "Reference" "#PWR022" (at 60.96 107.95 0)
+    (property "Reference" "#PWR041" (at 60.96 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 60.96 106.68 0)
@@ -1843,7 +1843,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -1852,7 +1852,7 @@
   (symbol (lib_id "LocoNetInterface:10118193-0001LF") (at 21.59 31.75 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 41cc03db-8486-4e35-bbbe-a80452f1938c)
-    (property "Reference" "J1" (at 15.24 30.48 0)
+    (property "Reference" "J4" (at 15.24 30.48 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10118193-0001LF" (at 30.48 20.32 0)
@@ -1879,21 +1879,21 @@
     (property "STANDARD" "Manufacturer Recommendations" (at 21.59 31.75 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
     )
-    (pin "1" (uuid 9c3272ff-297e-4bcf-a4b7-b54d903ca033))
-    (pin "2" (uuid 43215222-9e06-4d71-b471-6d5c431017d2))
-    (pin "3" (uuid 6bb95765-b3db-416f-97c2-9b62674b090d))
-    (pin "4" (uuid d2a2c432-1283-48cc-9c9b-a0e6b36ad8f2))
-    (pin "5" (uuid f0d98807-5039-4727-885b-a16d03f9330d))
-    (pin "S1" (uuid 03e12703-6c93-4f48-a720-f9292f5643da))
-    (pin "S2" (uuid 27331906-774c-470a-8dc8-642db6c73b74))
-    (pin "S3" (uuid 788f95e2-d530-4f36-b15d-a16ce9dc0069))
-    (pin "S4" (uuid aaa20c02-83bc-4947-9c17-40fe397fddb7))
-    (pin "S5" (uuid 4150cdb8-1d41-4e8c-8b4d-a7cc33e95401))
-    (pin "S6" (uuid 6f868bc1-a587-4c41-ac65-dca245fc610d))
+    (pin "1" (uuid fd0f9f5c-5484-4d0f-9ea1-a9a251765f27))
+    (pin "2" (uuid 820acb46-eec5-4908-9d7d-e66e44a3a428))
+    (pin "3" (uuid a32a5294-e166-4c7f-b609-eaaf3d9b82c9))
+    (pin "4" (uuid 95829609-f585-4490-ae18-7f5d99860341))
+    (pin "5" (uuid 831f397f-f63f-4a2d-b1d8-a7222b28d5ea))
+    (pin "S1" (uuid a25c1009-be08-4d7a-ae7e-a3a234e774b7))
+    (pin "S2" (uuid 52408310-9201-49c2-a396-af155a0afaef))
+    (pin "S3" (uuid 1b6bfae9-1a35-4f45-8878-075027deffe9))
+    (pin "S4" (uuid e08a8803-aca0-4799-bd3c-996df802d604))
+    (pin "S5" (uuid b2a3f2c0-a30a-4811-ab28-ee802433f08c))
+    (pin "S6" (uuid 77c2ecc0-07cc-4c9a-9f92-0681b0867042))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "J1") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -1902,7 +1902,7 @@
   (symbol (lib_id "Device:R") (at 19.05 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 433a3ea0-d0a1-4059-bea9-68835b642f09)
-    (property "Reference" "R12" (at 21.59 93.98 0)
+    (property "Reference" "R23" (at 21.59 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2K 5%" (at 21.59 96.52 0)
@@ -1917,12 +1917,12 @@
     (property "LCSC" "C212449" (at 19.05 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid dc6b79a6-0932-4544-a6c4-fe9a6bee2200))
-    (pin "2" (uuid bcaae41a-0de0-4e59-8a39-4b5dac0b337d))
+    (pin "1" (uuid fc82c1b6-8df3-4094-87bf-237f403dc6d8))
+    (pin "2" (uuid bb7f2126-fe36-4c27-ae88-d4b840e83732))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R12") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -1931,7 +1931,7 @@
   (symbol (lib_id "Device:R") (at 163.83 68.58 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 465f85e6-ec5e-422c-80cf-4b072c93b313)
-    (property "Reference" "R20" (at 163.83 74.93 90)
+    (property "Reference" "R31" (at 163.83 74.93 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10K (5%)" (at 163.83 72.39 90)
@@ -1951,7 +1951,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R20") (unit 1)
+          (reference "R31") (unit 1)
         )
       )
     )
@@ -1960,7 +1960,7 @@
   (symbol (lib_id "power:VBUS") (at 49.53 21.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b2d6521-1545-4193-97fd-1a8ccb29ba1b)
-    (property "Reference" "#PWR014" (at 49.53 25.4 0)
+    (property "Reference" "#PWR039" (at 49.53 25.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VBUS" (at 49.53 16.51 0)
@@ -1976,7 +1976,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -1985,7 +1985,7 @@
   (symbol (lib_id "Device:D_TVS") (at 39.37 40.64 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4c6ce99b-d203-44f7-a64a-bd8bdd1d83d2)
-    (property "Reference" "D4" (at 41.91 39.37 90)
+    (property "Reference" "D10" (at 41.91 39.37 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LESD5D5.0CT1G" (at 41.91 41.91 0)
@@ -2005,7 +2005,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "D4") (unit 1)
+          (reference "D10") (unit 1)
         )
       )
     )
@@ -2014,7 +2014,7 @@
   (symbol (lib_id "power:GND") (at 138.43 22.86 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 52712b3e-3571-49a4-b68b-4d5e40ff0d71)
-    (property "Reference" "#PWR027" (at 138.43 16.51 0)
+    (property "Reference" "#PWR049" (at 138.43 16.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 138.43 17.78 0)
@@ -2030,7 +2030,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -2039,7 +2039,7 @@
   (symbol (lib_id "Device:C") (at 134.62 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 54fe95bd-8ed9-4783-8e2c-bbcfa6007860)
-    (property "Reference" "C4" (at 125.73 29.21 0)
+    (property "Reference" "C5" (at 125.73 29.21 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1uF/50V(10%)" (at 130.81 31.75 90)
@@ -2059,7 +2059,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C4") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -2068,7 +2068,7 @@
   (symbol (lib_id "Device:R") (at 105.41 62.23 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5da7d417-b292-4afc-bf82-40e6b0df2907)
-    (property "Reference" "R18" (at 107.95 60.96 0)
+    (property "Reference" "R29" (at 107.95 60.96 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "47K5 (5%)" (at 107.95 63.5 0)
@@ -2088,7 +2088,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R18") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -2097,13 +2097,13 @@
   (symbol (lib_id "Switch:SW_Push") (at 149.86 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5fe3c9f8-6c98-49cd-82e8-b5ee2d832189)
-    (property "Reference" "SW2" (at 149.86 137.16 0)
+    (property "Reference" "SW4" (at 149.86 137.16 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SW_Push" (at 149.86 139.7 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A" (at 149.86 139.7 0)
+    (property "Footprint" "Button_Switch_SMD:SW_SPST_CK_RS282G05A3" (at 149.86 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 149.86 139.7 0)
@@ -2114,7 +2114,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "SW2") (unit 1)
+          (reference "SW4") (unit 1)
         )
       )
     )
@@ -2123,7 +2123,7 @@
   (symbol (lib_id "power:GND") (at 35.56 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6180b1e3-be1d-42cc-963d-3cc5839b8af0)
-    (property "Reference" "#PWR015" (at 35.56 52.07 0)
+    (property "Reference" "#PWR037" (at 35.56 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 35.56 50.8 0)
@@ -2139,7 +2139,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
@@ -2148,7 +2148,7 @@
   (symbol (lib_id "power:VBUS") (at 105.41 44.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 622c96be-afb2-4bc5-850e-c276a2990076)
-    (property "Reference" "#PWR023" (at 105.41 48.26 0)
+    (property "Reference" "#PWR045" (at 105.41 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VBUS" (at 105.41 39.37 0)
@@ -2164,7 +2164,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -2173,7 +2173,7 @@
   (symbol (lib_id "power:GND") (at 46.99 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6d1d4439-d7a7-47db-be52-c5f95e6b526f)
-    (property "Reference" "#PWR016" (at 46.99 69.85 0)
+    (property "Reference" "#PWR038" (at 46.99 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 46.99 68.58 0)
@@ -2189,7 +2189,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR038") (unit 1)
         )
       )
     )
@@ -2198,7 +2198,7 @@
   (symbol (lib_id "Device:R") (at 49.53 133.35 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 71c1d72d-f90d-417c-8c5c-d30a77e9243d)
-    (property "Reference" "R13" (at 49.53 127 90)
+    (property "Reference" "R26" (at 49.53 127 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0 (5%)" (at 49.53 129.54 90)
@@ -2218,7 +2218,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R13") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -2227,7 +2227,7 @@
   (symbol (lib_id "power:GND") (at 139.7 107.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7eb2173e-aa38-4fd2-ab5b-1ff7d8994c55)
-    (property "Reference" "#PWR025" (at 139.7 114.3 0)
+    (property "Reference" "#PWR050" (at 139.7 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 139.7 113.03 0)
@@ -2243,7 +2243,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -2252,7 +2252,7 @@
   (symbol (lib_id "power:+3.3V") (at 114.3 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 80fd2107-756f-485a-9033-e1545f55e16f)
-    (property "Reference" "#PWR028" (at 114.3 33.02 0)
+    (property "Reference" "#PWR047" (at 114.3 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 114.3 24.13 0)
@@ -2268,7 +2268,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -2277,7 +2277,7 @@
   (symbol (lib_id "Device:C") (at 60.96 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8eb966fa-cda0-4998-8bc6-e7fae90fb381)
-    (property "Reference" "C2" (at 64.77 93.98 0)
+    (property "Reference" "C3" (at 64.77 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22uf/10V/20%" (at 64.77 96.52 0)
@@ -2292,12 +2292,12 @@
     (property "LCSC" "C45783" (at 60.96 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 84701034-008d-43a0-b372-bef7217c8f40))
-    (pin "2" (uuid fa5d8eaa-ec99-4ab0-a297-1e40dfdae3ca))
+    (pin "1" (uuid 54e77bc3-0354-4a9f-bc7a-59abf8497b3c))
+    (pin "2" (uuid c02f82e2-a6dc-4c87-9e51-e7df68e24b90))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C2") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -2306,7 +2306,7 @@
   (symbol (lib_id "power:+3.3V") (at 64.77 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 91534935-786a-457f-87dd-cd3949183935)
-    (property "Reference" "#PWR018" (at 64.77 88.9 0)
+    (property "Reference" "#PWR042" (at 64.77 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 64.77 80.01 0)
@@ -2322,7 +2322,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -2331,7 +2331,7 @@
   (symbol (lib_id "Device:R") (at 105.41 49.53 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9be00b7e-1a4a-4b69-845e-a3374e3b26a1)
-    (property "Reference" "R17" (at 107.95 48.26 0)
+    (property "Reference" "R28" (at 107.95 48.26 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "22K1 (5%)" (at 107.95 50.8 0)
@@ -2351,7 +2351,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R17") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
     )
@@ -2360,7 +2360,7 @@
   (symbol (lib_id "power:GND") (at 31.75 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9c7aee54-8e54-4578-b5ad-85931ab7fce1)
-    (property "Reference" "#PWR020" (at 31.75 107.95 0)
+    (property "Reference" "#PWR036" (at 31.75 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 106.68 0)
@@ -2376,7 +2376,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -2385,7 +2385,7 @@
   (symbol (lib_id "power:+3.3V") (at 129.54 35.56 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a404e725-a539-4f22-b333-80532e604ee2)
-    (property "Reference" "#PWR026" (at 133.35 35.56 0)
+    (property "Reference" "#PWR048" (at 133.35 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 124.46 35.56 0)
@@ -2401,7 +2401,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -2410,7 +2410,7 @@
   (symbol (lib_id "Device:C") (at 31.75 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a445735e-70b6-41e4-9d35-515d8a1e11d8)
-    (property "Reference" "C1" (at 35.56 93.98 0)
+    (property "Reference" "C2" (at 35.56 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22uf/10V/20%" (at 35.56 96.52 0)
@@ -2425,12 +2425,12 @@
     (property "LCSC" "C45783" (at 31.75 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d265427f-4568-415d-a2fc-2552e9b73ed0))
-    (pin "2" (uuid 5674b210-a032-4d31-96d6-25dd50ca8b21))
+    (pin "1" (uuid d0a9605c-dd6e-4499-a89c-c534e810d665))
+    (pin "2" (uuid 0c2eb491-43e6-43e2-9c41-cc5e8e84e71d))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C1") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -2439,7 +2439,7 @@
   (symbol (lib_id "Device:D_TVS") (at 54.61 40.64 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a4f17f02-8cab-4840-82e8-a5dac6442dda)
-    (property "Reference" "D6" (at 57.15 39.37 90)
+    (property "Reference" "D12" (at 57.15 39.37 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LESD5D5.0CT1G" (at 57.15 41.91 0)
@@ -2459,7 +2459,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "D6") (unit 1)
+          (reference "D12") (unit 1)
         )
       )
     )
@@ -2468,7 +2468,7 @@
   (symbol (lib_id "power:PWR_FLAG") (at 80.01 24.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a5b42806-46e1-4d27-b4ee-b0762ca3d7ec)
-    (property "Reference" "#FLG02" (at 80.01 22.225 0)
+    (property "Reference" "#FLG03" (at 80.01 22.225 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "PWR_FLAG" (at 80.01 19.05 0)
@@ -2484,7 +2484,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#FLG02") (unit 1)
+          (reference "#FLG03") (unit 1)
         )
       )
     )
@@ -2493,7 +2493,7 @@
   (symbol (lib_id "power:GND") (at 140.97 147.32 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b9293eda-765f-40e7-a350-c47a86865f56)
-    (property "Reference" "#PWR030" (at 140.97 153.67 0)
+    (property "Reference" "#PWR051" (at 140.97 153.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 140.97 152.4 0)
@@ -2509,7 +2509,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -2518,7 +2518,7 @@
   (symbol (lib_id "power:+5V") (at 19.05 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bb6dfac4-c04f-48a8-9131-5d73fbc3b89b)
-    (property "Reference" "#PWR017" (at 19.05 88.9 0)
+    (property "Reference" "#PWR034" (at 19.05 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 19.05 80.01 0)
@@ -2534,7 +2534,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -2543,7 +2543,7 @@
   (symbol (lib_id "Device:R") (at 40.64 156.21 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c3f12d7b-5ac5-4633-b96a-370564392f18)
-    (property "Reference" "R15" (at 40.64 162.56 90)
+    (property "Reference" "R24" (at 40.64 162.56 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10K (5%)" (at 40.64 160.02 90)
@@ -2563,7 +2563,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R15") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -2572,13 +2572,13 @@
   (symbol (lib_id "Switch:SW_Push") (at 107.95 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c861296b-dc1c-42f2-9da6-a6f6c431a0fb)
-    (property "Reference" "SW1" (at 107.95 137.16 0)
+    (property "Reference" "SW3" (at 107.95 137.16 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SW_Push" (at 107.95 139.7 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A" (at 107.95 139.7 0)
+    (property "Footprint" "Button_Switch_SMD:SW_SPST_CK_RS282G05A3" (at 107.95 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 107.95 139.7 0)
@@ -2589,7 +2589,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "SW1") (unit 1)
+          (reference "SW3") (unit 1)
         )
       )
     )
@@ -2598,7 +2598,7 @@
   (symbol (lib_id "Device:Q_NPN_BEC") (at 54.61 156.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c8a4c9ea-392b-4420-b0d6-bb26b4247d3c)
-    (property "Reference" "Q3" (at 59.69 154.94 0)
+    (property "Reference" "Q6" (at 59.69 154.94 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SS8050" (at 59.69 157.48 0)
@@ -2619,7 +2619,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "Q3") (unit 1)
+          (reference "Q6") (unit 1)
         )
       )
     )
@@ -2628,7 +2628,7 @@
   (symbol (lib_id "power:GND") (at 19.05 110.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid caf5222f-ec55-48de-9883-ba67c6594314)
-    (property "Reference" "#PWR019" (at 19.05 116.84 0)
+    (property "Reference" "#PWR035" (at 19.05 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 19.05 115.57 0)
@@ -2644,7 +2644,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -2653,7 +2653,7 @@
   (symbol (lib_id "power:GND") (at 105.41 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d9c42651-1124-4f20-a6ae-dcac63183c97)
-    (property "Reference" "#PWR024" (at 105.41 74.93 0)
+    (property "Reference" "#PWR046" (at 105.41 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 105.41 73.66 0)
@@ -2669,7 +2669,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -2678,7 +2678,7 @@
   (symbol (lib_id "Device:R") (at 49.53 138.43 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dd037ec1-2f0c-4053-bf7a-20ab9a0146b2)
-    (property "Reference" "R14" (at 49.53 144.78 90)
+    (property "Reference" "R27" (at 49.53 144.78 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0 (5%)" (at 49.53 142.24 90)
@@ -2698,7 +2698,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R14") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -2707,7 +2707,7 @@
   (symbol (lib_id "Device:C") (at 107.95 133.35 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e03660e5-da2a-4851-b6a0-858d1db948f4)
-    (property "Reference" "C5" (at 107.95 125.73 90)
+    (property "Reference" "C4" (at 107.95 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1uF/50V(10%)" (at 107.95 128.27 90)
@@ -2722,12 +2722,12 @@
     (property "LCSC" "C49678" (at 107.95 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3a01e834-5de9-4850-be88-a806c169c381))
-    (pin "2" (uuid aaf21369-88cb-4aa0-a5a6-80585a3bf9be))
+    (pin "1" (uuid 63509005-594a-410d-9a1e-1d2d1634ed0e))
+    (pin "2" (uuid e4603a0e-288b-4e9e-93b5-840302c87142))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "C5") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -2736,7 +2736,7 @@
   (symbol (lib_id "Device:D_TVS") (at 46.99 40.64 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e0c0c51d-cd4b-4eb8-ab9a-cbcac157c566)
-    (property "Reference" "D5" (at 49.53 39.37 90)
+    (property "Reference" "D11" (at 49.53 39.37 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LESD5D5.0CT1G" (at 49.53 41.91 0)
@@ -2756,7 +2756,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "D5") (unit 1)
+          (reference "D11") (unit 1)
         )
       )
     )
@@ -2795,7 +2795,7 @@
   (symbol (lib_id "power:GND") (at 100.33 147.32 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f200a182-61d7-47ff-852a-208320225982)
-    (property "Reference" "#PWR031" (at 100.33 153.67 0)
+    (property "Reference" "#PWR044" (at 100.33 153.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 100.33 152.4 0)
@@ -2811,7 +2811,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -2820,7 +2820,7 @@
   (symbol (lib_id "Device:R") (at 114.3 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f5b9734d-48c3-4508-887a-05a025b1e20c)
-    (property "Reference" "R19" (at 116.84 34.29 0)
+    (property "Reference" "R30" (at 116.84 34.29 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2K 5%" (at 116.84 36.83 0)
@@ -2840,7 +2840,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "R19") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -2849,7 +2849,7 @@
   (symbol (lib_id "Interface_USB:CP2102N-Axx-xQFN28") (at 139.7 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fbd2c7fc-8a50-4801-8667-96df337fc23c)
-    (property "Reference" "U2" (at 141.6559 104.14 0)
+    (property "Reference" "U4" (at 141.6559 104.14 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CP2102N-A01-GQFN28" (at 141.6559 106.68 0)
@@ -2896,7 +2896,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "U2") (unit 1)
+          (reference "U4") (unit 1)
         )
       )
     )
@@ -2905,7 +2905,7 @@
   (symbol (lib_id "power:GND") (at 50.8 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ff708a78-aabc-4053-8827-be227c0dd011)
-    (property "Reference" "#PWR021" (at 50.8 107.95 0)
+    (property "Reference" "#PWR040" (at 50.8 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 50.8 106.68 0)
@@ -2921,7 +2921,7 @@
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
     )
