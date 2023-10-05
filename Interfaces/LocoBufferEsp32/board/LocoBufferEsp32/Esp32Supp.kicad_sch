@@ -2584,8 +2584,8 @@
     (property "Datasheet" "~" (at 107.95 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid cc6fda3f-0e02-4115-99fd-73f4397e3b94))
-    (pin "2" (uuid 80f4ac75-c8a0-42ae-9e41-7e023f0b6327))
+    (pin "1" (uuid 39287658-f321-4098-844a-c31be20b645f))
+    (pin "2" (uuid f69a6c65-e88b-464c-b3e8-4af1fa24ece4))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/e1950aa5-d54a-43fe-a31e-4c9ae1b04f9d"

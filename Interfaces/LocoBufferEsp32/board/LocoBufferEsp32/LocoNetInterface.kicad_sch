@@ -1328,8 +1328,8 @@
     (property "LCSC" "C17710" (at 133.35 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid e69c2faa-d11f-4612-82b2-93ce2733d167))
-    (pin "2" (uuid 786f4b79-5f05-46e3-b84d-2bf1b8e2499a))
+    (pin "1" (uuid a9d7d2f9-869d-4ffe-98cd-ba517373be4a))
+    (pin "2" (uuid 2476ee64-bcc9-406d-a41c-6894ec66abdb))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1357,8 +1357,8 @@
     (property "LCSC" "C2296" (at 133.35 97.79 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f8712f98-a326-4c25-bc66-c52b20184e97))
-    (pin "2" (uuid cc4750d1-b568-4cd4-a472-dd2a8d508c0f))
+    (pin "1" (uuid 26957584-876b-454a-ab2f-c9003b7836f2))
+    (pin "2" (uuid 24cad20c-1a71-4e5f-93a3-33ecc928ea20))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1386,8 +1386,8 @@
     (property "LCSC" "C229219" (at 193.04 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 605173c0-1a91-464b-85ab-80fa39918c7a))
-    (pin "2" (uuid 387ab552-00f2-4b18-ab09-a17c2dbd18a5))
+    (pin "1" (uuid f09a5737-4cc7-44a8-8318-d0120df778b2))
+    (pin "2" (uuid d151c30b-29e1-40a3-8846-2fc4a10a49af))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1412,7 +1412,7 @@
     (property "Datasheet" "" (at 176.53 110.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 2838f385-da01-47e8-8cf7-b9dba64c83fe))
+    (pin "1" (uuid 9cb88a81-5fd8-4c5e-ac46-771b0bc99fec))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1440,8 +1440,8 @@
     (property "LCSC" "C17710" (at 176.53 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c6144c17-c08c-4034-a7f8-fda12abe60f4))
-    (pin "2" (uuid 2045901f-9e36-42f5-93b1-610284f7e311))
+    (pin "1" (uuid 7811f20a-efcd-4e98-8877-094b38c6dc44))
+    (pin "2" (uuid ec9da466-45de-4eee-b106-a5a8e35dcd4a))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1469,8 +1469,8 @@
     (property "LCSC" "C2296" (at 176.53 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f2b776f2-ddee-42d4-a3cf-f609a80d9c77))
-    (pin "2" (uuid 9699cf43-f7fc-4fac-b659-603bd7bc8343))
+    (pin "1" (uuid 54936b88-dbd8-448b-80e6-064f7395be5d))
+    (pin "2" (uuid 2048cf38-49fd-48dd-9755-a02b6a8bc94b))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1498,9 +1498,9 @@
     (property "LCSC" "C2150" (at 179.07 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b77714e5-e5bc-4e9a-9f2f-92303c90985c))
-    (pin "2" (uuid fc0a2d58-a399-4b35-a049-f62022b78a7b))
-    (pin "3" (uuid e297f3a0-9340-4ae0-a3fb-aee5a176c908))
+    (pin "1" (uuid c36ebac3-87ee-4b48-87db-e8a96b329e89))
+    (pin "2" (uuid 45bcceb1-610b-4ad7-890b-6ee35ec4f8a1))
+    (pin "3" (uuid 21282ed6-8e50-4989-973e-dc3494c84d45))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
@@ -1655,7 +1655,7 @@
     (property "Datasheet" "" (at 176.53 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ca9224e2-5297-4d3d-b628-2c5beb994fa2))
+    (pin "1" (uuid 312cf671-5574-41a9-8f14-2adb53574ff8))
     (instances
       (project "LocoBuffer"
         (path "/f41e9384-dd4d-4b6d-95c2-0d2355bf925d/00000000-0000-0000-0000-000060685830"
