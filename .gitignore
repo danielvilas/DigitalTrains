@@ -319,3 +319,4 @@ TSWLatexianTemp*
 /kibot/docker.tmp/
 **/*-backups/
 **/jlcpcb/
+**/.pio/
