@@ -4,24 +4,43 @@
 #define SERIAL_OUT SerialUSB
 #endif
 
+#define POS_1 335
+#define POS_2 460
+#define POS_3 580
+
+#define ABS_DIFF(p,d) ((p>d)?(p-d):(d-p))
+
 void setup()
 {
     SERIAL_OUT.begin(115200);
     pinMode(PIN_TEST_LED, OUTPUT);
-
+    digitalWrite(PIN_TEST_LED,HIGH);
 }
 
 void loop(){
 
+    int8_t pos=-1;
+    uint32_t data=analogRead(PA0);
     while(SERIAL_OUT.available()>0){
         int r = SERIAL_OUT.read();
         SERIAL_OUT.write(r);
     }
 
-    SERIAL_OUT.println("Serial Monitor HIGH");
-    digitalWrite(PIN_TEST_LED,HIGH);
-    delay(1000);    
-    SERIAL_OUT.println("Serial Monitor LOW");
-    digitalWrite(PIN_TEST_LED,LOW);
+    uint32_t delta=0;
+    delta=ABS_DIFF(POS_1,data);
+    if(delta<20) pos=1;
+    delta=ABS_DIFF(POS_2,data);
+    if(delta<20) pos=2;
+    delta=ABS_DIFF(POS_3,data);
+    if(delta<20) pos=3;
+
+    
+    for(int i =0; i<pos;i++){
+        digitalWrite(PIN_TEST_LED,LOW);
+        delay(300);
+        digitalWrite(PIN_TEST_LED,HIGH);
+        delay(300);
+    }  
+
     delay(1000);    
 }
