@@ -10,6 +10,22 @@
 
 #define ABS_DIFF(p,d) ((p>d)?(p-d):(d-p))
 
+/*
+S1: 394 404 448 477 507
+    385 397 434 488 512
+
+S2: 560 579 623 655 667
+    565 588 612 645 664
+*/
+const PROGMEM uint8_t numPos=5;
+const PROGMEM uint16_t s0max[]={394, 410, 448, 490, 512};
+const PROGMEM uint16_t s0min[]={385, 397, 434, 477, 507};
+
+const PROGMEM uint16_t s1max[]={565, 588, 623, 655, 667};
+const PROGMEM uint16_t s1min[]={560, 579, 612, 645, 664};
+
+
+
 void setup()
 {
     SERIAL_OUT.begin(115200);
@@ -20,28 +36,27 @@ void setup()
 void loop(){
 
     int8_t pos=-1;
-    uint32_t data=analogRead(PA0);
-    uint32_t data1=analogRead(PA1);
+    uint32_t s0=analogRead(PA0);
+    uint32_t s1=analogRead(PA1);
     while(SERIAL_OUT.available()>0){
         int r = SERIAL_OUT.read();
         SERIAL_OUT.write(r);
     }
+    
+    for(int i=0;i<numPos;i++){
+        bool b0 = (s0>=s0min[i]) && (s0<=s0max[i]);
+        bool b1 = (s1>=s1min[i]) && (s1<=s1max[i]);
+        //SERIAL_OUT.printf("\t(%i): (%u>=%u) && (s0<=s0max[i])\n",i,s0,s0min[i]);
+        if(b0 && b1) pos=i+1;
+    }
 
-    uint32_t delta=0;
-    delta=ABS_DIFF(POS_1,data);
-    if(delta<20) pos=1;
-    delta=ABS_DIFF(POS_2,data);
-    if(delta<20) pos=2;
-    delta=ABS_DIFF(POS_3,data);
-    if(delta<20) pos=3;
-
-    SERIAL_OUT.printf("data0: %u, data1: %u\n",data,data1);
+    SERIAL_OUT.printf("s0: %u, s1: %u, pos= %i\n",s0,s1,pos);
     for(int i =0; i<pos;i++){
         digitalWrite(PIN_TEST_LED,LOW);
-        delay(300);
+        delay(150);
         digitalWrite(PIN_TEST_LED,HIGH);
-        delay(300);
+        delay(150);
     }  
 
-    delay(1000);    
+    delay(500);    
 }
