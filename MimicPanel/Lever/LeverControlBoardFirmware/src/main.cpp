@@ -21,6 +21,7 @@ void loop(){
 
     int8_t pos=-1;
     uint32_t data=analogRead(PA0);
+    uint32_t data1=analogRead(PA1);
     while(SERIAL_OUT.available()>0){
         int r = SERIAL_OUT.read();
         SERIAL_OUT.write(r);
@@ -34,7 +35,7 @@ void loop(){
     delta=ABS_DIFF(POS_3,data);
     if(delta<20) pos=3;
 
-    
+    SERIAL_OUT.printf("data0: %u, data1: %u\n",data,data1);
     for(int i =0; i<pos;i++){
         digitalWrite(PIN_TEST_LED,LOW);
         delay(300);
