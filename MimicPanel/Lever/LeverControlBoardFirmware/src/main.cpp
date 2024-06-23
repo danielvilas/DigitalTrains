@@ -31,6 +31,11 @@ void setup()
     SERIAL_OUT.begin(115200);
     pinMode(PIN_TEST_LED, OUTPUT);
     digitalWrite(PIN_TEST_LED,HIGH);
+    pinMode(PA0,INPUT_ANALOG);
+    pinMode(PA1,INPUT_ANALOG);
+    pinMode(PA2,INPUT_PULLUP);
+    pinMode(PA3,INPUT_PULLUP);
+
 }
 
 void loop(){
@@ -57,6 +62,9 @@ void loop(){
         digitalWrite(PIN_TEST_LED,HIGH);
         delay(150);
     }  
-
+    int btn1=digitalRead(PA2);
+    int btn2=digitalRead(PA3);
+    SERIAL_OUT.printf("b2: %u, b3: %u\n",btn1,btn2,pos);
+    
     delay(500);    
 }
