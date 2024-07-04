@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include "config.h"
+#include "ui.h"
 
 #ifndef SERIAL_OUT
 #define SERIAL_OUT SerialUSB
@@ -28,16 +30,26 @@ const PROGMEM uint16_t s1min[]={560, 579, 612, 645, 664};
 
 void setup()
 {
-    SERIAL_OUT.begin(115200);
     pinMode(PIN_TEST_LED, OUTPUT);
-    digitalWrite(PIN_TEST_LED,HIGH);
-    pinMode(PA0,INPUT_ANALOG);
-    pinMode(PA1,INPUT_ANALOG);
-    pinMode(PA2,INPUT_PULLUP);
-    pinMode(PA3,INPUT_PULLUP);
+
+    SERIAL_OUT.begin(115200);
+    SERIAL_OUT.println("Lever Controller v0.0.1");
+
+    //Wire.begin();
+    ui_begin();
+    
+    // pinMode(PA0,INPUT_ANALOG);
+    // pinMode(PA1,INPUT_ANALOG);
+    // pinMode(PA2,INPUT_PULLUP);
+    // pinMode(PA3,INPUT_PULLUP);
 
 }
 
+void loop(){
+    display.display();
+}
+
+/*
 void loop(){
 
     int8_t pos=-1;
@@ -68,3 +80,5 @@ void loop(){
     
     delay(500);    
 }
+
+*/
