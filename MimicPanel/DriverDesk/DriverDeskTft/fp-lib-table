@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "DigitalTrains")(type "KiCad")(uri "${KIPRJMOD}/libs/DigitalTrains.pretty")(options "")(descr ""))
+)
