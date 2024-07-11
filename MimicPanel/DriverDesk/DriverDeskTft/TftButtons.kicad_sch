@@ -1498,7 +1498,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 90.17 92.71 0)
 			(effects
 				(font
@@ -1517,6 +1517,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 90.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 90.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 90.17 97.79 0)
 			(effects
 				(font
@@ -1653,6 +1671,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 78.74 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 78.74 59.69 0)
 			(effects
 				(font
@@ -1995,6 +2022,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c6fbc177-f7af-46f5-b053-ce77e185b776")
 		)
@@ -2036,7 +2072,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 207.01 123.19 0)
 			(effects
 				(font
@@ -2055,6 +2091,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 207.01 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 207.01 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 207.01 128.27 0)
 			(effects
 				(font
@@ -2397,6 +2451,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 196.85 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a13fce7e-9545-423c-a8f9-cf4ff5a7c7b0")
 		)
@@ -2438,7 +2501,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 207.01 62.23 0)
 			(effects
 				(font
@@ -2457,6 +2520,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 207.01 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 207.01 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 207.01 67.31 0)
 			(effects
 				(font
@@ -2535,6 +2616,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 80.01 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bc08fecd-830a-47a4-ae8c-dc950fe4f4a6")
 		)
@@ -2597,6 +2687,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 161.29 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 161.29 151.13 0)
 			(effects
 				(font
@@ -2807,6 +2906,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 196.85 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "344df5cb-6687-4c4e-b9db-ab3cfb99453c")
 		)
@@ -2877,6 +2985,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 196.85 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "89813099-9be3-4165-8bbb-eb72f3b1a226")
 		)
@@ -2918,7 +3035,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 130.81 31.75 0)
 			(effects
 				(font
@@ -2937,6 +3054,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 130.81 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 130.81 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 130.81 36.83 0)
 			(effects
 				(font
@@ -3117,7 +3252,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 170.18 31.75 0)
 			(effects
 				(font
@@ -3136,6 +3271,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 170.18 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 170.18 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 170.18 36.83 0)
 			(effects
 				(font
@@ -3206,6 +3359,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 160.02 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 160.02 31.75 0)
 			(effects
 				(font
@@ -3350,6 +3512,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 120.65 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "826691b8-6344-4f0d-84c0-3d3ff16a8df6")
 		)
@@ -3391,7 +3562,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 171.45 151.13 0)
 			(effects
 				(font
@@ -3410,6 +3581,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 171.45 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 171.45 156.21 0)
 			(effects
 				(font
@@ -3459,7 +3648,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 130.81 151.13 0)
 			(effects
 				(font
@@ -3478,6 +3667,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 130.81 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 130.81 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 130.81 156.21 0)
 			(effects
 				(font
@@ -3527,7 +3734,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 207.01 93.98 0)
 			(effects
 				(font
@@ -3546,6 +3753,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 207.01 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 207.01 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 207.01 99.06 0)
 			(effects
 				(font
@@ -3624,6 +3849,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 80.01 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "261a5a05-39e1-4073-9930-2a7f48b5bfc6")
 		)
@@ -3665,7 +3899,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 88.9 59.69 0)
 			(effects
 				(font
@@ -3684,6 +3918,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 88.9 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 88.9 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 88.9 64.77 0)
 			(effects
 				(font
@@ -3798,7 +4050,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 90.17 123.19 0)
 			(effects
 				(font
@@ -3817,6 +4069,24 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 90.17 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2888764"
+			(at 90.17 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "1825910-6"
 			(at 90.17 128.27 0)
 			(effects
 				(font

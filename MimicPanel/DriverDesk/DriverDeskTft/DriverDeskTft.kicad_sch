@@ -994,6 +994,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 46.99 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6fda5516-54e0-422c-ac44-c84707fdfeb1")
 		)
@@ -1128,6 +1137,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 19.05 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "58711291-76f4-4a7e-bdcd-92dafc041afc")
 		)
@@ -1254,6 +1272,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 46.99 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 46.99 165.1 0)
 			(effects
 				(font
@@ -1529,6 +1556,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" ""
+			(at 19.05 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "38937d20-d5d2-4836-8b29-24c14ee3fc9e")
 		)
@@ -1718,6 +1754,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 48.26 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 48.26 78.74 0)
 			(effects
 				(font
