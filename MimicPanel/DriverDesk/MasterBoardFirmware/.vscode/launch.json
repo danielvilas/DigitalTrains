@@ -12,11 +12,11 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/Users/dvilascsic/OHS/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
+            "executable": "/Users/daniel/Electronica/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
             "projectEnvName": "STM32F103_Devel",
-            "toolchainBinDir": "/Users/dvilascsic/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "/Users/dvilascsic/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
+            "svdPath": "/Users/daniel/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -26,21 +26,21 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/Users/dvilascsic/OHS/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
+            "executable": "/Users/daniel/Electronica/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
             "projectEnvName": "STM32F103_Devel",
-            "toolchainBinDir": "/Users/dvilascsic/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "/Users/dvilascsic/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd"
+            "svdPath": "/Users/daniel/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "/Users/dvilascsic/OHS/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
+            "executable": "/Users/daniel/Electronica/DigitalTrains/MimicPanel/DriverDesk/MasterBoardFirmware/.pio/build/STM32F103_Devel/firmware.elf",
             "projectEnvName": "STM32F103_Devel",
-            "toolchainBinDir": "/Users/dvilascsic/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/Users/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "/Users/dvilascsic/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
+            "svdPath": "/Users/daniel/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
             "loadMode": "manual"
         }
     ]

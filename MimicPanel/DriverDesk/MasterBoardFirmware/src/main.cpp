@@ -5,10 +5,10 @@
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7789
 #include <SPI.h>
 
-#define TFT_CS         PB8
-#define TFT_RST        PB9
+#define TFT_CS         PA15 //PB8
+#define TFT_RST        PA0
 #define TFT_DC         PA9
-#define BL             PB4
+#define BL             PA10
 /*
 #define PIN_SPI_MOSI          PA7 SDA
 #define PIN_SPI_MISO          PA6
@@ -17,7 +17,6 @@
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 float p = 3.1415926;
-
 
 void testlines(uint16_t color) {
   tft.fillScreen(ST77XX_BLACK);
@@ -234,7 +233,7 @@ void setup(void) {
 
   uint16_t time = millis();
   tft.fillScreen(ST77XX_BLACK);
-  analogWrite(BL,0x1F); //Ahora permitimos el BackLigth
+  analogWrite(BL,0x7F); //Ahora permitimos el BackLigth
   time = millis() - time;
 
   Serial.println(time, DEC);

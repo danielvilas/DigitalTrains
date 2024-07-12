@@ -1,152 +1,293 @@
 #include <Arduino.h>
 
-#include <TFT_eSPI.h> // Graphics and font library for ST7735 driver chip
+#include <Adafruit_GFX.h>    // Core graphics library
+
+#include <Adafruit_ST7735.h> // Hardware-specific library for ST7789
 #include <SPI.h>
 
-#define TFT_CS         PA1
+#define TFT_CS         PA15 //PB8
 #define TFT_RST        PA0
 #define TFT_DC         PA4
-#define BL             PA12
+#define BL             PA10
 /*
 #define PIN_SPI_MOSI          PA7 SDA
 #define PIN_SPI_MISO          PA6
 #define PIN_SPI_SCK           PA5
 */
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
-TFT_eSPI tft = TFT_eSPI();  // Invoke library, pins defined in User_Setup.h
+float p = 3.1415926;
 
-#define TFT_GREY 0xBDF7
+void testlines(uint16_t color) {
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=0; x < tft.width(); x+=6) {
+    tft.drawLine(0, 0, x, tft.height()-1, color);
+    delay(0);
+  }
+  for (int16_t y=0; y < tft.height(); y+=6) {
+    tft.drawLine(0, 0, tft.width()-1, y, color);
+    delay(0);
+  }
 
-float sx = 0, sy = 1, mx = 1, my = 0, hx = -1, hy = 0;    // Saved H, M, S x & y multipliers
-float sdeg=0, mdeg=0, hdeg=0;
-uint16_t osx=64, osy=64, omx=64, omy=64, ohx=64, ohy=64;  // Saved H, M, S x & y coords
-uint16_t x0=0, x1=0, yy0=0, yy1=0;
-uint32_t targetTime = 0;                    // for next 1 second timeout
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=0; x < tft.width(); x+=6) {
+    tft.drawLine(tft.width()-1, 0, x, tft.height()-1, color);
+    delay(0);
+  }
+  for (int16_t y=0; y < tft.height(); y+=6) {
+    tft.drawLine(tft.width()-1, 0, 0, y, color);
+    delay(0);
+  }
 
-static uint8_t conv2d(const char* p) {
-  uint8_t v = 0;
-  if ('0' <= *p && *p <= '9')
-    v = *p - '0';
-  return 10 * v + *++p - '0';
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=0; x < tft.width(); x+=6) {
+    tft.drawLine(0, tft.height()-1, x, 0, color);
+    delay(0);
+  }
+  for (int16_t y=0; y < tft.height(); y+=6) {
+    tft.drawLine(0, tft.height()-1, tft.width()-1, y, color);
+    delay(0);
+  }
+
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=0; x < tft.width(); x+=6) {
+    tft.drawLine(tft.width()-1, tft.height()-1, x, 0, color);
+    delay(0);
+  }
+  for (int16_t y=0; y < tft.height(); y+=6) {
+    tft.drawLine(tft.width()-1, tft.height()-1, 0, y, color);
+    delay(0);
+  }
 }
 
-uint8_t hh=conv2d(__TIME__), mm=conv2d(__TIME__+3), ss=conv2d(__TIME__+6);  // Get H, M, S from compile time
+void testdrawtext(char *text, uint16_t color) {
+  tft.setCursor(0, 0);
+  tft.setTextColor(color);
+  tft.setTextWrap(true);
+  tft.print(text);
+}
 
-bool initial = 1;
+void testfastlines(uint16_t color1, uint16_t color2) {
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t y=0; y < tft.height(); y+=5) {
+    tft.drawFastHLine(0, y, tft.width(), color1);
+  }
+  for (int16_t x=0; x < tft.width(); x+=5) {
+    tft.drawFastVLine(x, 0, tft.height(), color2);
+  }
+}
+
+void testdrawrects(uint16_t color) {
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=0; x < tft.width(); x+=6) {
+    tft.drawRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color);
+  }
+}
+
+void testfillrects(uint16_t color1, uint16_t color2) {
+  tft.fillScreen(ST77XX_BLACK);
+  for (int16_t x=tft.width()-1; x > 6; x-=6) {
+    tft.fillRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color1);
+    tft.drawRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color2);
+  }
+}
+
+void testfillcircles(uint8_t radius, uint16_t color) {
+  for (int16_t x=radius; x < tft.width(); x+=radius*2) {
+    for (int16_t y=radius; y < tft.height(); y+=radius*2) {
+      tft.fillCircle(x, y, radius, color);
+    }
+  }
+}
+
+void testdrawcircles(uint8_t radius, uint16_t color) {
+  for (int16_t x=0; x < tft.width()+radius; x+=radius*2) {
+    for (int16_t y=0; y < tft.height()+radius; y+=radius*2) {
+      tft.drawCircle(x, y, radius, color);
+    }
+  }
+}
+
+void testtriangles() {
+  tft.fillScreen(ST77XX_BLACK);
+  uint16_t color = 0xF800;
+  int t;
+  int w = tft.width()/2;
+  int x = tft.height()-1;
+  int y = 0;
+  int z = tft.width();
+  for(t = 0 ; t <= 15; t++) {
+    tft.drawTriangle(w, y, y, x, z, x, color);
+    x-=4;
+    y+=4;
+    z-=4;
+    color+=100;
+  }
+}
+
+void testroundrects() {
+  tft.fillScreen(ST77XX_BLACK);
+  uint16_t color = 100;
+  int i;
+  int t;
+  for(t = 0 ; t <= 4; t+=1) {
+    int x = 0;
+    int y = 0;
+    int w = tft.width()-2;
+    int h = tft.height()-2;
+    for(i = 0 ; i <= 16; i+=1) {
+      tft.drawRoundRect(x, y, w, h, 5, color);
+      x+=2;
+      y+=3;
+      w-=4;
+      h-=6;
+      color+=1100;
+    }
+    color+=100;
+  }
+}
+
+void tftPrintTest() {
+  tft.setTextWrap(false);
+  tft.fillScreen(ST77XX_BLACK);
+  tft.setCursor(0, 30);
+  tft.setTextColor(ST77XX_RED);
+  tft.setTextSize(1);
+  tft.println("Hello World!");
+  tft.setTextColor(ST77XX_YELLOW);
+  tft.setTextSize(2);
+  tft.println("Hello World!");
+  tft.setTextColor(ST77XX_GREEN);
+  tft.setTextSize(3);
+  tft.println("Hello World!");
+  tft.setTextColor(ST77XX_BLUE);
+  tft.setTextSize(4);
+  tft.print(1234.567);
+  delay(1500);
+  tft.setCursor(0, 0);
+  tft.fillScreen(ST77XX_BLACK);
+  tft.setTextColor(ST77XX_WHITE);
+  tft.setTextSize(0);
+  tft.println("Hello World!");
+  tft.setTextSize(1);
+  tft.setTextColor(ST77XX_GREEN);
+  tft.print(p, 6);
+  tft.println(" Want pi?");
+  tft.println(" ");
+  tft.print(8675309, HEX); // print 8,675,309 out in HEX!
+  tft.println(" Print HEX!");
+  tft.println(" ");
+  tft.setTextColor(ST77XX_WHITE);
+  tft.println("Sketch has been");
+  tft.println("running for: ");
+  tft.setTextColor(ST77XX_MAGENTA);
+  tft.print(millis() / 1000);
+  tft.setTextColor(ST77XX_WHITE);
+  tft.print(" seconds.");
+}
+
+void mediabuttons() {
+  // play
+  tft.fillScreen(ST77XX_BLACK);
+  tft.fillRoundRect(25, 10, 78, 60, 8, ST77XX_WHITE);
+  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_RED);
+  delay(500);
+  // pause
+  tft.fillRoundRect(25, 90, 78, 60, 8, ST77XX_WHITE);
+  tft.fillRoundRect(39, 98, 20, 45, 5, ST77XX_GREEN);
+  tft.fillRoundRect(69, 98, 20, 45, 5, ST77XX_GREEN);
+  delay(500);
+  // play color
+  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_BLUE);
+  delay(50);
+  // pause color
+  tft.fillRoundRect(39, 98, 20, 45, 5, ST77XX_RED);
+  tft.fillRoundRect(69, 98, 20, 45, 5, ST77XX_RED);
+  // play color
+  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_GREEN);
+}
 
 void setup(void) {
-  //Setup
   pinMode(PIN_TEST_LED,OUTPUT);
   pinMode(BL,OUTPUT);
   
   digitalWrite(BL,LOW); //Apagamos BackLigth
+
   //Señal con el led
   digitalWrite(PIN_TEST_LED,LOW); 
   delay(500);    
   digitalWrite(PIN_TEST_LED,HIGH);
   delay(250);
-  
+  // Encendemos el Led para inciar cfg
   digitalWrite(PIN_TEST_LED,LOW);
   Serial.begin(115200);
   Serial.print(F("Hello! ST77xx TFT Test"));
-  
-    tft.init();
-  tft.setRotation(0);
-  tft.fillScreen(TFT_GREY);
-  tft.setTextColor(TFT_GREEN, TFT_GREY);  // Adding a black background colour erases previous text automatically
-  
-  // Draw clock face
-  tft.fillCircle(64, 64, 61, TFT_BLUE);
-  tft.fillCircle(64, 64, 57, TFT_BLACK);
-
-  // Draw 12 lines
-  for(int i = 0; i<360; i+= 30) {
-    sx = cos((i-90)*0.0174532925);
-    sy = sin((i-90)*0.0174532925);
-    x0 = sx*57+64;
-    yy0 = sy*57+64;
-    x1 = sx*50+64;
-    yy1 = sy*50+64;
-
-    tft.drawLine(x0, yy0, x1, yy1, TFT_BLUE);
-  }
-
-  // Draw 60 dots
-  for(int i = 0; i<360; i+= 6) {
-    sx = cos((i-90)*0.0174532925);
-    sy = sin((i-90)*0.0174532925);
-    x0 = sx*53+64;
-    yy0 = sy*53+64;
-    
-    tft.drawPixel(x0, yy0, TFT_BLUE);
-    if(i==0 || i==180) tft.fillCircle(x0, yy0, 1, TFT_CYAN);
-    if(i==0 || i==180) tft.fillCircle(x0+1, yy0, 1, TFT_CYAN);
-    if(i==90 || i==270) tft.fillCircle(x0, yy0, 1, TFT_CYAN);
-    if(i==90 || i==270) tft.fillCircle(x0+1, yy0, 1, TFT_CYAN);
-  }
-
-  tft.fillCircle(65, 65, 3, TFT_RED);
-
-  // Draw text at position 64,125 using fonts 4
-  // Only font numbers 2,4,6,7 are valid. Font 6 only contains characters [space] 0 1 2 3 4 5 6 7 8 9 : . a p m
-  // Font 7 is a 7 segment font and only contains characters [space] 0 1 2 3 4 5 6 7 8 9 : .
-  tft.drawCentreString("Time flies",64,130,4);
-
-  targetTime = millis() + 1000; 
-  
+  // Use this initializer if using a 1.8" TFT screen:
+  tft.initR(INITR_BLACKTAB);      // Init ST7735S chip, black tab
+  //Apagamos el LED, ya hemos activado el TFT
   digitalWrite(PIN_TEST_LED,HIGH);
 
+  //tft.setSPISpeed(40000000);
 
   Serial.println(F("Initialized"));
 
+  uint16_t time = millis();
+  tft.fillScreen(ST77XX_BLACK);
+  analogWrite(BL,0x7F); //Ahora permitimos el BackLigth
+  time = millis() - time;
+
+  Serial.println(time, DEC);
+  delay(500);
+
+  // large block of text
+  tft.fillScreen(ST77XX_BLACK);
+  testdrawtext("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. ", ST77XX_WHITE);
+  delay(1000);
+
+  // tft print function!
+  tftPrintTest();
+  delay(4000);
+
+  // a single pixel
+  tft.drawPixel(tft.width()/2, tft.height()/2, ST77XX_GREEN);
+  delay(500);
+
+  // line draw test
+  testlines(ST77XX_YELLOW);
+  delay(500);
+
+  // optimized lines
+  testfastlines(ST77XX_RED, ST77XX_BLUE);
+  delay(500);
+
+  testdrawrects(ST77XX_GREEN);
+  delay(500);
+
+  testfillrects(ST77XX_YELLOW, ST77XX_MAGENTA);
+  delay(500);
+
+  tft.fillScreen(ST77XX_BLACK);
+  testfillcircles(10, ST77XX_BLUE);
+  testdrawcircles(10, ST77XX_WHITE);
+  delay(500);
+
+  testroundrects();
+  delay(500);
+
+  testtriangles();
+  delay(500);
+
+  mediabuttons();
+  delay(500);
+
+  Serial.println("done");
+  delay(1000);
+  
 }
 
 void loop() {
-  if (targetTime < millis()) {
-    targetTime = millis()+1000;
-    ss++;              // Advance second
-    if (ss==60) {
-      ss=0;
-      mm++;            // Advance minute
-      if(mm>59) {
-        mm=0;
-        hh++;          // Advance hour
-        if (hh>23) {
-          hh=0;
-        }
-      }
-    }
-
-    // Pre-compute hand degrees, x & y coords for a fast screen update
-    sdeg = ss*6;                  // 0-59 -> 0-354
-    mdeg = mm*6+sdeg*0.01666667;  // 0-59 -> 0-360 - includes seconds
-    hdeg = hh*30+mdeg*0.0833333;  // 0-11 -> 0-360 - includes minutes and seconds
-    hx = cos((hdeg-90)*0.0174532925);    
-    hy = sin((hdeg-90)*0.0174532925);
-    mx = cos((mdeg-90)*0.0174532925);    
-    my = sin((mdeg-90)*0.0174532925);
-    sx = cos((sdeg-90)*0.0174532925);    
-    sy = sin((sdeg-90)*0.0174532925);
-
-    if (ss==0 || initial) {
-      initial = 0;
-      // Erase hour and minute hand positions every minute
-      tft.drawLine(ohx, ohy, 65, 65, TFT_BLACK);
-      ohx = hx*33+65;    
-      ohy = hy*33+65;
-      tft.drawLine(omx, omy, 65, 65, TFT_BLACK);
-      omx = mx*44+65;    
-      omy = my*44+65;
-    }
-
-      // Redraw new hand positions, hour and minute hands not erased here to avoid flicker
-      tft.drawLine(osx, osy, 65, 65, TFT_BLACK);
-      tft.drawLine(ohx, ohy, 65, 65, TFT_WHITE);
-      tft.drawLine(omx, omy, 65, 65, TFT_WHITE);
-      osx = sx*47+65;    
-      osy = sy*47+65;
-      tft.drawLine(osx, osy, 65, 65, TFT_RED);
-
-    tft.fillCircle(65, 65, 3, TFT_RED);
-  }
+tft.invertDisplay(true);
+  delay(500);
+  tft.invertDisplay(false);
+  delay(500);
 }
