@@ -1,4 +1,4 @@
-23717055816364934
+23718777025464303
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -54703,7 +54703,14 @@ XDCR_PEC11R-4215F-S0024
 
 0
 7
-7
+6
+DigitalTrains
+YAAJ_BluePill_1
+Through hole headers for BluePill module. No SWD breakout. Fancy silkscreen.
+module BlluePill Blue Pill header SWD breakout
+0
+40
+40
 DigitalTrains
 sot404
 SOT404
