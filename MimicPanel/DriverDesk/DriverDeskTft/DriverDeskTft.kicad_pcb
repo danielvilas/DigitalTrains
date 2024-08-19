@@ -7,6 +7,12 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "Driver Desk TFT")
+		(date "2024-08-19")
+		(rev "0.0.1")
+		(company "Dcc DIY Tools")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(1 "In1.Cu" signal)
@@ -3628,7 +3634,7 @@
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
 		(property "Reference" "J2"
-			(at 0 -2.33 360)
+			(at 0 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "a271a151-33fe-4ae0-9e7e-b77b404bc979")
 			(effects
@@ -3639,7 +3645,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04"
-			(at 0 9.95 360)
+			(at 0 9.95 0)
 			(layer "F.Fab")
 			(uuid "b55b7491-1713-4bff-8435-7e9addf59a6d")
 			(effects
@@ -4501,7 +4507,7 @@
 		(descr "Through hole straight pin header, 2x05, 2.54mm pitch, double rows")
 		(tags "Through hole pin header THT 2x05 2.54mm double row")
 		(property "Reference" "J3"
-			(at 1.27 -2.33 360)
+			(at 1.27 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "3dcfd748-3d29-463d-ab05-d9191fd77ae8")
 			(effects
@@ -4512,7 +4518,7 @@
 			)
 		)
 		(property "Value" "Conn_02x05_Odd_Even"
-			(at 1.27 12.49 360)
+			(at 1.27 12.49 0)
 			(layer "F.Fab")
 			(uuid "7aa1afdc-85e6-4d37-bf27-f9d9b5a6a7d1")
 			(effects

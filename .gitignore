@@ -320,3 +320,4 @@ TSWLatexianTemp*
 **/*-backups/
 **/jlcpcb/
 **/.pio/
+.kibot
