@@ -14,4 +14,9 @@
 #define VERSION "0.0.1"
 
 
+#define RENC_A PA1
+#define RENC_B PA2
+#define RENC_S PA3
+
+
 #endif
