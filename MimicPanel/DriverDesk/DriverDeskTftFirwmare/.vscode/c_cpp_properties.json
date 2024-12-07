@@ -10,6 +10,7 @@
             "includePath": [
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
+                "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit GFX Library",
@@ -39,6 +40,7 @@
                 "/Users/daniel/.platformio/packages/framework-arduinoststm32/cores/arduino",
                 "/Users/daniel/.platformio/packages/framework-arduinoststm32/variants/STM32F1xx/F103C8T_F103CB(T-U)",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit seesaw Library",
+                "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/SD/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/CMSIS_DSP/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/EEPROM/src",
                 "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/IWatchdog/src",
@@ -58,6 +60,7 @@
                 "path": [
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
+                    "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit GFX Library",
@@ -87,6 +90,7 @@
                     "/Users/daniel/.platformio/packages/framework-arduinoststm32/cores/arduino",
                     "/Users/daniel/.platformio/packages/framework-arduinoststm32/variants/STM32F1xx/F103C8T_F103CB(T-U)",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit seesaw Library",
+                    "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/SD/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/CMSIS_DSP/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/EEPROM/src",
                     "/Users/daniel/.platformio/packages/framework-arduinoststm32/libraries/IWatchdog/src",
@@ -103,7 +107,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60115",
+                "PLATFORMIO=60116",
                 "STM32F103xB",
                 "STM32F1",
                 "PIO_FRAMEWORK_ARDUINO_ENABLE_CDC",

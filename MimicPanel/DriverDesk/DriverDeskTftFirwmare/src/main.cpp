@@ -4,20 +4,36 @@
 #include "global_data.h"
 
 #include <RotaryEncoder.h>
+#include <STM32TimerInterrupt.h>
 
 GlobalData global;
 volatile boolean valueChanged=false;
 volatile boolean buttonPressed=false;
 
 RotaryEncoder *encoder = nullptr;
+STM32Timer ITimer(TIM1);
+#define TIMER1_INTERVAL_MS        20
+
 void checkPosition()
 {
   encoder->tick(); // just call tick() to check the state.
   valueChanged=true;
 }
 
+volatile uint16_t pa;
+volatile uint16_t pb;
+
 void checkPush(){
-  buttonPressed=true;
+  
+  uint16_t t_pa;
+  uint16_t t_pb;
+  t_pa = LL_GPIO_ReadInputPort(GPIOA) & PA_MASK;
+  t_pb = LL_GPIO_ReadInputPort(GPIOB) & PB_MASK;
+  if(t_pa != pa || t_pb != pb){
+    buttonPressed=true;
+    pa= t_pa;
+    pb= t_pb;
+  }
 }
 
 void init_renc(){
@@ -26,10 +42,8 @@ void init_renc(){
   // register interrupt routine
   attachInterrupt(digitalPinToInterrupt(RENC_A), checkPosition, CHANGE);
   attachInterrupt(digitalPinToInterrupt(RENC_B), checkPosition, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(RENC_S), checkPush, CHANGE);
-  //  attachInterrupt(RENC_A,renc_int,CHANGE);
-  //  attachInterrupt(RENC_B,renc_int,CHANGE);
-  //  attachInterrupt(RENC_S,renc_int,CHANGE);
+
+  ITimer.attachInterruptInterval(TIMER1_INTERVAL_MS * 1000, checkPush);
 }
 
 
@@ -83,7 +97,10 @@ void loop() {
   if(buttonPressed){
     tft.setCursor(10,60);
     tft.printf("BUTTON");
+    Serial.printf("PA: %04x\n",(~pa)&PA_MASK);
+    Serial.printf("PB: %04x\n",(~pb)&PB_MASK);
     buttonPressed=false;
+
   }
 
   //Serial.printf("Value: %i\n",rotaryEncoder.getValue());
