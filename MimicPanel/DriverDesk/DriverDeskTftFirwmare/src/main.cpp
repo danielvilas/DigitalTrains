@@ -8,7 +8,6 @@
 
 GlobalData global;
 volatile boolean valueChanged=false;
-volatile boolean buttonPressed=false;
 
 RotaryEncoder *encoder = nullptr;
 STM32Timer ITimer(TIM1);
@@ -20,8 +19,6 @@ void checkPosition()
   valueChanged=true;
 }
 
-volatile uint16_t pa;
-volatile uint16_t pb;
 
 void checkPush(){
   
@@ -29,11 +26,8 @@ void checkPush(){
   uint16_t t_pb;
   t_pa = LL_GPIO_ReadInputPort(GPIOA) & PA_MASK;
   t_pb = LL_GPIO_ReadInputPort(GPIOB) & PB_MASK;
-  if(t_pa != pa || t_pb != pb){
-    buttonPressed=true;
-    pa= t_pa;
-    pb= t_pb;
-  }
+  uint16_t t_btn = convertToBtns(~t_pa,~t_pb);
+  pushPorts(t_btn);
 }
 
 void init_renc(){
@@ -94,13 +88,11 @@ void loop() {
     tft.println("v" VERSION);
     valueChanged=false;
   }
-  if(buttonPressed){
+  u_int16_t btn;
+  while(popPorts(&btn)==SUCCESS){
     tft.setCursor(10,60);
     tft.printf("BUTTON");
-    Serial.printf("PA: %04x\n",(~pa)&PA_MASK);
-    Serial.printf("PB: %04x\n",(~pb)&PB_MASK);
-    buttonPressed=false;
-
+    Serial.printf("BTNS: %04x\n",btn);
   }
 
   //Serial.printf("Value: %i\n",rotaryEncoder.getValue());
