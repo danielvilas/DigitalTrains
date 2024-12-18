@@ -36,25 +36,25 @@
 #define BTN_5_PORT portB
 #define BTN_5_MASK (1<<0)
 
-#define BTN_6 PB15
-#define BTN_6_PORT portB
-#define BTN_6_MASK (1<<15)
+#define BTN_10 PB15
+#define BTN_10_PORT portB
+#define BTN_10_MASK (1<<15)
 
-#define BTN_7 PB14
-#define BTN_7_PORT portB
-#define BTN_7_MASK (1<<14)
+#define BTN_9 PB14
+#define BTN_9_PORT portB
+#define BTN_9_MASK (1<<14)
 
 #define BTN_8 PB13
 #define BTN_8_PORT portB
 #define BTN_8_MASK (1<<13)
 
-#define BTN_9 PB12
-#define BTN_9_PORT portB
-#define BTN_9_MASK (1<<12)
+#define BTN_7 PB12
+#define BTN_7_PORT portB
+#define BTN_7_MASK (1<<12)
 
-#define BTN_10 PB11
-#define BTN_10_PORT portB
-#define BTN_10_MASK (1<<11)
+#define BTN_6 PB11
+#define BTN_6_PORT portB
+#define BTN_6_MASK (1<<11)
 
 
 #define PA_MASK 0x0108 // 0000 0001 0000 1000 PA8 PA3
