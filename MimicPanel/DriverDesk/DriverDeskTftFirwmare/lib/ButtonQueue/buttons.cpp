@@ -2,35 +2,57 @@
 
 u_int16_t q_ports[NUM_EVENTS];
 u_int16_t lastData=0;
+
 u_int8_t q_ports_w=0;//next to write
 u_int8_t q_ports_r=0;//next to read
+u_int8_t q_ports_s=0;//next to read
 //u_int8_t lostEvents=0;
 
 
-ErrorStatus pushPorts(u_int16_t btns){
+ButtonQueueStatus pushPorts(u_int16_t btns){
     //TODO: Check buttons
     if(btns == lastData){
-        return ERROR;
+        return BTNQ_ERROR;
     }
-    q_ports[q_ports_w]=btns;
-    q_ports_w=(q_ports_w+1)%NUM_EVENTS;
-    lastData=btns;
-    if(q_ports_w==q_ports_r){
-        //if write pointer reaches read pointer we lost older register
+
+    if(q_ports_s==NUM_EVENTS){
+        //if write pointer requires write over read pointer we lost older register
         q_ports_r=(q_ports_r+1)%NUM_EVENTS;
         //lostEvents++;
         //Serial.printf("Lost Event (%u)\n",lostEvents);
+    }else{
+        q_ports_s++;
     }
-    return SUCCESS;
+
+    q_ports[q_ports_w]=btns;
+    q_ports_w=(q_ports_w+1)%NUM_EVENTS;
+    lastData=btns;
+    
+    if(q_ports_s>NUM_EVENTS){//Protection code
+        q_ports_w=0;//next to write
+        q_ports_r=0;//next to read
+        q_ports_s=0;
+        return BTNQ_ERROR;
+    }
+
+    return BTNQ_SUCCESS;
 }
 
-ErrorStatus popPorts(u_int16_t* btns){
-    if(q_ports_r==q_ports_w){
-        return ERROR;
+ButtonQueueStatus popPorts(u_int16_t* btns){
+    if(q_ports_s==0){
+        return BTNQ_ERROR;
     }
     *btns=q_ports[q_ports_r];
     q_ports_r=(q_ports_r+1)%(NUM_EVENTS);
-    return SUCCESS;
+    q_ports_s--;
+
+    if(q_ports_s<0){ //Protection code
+        q_ports_w=0;//next to write
+        q_ports_r=0;//next to read
+        q_ports_s=0;
+        return BTNQ_ERROR;
+    }
+    return BTNQ_SUCCESS;
 }
 
 
@@ -50,3 +72,15 @@ u_int16_t convertToBtns(u_int16_t portA, u_int16_t portB){
     if(BTN_H_PORT & BTN_H_MASK) ret+=(1<<11);
     return ret;
 }
+
+#ifdef PIO_UNIT_TESTING
+void tst_reset(){
+    lastData=255;
+    q_ports_w=0;//next to write
+    q_ports_r=0;//next to read
+    q_ports_s=0;
+}
+void tst_print_queue(){
+
+}
+#endif

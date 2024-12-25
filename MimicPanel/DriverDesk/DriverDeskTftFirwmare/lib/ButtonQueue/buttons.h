@@ -73,9 +73,23 @@ struct s_dd_button{
 typedef struct s_dd_button t_dd_button;
 typedef t_dd_button* p_dd_button;
 
+typedef enum
+{
+  BTNQ_SUCCESS = 0U,
+  BTNQ_ERROR = !BTNQ_SUCCESS
+} ButtonQueueStatus;
+
 
 u_int16_t convertToBtns(u_int16_t portA, u_int16_t PortB);
-ErrorStatus pushPorts(u_int16_t btns);
-ErrorStatus popPorts(u_int16_t* btns);
+ButtonQueueStatus pushPorts(u_int16_t btns);
+ButtonQueueStatus popPorts(u_int16_t* btns);
+
+
+
+#ifdef PIO_UNIT_TESTING
+void tst_reset();
+void tst_print_queue();
+#endif
+
 
 #endif

@@ -10,6 +10,7 @@
             "includePath": [
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
+                "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/lib/ButtonQueue",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
@@ -60,6 +61,7 @@
                 "path": [
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
+                    "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/lib/ButtonQueue",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
