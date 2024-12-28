@@ -75,24 +75,30 @@ void setup(void) {
   paint_main_screen();
 }
 
+u_int16_t btn_last_paint=0;
+
+
 void loop() {
   if(valueChanged){
-    tft.fillScreen(ST7735_BLACK);
-
-    tft.setTextColor(0xFFFF, 0x0000);
-    tft.setCursor(10,50);
-    tft.printf("Value: %i",encoder->getPosition());
-    tft.setCursor(5,140);
-    tft.println("DriverDeskTFT");
-    tft.setCursor(5,150);
-    tft.println("v" VERSION);
+    tft.fillRect(50,50,30,8,ST7735_BLACK);
+    tft.setCursor(52,50); 
+    tft.printf("%i",encoder->getPosition()); 
+    
     valueChanged=false;
   }
-  u_int16_t btn;
+  u_int16_t btn=btn_last_paint;
   while(popPorts(&btn)==SUCCESS){
-    tft.setCursor(10,60);
-    tft.printf("BUTTON");
     Serial.printf("BTNS: %04x\n",btn);
+  }
+  
+  if(btn!=btn_last_paint){
+    for(u_int8_t i=0;i<NUM_BUTTONS;i++){
+      u_int16_t mask = 1 << i;
+      if( (btn&mask) != (btn_last_paint & mask )){
+        paint_btn(i,(btn &mask)?1:0);
+      }
+    }
+    btn_last_paint=btn;
   }
 
   //Serial.printf("Value: %i\n",rotaryEncoder.getValue());
