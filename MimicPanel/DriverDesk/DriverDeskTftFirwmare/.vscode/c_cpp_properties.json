@@ -11,6 +11,8 @@
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/lib/ButtonQueue",
+                "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/DDT_i2c_proto/include",
+                "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/DDT_i2c_proto/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                 "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
@@ -62,6 +64,8 @@
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/include",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/lib/ButtonQueue",
+                    "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/DDT_i2c_proto/include",
+                    "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/DDT_i2c_proto/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/STM32_TimerInterrupt/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/RotaryEncoder/src",
                     "/Users/daniel/OHS/danielvilas/DigitalTrains/MimicPanel/DriverDesk/DriverDeskTftFirwmare/.pio/libdeps/STM32F103_Devel/Adafruit ST7735 and ST7789 Library",
@@ -117,6 +121,7 @@
                 "PIO_FRAMEWORK_ARDUINO_USB_FULLMODE",
                 "HSE_VALUE=8000000U",
                 "PIN_TEST_LED=PB5",
+                "SERIAL_OUT=SerialUSB",
                 "STM32F1xx",
                 "ARDUINO=10808",
                 "ARDUINO_ARCH_STM32",
@@ -137,6 +142,10 @@
             ],
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
+            "forcedInclude": [
+                "include/DdtI2c.h",
+                ""
+            ],
             "compilerPath": "/Users/daniel/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc",
             "compilerArgs": [
                 "-mcpu=cortex-m3",

@@ -5,6 +5,7 @@
 
 #include <RotaryEncoder.h>
 #include <STM32TimerInterrupt.h>
+#include <DdtProtoClient.h>
 
 GlobalData global;
 volatile boolean valueChanged=false;
@@ -17,6 +18,7 @@ void checkPosition()
 {
   encoder->tick(); // just call tick() to check the state.
   valueChanged=true;
+  digitalWrite(INT_PIN,LOW);
 }
 
 
@@ -27,7 +29,7 @@ void checkPush(){
   t_pa = LL_GPIO_ReadInputPort(GPIOA) & PA_MASK;
   t_pb = LL_GPIO_ReadInputPort(GPIOB) & PB_MASK;
   uint16_t t_btn = convertToBtns(~t_pa,~t_pb);
-  pushPorts(t_btn);
+  if(pushPorts(t_btn)==BTNQ_SUCCESS) digitalWrite(INT_PIN,LOW);
 }
 
 void init_renc(){
@@ -55,6 +57,7 @@ void ledPing(){
 void setup(void) {
   pinMode(PIN_TEST_LED,OUTPUT);
   pinMode(TFT_BL,OUTPUT);
+  pinMode(INT_PIN,OUTPUT_OPEN_DRAIN);
 
   init_renc();
 
@@ -70,6 +73,8 @@ void setup(void) {
   digitalWrite(PIN_TEST_LED,HIGH);
   Serial.println(F("Initialized"));
 
+  digitalWrite(INT_PIN,1);
+  initDdtProtoDevice();
   delay(2000);
 
   paint_main_screen();
@@ -100,7 +105,7 @@ void loop() {
     }
     btn_last_paint=btn;
   }
-
+  digitalWrite(INT_PIN,HIGH);
   //Serial.printf("Value: %i\n",rotaryEncoder.getValue());
   
   delay(100);

@@ -15,6 +15,8 @@
 #define PIN_SPI_SCK           PA5
 */
 
+#define INT_PIN     PB4
+
 #define VERSION "0.0.1"
 
 #include "buttons.h"
