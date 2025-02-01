@@ -1430,8 +1430,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "J401")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "J301")
 					(unit 1)
 				)
 			)
@@ -1501,8 +1501,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "#PWR0403")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "#PWR0303")
 					(unit 1)
 				)
 			)
@@ -1572,8 +1572,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "#PWR0401")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "#PWR0301")
 					(unit 1)
 				)
 			)
@@ -1675,8 +1675,8 @@
 				)
 			)
 			(project "STM32103_Devel"
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "R401")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "R301")
 					(unit 1)
 				)
 			)
@@ -1746,8 +1746,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "#PWR0402")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "#PWR0302")
 					(unit 1)
 				)
 			)
@@ -1847,8 +1847,8 @@
 				)
 			)
 			(project "STM32103_Devel"
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "R403")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "R303")
 					(unit 1)
 				)
 			)
@@ -1948,8 +1948,8 @@
 				)
 			)
 			(project "STM32103_Devel"
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "R404")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "R304")
 					(unit 1)
 				)
 			)
@@ -2019,8 +2019,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "#PWR0404")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "#PWR0304")
 					(unit 1)
 				)
 			)
@@ -2120,8 +2120,8 @@
 				)
 			)
 			(project "STM32103_Devel"
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "R402")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "R302")
 					(unit 1)
 				)
 			)
@@ -2220,8 +2220,8 @@
 				)
 			)
 			(project "STM32103_Devel"
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "D401")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "D301")
 					(unit 1)
 				)
 			)
@@ -2292,8 +2292,8 @@
 				)
 			)
 			(project ""
-				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/073afc36-830b-4a15-a412-4e8c523c33fa"
-					(reference "#FLG0401")
+				(path "/c825b4d0-cfb0-42ac-8db7-b9a5afa1d288/44692a17-f65d-4471-ad79-d01dbdf2ca28"
+					(reference "#FLG0301")
 					(unit 1)
 				)
 			)
