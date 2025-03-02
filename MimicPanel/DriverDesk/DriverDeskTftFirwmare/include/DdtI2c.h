@@ -7,7 +7,7 @@
  */
 //#define DDT_MODE_MASTER
 #define DDT_MODE_CLIENT
-
+#define DDT_I2C_ADDR 0x10
 
 
 

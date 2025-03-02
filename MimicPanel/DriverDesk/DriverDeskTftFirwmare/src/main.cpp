@@ -67,6 +67,7 @@ void setup(void) {
 
   Serial.begin(115200);
   Serial.println("DriverDeskTft v" VERSION);
+  initDdtProtoDevice();
   init_tft();
   bl_on();
   //Apagamos el LED, ya hemos activado el TFT
